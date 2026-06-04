@@ -118,7 +118,7 @@
       doi = {10.1101/2025.11.14.688467}
     }
     
-- title: How Can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks
+- title: How can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks
   release-date: 2023-09-01
   authors:
     - first: Mark
@@ -180,9 +180,9 @@
   note: null
   doi-identifier: 10.4230/LIPIcs.WABI.2025.15
   doi-url: https://doi.org/10.4230/LIPIcs.WABI.2025.15
-  preprint-server: null
-  preprint-identifier: null
-  preprint-url: null
+  preprint-server: HAL
+  preprint-identifier: hal-04987366
+  preprint-url: https://hal.science/hal-04987366/document
   software-url: null
   topics:
   - FPT
@@ -267,9 +267,9 @@
   note: null
   doi-identifier: 10.1007/978-3-031-94928-9_7
   doi-url: https://doi.org/10.1007/978-3-031-94928-9_7
-  preprint-server: null
-  preprint-identifier: null
-  preprint-url: null
+  preprint-server: arXiv
+  preprint-identifier: 2405.01091
+  preprint-url: https://arxiv.org/abs/2405.01091
   software-url: null
   topics:
   - FPT
@@ -304,9 +304,9 @@
   note: null
   doi-identifier: 10.4230/LIPIcs.IPEC.2025.11
   doi-url: https://doi.org/10.4230/LIPIcs.IPEC.2025.11
-  preprint-server: null
-  preprint-identifier: null
-  preprint-url: null
+  preprint-server: arXiv
+  preprint-identifier: 2510.09512
+  preprint-url: https://arxiv.org/abs/2510.09512
   software-url: null
   topics:
   - FPT
@@ -342,9 +342,9 @@
   note: null
   doi-identifier: 10.4230/LIPIcs.FSTTCS.2024.28
   doi-url: https://doi.org/10.4230/LIPIcs.FSTTCS.2024.28
-  preprint-server: null
-  preprint-identifier: null
-  preprint-url: null
+  preprint-server: arXiv
+  preprint-identifier: 2405.17314
+  preprint-url: https://arxiv.org/abs/2405.17314
   software-url: null
   topics:
   - FPT
@@ -377,9 +377,9 @@
   note: null
   doi-identifier: 10.1007/978-3-032-17801-5_14
   doi-url: https://doi.org/10.1007/978-3-032-17801-5_14
-  preprint-server: null
-  preprint-identifier: null
-  preprint-url: null
+  preprint-server: arXiv
+  preprint-identifier: 2510.05911
+  preprint-url: https://arxiv.org/abs/2510.05911
   software-url: null
   topics:
   - FPT
@@ -450,9 +450,9 @@
   note: null
   doi-identifier: 10.1016/j.dam.2025.11.037
   doi-url: https://doi.org/10.1016/j.dam.2025.11.037
-  preprint-server: null
-  preprint-identifier: null
-  preprint-url: null
+  preprint-server: arXiv
+  preprint-identifier: 2307.03518
+  preprint-url: https://arxiv.org/abs/2307.03518
   software-url: null
   topics:
   - FPT
@@ -575,7 +575,7 @@
     - FPT
     - Phylogenetics
   abstract: >
-    Maximum Parsimony is the problem of computing a most parsimonious phylogenetic tree for a taxa set \(X\) from character data for \(X\). A common strategy to attack this notoriously hard problem is to perform a local search over the phylogenetic tree space. Here, one is given a phylogenetic tree \(T\) and wants to find a more parsimonious tree in the neighborhood of \(T\). We study the complexity of this problem when the neighborhood contains all trees within distance \(k\) for several classic distance functions. For the nearest neighbor interchange (NNI), subtree prune and regraft (SPR), tree bisection and reconnection (TBR), and edge contraction and refinement (ECR) distances, we show that, under the exponential time hypothesis, there are no algorithms with running time \(|I|^{o(k)}\), where \(|I|\) is the total input size. Hence, brute-force algorithms with running time \(|X|^{  \mathcal{O}(k)} \cdot |I|\) are essentially optimal. In contrast to the above distances, we observe that for the sECR-distance, where the contracted edges are constrained to form a subtree, a better solution within distance \(k\) can be found in \(k^{  \mathcal{O}(k)} \cdot |I|^{  \mathcal{O}(1)}\) time.
+    Maximum Parsimony is the problem of computing a most parsimonious phylogenetic tree for a taxa set \(X\) from character data for \(X\). A common strategy to attack this notoriously hard problem is to perform a local search over the phylogenetic tree space. Here, one is given a phylogenetic tree \(T\) and wants to find a more parsimonious tree in the neighborhood of \(T\). We study the complexity of this problem when the neighborhood contains all trees within distance \(k\) for several classic distance functions. For the nearest neighbor interchange (NNI), subtree prune and regraft (SPR), tree bisection and reconnection (TBR), and edge contraction and refinement (ECR) distances, we show that, under the exponential time hypothesis, there are no algorithms with running time \(|I|^{o(k)}\), where \(|I|\) is the total input size. Hence, brute-force algorithms with running time \(|X|^{\mathcal{O}(k)} \cdot |I|\) are essentially optimal. In contrast to the above distances, we observe that for the sECR-distance, where the contracted edges are constrained to form a subtree, a better solution within distance \(k\) can be found in \(k^{\mathcal{O}(k)} \cdot |I|^{\mathcal{O}(1)}\) time.
   bibtex: >
     @inproceedings{komusiewicz2023complexity,
       title = {{On the Complexity of Parameterized Local Search for the Maximum Parsimony Problem}},
@@ -605,9 +605,9 @@
   note: null
   doi-identifier: 10.4230/LIPIcs.IPEC.2023.4
   doi-url: https://doi.org/10.4230/LIPIcs.IPEC.2023.4
-  preprint-server: null
-  preprint-identifier: null
-  preprint-url: null
+  preprint-server: arXiv
+  preprint-identifier: 2308.04575
+  preprint-url: https://arxiv.org/abs/2308.04575
   software-url: null
   topics:
     - FPT
@@ -644,9 +644,9 @@
   note: null
   doi-identifier: 10.4230/LIPIcs.IPEC.2023.19
   doi-url: https://doi.org/10.4230/LIPIcs.IPEC.2023.19
-  preprint-server: null
+  preprint-server: TU Delft
   preprint-identifier: null
-  preprint-url: null
+  preprint-url: https://pure.tudelft.nl/ws/portalfiles/portal/172830199/LIPIcs.IPEC.2023.19.pdf
   software-url: null
   topics:
     - FPT
@@ -724,14 +724,14 @@
   note: null
   doi-identifier: 10.46298/dmtcs.6108
   doi-url: https://doi.org/10.46298/dmtcs.6108
-  preprint-server: null
-  preprint-identifier: null
-  preprint-url: null
+  preprint-server: arXiv
+  preprint-identifier: 1901.03627
+  preprint-url: https://arxiv.org/abs/1901.03627
   software-url: null
   topics:
     - FPT
   abstract: >
-    We introduce and study the Bicolored \(P_3\) Deletion problem. The input is a graph whose edges are colored red or blue, and the task is to delete at most \(k\) edges so that no induced path on three vertices contains edges of both colors. We show that the problem is NP-hard and cannot be solved in subexponential time on bounded-degree graphs under ETH. We then identify polynomial-time solvable special cases based on forbidden colored substructures. Finally, we present an FPT algorithm running in \(  \mathcal{O}(1.84^k \cdot |V| \cdot |E|)\) time and show that the problem admits a kernel with \(  \mathcal{O}(k \Delta min(k,\Delta))\) vertices, where \(\Delta\) denotes the maximum degree.
+    We introduce and study the Bicolored \(P_3\) Deletion problem. The input is a graph whose edges are colored red or blue, and the task is to delete at most \(k\) edges so that no induced path on three vertices contains edges of both colors. We show that the problem is NP-hard and cannot be solved in subexponential time on bounded-degree graphs under ETH. We then identify polynomial-time solvable special cases based on forbidden colored substructures. Finally, we present an FPT algorithm running in \(\mathcal{O}(1.84^k \cdot |V| \cdot |E|)\) time and show that the problem admits a kernel with \(\mathcal{O}(k \Delta min(k,\Delta))\) vertices, where \(\Delta\) denotes the maximum degree.
   bibtex: >
     @article{gruttemeier2021destroying,
       title = {{Destroying Bicolored P3s by Deleting Few Edges}},
