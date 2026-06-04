@@ -1,0 +1,16 @@
+/* Site-specific overrides that avoid SCSS/front-matter parsing. */
+
+.page__content {
+  font-size: 0.9em;
+}
+
+/* Keep LinkedIn icon monochrome (no brand blue). */
+.fa-linkedin,
+.fa-linkedin-in {
+  color: inherit !important;
+}
+
+/* Make profile image square with rounded corners (not circular). */
+.author__avatar img {
+  border-radius: 12px !important;
+}

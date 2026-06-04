@@ -1,0 +1,217 @@
+.software-box {
+  border: 1px solid #ccc;
+  padding: 1em 1.2em;
+  margin: 1.2em 0;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fafafa;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.software-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.82);
+  pointer-events: none;
+}
+
+.software-box.expanded::before {
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.software-box > * {
+  position: relative;
+  z-index: 1;
+}
+
+.software-box:hover {
+  background-color: #f0f0f0;
+}
+
+.software-overlay {
+  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.5em 0.8em;
+  border-radius: 6px;
+}
+
+.software-title {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.lang-note {
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 0.2em;
+}
+
+.software-detail {
+  display: none;
+  margin-top: 0.8em;
+  padding: 0.7em 0.8em 0.6em;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.software-buttons a {
+  display: inline-block;
+  margin-top: 0.4em;
+  margin-right: 0.6em;
+  padding: 4px 8px;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85em;
+  color: black;
+}
+
+.software-buttons a:hover {
+  background: #ddd;
+}
+
+.noshow {
+  display: none;
+}
+
+.bibtex,
+.abstract-box {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  padding: 1em;
+  background: #fdfdfd;
+  position: relative;
+}
+
+.bibtex pre {
+  font-size: 85%;
+  overflow-x: auto;
+  overflow-y: auto;
+  white-space: pre;
+  font-family: monospace;
+  margin: 0;
+}
+
+.abstract-box {
+  font-size: 95%;
+  line-height: 1.4em;
+  max-height: 20em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.4em;
+  right: 0.4em;
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.copy-btn:hover {
+  background: #ddd;
+}
+
+.button-group {
+  margin-top: 0.1em;
+}
+
+.toggle-button,
+.link-button {
+  display: inline-block;
+  font-size: 0.75em;
+  padding: 3px 8px;
+  margin-right: 4px;
+  margin-top: 2px;
+  background-color: #eee;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.toggle-button.lowkey {
+  font-family: monospace;
+  font-size: 0.65;
+  color: #666;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 2px 6px;
+  margin-top: 2px;
+  border-radius: 3px;
+}
+
+.toggle-button:hover,
+.link-button:hover {
+  background-color: #ddd;
+}
+
+.year-label {
+  position: relative;
+  text-align: right;
+  margin: 2em 0 1.5em;
+  font-weight: normal;
+  font-size: 0.9em;
+  color: #888;
+}
+
+.year-label::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #ccc;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.year-label span {
+  position: relative;
+  background: white;
+  padding: 0 0.5em;
+  z-index: 1;
+}
+
+ul.no-bullets {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+ul.no-bullets li {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 0.6em;
+}
+
+.authors {
+  font-size: 0.8em;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.info {
+  font-size: 0.75em;
+  color: #555;
+}

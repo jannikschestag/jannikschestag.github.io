@@ -1,0 +1,10 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var copyright = document.querySelector(".page__footer-copyright");
+  if (!copyright) return;
+  copyright.innerHTML = copyright.innerHTML.replace(
+    /\s*Powered by .*$/i,
+    ""
+  );
+});
+</script>

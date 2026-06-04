@@ -1,0 +1,145 @@
+<div class="pub-entry" style="display: flex; align-items: flex-start; margin-bottom: 1.5em;">
+
+  <!-- Left Column: pubnum and abs/bib buttons -->
+  <div class="pub-left" style="width: 2em; text-align: right; padding-right: 1em; flex-shrink: 0;">
+    {% assign is_number = include.pubnum | plus: 0 %}
+    <span class="pubnum" style="display: inline-block; margin-top: 0.6em;">
+      {% if include.pubnum == is_number %}
+        [{{ include.pubnum }}]
+      {% else %}
+        {{ include.pubnum }}
+      {% endif %}
+    </span><br>
+  </div>
+
+
+
+  <!-- Middle Column: Title, Authors, Info, preprint -->
+  <div class="pub-middle" style="flex: 1; border: 1px solid #ddd; border-radius: 5px; padding: 0.55em 0.8em 0.8em 0.8em; position: relative;">
+    <div class="top-label" style="position: absolute;
+        top: -0.8em;
+        right: 1em;
+        background-color: white;
+        padding: 0 0.4em;
+        font-size: 0.6em;
+        font-family: monospace;
+        color: #777;">
+      {% if pub.type == "journal" %}
+        journal article
+      {% elsif pub.type == "preprint" %}
+        preprint
+      {% elsif pub.type == "conference" %}
+        conference paper
+      {% elsif pub.type == "thesis" %}
+        thesis
+      {% endif %}
+    </div>
+
+    <span class="title">{{ pub.title }}</span><br>
+
+    <span class="authors">
+      {% for author in pub.authors %}
+        {%- assign name = author.first -%}
+        {%- if author.middle %}
+          {%- for m in author.middle %}
+            {%- assign name = name | append: " " | append: m | append: "." -%}
+          {%- endfor %}
+        {%- endif %}
+        {%- if author.tussenvoegsel %}
+          {%- assign name = name | append: " " | append: author.tussenvoegsel -%}
+        {%- endif %}
+        {%- assign name = name | append: " " | append: author.last -%}
+        <span style="white-space: nowrap;">{{ name }}</span>{%- unless forloop.last %}, {% endunless %}
+      {% endfor %}
+    </span><br>
+
+
+    
+    <div class="info-row" style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+
+      <span class="info">
+        {% if pub.type == "journal" %}
+          <i>{{ pub.journal }}</i>{% if pub.volume %}, {{ pub.volume }}{% if pub.issue %}({{ pub.issue }}){% endif %}{% endif %}{% if pub.pages %}:{{ pub.pages }}{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}.
+        {% elsif pub.type == "preprint" %}
+          {% if pub.preprint-server %}{{ pub.preprint-server }}{% endif %}{% if pub.preprint-identifier %}:{{ pub.preprint-identifier }}{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}.
+        {% elsif pub.type == "thesis" %}
+          {% if pub.note %}{{ pub.note }}{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}.
+        {% endif %}
+       </span>
+  
+        <!-- Buttons after info -->
+        <span class="info-buttons" style="white-space: nowrap;">
+          {% if pub.type == "journal" %}
+            {% if pub.doi-url %}
+              <a class="link-button" href="{{ pub.doi-url }}" target="_blank">journal</a>
+            {% endif %}
+            {% if pub.preprint-url %}
+              <a class="link-button" href="{{ pub.preprint-url }}" target="_blank">{{ pub.preprint-server }}</a>
+            {% endif %}
+            {% if pub.software-url %}
+              <a class="link-button" href="{{ pub.software-url }}" target="_blank">software</a>
+            {% endif %}
+          {% elsif pub.type == "preprint" %}
+            {% if pub.preprint-url %}
+              <a class="link-button" href="{{ pub.preprint-url }}" target="_blank">{{ pub.preprint-server }}</a>
+            {% endif %}
+            {% if pub.software-url %}
+              <a class="link-button" href="{{ pub.software-url }}" target="_blank">software</a>
+            {% endif %}
+          {% elsif pub.type == "thesis" %}
+            {% if pub.repository-url %}
+              <a class="link-button" href="{{ pub.repository-url }}" target="_blank">repository</a>
+            {% endif %}
+            {% if pub.software-url %}
+              <a class="link-button" href="{{ pub.software-url }}" target="_blank">software</a>
+            {% endif %}
+          {% endif %}
+        </span>
+    </div>
+
+
+    <div class="lowkey-button-group" style="
+      position: absolute;
+      bottom: -0.6em;
+      left: 0.6em;
+      z-index: 2;
+    ">
+      {% if pub.abstract %}
+        <button class="toggle-button lowkey" onclick="toggleBox('abs_{{ pub.title | slugify }}')">abstract</button>
+      {% endif %}
+      {% if pub.bibtex %}
+        <button class="toggle-button lowkey" onclick="toggleBox('bib_{{ pub.title | slugify }}')">bibtex</button>
+      {% endif %}
+    </div>
+
+
+  </div>
+</div>
+
+<!-- Optional toggles below full row, aligned with pub-middle -->
+<div style="margin-left: 3.3em; margin-top: -0.7em;">
+  {% if pub.abstract %}
+    <div id="abs_{{ pub.title | slugify }}" class="abstract-box noshow" style="
+      font-family: inherit;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 0.4em 0.6em 0.6em 0.6em;
+      font-size: 0.9em;
+      line-height: 1.3em;
+      white-space: normal;
+    ">{{ pub.abstract }}</div>
+  {% endif %}
+  {% if pub.bibtex %}
+    <div id="bib_{{ pub.title | slugify }}" class="bibtex noshow" style="
+      font-family: monospace;
+      color: #666;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 0.6em 0.8em 0.8em 0.8em;
+      font-size: 0.85em;
+      margin-top: 0.3em;
+      overflow-x: auto;
+    "><pre style="margin: 0;">{{ pub.bibtex }}</pre></div>
+  {% endif %}
+</div>

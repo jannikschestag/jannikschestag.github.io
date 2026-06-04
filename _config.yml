@@ -1,0 +1,111 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Niels Holtgrefe
+subtitle: nielsholtgrefe.nl
+email: n.a.l.holtgrefe@tudelft.nl
+description: >- # this means to ignore newlines until "baseurl:"
+  Personal homepage of Niels Holtgrefe, PhD candidate in applied mathematics at TU Delft, working on algorithmic and mathematical phylogenetics
+  
+#twitter_username: username
+#github_username: username
+minimal_mistakes_skin: default
+search: false
+atom_feed:
+  hide: true
+og_image: /assets/images/nh-icon.svg
+
+# Build settings
+markdown: kramdown
+remote_theme: mmistakes/minimal-mistakes
+# Outputting (default for any future dated content; pages use their own permalink)
+permalink: pretty
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+include:
+  - _pages
+  - assets
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-sitemap
+  - jekyll-gist
+  - jemoji
+  - jekyll-include-cache
+
+author:
+  name   : "Niels Holtgrefe"
+  avatar : "/assets/images/bio_pic.jpg"
+  bio    : "PhD candidate in applied mathematics, working on algorithmic and mathematical phylogenetics."
+  links: &social_links
+    - label: "n.a.l.holtgrefe@tudelft.nl"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:n.a.l.holtgrefe@tudelft.nl"
+    - label: "Google Scholar"
+      icon: "fab fa-fw fa-google-scholar"
+      url: "https://scholar.google.com/citations?user=wJh7R3UAAAAJ"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/niels-holtgrefe/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/nholtgrefe"
+    - label: "ORCID"
+      icon: "fab fa-fw fa-orcid"
+      url: "https://orcid.org/0009-0001-6162-9668"
+    - label: "TU Delft"
+      icon: "fas fa-fw fa-university"
+      url: "https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/applied-mathematics/people/nal-niels-holtgrefe-msc"
+
+footer:
+  links:
+    - label: "n.a.l.holtgrefe@tudelft.nl"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:n.a.l.holtgrefe@tudelft.nl"
+    - label: "Google Scholar"
+      icon: "fab fa-fw fa-google-scholar"
+      url: "https://scholar.google.com/citations?user=wJh7R3UAAAAJ"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/niels-holtgrefe/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/nholtgrefe"
+    - label: "ORCID"
+      icon: "fab fa-fw fa-orcid"
+      url: "https://orcid.org/0009-0001-6162-9668"
+    - label: "TU Delft"
+      icon: "fas fa-fw fa-university"
+      url: "https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/applied-mathematics/people/nal-niels-holtgrefe-msc"
+
+defaults:
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: splash
+      author_profile: true
