@@ -64,49 +64,6 @@
       archivePrefix={arXiv},
       eprint={2602.12959}
     }
-
-- title: "Bounds on the Sequence Length Sufficient to Reconstruct Binary Level-1 Phylogenetic Networks Under the CFN Model"
-  release-date: 2026-05-21
-  authors:
-    - first: Martin
-      last: Frohn
-    - first: Niels
-      last: Holtgrefe
-    - first: Leo
-      tussenvoegsel: van
-      last: Iersel
-    - first: Mark
-      last: Jones
-    - first: Steven
-      last: Kelk
-  year: 2026
-  type: "journal"
-  journal: "Annals of Combinatorics"
-  volume:
-  issue:
-  pages:
-  note:
-  doi-identifier: "10.1007/s00026-026-00830-0"
-  doi-url: "https://doi.org/10.1007/s00026-026-00830-0"
-  preprint-server: "arXiv"
-  preprint-identifier: 2511.22736
-  preprint-url: "https://arxiv.org/abs/2511.22736"
-  software-url:
-  abstract: |
-    Phylogenetic trees and networks are graphs used to model evolutionary relationships, with trees representing strictly branching histories and networks allowing for 
-    events in which lineages merge, called <em>reticulation</em> events.
-    While the question of data sufficiency has been studied extensively in the context of trees, it remains largely unexplored for networks. In this work we take a first step in this direction
-    by establishing bounds on the amount of genomic data required to reconstruct binary level-1 semi-directed phylogenetic networks, which are binary networks in which reticulation events are indicated by directed edges, all other edges are undirected, and cycles are vertex-disjoint. For this class, methods have been developed recently that are statistically consistent. Roughly speaking, such methods are guaranteed to reconstruct the correct network assuming infinitely long genomic sequences. Here we consider the question whether networks from this class can be uniquely and correctly reconstructed from finite sequences.
-    Specifically, we present an inference algorithm that takes as input genetic sequence data, and demonstrate that the sequence length sufficient to reconstruct the correct network with high probability,
-    under the CFN model of evolution, scales logarithmically, polynomially, or polylogarithmically with the number of taxa, depending on the parameter regime. As part of our contribution, we also present novel inference rules for quartet data in the semi-directed phylogenetic network setting.
-  bibtex: |
-    @article{frohn2026bounds,
-      author = {Frohn, Martin and Holtgrefe, Niels and van Iersel, Leo and Jones, Mark and Kelk, Steven},
-      title = {Bounds on the sequence length sufficient to reconstruct binary level-1 phylogenetic networks under the {CFN} model},
-      journal = {Annals of Combinatorics},
-      doi = {10.1007/s00026-026-00830-0},
-      year = {2026}
-    }
     
 - title: "PaNDA: Efficient Optimization of Phylogenetic Diversity in Networks"
   release-date: 2025-11-17
