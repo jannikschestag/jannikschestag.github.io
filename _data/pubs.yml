@@ -25,12 +25,13 @@
     We further contribute the first exact algorithms to compute node scanwidth, recognizing that the utility of algorithms based on nsw depends on the ability to compute nsw and its corresponding decomposition. Our approaches integrate data reduction rules, dynamic programming, and an Integer Linear Programming formulation.
     We validate our theoretical results through extensive experiments on highly reticulated, simulated networks containing several hundred taxa, using heterogeneous costs. Our implementation computes PD scores and optimal nsw in fractions of a second, even on the most challenging instances. Furthermore, our budgeted optimization algorithms significantly outperform existing benchmarks for computing PD on networks, which were previously limited to unit-cost scenarios. The software makes analyses even on networks with a thousand taxa tractable in practice.
   bibtex: |
-    @misc{holtgrefe2026tractable,
+    @article{holtgrefe2026tractable,
       author = {Holtgrefe, Niels and Schestag, Jannik},
-      title = {Tractable Maximization of Budgeted Phylogenetic Diversity on Networks Utilizing Node Scanwidth},
-      year={2026},
-      archivePrefix={arXiv},
-      eprint={2605.23319}
+      title = {{Tractable Maximization of Budgeted Phylogenetic Diversity on Networks Utilizing Node Scanwidth}},
+      year = {2026},
+      jorunal = {arXiv preprint},
+      archivePrefix = {arXiv},
+      eprint = {2605.23319}
     }
 
 - title: "Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies"
@@ -61,10 +62,12 @@
   bibtex: |
     @misc{holtgrefe2026limits,
       author = {Holtgrefe, Niels and Schestag, Jannik and Zeh, Norbert},
-      title = {Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies},
-      year={2026},
-      archivePrefix={arXiv},
-      eprint={2602.12959}
+      title = {{Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies}},
+      booktitle = {Proceedings of the 17th Latin American Theoretical Informatics Symposium (LATIN 2026)},
+      organization = {Springer},
+      year = {2026},
+      archivePrefix = {arXiv},
+      eprint = {2602.12959}
     }
     
 - title: "PaNDA: Efficient Optimization of Phylogenetic Diversity in Networks"
@@ -132,13 +135,13 @@
     Phylogenetic Diversity (PD) is a measure of the overall biodiversity of a set of present-day species (taxa) within a phylogenetic tree. We consider an extension of PD to phylogenetic networks. Given a phylogenetic network with weighted edges and a subset (S) of leaves, the all-paths phylogenetic diversity of (S) is the summed weight of all edges on a path from the root to some leaf in (S). The problem of finding a bounded-size set (S) that maximizes this measure is polynomial-time solvable on trees, but NP-hard on networks. We study the latter from a parameterized perspective.
   While this problem is W[2]-hard with respect to the size of (S) (and W[1]-hard with respect to the size of the complement of (S)), we show that it is fixed-parameter tractable with respect to several other parameters, including the phylogenetic diversity of (S), the acceptable loss of phylogenetic diversity, the number of reticulations in the network, and the treewidth of the underlying graph.
   bibtex: |
-  @inproceedings{jones2023maximize,
-  title = {{How Can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks}},
-  author = {Jones, Mark and Schestag, Jannik},
-  booktitle = {Proceedings of the 18th International Symposium on Parameterized and Exact Computation (IPEC 2023)},
-  pages = {30:1--30:12},
-  year = {2023},
-  organization = {Schloss-Dagstuhl-Leibniz Zentrum f{"u}r Informatik},
-  doi = {10.4230/LIPIcs.IPEC.2023.30}
-  }
+    @inproceedings{jones2023maximize,
+      title = {{How Can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks}},
+      author = {Jones, Mark and Schestag, Jannik},
+      booktitle = {Proceedings of the 18th International Symposium on Parameterized and Exact Computation (IPEC 2023)},
+      pages = {30:1--30:12},
+      year = {2023},
+      organization = {Schloss-Dagstuhl-Leibniz Zentrum f{"u}r Informatik},
+      doi = {10.4230/LIPIcs.IPEC.2023.30}
+    }
   
