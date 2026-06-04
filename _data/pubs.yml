@@ -1,5 +1,4 @@
 - title: "Tractable Maximization of Budgeted Phylogenetic Diversity on Networks Utilizing Node Scanwidth"
-  release-date: 2026-05-22
   authors:
     - first: Niels
       last: Holtgrefe
@@ -18,22 +17,23 @@
   preprint-identifier: 2605.23319
   preprint-url: "https://arxiv.org/abs/2605.23319"
   software-url: "https://github.com/nholtgrefe/panda"
+  keys: FPT, Phylogenetic Diversity, Phylogenetic Networks, Implementation
   abstract: |
     Identifying a subset of taxa that maximizes Phylogenetic Diversity (PD) is a cornerstone of quantitative conservation planning. Traditionally, PD is defined over a phylogenetic tree in which leaves represent present-day taxa and branch lengths capture the estimated evolutionary distinctiveness. While PD maximization is computationally tractable on trees with unit costs, the problem becomes NP-hard when transitioning to phylogenetic networks or to budgeted versions in which protecting taxa incurs non-homogeneous costs.
     In this paper, we address these two challenges by providing definitions and a comprehensive analysis of three distinct variants of budgeted PD on networks. We conduct our study through the lens of a small structural parameter, node scanwidth (nsw), which measures the tree-likeness of a phylogenetic network. We show that two of the considered variants can be optimized in \(\mathcal{O}^*(2^{\mathsf{nsw}} \cdot B^2)\) time, where \(B\) is the budget. For the computationally harder, third variant, we provide an algorithm to compute PD scores in \(\mathcal{O}^*(3^{\mathsf{nsw}})\) time.
     We further contribute the first exact algorithms to compute node scanwidth, recognizing that the utility of algorithms based on nsw depends on the ability to compute nsw and its corresponding decomposition. Our approaches integrate data reduction rules, dynamic programming, and an Integer Linear Programming formulation.
     We validate our theoretical results through extensive experiments on highly reticulated, simulated networks containing several hundred taxa, using heterogeneous costs. Our implementation computes PD scores and optimal nsw in fractions of a second, even on the most challenging instances. Furthermore, our budgeted optimization algorithms significantly outperform existing benchmarks for computing PD on networks, which were previously limited to unit-cost scenarios. The software makes analyses even on networks with a thousand taxa tractable in practice.
   bibtex: |
-    @misc{holtgrefe2026tractable,
-      author = {Holtgrefe, Niels and Schestag, Jannik},
-      title = {Tractable Maximization of Budgeted Phylogenetic Diversity on Networks Utilizing Node Scanwidth},
-      year={2026},
-      archivePrefix={arXiv},
-      eprint={2605.23319}
-    }
+    @article{holtgrefe2026tractable,
+	title = {{Tractable Maximization of Budgeted Phylogenetic Diversity on Networks Utilizing Node Scanwidth}},
+	author = {Holtgrefe, Niels and Schestag, Jannik},
+	year = {2026},
+	archivePrefix = {arXiv},
+	jorunal = {arXiv preprint},
+	eprint = {2605.23319}
+     }
 
 - title: "Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies"
-  release-date: 2026-02-13
   authors:
     - first: Niels
       last: Holtgrefe
@@ -53,63 +53,20 @@
   preprint-server: "arXiv"
   preprint-identifier: 2602.12959
   preprint-url: "https://arxiv.org/abs/2602.12959"
+  keys: FPT, Phylogenetic Diversity, Food Webs
   abstract: | 
     In the <em>Maximize Phylogenetic Diversity</em> problem, we are given a phylogenetic tree that represents the genetic proximity of species, and we are asked to select a subset of species of maximum phylogenetic diversity to be preserved through conservation efforts, subject to budgetary constraints that allow only \( k \) species to be saved. This neglects that it is futile to preserve a predatory species if we do not also preserve at least a subset of the prey it feeds on. Thus, in the <em>Optimizing PD with Dependencies</em> (\( \varepsilon \)-PDD) problem, we are additionally given a food web that represents the predator–prey relationships between species. The goal is to save a set of \( k \) species of maximum phylogenetic diversity such that for every saved species, at least one of its prey is also saved. This problem is NP-hard even when the phylogenetic tree is a star.<br>
     The \( \alpha \)-PDD problem alters \( \varepsilon \)-PDD by requiring that at least some fraction \( \alpha \) of the prey of every saved species are also saved. In this paper, we study the parameterized complexity of \( \alpha \)-PDD. We prove that the problem is W[1]-hard and in XP when parameterized by the solution size \( k \), the diversity threshold \( D \), or their complements. When parameterized by the vertex cover number of the food web, \( \alpha \)-PDD is fixed-parameter tractable (FPT). A key measure of the computational difficulty of a problem that is FPT is the size of the smallest kernel that can be obtained. We prove that, when parameterized by the distance to clique, 1-PDD admits a linear kernel. Our main contribution is to prove that \( \alpha \)-PDD does not admit a polynomial kernel when parameterized by the vertex cover number plus the diversity threshold \( D \), even if the phylogenetic tree is a star. This implies the non-existence of a polynomial kernel for \( \alpha \)-PDD also when parameterized by a range of structural parameters of the food web, such as its distance to cluster, treewidth, pathwidth, feedback vertex set, and others.
   bibtex: |
-    @misc{holtgrefe2026limits,
-      author = {Holtgrefe, Niels and Schestag, Jannik and Zeh, Norbert},
-      title = {Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies},
-      year={2026},
-      archivePrefix={arXiv},
-      eprint={2602.12959}
+    @inproceedings{holtgrefe2026limits,
+	title = {{Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies}},
+	author = {Holtgrefe, Niels and Schestag, Jannik and Zeh, Norbert},
+	booktitle = {Proceedings of the 17th Latin American Theoretical Informatics Symposium (LATIN 2026)},
+	year = {2026},
+	organization = {Springer}
     }
 
-- title: "Bounds on the Sequence Length Sufficient to Reconstruct Binary Level-1 Phylogenetic Networks Under the CFN Model"
-  release-date: 2026-05-21
-  authors:
-    - first: Martin
-      last: Frohn
-    - first: Niels
-      last: Holtgrefe
-    - first: Leo
-      tussenvoegsel: van
-      last: Iersel
-    - first: Mark
-      last: Jones
-    - first: Steven
-      last: Kelk
-  year: 2026
-  type: "journal"
-  journal: "Annals of Combinatorics"
-  volume:
-  issue:
-  pages:
-  note:
-  doi-identifier: "10.1007/s00026-026-00830-0"
-  doi-url: "https://doi.org/10.1007/s00026-026-00830-0"
-  preprint-server: "arXiv"
-  preprint-identifier: 2511.22736
-  preprint-url: "https://arxiv.org/abs/2511.22736"
-  software-url:
-  abstract: |
-    Phylogenetic trees and networks are graphs used to model evolutionary relationships, with trees representing strictly branching histories and networks allowing for 
-    events in which lineages merge, called <em>reticulation</em> events.
-    While the question of data sufficiency has been studied extensively in the context of trees, it remains largely unexplored for networks. In this work we take a first step in this direction
-    by establishing bounds on the amount of genomic data required to reconstruct binary level-1 semi-directed phylogenetic networks, which are binary networks in which reticulation events are indicated by directed edges, all other edges are undirected, and cycles are vertex-disjoint. For this class, methods have been developed recently that are statistically consistent. Roughly speaking, such methods are guaranteed to reconstruct the correct network assuming infinitely long genomic sequences. Here we consider the question whether networks from this class can be uniquely and correctly reconstructed from finite sequences.
-    Specifically, we present an inference algorithm that takes as input genetic sequence data, and demonstrate that the sequence length sufficient to reconstruct the correct network with high probability,
-    under the CFN model of evolution, scales logarithmically, polynomially, or polylogarithmically with the number of taxa, depending on the parameter regime. As part of our contribution, we also present novel inference rules for quartet data in the semi-directed phylogenetic network setting.
-  bibtex: |
-    @article{frohn2026bounds,
-      author = {Frohn, Martin and Holtgrefe, Niels and van Iersel, Leo and Jones, Mark and Kelk, Steven},
-      title = {Bounds on the sequence length sufficient to reconstruct binary level-1 phylogenetic networks under the {CFN} model},
-      journal = {Annals of Combinatorics},
-      doi = {10.1007/s00026-026-00830-0},
-      year = {2026}
-    }
-    
 - title: "PaNDA: Efficient Optimization of Phylogenetic Diversity in Networks"
-  release-date: 2025-11-17
   authors:
     - first: Niels
       middle:
@@ -136,415 +93,138 @@
   preprint-identifier: "10.1101/2025.11.14.688467"
   preprint-url: "https://www.biorxiv.org/content/10.1101/2025.11.14.688467"
   software-url: "https://github.com/nholtgrefe/panda"
+  keys: FPT, Phylogenetic Diversity, Phylogenetic Networks, Implementation
   abstract: |
     Phylogenetic diversity plays an important role in biodiversity, conservation, and evolutionary studies by measuring the diversity of a set of taxa based on their phylogenetic relationships. In phylogenetic trees, a subset of \( k \) taxa with maximum phylogenetic diversity can be found by a simple and efficient greedy algorithm. However, this algorithmic tractability is lost when considering phylogenetic networks, which incorporate reticulate evolutionary events such as hybridization and horizontal gene transfer. To address this challenge, we introduce PaNDA (Phylogenetic Network Diversity Algorithms), the first software package and interactive graphical user-interface for exploring, visualizing and maximizing diversity in phylogenetic networks. PaNDA includes a novel algorithm to find a subset of \( k \) taxa with maximum diversity, running in polynomial time for networks of bounded <i>scanwidth</i>, a measure of tree-likeness of a network that grows slower than the well-known <i>level</i> measure. This algorithm considers the variant of phylogenetic diversity on networks in which the branch lengths of all paths from the root to the selected taxa contribute towards their diversity. We demonstrate the scalability of this algorithm on simulated networks, successfully analyzing level-15 networks with up to 200 taxa in seconds. We also provide a proof-of-concept analysis using a phylogenetic network on Xiphophorus species, illustrating how the tool can support diversity studies based on real genomic data. The software is easily installable and freely available at <a href="https://github.com/nholtgrefe/panda" target="_blank">https://github.com/nholtgrefe/panda</a>. Additionally, we extend the definition of phylogene- tic diversity to semi-directed phylogenetic networks, which are mixed graphs increasingly used in phylogenetic analysis to model uncertainty of the root location. We prove that finding a subset of k taxa with maximum diversity remains NP-hard on semi-directed networks, but do present a polynomial-time algorithm for networks with bounded level.
   bibtex: |
-    @misc{holtgrefe2025panda,
+    @article{holtgrefe2025panda,
       author = {Holtgrefe, Niels and van Iersel, Leo and Meuwese, Ruben and Murakami, Yukihiro and Schestag, Jannik},
-      title = {{PaNDA}: Efficient Optimization of Phylogenetic Diversity in Networks},
+      title = {{{PaNDA}: Efficient Optimization of Phylogenetic Diversity in Networks}},
       year={2025},
+      publisher = {Cold Spring Harbor Laboratory},
       archivePrefix={bioRxiv},
       eprint={10.1101/2025.11.14.688467}
     }
-    
-- title: "Characterizing semi-directed phylogenetic networks and their multi-rootable variants"
-  release-date: 2025-12-10
+* title: "How Can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks"
   authors:
-    - first: Niels
-      last: Holtgrefe
-    - first: Katharina
-      middle: ["T"]
-      last: Huber
-    - first: Leo
-      tussenvoegsel: van
-      last: Iersel
-    - first: Mark
-      last: Jones
-    - first: Vincent
-      last: Moulton
-  year: 2026
-  type: "journal"
-  journal: "Theory in Biosciences"
-  volume: 145
-  issue: 1
-  pages: 4
-  note:
-  doi-identifier: "10.1007/s12064-025-00453-8"
-  doi-url: "https://doi.org/10.1007/s12064-025-00453-8"
-  preprint-server: "arXiv"
-  preprint-identifier: 2507.18772
-  preprint-url: "https://arxiv.org/abs/2507.18772"
-  software-url:
-  abstract: |
-    In evolutionary biology, phylogenetic networks are graphs that provide a flexible framework for representing complex evolutionary histories that involve reticulate evolutionary events. Recently phylogenetic studies have started to focus on a special class of such networks called semi-directed networks. These graphs are defined as mixed graphs that can be obtained by de-orienting some of the arcs in some rooted phylogenetic network, that is, a directed acyclic graph whose leaves correspond to a collection of species and that has a single source or root vertex. However, this definition of semi-directed networks is implicit in nature since it is not clear when a mixed-graph enjoys this property or not. In this paper, we introduce novel, explicit mathematical characterizations of semi-directed networks, and also multi-semi-directed networks, that is, mixed graphs that can be obtained from directed phylogenetic networks that may have more than one root. In addition, through extending foundational tools from the theory of rooted networks into the semi-directed setting---such as cherry picking sequences, omnians, and path partitions---we characterize when a (multi-)semi-directed network can be obtained by de-orienting some rooted network that is contained in one of the well-known classes of tree-child, orchard, tree-based or forest-based networks. These results address structural aspects of (multi-)semi-directed networks and pave the way to improved theoretical and computational analyses of such networks, for example, within the development of algebraic evolutionary models that are based on such networks.
-  bibtex: |  
-    @article{holtgrefe2025charachterizing,
-      author = {Holtgrefe, Niels and Huber, Katharina T and van Iersel, Leo and Jones, Mark and Moulton, Vincent},
-      title = {Characterizing semi-directed phylogenetic networks and their multi-rootable variants},
-      journal={Theory in Biosciences},
-      doi={10.1007/s12064-025-00453-8},
-      volume = {145},
-      pages = {4},
-      number = {1},
-      year = {2026}
-    }
 
-- title: "Distinguishing Phylogenetic Level-2 Networks with Quartets and Inter-Taxon Quartet Distances"
-  release-date: 2025-10-23
-  authors:
-    - first: Niels
-      last: Holtgrefe
-    - first: Elizabeth
-      middle: ["S"]
-      last: Allman
-    - first: Hector
-      last: Baños
-    - first: Leo
-      tussenvoegsel: van
-      last: Iersel
-    - first: Vincent
-      last: Moulton
-    - first: John
-      middle: ["A"]
-      last: Rhodes
-    - first: Kristina
-      last: Wicke
-  year: 2025
-  type: "journal"
-  journal: "Bulletin of Mathematical Biology"
-  volume: 87
-  issue: 12
-  pages: 168
-  note:
-  doi-identifier: "10.1007/s11538-025-01549-4"
-  doi-url: "https://doi.org/10.1007/s11538-025-01549-4"
-  preprint-server: "arXiv"
-  preprint-identifier: 2507.17308
-  preprint-url: "https://arxiv.org/abs/2507.17308"
-  software-url:
-  abstract: |
-    The inference of phylogenetic networks, which model complex evolutionary processes including hybridization and gene flow, remains a central challenge in evolutionary biology. Until now, statistically consistent inference methods have been limited to phylogenetic level-1 networks, which allow no interdependence between reticulate events. In this work, we establish the theoretical foundations for a statistically consistent inference method for a much broader class: semi-directed level-2 networks that are outer-labeled planar and galled. We precisely characterize the features of these networks that are distinguishable from the topologies of their displayed quartet trees. Moreover, we prove that an inter-taxon distance derived from these quartets is circular decomposable, enabling future robust inference of these networks from quartet data, such as concordance factors obtained from gene tree distributions under the Network Multispecies Coalescent model. Our results also have novel identifiability implications across different data types and evolutionary models, applying to any setting in which displayed quartets can be distinguished.  
+  * first: Mark
+    last: Jones
+  * first: Jannik
+    last: Schestag
+    year: 2023
+    type: "conference"
+    journal: "Proceedings of the 18th International Symposium on Parameterized and Exact Computation (IPEC 2023)"
+    volume:
+    issue:
+    pages: "30:1--30:12"
+    note:
+    doi-identifier: "10.4230/LIPIcs.IPEC.2023.30"
+    doi-url: "https://doi.org/10.4230/LIPIcs.IPEC.2023.30"
+    preprint-server:
+    preprint-identifier:
+    preprint-url:
+    software-url:
+    keys: FPT, Phylogenetic Diversity, Phylogenetic Networks
+    abstract: |
+    Phylogenetic Diversity (PD) is a measure of the overall biodiversity of a set of present-day species (taxa) within a phylogenetic tree. We consider an extension of PD to phylogenetic networks. Given a phylogenetic network with weighted edges and a subset (S) of leaves, the all-paths phylogenetic diversity of (S) is the summed weight of all edges on a path from the root to some leaf in (S). The problem of finding a bounded-size set (S) that maximizes this measure is polynomial-time solvable on trees, but NP-hard on networks. We study the latter from a parameterized perspective.
+  While this problem is W[2]-hard with respect to the size of (S) (and W[1]-hard with respect to the size of the complement of (S)), we show that it is fixed-parameter tractable with respect to several other parameters, including the phylogenetic diversity of (S), the acceptable loss of phylogenetic diversity, the number of reticulations in the network, and the treewidth of the underlying graph.
   bibtex: |
-    @article{holtgrefe2025distinguishing,
-      author = {Holtgrefe, Niels and Allman, Elizabeth S and Baños, Hector and van Iersel, Leo and Moulton, Vincent and Rhodes, John A and Wicke, Kristina},
-      title = {Distinguishing Phylogenetic Level-2 Networks with Quartets and Inter-Taxon Quartet Distances},
-      journal={Bulletin of Mathematical Biology},
-      doi={10.1007/s11538-025-01549-4},
-      volume = {87},
-      pages = {168},
-      number = {12},
-      year = {2025}
-    }
+  @inproceedings{jones2023maximize,
+  title = {{How Can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks}},
+  author = {Jones, Mark and Schestag, Jannik},
+  booktitle = {Proceedings of the 18th International Symposium on Parameterized and Exact Computation (IPEC 2023)},
+  pages = {30:1--30:12},
+  year = {2023},
+  organization = {Schloss-Dagstuhl-Leibniz Zentrum f{"u}r Informatik},
+  doi = {10.4230/LIPIcs.IPEC.2023.30}
+  }
 
-- title: "Algebraic Invariants for Inferring 4-leaf Semi-Directed Phylogenetic Networks"
-  release-date: 2025-10-14
+* title: "Average-Tree Phylogenetic Diversity of Networks"
   authors:
-    - first: Samuel
-      last: Martin
-    - first: Niels
-      last: Holtgrefe
-    - first: Vincent
-      last: Moulton
-    - first: Richard
-      middle: ["M"]
-      last: Legget
-  year: 2025
-  type: "journal"
-  journal: "Systematic Biology"
-  volume:
-  issue:
-  pages: "syaf071"
-  note:
-  doi-identifier: "10.1093/sysbio/syaf071"
-  doi-url: "https://doi.org/10.1093/sysbio/syaf071"
-  preprint-server: "bioRxiv"
-  preprint-identifier: "10.1101/2023.09.11.557152"
-  preprint-url: "https://www.biorxiv.org/content/10.1101/2023.09.11.557152v4"
-  software-url: "https://github.com/SR-Martin/4cycle_invariants"
-  abstract: |
-    A core goal of phylogenomics is to determine the evolutionary history of a set of species from biological sequence data. Phylogenetic networks are able to describe more complex evolutionary phenomena than phylogenetic trees but are more difficult to accurately reconstruct. Recently, there has been growing interest in developing methods to infer semi-directed phylogenetic networks. As computing such networks can be computationally intensive, one approach to building such networks is to puzzle together smaller networks. Thus, it is essential to have robust methods for inferring semi-directed phylogenetic networks on small numbers of taxa. In this paper, we investigate an algebraic method for performing phylogenetic network inference from nucleotide sequence data on 4-leaf semi-directed phylogenetic networks by analysing the distribution of leaf-pattern probabilities. On simulated data, we found that we can correctly identify with high accuracy the undirected phylogenetic network for sequences of length at least 10kbp. We found that identifying the semi-directed network is more challenging and requires sequences of length approaching 10Mbp. We are also able to use our approach to identify tree-like evolution and determine the underlying tree. Finally, we employ our method on a real dataset from Xiphophorus species and use the results to build a phylogenetic network.  
-  bibtex: |
-    @article{martin2025algebraic,
-      title={Algebraic Invariants for Inferring 4-leaf Semi-Directed Phylogenetic Networks},
-      author={Martin, Samuel and Holtgrefe, Niels and Moulton, Vincent and Legget, Richard M},
-      journal={Systematic Biology},
-      doi={10.1093/sysbio/syaf071},
-      pages = {syaf071},
-      year = {2025}
-    }
 
-- title: "Identifiability of Phylogenetic Level-2 Networks under the Jukes-Cantor Model"
-  release-date: 2025-04-24
-  authors:
-    - first: Aviva
-      middle: ["K"]
-      last: Englander
-    - first: Martin
-      last: Frohn
-    - first: Elizabeth
-      last: Gross
-    - first: Niels
-      last: Holtgrefe
-    - first: Leo
-      tussenvoegsel: van
-      last: Iersel
-    - first: Mark
-      last: Jones
-    - first: Seth
-      last: Sullivant
-  year: 2025
-  type: "preprint"
-  journal:
-  volume:
-  issue:
-  pages:
-  note:
-  doi-identifier: "10.1101/2025.04.18.649493"
-  doi-url: "https://www.biorxiv.org/content/10.1101/2025.04.18.649493"
-  preprint-server: "bioRxiv"
-  preprint-identifier: "10.1101/2025.04.18.649493"
-  preprint-url: "https://www.biorxiv.org/content/10.1101/2025.04.18.649493"
-  software-url:
-  abstract: |
-    We consider the fundamental question of which evolutionary histories can potentially be reconstructed from sufficiently long DNA sequences, by studying the identifiability of phylogenetic networks from data generated under Markov models of DNA evolution. This topic has previously been studied for phylogenetic trees and for phylogenetic networks that are level-1, which means that reticulate evolutionary events were restricted to be independent in the sense that the corresponding cycles in the network are non-overlapping.<br>
-    In this paper, we study the identifiability of phylogenetic networks from DNA sequence data under Markov models of DNA evolution for more general classes of networks that may contain pairs of tangled reticulations. Our main result is generic identifiability, under the Jukes-Cantor model, of binary semi-directed level-2 phylogenetic networks that satisfy two additional conditions called triangle-free and strongly tree-child.<br>
-    We also consider level-1 networks and show stronger identifiability results for this class than what was known previously. In particular, we show that the number of reticulations in a level-1 network is identifiable under the Jukes-Cantor model.<br>
-    Moreover, we prove general identifiability results that do not restrict the network level at all and hold for the Jukes-Cantor as well as for the Kimura-2-Parameter model. We show that any two binary semi-directed phylogenetic networks are distinguishable if they do not display exactly the same 4-leaf subtrees, called quartets. This has direct consequences regarding the blobs of a network, which are its reticulated components. We show that the tree-of-blobs of a network, the global branching structure of the network, is always identifiable, as well as the circular ordering of the subnetworks around each blob, for networks in which edges do not cross and taxa are on the outside.
+  * first: Leo
+    tussenvoegsel: van
+    last: Iersel
+  * first: Mark
+    last: Jones
+  * first: Jannik
+    last: Schestag
+  * first: Celine
+    last: Scornavacca
+  * first: Mathias
+    last: Weller
+    year: 2025
+    type: "conference"
+    journal: "Proceedings of the 25th International Workshop on Algorithms in Bioinformatics (WABI 2025)"
+    volume:
+    issue:
+    pages: "14:1--14:21"
+    note:
+    doi-identifier: "10.4230/LIPIcs.WABI.2025.15"
+    doi-url: "https://doi.org/10.4230/LIPIcs.WABI.2025.15"
+    preprint-server:
+    preprint-identifier:
+    preprint-url:
+    software-url:
+    keys: FPT, Phylogenetic Diversity, Phylogenetic Networks
+    abstract: |
+    Phylogenetic diversity is a measure used to quantify the biodiversity of a set of species. Here, we introduce the average-tree phylogenetic diversity score in rooted binary phylogenetic networks and consider algorithms for computing and maximizing the score on a given network.
+  Basically, the score is the weighted average of the phylogenetic diversity scores in all trees displayed by the network, with the weights determined by the inheritance probabilities on the reticulation edges used in the embeddings.
+  We show that computing the score of a given set of taxa in a given network is \#P-hard, directly implying \#P-hardness of finding a subset of (k) taxa achieving maximum diversity score and thereby ruling out polynomial-time algorithms for these problems unless the polynomial hierarchy collapses.
+  However, we show that both problems can be solved efficiently if the input network is close to being a tree in the sense that its reticulation number is small. More precisely, we prove that we can solve the optimization problem in networks with (n) leaves and (r) reticulations in (2^{\mathcal{O}(r)} \cdot n \cdot k) time. Using experiments on data produced by simulating a reticulate-evolution process, we show that our algorithm runs efficiently on networks with hundreds of taxa and tens of reticulations.
   bibtex: |
-    @misc{englander2025identifiability,
-      author = {Englander, Aviva K and Frohn, Martin and Gross, Elizabeth and Holtgrefe, Niels and van Iersel, Leo and Jones, Mark and Sullivant, Seth},
-      title = {Identifiability of Phylogenetic Level-2 Networks under the {Jukes-Cantor} Model},
-      year={2025},
-      archivePrefix={bioRxiv},
-      eprint={10.1101/2025.04.18.649493}
-    }
+  @inproceedings{vaniersel2025averagetree,
+  title = {{Average-Tree Phylogenetic Diversity of Networks}},
+  author = {van Iersel, Leo and Jones, Mark and Schestag, Jannik and Scornavacca, Celine and Weller, Mathias},
+  booktitle = {Proceedings of the 25th International Workshop on Algorithms in Bioinformatics (WABI 2025)},
+  pages = {14:1--14:21},
+  year = {2025},
+  organization = {Schloss Dagstuhl--Leibniz-Zentrum f{"u}r Informatik},
+  doi = {10.4230/LIPIcs.WABI.2025.15}
+  }
 
-- title: "Reconstructing semi-directed level-1 networks using few quarnets"
-  release-date: 2025-03-28
+* title: "Average-Tree Phylogenetic Diversity Parameterized by Scanwidth and Invisibility"
   authors:
-    - first: Martin
-      last: Frohn
-    - first: Niels
-      last: Holtgrefe
-    - first: Leo
-      tussenvoegsel: van
-      last: Iersel
-    - first: Mark
-      last: Jones
-    - first: Steven
-      last: Kelk
-  year: 2025
-  type: "journal"
-  journal: "Journal of Computer and System Sciences"
-  volume: 152
-  issue:
-  pages: "103655"
-  note:
-  doi-identifier: "10.1016/j.jcss.2025.103655"
-  doi-url: "https://doi.org/10.1016/j.jcss.2025.103655"
-  preprint-server: "arXiv"
-  preprint-identifier: "2409.06034"
-  preprint-url: "https://arxiv.org/abs/2409.06034"
-  software-url:
-  abstract: |
-    Semi-directed networks are partially directed graphs that model evolution where the directed edges represent reticulate evolutionary events. We present an algorithm that reconstructs binary \(n\)-leaf semi-directed level-1 networks in \( O( n^2) \) time from its quarnets (4-leaf subnetworks). Our method assumes we have direct access to all quarnets, yet uses only an asymptotically optimal number of \( O(n \log n) \) quarnets. When the network is assumed to contain no triangles, our method instead relies only on four-cycle quarnets and the splits of the other quarnets. A variant of our algorithm works with quartets rather than quarnets and we show that it reconstructs most of a semi-directed level-1 network from an asymptotically optimal \( O(n \log n) \) of the quartets it displays. Additionally, we provide an \( O(n^3) \) time algorithm that reconstructs the tree-of-blobs of any binary \( n\)-leaf semi-directed network with unbounded level from \( O(n^3) \) splits of its quarnets.
-  bibtex: |
-    @article{frohn2025reconstructing,
-      title={Reconstructing semi-directed level-1 networks using few quarnets},
-      author={Frohn, Martin and Holtgrefe, Niels and van Iersel, Leo and Jones, Mark and Kelk, Steven},
-      journal={Journal of Computer and System Sciences},
-      doi={10.1016/j.jcss.2025.103655},
-      volume = {152},
-      pages = {103655},
-      year = {2025}
-    }
 
-- title: "Squirrel: Reconstructing Semi-directed Phylogenetic Level-1 Networks from Four-Leaved Networks or Sequence Alignments"
-  release-date: 2025-03-27
-  authors:
-    - first: Niels
-      last: Holtgrefe
-    - first: Katharina
-      middle: ["T"]
-      last: Huber
-    - first: Leo
-      tussenvoegsel: van
-      last: Iersel
-    - first: Mark
-      last: Jones
-    - first: Samuel
-      last: Martin
-    - first: Vincent
-      last: Moulton
-  year: 2025
-  type: "journal"
-  journal: "Molecular Biology and Evolution"
-  volume: 42
-  issue: 4
-  pages: "msaf067"
-  note:
-  doi-identifier: "10.1093/molbev/msaf067"
-  doi-url: "https://doi.org/10.1093/molbev/msaf067"
-  preprint-server: "bioRxiv"
-  preprint-identifier: "10.1101/2024.11.01.621567"
-  preprint-url: "https://www.biorxiv.org/content/10.1101/2024.11.01.621567v2"
-  software-url: "https://github.com/nholtgrefe/squirrel"
-  abstract: |
-    With the increasing availability of genomic data, biologists aim to find more accurate descriptions of evolutionary histories influenced by secondary contact, where diverging lineages reconnect before diverging again. Such reticulate evolutionary events can be more accurately represented in phylogenetic networks than in phylogenetic trees. Since the root location of phylogenetic networks cannot be inferred from biological data under several evolutionary models, we consider semi-directed (phylogenetic) networks: partially directed graphs without a root in which the directed edges represent reticulate evolutionary events. By specifying a known outgroup, the rooted topology can be recovered from such networks. We introduce the algorithm <span style="font-variant: small-caps;">Squirrel</span> (<u>S</u>emi-directed <u>Qu</u>arnet-based <u>I</u>nfe<u>r</u>ence to <u>Re</u>construct <u>L</u>evel-1 Networks), which constructs a semi-directed level-1 network from a full set of quarnets (four-leaf semi-directed networks). Our method also includes a heuristic to construct such a quarnet set directly from sequence alignments. We demonstrate <span style="font-variant: small-caps;">Squirrel</span>'s performance through simulations and on real sequence datasets, the largest of which contains 29 aligned sequences close to 1.7 Mbp long. The resulting networks are obtained on a standard laptop within a few minutes. Lastly, we prove that <span style="font-variant: small-caps;">Squirrel</span> is combinatorially consistent: given a full set of quarnets coming from a triangle-free semi-directed level-1 network, it is guaranteed to reconstruct the original network. <span style="font-variant: small-caps;">Squirrel</span> is implemented in Python, has an easy-to-use graphical user interface that takes sequence alignments or quarnets as input, and is freely available at <a href="https://github.com/nholtgrefe/squirrel" target="_blank">https://github.com/nholtgrefe/squirrel</a>.
+  * first: Leo
+    tussenvoegsel: van
+    last: Iersel
+  * first: Mark
+    last: Jones
+  * first: Jannik
+    last: Schestag
+  * first: Celine
+    last: Scornavacca
+  * first: Mathias
+    last: Weller
+    year: 2026
+    type: "preprint"
+    journal:
+    volume:
+    issue:
+    pages:
+    note:
+    doi-identifier:
+    doi-url:
+    preprint-server: "arXiv"
+    preprint-identifier: "2604.27745"
+    preprint-url: "https://arxiv.org/abs/2604.27745"
+    software-url:
+    keys: FPT, Phylogenetic Diversity, Phylogenetic Networks
+    abstract: |
+    We investigate parameterized algorithms for computing the average-tree phylogenetic diversity (APD) in rooted phylogenetic networks, studying the problem under different structural parameters that capture the deviation of a network from a tree.
+  Our primary parameter is the scanwidth, a measure of the tree-likeness of a given directed acyclic graph.
+  We show that a subset of taxa with maximum APD can be found in polynomial time in phylogenetic networks of scanwidth at most 2, but becomes NP-hard in networks of scanwidth 3.
+  Further, we design an algorithm that computes the APD of a given set of taxa in (\mathcal{O}(2^{\mathsf{sw}} n)) time, where (\mathsf{sw}) denotes the scanwidth and (n) the number of taxa in the input network.
+  Finally, we give a linear-time algorithm for computing the APD of a given set of taxa if the network induced by these taxa is reticulation-visible. We generalize this algorithm to still run in polynomial time if each biconnected component of the induced network has only constantly many invisible reticulations.
   bibtex: |
-    @article{holtgrefe2025squirrel,
-      title={Squirrel: Reconstructing semi-directed phylogenetic level-1 networks from four-leaved networks or sequence alignments},
-      author={Holtgrefe, Niels and Huber, Katharina T and van Iersel, Leo and Jones, Mark and Martin, Samuel and Moulton, Vincent},
-      journal={Molecular Biology and Evolution},
-      doi={10.1093/molbev/msaf067},
-      volume = {42},
-      number = {4},
-      pages = {msaf067},
-      year = {2025}
-    }
+  @article{vaniersel2026averagetree,
+  title = {{Average-Tree Phylogenetic Diversity Parameterized by Scanwidth and Invisibility}},
+  author = {van Iersel, Leo and Jones, Mark and Schestag, Jannik and Scornavacca, Celine and Weller, Mathias},
+  year = {2026},
+  archivePrefix = {arXiv},
+  journal = {arXiv preprint},
+  eprint = {2604.27745}
+  }
 
-- title: "Invariants for level-1 phylogenetic networks under the random walk 4-state Markov model"
-  release-date: 2024-07-16
-  authors:
-    - first: Martin
-      last: Frohn
-    - first: Niels
-      last: Holtgrefe
-    - first: Leo
-      tussenvoegsel: van
-      last: Iersel
-    - first: Mark
-      last: Jones
-    - first: Steven
-      last: Kelk
-  year: 2024
-  type: "preprint"
-  journal:
-  volume:
-  issue:
-  pages:
-  note:
-  doi-identifier:
-  doi-url:
-  preprint-server: "arXiv"
-  preprint-identifier: 2407.11720
-  preprint-url: "https://arxiv.org/abs/2407.11720"
-  software-url:
-  abstract: |
-    Phylogenetic networks can represent evolutionary events that cannot be described by phylogenetic trees, such as hybridization, introgression, and lateral gene transfer. Studying phylogenetic networks under a statistical model of DNA sequence evolution can aid the inference of phylogenetic networks. Most notably Markov models like the Jukes-Cantor or Kimura-3 model can been employed to infer a phylogenetic network using phylogenetic invariants. In this article we determine all quadratic invariants for sunlet networks under the random walk 4-state Markov model, which includes the aforementioned models. Taking toric fiber products of trees and sunlet networks, we obtain a new class of invariants for level-1 phylogenetic networks under the same model. Furthermore, we apply our results to the identifiability problem of a network parameter. In particular, we prove that our new class of invariants of the studied model is not sufficient to derive identifiability of quarnets (4-leaf networks). Moreover, we provide an efficient method that is faster and more reliable than the state-of-the-art in finding a significant number of invariants for many level-1 phylogenetic networks.
-  bibtex: |
-    @misc{frohn2024invariants,
-      author = {Frohn, Martin and Holtgrefe, Niels and van Iersel, Leo and Jones, Mark and Kelk, Steven},
-      title = {Invariants for level-1 phylogenetic networks under the random walk 4-state {Markov} model},
-      year={2024},
-      archivePrefix={arXiv},
-      eprint={2407.11720}
-    }
-
-- title: "Exact and Heuristic Computation of the Scanwidth of Directed Acyclic Graphs"
-  release-date: 2026-04-08
-  authors:
-    - first: Niels
-      last: Holtgrefe
-    - first: Leo
-      tussenvoegsel: van
-      last: Iersel
-    - first: Mark
-      last: Jones
-  year: 2026
-  type: "journal"
-  journal: "Journal of Computer and System Sciences"
-  volume: 160
-  issue:
-  pages: "103802"
-  note:
-  doi-identifier: "10.1016/j.jcss.2026.103802"
-  doi-url: "https://doi.org/10.1016/j.jcss.2026.103802"
-  preprint-server: "arXiv"
-  preprint-identifier: 2403.12734
-  preprint-url: "https://arxiv.org/abs/2403.12734"
-  software-url: "https://github.com/nholtgrefe/scanwidth"
-  abstract: |
-    To measure the tree-likeness of a directed acyclic graph (DAG), a new width parameter that considers the directions of the arcs was recently introduced: <em>scanwidth</em>. We present the first algorithm that efficiently computes the exact scanwidth of general DAGs. For DAGs with one root and scanwidth \( k \), it runs in \( O(k \cdot n^k \cdot m) \) time. The algorithm also functions as an FPT algorithm with complexity \( O(2^{4\ell - 1} \cdot \ell \cdot n + n^2) \) for phylogenetic networks of level-\( \ell \), a type of DAG used to depict evolutionary relationships among species. Our algorithm performs well in practice, being able to compute the scanwidth of synthetic networks up to 30 reticulations and 100 leaves within 500 seconds. Furthermore, we propose a heuristic that obtains an average practical approximation ratio of 1.5 on these networks. While we prove that the scanwidth is bounded from below by the treewidth of the underlying undirected graph, experiments suggest that for networks the parameters are close in practice.
-  bibtex: |
-    @article{holtgrefe2026exact,
-      author = {Holtgrefe, Niels and van Iersel, Leo and Jones, Mark},
-      title = {Exact and heuristic computation of the scanwidth of directed acyclic graphs},
-      journal={Journal of Computer and System Sciences},
-      doi={10.1016/j.jcss.2026.103802},
-      volume = {160},
-      pages = {103802},
-      year = {2026}
-    }
-
-- title: "Computing the Scanwidth of Directed Acyclic Graphs"
-  release-date: 2023-07-12
-  authors:
-    - first: Niels
-      last: Holtgrefe
-  supervisors:
-    - Leo van Iersel
-    - Mark Jones
-  year: 2023
-  type: "thesis"
-  journal:
-  volume:
-  issue:
-  pages:
-  note: MSc Thesis, Delft University of Technology, Delft, The Netherlands
-  doi-identifier:
-  doi-url:
-  preprint-server:
-  preprint-identifier:
-  preprint-url:
-  software-url: "https://github.com/nholtgrefe/scanwidth"
-  repository-url: "http://resolver.tudelft.nl/uuid:9c82fd2a-5841-4aac-8e40-d4d22542cdf5"
-  abstract: |
-    Phylogenetic networks are a specific type of directed acyclic graph (DAG), used to depict evolutionary relationships among, for example, species or other groups of organisms. To solve computationally hard problems, treewidth has been used to parametrize algorithms in phylogenetics. In the hope of simplifying the algorithmic design process, Berry, Scornavacca and Weller [BSW20] recently proposed a new measure of tree-likeness that takes into account the directions of the arcs: <i>scanwidth</i>. They showed that the corresponding decision problem of this parameter - which can be seen as a variant of directed cutwidth, using a tree instead of a linear ordering - is NP-complete. This thesis aims to widen the structural knowledge of scanwidth and to find efficient ways of computing it on general DAGs, both by exact and heuristic algorithms.<br>
-    With the help of reduction rules, we construct an explicit dynamic programming algorithm that computes scanwidth exactly, along with its corresponding <i>tree extension</i>, in \( O(k \cdot n^k \cdot m) \) time for rooted DAGs of scanwidth \( k \). This slicewise polynomial algorithm proves that computing the scanwidth is in the complexity class XP. The algorithm also functions as an FPT algorithm for networks of level-\(\ell\), with the complexity bounded by \(O(2^{4 \ell - 1} \cdot \ell \cdot n + n^2) \). It performs well in practice, being able to compute the scanwidth of networks up to 30 reticulations and 100 leaves within 500 seconds.<br>
-    On the heuristic side, an algorithm that repeatedly splits at a specific type of smallest cut is proposed. Enhanced with simulated annealing, this heuristic shows promising results, obtaining an average approximation ratio of 1.5 for large synthetic networks of 30 reticulations and 100 leaves. Applied to a real-world dataset of networks, the heuristic performs near-optimal. Although we prove that the scanwidth is always greater than or equal to the treewidth, experiments show that they are close to each other in practice. This further motivates the use of scanwidth over treewidth as a parameter in algorithms.
-  bibtex: |
-    @masterthesis{holtgrefe2023computing,
-      title={Computing the Scanwidth of Directed Acyclic Graphs},
-      author={Niels Holtgrefe},
-      year={2023},
-      address={Delft, The Netherlands},
-      note={Available at \url{http://resolver.tudelft.nl/uuid:9c82fd2a-5841-4aac-8e40-d4d22542cdf5}},
-      school={Delft University of Technology},
-      type= {MSc thesis}
-    }
-
-- title: "Maximum Coverage Problems: Theory and Application in Optimal Sensor Selection"
-  release-date: 2021-07-12
-  authors:
-    - first: Niels
-      last: Holtgrefe
-  supervisors:
-    - Teun Janssen
-  year: 2021
-  type: "thesis"
-  journal:
-  volume:
-  issue:
-  pages:
-  note: BSc Thesis, Delft University of Technology, Delft, The Netherlands
-  doi-identifier:
-  doi-url:
-  preprint-server:
-  preprint-identifier:
-  preprint-url:
-  software-url:
-  repository-url: "https://resolver.tudelft.nl/uuid:9d222076-f3e6-4a36-9325-40de3dde0e9d"
-  abstract: |
-    In this thesis we analyse the class of <i>maximum coverage</i> problems. For all discussed problems, linear programs are formulated. Using the notion of <i>submodularity</i>, we prove that for the weighted version of the basic <i>Maximum Coverage</i> problem, where the weights differ per set, a polynomial-time greedy algorithm guarantees a \((1 - 1/e)\)-approximation of the optimal solution. This improves the already known bound of \((1 - 1/e - \varepsilon)\), for all \(\varepsilon > 0) \). We then show that the same result holds true, if we allow elements to be covered by multiple sets. Furthermore, a completely novel extension is introduced, where weights differ per combination of sets. It is proved that, under the assumption that the weights are submodular and increasing, a greedy algorithm still provides a \((1 – 1/e)\)-approximation.<br>
-    The latter algorithm is tested in the framework of optimal sensor selection. To this end, we consider all official weather stations in the Netherlands as our sensor group. We test the performance of the approximation algorithm, if some of the assumptions do not hold and no theoretical bounds exists. Corresponding weights are calculated, using two approaches: <i>inverse distance weighting</i> and <i>multiple linear regression</i>. For both approaches the in practice performance of the greedy algorithm is shown to be even higher than \((1 – 1/e)\), even though not all assumptions hold. Finally, the corresponding selection of weather stations is shown.
-  bibtex: |
-    @bachelorthesis{holtgrefe2021maximum,
-      title={Maximum Coverage Problems: Theory and Application in Optimal Sensor Selection},
-      author={Niels Holtgrefe},
-      year={2021},
-      address={Delft, The Netherlands},
-      note={Available at \url{https://resolver.tudelft.nl/uuid:9d222076-f3e6-4a36-9325-40de3dde0e9d}},
-      school={Delft University of Technology},
-      type= {BSc thesis}
-    }
