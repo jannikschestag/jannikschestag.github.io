@@ -34,7 +34,7 @@
      }
 
 - title: "Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies"
-  release-date: 2026-05-22
+  release-date: 2026-02-13
   authors:
     - first: Niels
       last: Holtgrefe
@@ -67,7 +67,7 @@
     }
 
 - title: "PaNDA: Efficient Optimization of Phylogenetic Diversity in Networks"
-  release-date: 2026-05-22
+  release-date: 2025-11-17
   authors:
     - first: Niels
       middle:
@@ -105,3 +105,4 @@
       archivePrefix={bioRxiv},
       eprint={10.1101/2025.11.14.688467}
     }
+
