@@ -58,7 +58,7 @@
     <div class="info-row" style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
 
       <span class="info">
-        {% if pub.type == "journal" %}
+        {% if pub.type == "journal" or pub.type == "conference" %}
           <i>{{ pub.journal }}</i>{% if pub.volume %}, {{ pub.volume }}{% if pub.issue %}({{ pub.issue }}){% endif %}{% endif %}{% if pub.pages %}:{{ pub.pages }}{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}.
         {% elsif pub.type == "preprint" %}
           {% if pub.preprint-server %}{{ pub.preprint-server }}{% endif %}{% if pub.preprint-identifier %}:{{ pub.preprint-identifier }}{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}.
