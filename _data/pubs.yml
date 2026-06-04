@@ -1,4 +1,6 @@
-- title: "Tractable Maximization of Budgeted Phylogenetic Diversity on Networks Utilizing Node Scanwidth"
+---
+- title: Tractable Maximization of Budgeted Phylogenetic Diversity on Networks
+    Utilizing Node Scanwidth
   release-date: 2026-05-22
   authors:
     - first: Niels
@@ -6,25 +8,38 @@
     - first: Jannik
       last: Schestag
   year: 2026
-  type: "preprint"
-  journal:
-  volume:
-  issue:
-  pages:
-  note:
-  doi-identifier:
-  doi-url:
-  preprint-server: "arXiv"
+  type: preprint
+  journal: null
+  volume: null
+  issue: null
+  pages: null
+  note: null
+  doi-identifier: null
+  doi-url: null
+  preprint-server: arXiv
   preprint-identifier: 2605.23319
-  preprint-url: "https://arxiv.org/abs/2605.23319"
-  software-url: "https://github.com/nholtgrefe/panda"
-  topics: FPT, Phylogenetic Diversity, Phylogenetic Networks, Implementation
-  abstract: |
-    Identifying a subset of taxa that maximizes Phylogenetic Diversity (PD) is a cornerstone of quantitative conservation planning. Traditionally, PD is defined over a phylogenetic tree in which leaves represent present-day taxa and branch lengths capture the estimated evolutionary distinctiveness. While PD maximization is computationally tractable on trees with unit costs, the problem becomes NP-hard when transitioning to phylogenetic networks or to budgeted versions in which protecting taxa incurs non-homogeneous costs.
+  preprint-url: https://arxiv.org/abs/2605.23319
+  software-url: https://github.com/nholtgrefe/panda
+  topics:
+    - FPT
+    - Phylogenetic Diversity
+    - Phylogenetic Networks
+    - Implementation
+  abstract: >
+    Identifying a subset of taxa that maximizes Phylogenetic Diversity
+    (PD) is a cornerstone of quantitative conservation planning. Traditionally,
+    PD is defined over a phylogenetic tree in which leaves represent present-day
+    taxa and branch lengths capture the estimated evolutionary distinctiveness.
+    While PD maximization is computationally tractable on trees with unit costs,
+    the problem becomes NP-hard when transitioning to phylogenetic networks or
+    to budgeted versions in which protecting taxa incurs non-homogeneous costs.
+
     In this paper, we address these two challenges by providing definitions and a comprehensive analysis of three distinct variants of budgeted PD on networks. We conduct our study through the lens of a small structural parameter, node scanwidth (nsw), which measures the tree-likeness of a phylogenetic network. We show that two of the considered variants can be optimized in \(\mathcal{O}^*(2^{\mathsf{nsw}} \cdot B^2)\) time, where \(B\) is the budget. For the computationally harder, third variant, we provide an algorithm to compute PD scores in \(\mathcal{O}^*(3^{\mathsf{nsw}})\) time.
+
     We further contribute the first exact algorithms to compute node scanwidth, recognizing that the utility of algorithms based on nsw depends on the ability to compute nsw and its corresponding decomposition. Our approaches integrate data reduction rules, dynamic programming, and an Integer Linear Programming formulation.
+
     We validate our theoretical results through extensive experiments on highly reticulated, simulated networks containing several hundred taxa, using heterogeneous costs. Our implementation computes PD scores and optimal nsw in fractions of a second, even on the most challenging instances. Furthermore, our budgeted optimization algorithms significantly outperform existing benchmarks for computing PD on networks, which were previously limited to unit-cost scenarios. The software makes analyses even on networks with a thousand taxa tractable in practice.
-  bibtex: |
+  bibtex: >
     @article{holtgrefe2026tractable,
       author = {Holtgrefe, Niels and Schestag, Jannik},
       title = {{Tractable Maximization of Budgeted Phylogenetic Diversity on Networks Utilizing Node Scanwidth}},
@@ -33,8 +48,8 @@
       archivePrefix = {arXiv},
       eprint = {2605.23319}
     }
-
-- title: "Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies"
+- title: Limits of Kernelization and Parametrization for Phylogenetic Diversity
+    with Dependencies
   release-date: 2026-02-13
   authors:
     - first: Niels
@@ -44,22 +59,38 @@
     - first: Norbert
       last: Zeh
   year: 2026
-  type: "preprint"
-  journal:
-  volume:
-  issue:
-  pages:
-  note:
-  doi-identifier:
-  doi-url:
-  preprint-server: "arXiv"
+  type: preprint
+  journal: null
+  volume: null
+  issue: null
+  pages: null
+  note: null
+  doi-identifier: null
+  doi-url: null
+  preprint-server: arXiv
   preprint-identifier: 2602.12959
-  preprint-url: "https://arxiv.org/abs/2602.12959"
-  topics: FPT, Phylogenetic Diversity, Food Webs
-  abstract: | 
-    In the <em>Maximize Phylogenetic Diversity</em> problem, we are given a phylogenetic tree that represents the genetic proximity of species, and we are asked to select a subset of species of maximum phylogenetic diversity to be preserved through conservation efforts, subject to budgetary constraints that allow only \( k \) species to be saved. This neglects that it is futile to preserve a predatory species if we do not also preserve at least a subset of the prey it feeds on. Thus, in the <em>Optimizing PD with Dependencies</em> (\( \varepsilon \)-PDD) problem, we are additionally given a food web that represents the predator–prey relationships between species. The goal is to save a set of \( k \) species of maximum phylogenetic diversity such that for every saved species, at least one of its prey is also saved. This problem is NP-hard even when the phylogenetic tree is a star.<br>
+  preprint-url: https://arxiv.org/abs/2602.12959
+  topics:
+    - FPT
+    - Phylogenetic Diversity
+    - Food Webs
+  abstract: >
+    In the <em>Maximize Phylogenetic Diversity</em> problem, we are given
+    a phylogenetic tree that represents the genetic proximity of species, and we
+    are asked to select a subset of species of maximum phylogenetic diversity to
+    be preserved through conservation efforts, subject to budgetary constraints
+    that allow only \( k \) species to be saved. This neglects that it is futile
+    to preserve a predatory species if we do not also preserve at least a subset
+    of the prey it feeds on. Thus, in the <em>Optimizing PD with
+    Dependencies</em> (\( \varepsilon \)-PDD) problem, we are additionally given
+    a food web that represents the predator–prey relationships between species.
+    The goal is to save a set of \( k \) species of maximum phylogenetic
+    diversity such that for every saved species, at least one of its prey is
+    also saved. This problem is NP-hard even when the phylogenetic tree is a
+    star.<br>
+
     The \( \alpha \)-PDD problem alters \( \varepsilon \)-PDD by requiring that at least some fraction \( \alpha \) of the prey of every saved species are also saved. In this paper, we study the parameterized complexity of \( \alpha \)-PDD. We prove that the problem is W[1]-hard and in XP when parameterized by the solution size \( k \), the diversity threshold \( D \), or their complements. When parameterized by the vertex cover number of the food web, \( \alpha \)-PDD is fixed-parameter tractable (FPT). A key measure of the computational difficulty of a problem that is FPT is the size of the smallest kernel that can be obtained. We prove that, when parameterized by the distance to clique, 1-PDD admits a linear kernel. Our main contribution is to prove that \( \alpha \)-PDD does not admit a polynomial kernel when parameterized by the vertex cover number plus the diversity threshold \( D \), even if the phylogenetic tree is a star. This implies the non-existence of a polynomial kernel for \( \alpha \)-PDD also when parameterized by a range of structural parameters of the food web, such as its distance to cluster, treewidth, pathwidth, feedback vertex set, and others.
-  bibtex: |
+  bibtex: >
     @misc{holtgrefe2026limits,
       author = {Holtgrefe, Niels and Schestag, Jannik and Zeh, Norbert},
       title = {{Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies}},
@@ -69,12 +100,11 @@
       archivePrefix = {arXiv},
       eprint = {2602.12959}
     }
-    
 - title: "PaNDA: Efficient Optimization of Phylogenetic Diversity in Networks"
   release-date: 2025-11-17
   authors:
     - first: Niels
-      middle:
+      middle: null
       last: Holtgrefe
     - first: Leo
       tussenvoegsel: van
@@ -86,55 +116,98 @@
     - first: Jannik
       last: Schestag
   year: 2025
-  type: "preprint"
-  journal:
-  volume:
-  issue:
-  pages:
-  note:
-  doi-identifier: "10.1101/2025.11.14.688467"
-  doi-url: "https://www.biorxiv.org/content/10.1101/2025.11.14.688467"
-  preprint-server: "bioRxiv"
-  preprint-identifier: "10.1101/2025.11.14.688467"
-  preprint-url: "https://www.biorxiv.org/content/10.1101/2025.11.14.688467"
-  software-url: "https://github.com/nholtgrefe/panda"
+  type: preprint
+  journal: null
+  volume: null
+  issue: null
+  pages: null
+  note: null
+  doi-identifier: 10.1101/2025.11.14.688467
+  doi-url: https://www.biorxiv.org/content/10.1101/2025.11.14.688467
+  preprint-server: bioRxiv
+  preprint-identifier: 10.1101/2025.11.14.688467
+  preprint-url: https://www.biorxiv.org/content/10.1101/2025.11.14.688467
+  software-url: https://github.com/nholtgrefe/panda
   topics: FPT, Phylogenetic Diversity, Phylogenetic Networks, Implementation
-  abstract: |
-    Phylogenetic diversity plays an important role in biodiversity, conservation, and evolutionary studies by measuring the diversity of a set of taxa based on their phylogenetic relationships. In phylogenetic trees, a subset of \( k \) taxa with maximum phylogenetic diversity can be found by a simple and efficient greedy algorithm. However, this algorithmic tractability is lost when considering phylogenetic networks, which incorporate reticulate evolutionary events such as hybridization and horizontal gene transfer. To address this challenge, we introduce PaNDA (Phylogenetic Network Diversity Algorithms), the first software package and interactive graphical user-interface for exploring, visualizing and maximizing diversity in phylogenetic networks. PaNDA includes a novel algorithm to find a subset of \( k \) taxa with maximum diversity, running in polynomial time for networks of bounded <i>scanwidth</i>, a measure of tree-likeness of a network that grows slower than the well-known <i>level</i> measure. This algorithm considers the variant of phylogenetic diversity on networks in which the branch lengths of all paths from the root to the selected taxa contribute towards their diversity. We demonstrate the scalability of this algorithm on simulated networks, successfully analyzing level-15 networks with up to 200 taxa in seconds. We also provide a proof-of-concept analysis using a phylogenetic network on Xiphophorus species, illustrating how the tool can support diversity studies based on real genomic data. The software is easily installable and freely available at <a href="https://github.com/nholtgrefe/panda" target="_blank">https://github.com/nholtgrefe/panda</a>. Additionally, we extend the definition of phylogene- tic diversity to semi-directed phylogenetic networks, which are mixed graphs increasingly used in phylogenetic analysis to model uncertainty of the root location. We prove that finding a subset of k taxa with maximum diversity remains NP-hard on semi-directed networks, but do present a polynomial-time algorithm for networks with bounded level.
-  bibtex: |
-    @misc{holtgrefe2025panda,
+  abstract: >
+    Phylogenetic diversity plays an important role in biodiversity,
+    conservation, and evolutionary studies by measuring the diversity of a set
+    of taxa based on their phylogenetic relationships. In phylogenetic trees, a
+    subset of \( k \) taxa with maximum phylogenetic diversity can be found by a
+    simple and efficient greedy algorithm. However, this algorithmic
+    tractability is lost when considering phylogenetic networks, which
+    incorporate reticulate evolutionary events such as hybridization and
+    horizontal gene transfer. To address this challenge, we introduce PaNDA
+    (Phylogenetic Network Diversity Algorithms), the first software package and
+    interactive graphical user-interface for exploring, visualizing and
+    maximizing diversity in phylogenetic networks. PaNDA includes a novel
+    algorithm to find a subset of \( k \) taxa with maximum diversity, running
+    in polynomial time for networks of bounded <i>scanwidth</i>, a measure of
+    tree-likeness of a network that grows slower than the well-known
+    <i>level</i> measure. This algorithm considers the variant of phylogenetic
+    diversity on networks in which the branch lengths of all paths from the root
+    to the selected taxa contribute towards their diversity. We demonstrate the
+    scalability of this algorithm on simulated networks, successfully analyzing
+    level-15 networks with up to 200 taxa in seconds. We also provide a
+    proof-of-concept analysis using a phylogenetic network on Xiphophorus
+    species, illustrating how the tool can support diversity studies based on
+    real genomic data. The software is easily installable and freely available
+    at <a href="https://github.com/nholtgrefe/panda"
+    target="_blank">https://github.com/nholtgrefe/panda</a>. Additionally, we
+    extend the definition of phylogene- tic diversity to semi-directed
+    phylogenetic networks, which are mixed graphs increasingly used in
+    phylogenetic analysis to model uncertainty of the root location. We prove
+    that finding a subset of k taxa with maximum diversity remains NP-hard on
+    semi-directed networks, but do present a polynomial-time algorithm for
+    networks with bounded level.
+  bibtex: >
+    @article{holtgrefe2025panda,
       author = {Holtgrefe, Niels and van Iersel, Leo and Meuwese, Ruben and Murakami, Yukihiro and Schestag, Jannik},
       title = {{PaNDA}: Efficient Optimization of Phylogenetic Diversity in Networks},
-      year={2025},
-      archivePrefix={bioRxiv},
-      eprint={10.1101/2025.11.14.688467}
+      year = {2025},
+      publisher = {Cold Spring Harbor Laboratory},
+      journal = {bioRxiv: 10.1101/2025.11.14.688467},
+      doi = {10.1101/2025.11.14.688467}
     }
-
-- title: "How Can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks"
+- title: How Can We Maximize Phylogenetic Diversity? Parameterized Approaches for
+    Networks
   release-date: 2000-01-01
   authors:
-  - first: Mark
-    last: Jones
-  - first: Jannik
-    last: Schestag
+    - first: Mark
+      last: Jones
+    - first: Jannik
+      last: Schestag
   year: 2023
-  type: "conference"
-  journal: "Proceedings of the 18th International Symposium on Parameterized and Exact Computation (IPEC 2023)"
-  volume:
-  issue:
-  pages: "30:1--30:12"
-  note:
-  doi-identifier: "10.4230/LIPIcs.IPEC.2023.30"
-  doi-url: "https://doi.org/10.4230/LIPIcs.IPEC.2023.30"
-  preprint-server:
-  preprint-identifier:
-  preprint-url:
-  software-url:
-  topics: FPT, Phylogenetic Diversity, Phylogenetic Networks
-  abstract: |
-    Phylogenetic Diversity (PD) is a measure of the overall biodiversity of a set of present-day species (taxa) within a phylogenetic tree. We consider an extension of PD to phylogenetic networks. Given a phylogenetic network with weighted edges and a subset (S) of leaves, the all-paths phylogenetic diversity of (S) is the summed weight of all edges on a path from the root to some leaf in (S). The problem of finding a bounded-size set (S) that maximizes this measure is polynomial-time solvable on trees, but NP-hard on networks. We study the latter from a parameterized perspective.
-  While this problem is W[2]-hard with respect to the size of (S) (and W[1]-hard with respect to the size of the complement of (S)), we show that it is fixed-parameter tractable with respect to several other parameters, including the phylogenetic diversity of (S), the acceptable loss of phylogenetic diversity, the number of reticulations in the network, and the treewidth of the underlying graph.
-  bibtex: |
+  type: conference
+  journal: Proceedings of the 18th International Symposium on Parameterized and
+    Exact Computation (IPEC 2023)
+  volume: null
+  issue: null
+  pages: 30:1--30:12
+  note: null
+  doi-identifier: 10.4230/LIPIcs.IPEC.2023.30
+  doi-url: https://doi.org/10.4230/LIPIcs.IPEC.2023.30
+  preprint-server: null
+  preprint-identifier: null
+  preprint-url: null
+  software-url: null
+  topics:
+    - FPT
+    - Phylogenetic Diversity
+    - Phylogenetic Networks
+    - Implementation
+  abstract: >
+    Phylogenetic Diversity (PD) is a measure of the overall biodiversity
+    of a set of present-day species (taxa) within a phylogenetic tree. We
+    consider an extension of PD to phylogenetic networks. Given a phylogenetic
+    network with weighted edges and a subset (S) of leaves, the all-paths
+    phylogenetic diversity of (S) is the summed weight of all edges on a path
+    from the root to some leaf in (S). The problem of finding a bounded-size set
+    (S) that maximizes this measure is polynomial-time solvable on trees, but
+    NP-hard on networks. We study the latter from a parameterized perspective.
+
+    While this problem is W[2]-hard with respect to the size of (S) (and W[1]-hard with respect to the size of the complement of (S)), we show that it is fixed-parameter tractable with respect to several other parameters, including the phylogenetic diversity of (S), the acceptable loss of phylogenetic diversity, the number of reticulations in the network, and the treewidth of the underlying graph.
+  bibtex: >
     @inproceedings{jones2023maximize,
       title = {{How Can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks}},
       author = {Jones, Mark and Schestag, Jannik},
@@ -144,4 +217,4 @@
       organization = {Schloss-Dagstuhl-Leibniz Zentrum f{"u}r Informatik},
       doi = {10.4230/LIPIcs.IPEC.2023.30}
     }
-  
+
