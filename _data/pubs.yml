@@ -18,22 +18,24 @@
   preprint-identifier: 2605.23319
   preprint-url: "https://arxiv.org/abs/2605.23319"
   software-url: "https://github.com/nholtgrefe/panda"
+  keys: FPT, Phylogenetic Diversity, Phylogenetic Networks, Implementation
   abstract: |
     Identifying a subset of taxa that maximizes Phylogenetic Diversity (PD) is a cornerstone of quantitative conservation planning. Traditionally, PD is defined over a phylogenetic tree in which leaves represent present-day taxa and branch lengths capture the estimated evolutionary distinctiveness. While PD maximization is computationally tractable on trees with unit costs, the problem becomes NP-hard when transitioning to phylogenetic networks or to budgeted versions in which protecting taxa incurs non-homogeneous costs.
     In this paper, we address these two challenges by providing definitions and a comprehensive analysis of three distinct variants of budgeted PD on networks. We conduct our study through the lens of a small structural parameter, node scanwidth (nsw), which measures the tree-likeness of a phylogenetic network. We show that two of the considered variants can be optimized in \(\mathcal{O}^*(2^{\mathsf{nsw}} \cdot B^2)\) time, where \(B\) is the budget. For the computationally harder, third variant, we provide an algorithm to compute PD scores in \(\mathcal{O}^*(3^{\mathsf{nsw}})\) time.
     We further contribute the first exact algorithms to compute node scanwidth, recognizing that the utility of algorithms based on nsw depends on the ability to compute nsw and its corresponding decomposition. Our approaches integrate data reduction rules, dynamic programming, and an Integer Linear Programming formulation.
     We validate our theoretical results through extensive experiments on highly reticulated, simulated networks containing several hundred taxa, using heterogeneous costs. Our implementation computes PD scores and optimal nsw in fractions of a second, even on the most challenging instances. Furthermore, our budgeted optimization algorithms significantly outperform existing benchmarks for computing PD on networks, which were previously limited to unit-cost scenarios. The software makes analyses even on networks with a thousand taxa tractable in practice.
   bibtex: |
-    @misc{holtgrefe2026tractable,
-      author = {Holtgrefe, Niels and Schestag, Jannik},
-      title = {Tractable Maximization of Budgeted Phylogenetic Diversity on Networks Utilizing Node Scanwidth},
-      year={2026},
-      archivePrefix={arXiv},
-      eprint={2605.23319}
-    }
+    @article{holtgrefe2026tractable,
+	title = {{Tractable Maximization of Budgeted Phylogenetic Diversity on Networks Utilizing Node Scanwidth}},
+	author = {Holtgrefe, Niels and Schestag, Jannik},
+	year = {2026},
+	archivePrefix = {arXiv},
+	jorunal = {arXiv preprint},
+	eprint = {2605.23319}
+     }
 
 - title: "Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies"
-  release-date: 2026-02-13
+  release-date: 2026-05-22
   authors:
     - first: Niels
       last: Holtgrefe
@@ -53,63 +55,21 @@
   preprint-server: "arXiv"
   preprint-identifier: 2602.12959
   preprint-url: "https://arxiv.org/abs/2602.12959"
+  keys: FPT, Phylogenetic Diversity, Food Webs
   abstract: | 
     In the <em>Maximize Phylogenetic Diversity</em> problem, we are given a phylogenetic tree that represents the genetic proximity of species, and we are asked to select a subset of species of maximum phylogenetic diversity to be preserved through conservation efforts, subject to budgetary constraints that allow only \( k \) species to be saved. This neglects that it is futile to preserve a predatory species if we do not also preserve at least a subset of the prey it feeds on. Thus, in the <em>Optimizing PD with Dependencies</em> (\( \varepsilon \)-PDD) problem, we are additionally given a food web that represents the predator–prey relationships between species. The goal is to save a set of \( k \) species of maximum phylogenetic diversity such that for every saved species, at least one of its prey is also saved. This problem is NP-hard even when the phylogenetic tree is a star.<br>
     The \( \alpha \)-PDD problem alters \( \varepsilon \)-PDD by requiring that at least some fraction \( \alpha \) of the prey of every saved species are also saved. In this paper, we study the parameterized complexity of \( \alpha \)-PDD. We prove that the problem is W[1]-hard and in XP when parameterized by the solution size \( k \), the diversity threshold \( D \), or their complements. When parameterized by the vertex cover number of the food web, \( \alpha \)-PDD is fixed-parameter tractable (FPT). A key measure of the computational difficulty of a problem that is FPT is the size of the smallest kernel that can be obtained. We prove that, when parameterized by the distance to clique, 1-PDD admits a linear kernel. Our main contribution is to prove that \( \alpha \)-PDD does not admit a polynomial kernel when parameterized by the vertex cover number plus the diversity threshold \( D \), even if the phylogenetic tree is a star. This implies the non-existence of a polynomial kernel for \( \alpha \)-PDD also when parameterized by a range of structural parameters of the food web, such as its distance to cluster, treewidth, pathwidth, feedback vertex set, and others.
   bibtex: |
-    @misc{holtgrefe2026limits,
-      author = {Holtgrefe, Niels and Schestag, Jannik and Zeh, Norbert},
-      title = {Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies},
-      year={2026},
-      archivePrefix={arXiv},
-      eprint={2602.12959}
+    @inproceedings{holtgrefe2026limits,
+	title = {{Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies}},
+	author = {Holtgrefe, Niels and Schestag, Jannik and Zeh, Norbert},
+	booktitle = {Proceedings of the 17th Latin American Theoretical Informatics Symposium (LATIN 2026)},
+	year = {2026},
+	organization = {Springer}
     }
 
-- title: "Bounds on the Sequence Length Sufficient to Reconstruct Binary Level-1 Phylogenetic Networks Under the CFN Model"
-  release-date: 2026-05-21
-  authors:
-    - first: Martin
-      last: Frohn
-    - first: Niels
-      last: Holtgrefe
-    - first: Leo
-      tussenvoegsel: van
-      last: Iersel
-    - first: Mark
-      last: Jones
-    - first: Steven
-      last: Kelk
-  year: 2026
-  type: "journal"
-  journal: "Annals of Combinatorics"
-  volume:
-  issue:
-  pages:
-  note:
-  doi-identifier: "10.1007/s00026-026-00830-0"
-  doi-url: "https://doi.org/10.1007/s00026-026-00830-0"
-  preprint-server: "arXiv"
-  preprint-identifier: 2511.22736
-  preprint-url: "https://arxiv.org/abs/2511.22736"
-  software-url:
-  abstract: |
-    Phylogenetic trees and networks are graphs used to model evolutionary relationships, with trees representing strictly branching histories and networks allowing for 
-    events in which lineages merge, called <em>reticulation</em> events.
-    While the question of data sufficiency has been studied extensively in the context of trees, it remains largely unexplored for networks. In this work we take a first step in this direction
-    by establishing bounds on the amount of genomic data required to reconstruct binary level-1 semi-directed phylogenetic networks, which are binary networks in which reticulation events are indicated by directed edges, all other edges are undirected, and cycles are vertex-disjoint. For this class, methods have been developed recently that are statistically consistent. Roughly speaking, such methods are guaranteed to reconstruct the correct network assuming infinitely long genomic sequences. Here we consider the question whether networks from this class can be uniquely and correctly reconstructed from finite sequences.
-    Specifically, we present an inference algorithm that takes as input genetic sequence data, and demonstrate that the sequence length sufficient to reconstruct the correct network with high probability,
-    under the CFN model of evolution, scales logarithmically, polynomially, or polylogarithmically with the number of taxa, depending on the parameter regime. As part of our contribution, we also present novel inference rules for quartet data in the semi-directed phylogenetic network setting.
-  bibtex: |
-    @article{frohn2026bounds,
-      author = {Frohn, Martin and Holtgrefe, Niels and van Iersel, Leo and Jones, Mark and Kelk, Steven},
-      title = {Bounds on the sequence length sufficient to reconstruct binary level-1 phylogenetic networks under the {CFN} model},
-      journal = {Annals of Combinatorics},
-      doi = {10.1007/s00026-026-00830-0},
-      year = {2026}
-    }
-    
 - title: "PaNDA: Efficient Optimization of Phylogenetic Diversity in Networks"
-  release-date: 2025-11-17
+  release-date: 2026-05-22
   authors:
     - first: Niels
       middle:
@@ -136,56 +96,15 @@
   preprint-identifier: "10.1101/2025.11.14.688467"
   preprint-url: "https://www.biorxiv.org/content/10.1101/2025.11.14.688467"
   software-url: "https://github.com/nholtgrefe/panda"
+  keys: FPT, Phylogenetic Diversity, Phylogenetic Networks, Implementation
   abstract: |
     Phylogenetic diversity plays an important role in biodiversity, conservation, and evolutionary studies by measuring the diversity of a set of taxa based on their phylogenetic relationships. In phylogenetic trees, a subset of \( k \) taxa with maximum phylogenetic diversity can be found by a simple and efficient greedy algorithm. However, this algorithmic tractability is lost when considering phylogenetic networks, which incorporate reticulate evolutionary events such as hybridization and horizontal gene transfer. To address this challenge, we introduce PaNDA (Phylogenetic Network Diversity Algorithms), the first software package and interactive graphical user-interface for exploring, visualizing and maximizing diversity in phylogenetic networks. PaNDA includes a novel algorithm to find a subset of \( k \) taxa with maximum diversity, running in polynomial time for networks of bounded <i>scanwidth</i>, a measure of tree-likeness of a network that grows slower than the well-known <i>level</i> measure. This algorithm considers the variant of phylogenetic diversity on networks in which the branch lengths of all paths from the root to the selected taxa contribute towards their diversity. We demonstrate the scalability of this algorithm on simulated networks, successfully analyzing level-15 networks with up to 200 taxa in seconds. We also provide a proof-of-concept analysis using a phylogenetic network on Xiphophorus species, illustrating how the tool can support diversity studies based on real genomic data. The software is easily installable and freely available at <a href="https://github.com/nholtgrefe/panda" target="_blank">https://github.com/nholtgrefe/panda</a>. Additionally, we extend the definition of phylogene- tic diversity to semi-directed phylogenetic networks, which are mixed graphs increasingly used in phylogenetic analysis to model uncertainty of the root location. We prove that finding a subset of k taxa with maximum diversity remains NP-hard on semi-directed networks, but do present a polynomial-time algorithm for networks with bounded level.
   bibtex: |
-    @misc{holtgrefe2025panda,
+    @article{holtgrefe2025panda,
       author = {Holtgrefe, Niels and van Iersel, Leo and Meuwese, Ruben and Murakami, Yukihiro and Schestag, Jannik},
-      title = {{PaNDA}: Efficient Optimization of Phylogenetic Diversity in Networks},
+      title = {{{PaNDA}: Efficient Optimization of Phylogenetic Diversity in Networks}},
       year={2025},
+      publisher = {Cold Spring Harbor Laboratory},
       archivePrefix={bioRxiv},
       eprint={10.1101/2025.11.14.688467}
     }
-    
-- title: "Characterizing semi-directed phylogenetic networks and their multi-rootable variants"
-  release-date: 2025-12-10
-  authors:
-    - first: Niels
-      last: Holtgrefe
-    - first: Katharina
-      middle: ["T"]
-      last: Huber
-    - first: Leo
-      tussenvoegsel: van
-      last: Iersel
-    - first: Mark
-      last: Jones
-    - first: Vincent
-      last: Moulton
-  year: 2026
-  type: "journal"
-  journal: "Theory in Biosciences"
-  volume: 145
-  issue: 1
-  pages: 4
-  note:
-  doi-identifier: "10.1007/s12064-025-00453-8"
-  doi-url: "https://doi.org/10.1007/s12064-025-00453-8"
-  preprint-server: "arXiv"
-  preprint-identifier: 2507.18772
-  preprint-url: "https://arxiv.org/abs/2507.18772"
-  software-url:
-  abstract: |
-    In evolutionary biology, phylogenetic networks are graphs that provide a flexible framework for representing complex evolutionary histories that involve reticulate evolutionary events. Recently phylogenetic studies have started to focus on a special class of such networks called semi-directed networks. These graphs are defined as mixed graphs that can be obtained by de-orienting some of the arcs in some rooted phylogenetic network, that is, a directed acyclic graph whose leaves correspond to a collection of species and that has a single source or root vertex. However, this definition of semi-directed networks is implicit in nature since it is not clear when a mixed-graph enjoys this property or not. In this paper, we introduce novel, explicit mathematical characterizations of semi-directed networks, and also multi-semi-directed networks, that is, mixed graphs that can be obtained from directed phylogenetic networks that may have more than one root. In addition, through extending foundational tools from the theory of rooted networks into the semi-directed setting---such as cherry picking sequences, omnians, and path partitions---we characterize when a (multi-)semi-directed network can be obtained by de-orienting some rooted network that is contained in one of the well-known classes of tree-child, orchard, tree-based or forest-based networks. These results address structural aspects of (multi-)semi-directed networks and pave the way to improved theoretical and computational analyses of such networks, for example, within the development of algebraic evolutionary models that are based on such networks.
-  bibtex: |  
-    @article{holtgrefe2025charachterizing,
-      author = {Holtgrefe, Niels and Huber, Katharina T and van Iersel, Leo and Jones, Mark and Moulton, Vincent},
-      title = {Characterizing semi-directed phylogenetic networks and their multi-rootable variants},
-      journal={Theory in Biosciences},
-      doi={10.1007/s12064-025-00453-8},
-      volume = {145},
-      pages = {4},
-      number = {1},
-      year = {2026}
-    }
-
