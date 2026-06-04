@@ -106,3 +106,127 @@
       archivePrefix={bioRxiv},
       eprint={10.1101/2025.11.14.688467}
     }
+
+- title: "How Can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks"
+  release-date: 2000-01-01
+  authors:
+  - first: Mark
+    last: Jones
+  - first: Jannik
+    last: Schestag
+    year: 2023
+    type: "conference"
+    journal: "Proceedings of the 18th International Symposium on Parameterized and Exact Computation (IPEC 2023)"
+    volume:
+    issue:
+    pages: "30:1--30:12"
+    note:
+    doi-identifier: "10.4230/LIPIcs.IPEC.2023.30"
+    doi-url: "https://doi.org/10.4230/LIPIcs.IPEC.2023.30"
+    preprint-server:
+    preprint-identifier:
+    preprint-url:
+    software-url:
+    topics: FPT, Phylogenetic Diversity, Phylogenetic Networks
+    abstract: |
+    Phylogenetic Diversity (PD) is a measure of the overall biodiversity of a set of present-day species (taxa) within a phylogenetic tree. We consider an extension of PD to phylogenetic networks. Given a phylogenetic network with weighted edges and a subset (S) of leaves, the all-paths phylogenetic diversity of (S) is the summed weight of all edges on a path from the root to some leaf in (S). The problem of finding a bounded-size set (S) that maximizes this measure is polynomial-time solvable on trees, but NP-hard on networks. We study the latter from a parameterized perspective.
+  While this problem is W[2]-hard with respect to the size of (S) (and W[1]-hard with respect to the size of the complement of (S)), we show that it is fixed-parameter tractable with respect to several other parameters, including the phylogenetic diversity of (S), the acceptable loss of phylogenetic diversity, the number of reticulations in the network, and the treewidth of the underlying graph.
+  bibtex: |
+  @inproceedings{jones2023maximize,
+  title = {{How Can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks}},
+  author = {Jones, Mark and Schestag, Jannik},
+  booktitle = {Proceedings of the 18th International Symposium on Parameterized and Exact Computation (IPEC 2023)},
+  pages = {30:1--30:12},
+  year = {2023},
+  organization = {Schloss-Dagstuhl-Leibniz Zentrum f{"u}r Informatik},
+  doi = {10.4230/LIPIcs.IPEC.2023.30}
+  }
+
+- title: "Average-Tree Phylogenetic Diversity of Networks"
+  release-date: 2000-01-01
+  authors:
+  - first: Leo
+    tussenvoegsel: van
+    last: Iersel
+  - first: Mark
+    last: Jones
+  - first: Jannik
+    last: Schestag
+  - first: Celine
+    last: Scornavacca
+  - first: Mathias
+    last: Weller
+    year: 2025
+    type: "conference"
+    journal: "Proceedings of the 25th International Workshop on Algorithms in Bioinformatics (WABI 2025)"
+    volume:
+    issue:
+    pages: "14:1--14:21"
+    note:
+    doi-identifier: "10.4230/LIPIcs.WABI.2025.15"
+    doi-url: "https://doi.org/10.4230/LIPIcs.WABI.2025.15"
+    preprint-server:
+    preprint-identifier:
+    preprint-url:
+    software-url:
+    topics: FPT, Phylogenetic Diversity, Phylogenetic Networks
+    abstract: |
+    Phylogenetic diversity is a measure used to quantify the biodiversity of a set of species. Here, we introduce the average-tree phylogenetic diversity score in rooted binary phylogenetic networks and consider algorithms for computing and maximizing the score on a given network.
+  Basically, the score is the weighted average of the phylogenetic diversity scores in all trees displayed by the network, with the weights determined by the inheritance probabilities on the reticulation edges used in the embeddings.
+  We show that computing the score of a given set of taxa in a given network is \#P-hard, directly implying \#P-hardness of finding a subset of (k) taxa achieving maximum diversity score and thereby ruling out polynomial-time algorithms for these problems unless the polynomial hierarchy collapses.
+  However, we show that both problems can be solved efficiently if the input network is close to being a tree in the sense that its reticulation number is small. More precisely, we prove that we can solve the optimization problem in networks with (n) leaves and (r) reticulations in (2^{\mathcal{O}(r)} \cdot n \cdot k) time. Using experiments on data produced by simulating a reticulate-evolution process, we show that our algorithm runs efficiently on networks with hundreds of taxa and tens of reticulations.
+  bibtex: |
+  @inproceedings{vaniersel2025averagetree,
+  title = {{Average-Tree Phylogenetic Diversity of Networks}},
+  author = {van Iersel, Leo and Jones, Mark and Schestag, Jannik and Scornavacca, Celine and Weller, Mathias},
+  booktitle = {Proceedings of the 25th International Workshop on Algorithms in Bioinformatics (WABI 2025)},
+  pages = {14:1--14:21},
+  year = {2025},
+  organization = {Schloss Dagstuhl--Leibniz-Zentrum f{"u}r Informatik},
+  doi = {10.4230/LIPIcs.WABI.2025.15}
+  }
+
+- title: "Average-Tree Phylogenetic Diversity Parameterized by Scanwidth and Invisibility"
+  release-date: 2000-01-01
+  authors:
+  - first: Leo
+    tussenvoegsel: van
+    last: Iersel
+  - first: Mark
+    last: Jones
+  - first: Jannik
+    last: Schestag
+  - first: Celine
+    last: Scornavacca
+  - first: Mathias
+    last: Weller
+    year: 2026
+    type: "preprint"
+    journal:
+    volume:
+    issue:
+    pages:
+    note:
+    doi-identifier:
+    doi-url:
+    preprint-server: "arXiv"
+    preprint-identifier: "2604.27745"
+    preprint-url: "https://arxiv.org/abs/2604.27745"
+    software-url:
+    topics: FPT, Phylogenetic Diversity, Phylogenetic Networks
+    abstract: |
+    We investigate parameterized algorithms for computing the average-tree phylogenetic diversity (APD) in rooted phylogenetic networks, studying the problem under different structural parameters that capture the deviation of a network from a tree.
+  Our primary parameter is the scanwidth, a measure of the tree-likeness of a given directed acyclic graph.
+  We show that a subset of taxa with maximum APD can be found in polynomial time in phylogenetic networks of scanwidth at most 2, but becomes NP-hard in networks of scanwidth 3.
+  Further, we design an algorithm that computes the APD of a given set of taxa in (\mathcal{O}(2^{\mathsf{sw}} n)) time, where (\mathsf{sw}) denotes the scanwidth and (n) the number of taxa in the input network.
+  Finally, we give a linear-time algorithm for computing the APD of a given set of taxa if the network induced by these taxa is reticulation-visible. We generalize this algorithm to still run in polynomial time if each biconnected component of the induced network has only constantly many invisible reticulations.
+  bibtex: |
+  @article{vaniersel2026averagetree,
+  title = {{Average-Tree Phylogenetic Diversity Parameterized by Scanwidth and Invisibility}},
+  author = {van Iersel, Leo and Jones, Mark and Schestag, Jannik and Scornavacca, Celine and Weller, Mathias},
+  year = {2026},
+  archivePrefix = {arXiv},
+  journal = {arXiv preprint},
+  eprint = {2604.27745}
+  }
+
