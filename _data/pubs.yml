@@ -731,7 +731,7 @@
   topics:
     - FPT
   abstract: >
-    We introduce and study the Bicolored \(P_3\) Deletion problem. The input is a graph whose edges are colored red or blue, and the task is to delete at most \(k\) edges so that no induced path on three vertices contains edges of both colors. We show that the problem is NP-hard and cannot be solved in subexponential time on bounded-degree graphs under ETH. We then identify polynomial-time solvable special cases based on forbidden colored substructures. Finally, we present an FPT algorithm running in \(\mathcal{O}(1.84^k \cdot |V| \cdot |E|)\) time and show that the problem admits a kernel with \(\mathcal{O}(k \Delta min(k,\Delta))\) vertices, where \(\Delta\) denotes the maximum degree.
+    We introduce and study the Bicolored \(P_3\) Deletion problem. The input is a graph whose edges are colored red or blue, and the task is to delete at most \(k\) edges so that no induced path on three vertices contains edges of both colors. We show that the problem is NP-hard and cannot be solved in subexponential time on bounded-degree graphs under ETH. We then identify polynomial-time solvable special cases based on forbidden colored substructures. Finally, we present an FPT algorithm running in \(\mathcal{O}(1.84^k \cdot |V| \cdot |E|)\) time and show that the problem admits a kernel with \(\mathcal{O}(k \Delta \cdot \mathrm{min}(k,\Delta))\) vertices, where \(\Delta\) denotes the maximum degree.
   bibtex: >
     @article{gruttemeier2021destroying,
       title = {{Destroying Bicolored P3s by Deleting Few Edges}},

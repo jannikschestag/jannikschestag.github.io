@@ -69,9 +69,9 @@
   
         <!-- Buttons after info -->
         <span class="info-buttons" style="white-space: nowrap;">
-          {% if pub.type == "journal" %}
+          {% if pub.type == "journal" or pub.type == "conference" %}
             {% if pub.doi-url %}
-              <a class="link-button" href="{{ pub.doi-url }}" target="_blank">journal</a>
+              <a class="link-button" href="{{ pub.doi-url }}" target="_blank">{{ pub.type }}</a>
             {% endif %}
             {% if pub.preprint-url %}
               <a class="link-button" href="{{ pub.preprint-url }}" target="_blank">{{ pub.preprint-server }}</a>
