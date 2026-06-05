@@ -121,11 +121,6 @@ classes: wide
         {% endif %}
       {% endfor %}
       
-        <tr>
-          <td>{{ alreadypublished }}</td>
-          <td>{{ c.collaboration }}</td>
-          <td>{{ c }}</td>
-        </tr>
       {% if alreadypublished != true and c.collaboration %}
       
         <tr>
@@ -133,10 +128,10 @@ classes: wide
 
           <td>
             {% if c.link == nil %}
-              {{ fullname }}
+              {{ c.name }}
             {% else %}
               <a href="{{ c.link }}" target="_blank" rel="noopener noreferrer">
-                {{ fullname }}
+                {{ c.name }}
               </a>
             {% endif %}
           </td>
