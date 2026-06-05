@@ -3,5 +3,7 @@ main:
     url: /
   - title: "Publications"
     url: /publications/
+  - title: "Co-Authors"
+    url: /coauthors/
   - title: "My CV"
     url: /assets/Schestag_CV.pdf
