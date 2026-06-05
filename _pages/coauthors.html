@@ -92,7 +92,8 @@ classes: wide
           {% assign cname = cname | append: " " | append: c.name[0].tussenvoegsel %}
         {% endif %}
         {% assign cname = cname | append: " " | append: c.name[0].last %}
-          {% if cname == fullname %}
+          {% assign displaytrue = count != 0 or c.collaboration %}
+          {% if cname == fullname and displaytrue %}
             {% assign coauthor = c %}
             {% break %}
           {% endif %}
@@ -100,7 +101,7 @@ classes: wide
 
         <tr>
           <td>
-            {% if count > 0 %}
+            {% if count != 0 %}
               {{ count }}x
             {% endif %}
             debug
