@@ -30,6 +30,21 @@ classes: wide
   {% endfor %}
 {% endfor %}
 
+<!-- Collect and normalize all co-authors from coauthors, skipping yourself -->
+{% for c in site.data.coauthors %}
+  {% assign a = c.name[0] %}
+  {% assign name = a.first %}
+  {% if a.tussenvoegsel %}
+    {% assign name = name | append: " " | append: a.tussenvoegsel %}
+  {% endif %}
+  {% assign name = a.last | append: "||" | append: name | append: " " | append: a.last %}
+  
+  {% unless name == "Schestag||Jannik Schestag" %}
+    {% assign raw = raw | append: name | append: "--" %}
+  {% endunless %}
+  {% endfor %}
+{% endfor %}
+
 <!-- Count occurrences -->
 {% assign names = raw | split: "--" %}
 {% assign counted = "" %}
@@ -67,7 +82,7 @@ classes: wide
     {% for entry in sorted %}
       {% unless entry == "" %}
         {% assign parts = entry | split: "||" %}
-        {% assign count = 999 | minus: parts[0] | plus: 0 %}
+        {% assign count = 998 | minus: parts[0] | plus: 0 %}
         {% assign fullname = parts[2] %}
 
         {% assign coauthor = nil %}
