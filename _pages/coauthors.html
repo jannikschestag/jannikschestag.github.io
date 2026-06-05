@@ -21,8 +21,10 @@ classes: wide
     {% endif %}
     {% if a.tussenvoegsel %}
       {% assign name = name | append: " " | append: a.tussenvoegsel %}
+      {% assign surname = a.tussenvoegsel %}
     {% endif %}
     {% assign name = name | append: " " | append: a.last %}
+    {% assign surname = surname | append: " " | append: a.last %}
 
     {% unless name == "Jannik Schestag" %}
       {% assign raw = raw | append: name | append: "||" %}
@@ -44,15 +46,15 @@ classes: wide
       {% endif %}
     {% endfor %}
     {% assign counted = counted | append: name | append: "||" %}
-    {% assign padded_count = count | prepend: "000" | slice: -3, 3 %}
-    {% assign entry = padded_count | append: "||" | append: name %}
+    {% assign padded_count = 999-count | prepend: "000" | slice: -3, 3 %}
+    {% assign entry = padded_count | append: "||" | append: surname | append: "||" | append: name %}
     {% assign authors = authors | append: entry | append: ";;" %}
   {% endunless %}
 {% endfor %}
 
 <!-- Sort by count descending, then name ascending -->
 {% assign authors_list = authors | split: ";;" %}
-{% assign sorted = authors_list | sort_natural | reverse %}
+{% assign sorted = authors_list | sort_natural %}
 
 <table>
   <thead>
@@ -79,7 +81,7 @@ classes: wide
         {% endfor %}
 
         <tr>
-          <td>{{ count }}x</td>
+          <td>{{ 999-count }}x</td>
 
           <td>
             {% if coauthor.link == nil %}
