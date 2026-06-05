@@ -48,11 +48,7 @@ Group non-theses by pub.year, assign reverse numbering
     {% assign current_year = pub.year %}
   {% endif %}
 
-  {% for topic in pub.topics %}
-    {% if pub.topics[0] == "Scanwidth" %}
-      {% include pub_entry.html pub=pub pubnum=pubnum%}
-    {% endif %}
-  {% endfor %}
+  {% include pub_entry.html pub=pub pubnum=pubnum%}
   
 {% endfor %}
 
