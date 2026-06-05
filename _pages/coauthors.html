@@ -82,7 +82,6 @@ classes: wide
           <td>{{ count }}x</td>
 
           <td>
-            {{ coauthor.link }}
             {% if coauthor.link == nil %}
               {{ fullname }}
             {% else %}
@@ -93,15 +92,12 @@ classes: wide
           </td>
 
           <td>
-            {{ coauthor.collaboration }}
             {% if coauthor.collaboration %}
               &#10004;
             {% endif %}
-              &#10004;
           </td>
 
           <td>
-            {{ coauthor.affiliation[0].name }}
             {% unless coauthor.affiliation[0].name == nil %}
               {{ coauthor.affiliation[0].name }}, {{ coauthor.affiliation[0].city }}, {{ coauthor.affiliation[0].country }}
             {% endunless %}
