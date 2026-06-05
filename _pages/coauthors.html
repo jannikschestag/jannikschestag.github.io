@@ -70,14 +70,10 @@ classes: wide
         {% assign count = parts[0] | plus: 0 %}
         {% assign fullname = parts[1] %}
 
+        {% assign coauthor = nil %}
         {% for c in site.data.coauthors %}
           {% if c.name == fullname %}
-        <tr>
-          <td>{{ c.collaboration }}&#10004;</td>
-          <td>{{ c.affiliation[0].name }}, {{ c.affiliation[0].city }}, {{ c.affiliation[0].country }}</td>
-          <td>{{ c.link }}</td>
-          <td>{{ c }}</td>
-        </tr>
+            {% assign coauthor = c %}
             {% break %}
           {% endif %}
         {% endfor %}
@@ -86,28 +82,28 @@ classes: wide
           <td>{{ count }}x</td>
 
           <td>
-            {{ c.link }}
-            {% if c.link == nil %}
+            {{ coauthor.link }}
+            {% if coauthor.link == nil %}
               {{ fullname }}
             {% else %}
-              <a href="{{ c.link }}" target="_blank" rel="noopener noreferrer">
+              <a href="{{ coauthor.link }}" target="_blank" rel="noopener noreferrer">
                 {{ fullname }}
               </a>
             {% endif %}
           </td>
 
           <td>
-            {{ c.collaboration }}
-            {% if c.collaboration %}
+            {{ coauthor.collaboration }}
+            {% if coauthor.collaboration %}
               &#10004;
             {% endif %}
               &#10004;
           </td>
 
           <td>
-            {{ c.affiliation[0].name }}
-            {% unless c.affiliation[0].name == nil %}
-              {{ c.affiliation[0].name }}, {{ c.affiliation[0].city }}, {{ c.affiliation[0].country }}
+            {{ coauthor.affiliation[0].name }}
+            {% unless coauthor.affiliation[0].name == nil %}
+              {{ coauthor.affiliation[0].name }}, {{ coauthor.affiliation[0].city }}, {{ coauthor.affiliation[0].country }}
             {% endunless %}
           </td>
         </tr>
