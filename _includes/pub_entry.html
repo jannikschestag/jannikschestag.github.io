@@ -39,11 +39,9 @@
 
     <span class="authors">
       {% assign numAuthors = pub.authors | size %}
-      {% assign currentAuthorPos = 0 %}
-      {{ numAuthors }}
+      {% assign currentAuthorPos = 1 %}
       {% for author in pub.authors %}
         {% assign currentAuthorPos = currentAuthorPos | plus: 1 %}
-        {{ currentAuthorPos }}
         {%- assign name = author.first -%}
         {%- if author.middle %}
           {%- for m in author.middle %}
@@ -54,7 +52,7 @@
           {%- assign name = name | append: " " | append: author.tussenvoegsel -%}
         {%- endif %}
         {%- assign name = name | append: " " | append: author.last -%}
-        <span style="white-space: nowrap;">{{ name }}</span>{%- if forloop.last %}, {% endif %}
+        <span style="white-space: nowrap;">{{ name }}</span>{% if currentAuthorPos < numAuthors %}, {% elsif currentAuthorPos == numAuthors and numAuthors > 2 %}, and {% elsif currentAuthorPos == numAuthors and numAuthors == 2 %} and {% endif %}
       {% endfor %}
     </span><br>
 
