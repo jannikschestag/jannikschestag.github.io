@@ -36,12 +36,9 @@ tr:hover {
   {% endfor %}
 {% endfor %}
 
-{{ raw }}
-
 <!-- Collect and normalize all co-authors from coauthors, skipping yourself -->
 {% for c in site.data.coauthors %}
   {% assign a = c.name[0] %}
-  {{ a }}
   {% assign name = a.first %}
   {% if a.tussenvoegsel %}
     {% assign name = name | append: " " | append: a.tussenvoegsel %}
@@ -53,8 +50,6 @@ tr:hover {
   {% endunless %}
   {% endfor %}
 {% endfor %}
-
-{{ raw }}
 
 <!-- Count occurrences -->
 {% assign names = raw | split: "--" %}
@@ -75,8 +70,6 @@ tr:hover {
     {% assign authors = authors | append: entry | append: ";;" %}
   {% endunless %}
 {% endfor %}
-
-{{ authors }}
 
 <!-- Sort by count descending, then name ascending -->
 {% assign authors_list = authors | split: ";;" %}
@@ -117,7 +110,6 @@ tr:hover {
             {% if count != 0 %}
               {{ count }}x
             {% endif %}
-            debug
           </td>
 
           <td>
