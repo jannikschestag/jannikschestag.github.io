@@ -65,6 +65,8 @@ classes: wide
   {% endunless %}
 {% endfor %}
 
+{{ authors }}
+
 <!-- Sort by count descending, then name ascending -->
 {% assign authors_list = authors | split: ";;" %}
 {% assign sorted = authors_list | sort_natural %}
