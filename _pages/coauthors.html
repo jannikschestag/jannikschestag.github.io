@@ -71,13 +71,13 @@ classes: wide
         {% assign fullname = parts[1] %}
 
         {% for c in site.data.coauthors %}
+          {% if c.name == fullname %}
         <tr>
           <td>{{ c.collaboration }}&#10004;</td>
           <td>{{ c.affiliation[0].name }}, {{ c.affiliation[0].city }}, {{ c.affiliation[0].country }}</td>
           <td>{{ c.link }}</td>
           <td>{{ c }}</td>
         </tr>
-          {% if c.name == fullname %}
             {% break %}
           {% endif %}
         {% endfor %}
