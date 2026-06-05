@@ -106,5 +106,47 @@ classes: wide
 
       {% endunless %}
     {% endfor %}
+    
+    
+    {% for c in site.data.coauthors %}
+      {% for entry in sorted %}
+        {% assign parts = entry | split: "||" %}
+        {% assign count = parts[0] | plus: 0 %}
+        {% assign fullname = parts[1] %}
+
+        {% if c.name == fullname %}
+          {% assign alreadypublished = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+      
+      {% if alreadypublished != true and coauthor.collaboration %}
+      
+        <tr>
+          <td></td>
+
+          <td>
+            {% if coauthor.link == nil %}
+              {{ fullname }}
+            {% else %}
+              <a href="{{ coauthor.link }}" target="_blank" rel="noopener noreferrer">
+                {{ fullname }}
+              </a>
+            {% endif %}
+          </td>
+
+          <td>
+              &#10004;
+          </td>
+
+          <td>
+            {% unless coauthor.affiliation[0].name == nil %}
+              {{ coauthor.affiliation[0].name }}, {{ coauthor.affiliation[0].city }}, {{ coauthor.affiliation[0].country }}
+            {% endunless %}
+          </td>
+        </tr>
+      
+      {% endif %}
+    {% endfor %}
   </tbody>
 </table>
