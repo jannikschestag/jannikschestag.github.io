@@ -78,10 +78,9 @@ classes: wide
         {% endif %}
         {% assign cname = cname | append: " " | append: c.name[0].last %}
         <tr>
-          <td>{{ c }}</td>
           <td>{{ c.name[0].first }}</td>
+          <td>{{ c.name[0].last }}</td>
           <td>{{ cname }}</td>
-          <td>{{ parts }}</td>
           <td>{{ fullname }}</td>
         </tr>
           {% if cname == fullname %}
