@@ -23,15 +23,16 @@ classes: wide
       {% assign name = name | append: " " | append: a.tussenvoegsel %}
     {% endif %}
     {% assign name = a.last | append: "||" | append: name | append: " " | append: a.last %}
+    {{ name }}
 
     {% unless name == "Schestag||Jannik Schestag" %}
-      {% assign raw = raw | append: name | append: "||" %}
+      {% assign raw = raw | append: name | append: "--" %}
     {% endunless %}
   {% endfor %}
 {% endfor %}
 
 <!-- Count occurrences -->
-{% assign names = raw | split: "||" %}
+{% assign names = raw | split: "--" %}
 {% assign counted = "" %}
 {% assign authors = "" %}
 
@@ -46,7 +47,6 @@ classes: wide
     {% assign counted = counted | append: name | append: "||" %}
     {% assign padded_count = 999-count | slice: -3, 3 %}
     {% assign entry = padded_count | append: "||" | append: surname | append: "||" | append: name %}
-    {{ entry }}
     {% assign authors = authors | append: entry | append: ";;" %}
   {% endunless %}
 {% endfor %}
