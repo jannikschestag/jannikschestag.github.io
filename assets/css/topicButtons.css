@@ -1,0 +1,16 @@
+.topic-button {
+  display: inline-block;
+  padding: 5px 12px;
+  margin: 3px;
+  border-radius: 999px;
+  background: #eef4ff;
+  color: #1d4ed8;
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: background 0.2s ease;
+}
+
+.topic-button:hover {
+  background: #dbeafe;
+  text-decoration: none;
+}
