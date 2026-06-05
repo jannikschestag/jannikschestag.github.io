@@ -16,18 +16,25 @@ classes: wide
 </script>
 
 
+
+
 <p>Below you can find my publications and preprints, with links and toggleable abstracts.</p>
 
 
 {% assign all_pubs = site.data.pubs %}
 
 {%- comment -%}
-Sort by release-date descending
+Separate non-theses and theses
+{%- endcomment -%}
+{% assign normal_pubs = all_pubs | where_exp: "p", "p.topics contains 'Phylogenetic Diversity'" %}
+
+{%- comment -%}
+Sort non-theses and theses by release-date descending
 {%- endcomment -%}
 {% assign normal_pubs = normal_pubs | sort: "release-date" | reverse %}
 
 {%- comment -%}
-Group by pub.year, assign reverse numbering
+Group non-theses by pub.year, assign reverse numbering
 {%- endcomment -%}
 {% assign total = normal_pubs | size %}
 {% assign current_year = "" %}
