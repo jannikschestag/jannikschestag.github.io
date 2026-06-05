@@ -109,6 +109,7 @@ classes: wide
     
     
     {% for c in site.data.coauthors %}
+      {% assign alreadypublished = false %}
       {% for entry in sorted %}
         {% assign parts = entry | split: "||" %}
         {% assign count = parts[0] | plus: 0 %}
