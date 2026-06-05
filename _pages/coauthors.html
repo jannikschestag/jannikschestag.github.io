@@ -120,16 +120,19 @@ classes: wide
         {% endif %}
       {% endfor %}
       
-      {% if alreadypublished != true and coauthor.collaboration %}
+        <tr>
+          <td></td>
+        </tr>
+      {% if alreadypublished != true and c.collaboration %}
       
         <tr>
           <td></td>
 
           <td>
-            {% if coauthor.link == nil %}
+            {% if c.link == nil %}
               {{ fullname }}
             {% else %}
-              <a href="{{ coauthor.link }}" target="_blank" rel="noopener noreferrer">
+              <a href="{{ c.link }}" target="_blank" rel="noopener noreferrer">
                 {{ fullname }}
               </a>
             {% endif %}
@@ -140,8 +143,8 @@ classes: wide
           </td>
 
           <td>
-            {% unless coauthor.affiliation[0].name == nil %}
-              {{ coauthor.affiliation[0].name }}, {{ coauthor.affiliation[0].city }}, {{ coauthor.affiliation[0].country }}
+            {% unless c.affiliation[0].name == nil %}
+              {{ c.affiliation[0].name }}, {{ c.affiliation[0].city }}, {{ c.affiliation[0].country }}
             {% endunless %}
           </td>
         </tr>
