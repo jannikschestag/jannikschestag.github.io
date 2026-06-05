@@ -42,11 +42,14 @@ tr:hover {
   {{ a }}
   {% assign name = a.first %}
   {{ name }}
+  {% if a.tussenvoegsel %}
+    {% assign name = name | append: " " | append: a.tussenvoegsel %}
+  {% endif %}
+  {% assign name = a.last | append: "||" | append: name | append: " " | append: a.last %}
   
   {% unless name == "Schestag||Jannik Schestag" %}
     {% assign raw = raw | append: name | append: "--" %}
   {% endunless %}
-  {% endfor %}
 {% endfor %}
 
 <!-- Count occurrences -->
