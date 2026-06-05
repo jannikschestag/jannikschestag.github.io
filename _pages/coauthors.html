@@ -99,7 +99,11 @@ classes: wide
         {% endfor %}
 
         <tr>
-          <td>{{ count }}x</td>
+          <td>
+            {% if count > 0 %}
+              {{ count }}x
+            {% endif %}
+          </td>
 
           <td>
             {% if coauthor.link == nil %}
