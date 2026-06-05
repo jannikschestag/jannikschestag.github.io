@@ -2,183 +2,183 @@
   link: nielsholtgrefe.nl
   affiliation:
     - name: TU Delft
-    - city: Delft
-    - country: The Netherlands
+      city: Delft
+      country: The Netherlands
   collaboration: yes
 
 - name: Mark Jones
   link: https://www.mdx.ac.uk/about-us/our-people/staff-directory/dr-mark-jones/
   affiliation:
     - name: Middlesex University
-    - city: London
-    - country: United Kingdom
+      city: London
+      country: United Kingdom
   collaboration: no
 
 - name: Christian Komusiewicz
   link: https://www.fmi.uni-jena.de/en/6050/prof-dr-christian-komusiewicz
   affiliation:
     - name: Friedrich Schiller Universität
-    - city: Jena
-    - country: Germany
+      city: Jena
+      country: Germany
   collaboration: no
 
 - name: Mathias Weller
   link: http://igm.univ-mlv.fr/~mweller/
   affiliation:
     - name: Université Gustave Eiffel
-    - city: Paris
-    - country: France
+      city: Paris
+      country: France
   collaboration: yes
 
 - name: Leo van Iersel
   link: https://leovaniersel.wordpress.com/
   affiliation:
     - name: TU Delft
-    - city: Delft
-    - country: The Netherlands
+      city: Delft
+      country: The Netherlands
   collaboration: yes
 
 - name: Frank Sommer
   link: https://www.ac.tuwien.ac.at/people/fsommer/
   affiliation:
     - name: Friedrich Schiller Universität
-    - city: Jena
-    - country: Germany
+      city: Jena
+      country: Germany
   collaboration: yes
 
 - name: Celine Scornavacca
   link: https://sites.google.com/view/celinescornavacca
   affiliation:
     - name: Université Montpellier
-    - city: Montpellier
-    - country: France
+      city: Montpellier
+      country: France
   collaboration: yes
 
 - name: Norbert Zeh
   link: https://web.cs.dal.ca/~nzeh/
   affiliation:
     - name: Dalhousie University
-    - city: Halifax
-    - country: Canada
+      city: Halifax
+      country: Canada
   collaboration: yes
 
 - name: Niels Grüttemeier
   link: https://www.smart-e-factory.de/?team=dr-niels-gruettemeier
   affiliation:
     - name: Fraunhofer Institut
-    - city: Lemgo
-    - country: Germany
+      city: Lemgo
+      country: Germany
   collaboration: no
 
 - name: Jaroslav Garvardt
   link: https://www.fmi.uni-jena.de/en/6039/jaroslav-garvardt
   affiliation:
     - name: Friedrich Schiller Universität
-    - city: Jena
-    - country: Germany
+      city: Jena
+      country: Germany
   collaboration: yes
 
 - name: Yukihiro Murakami
   link: https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/applied-mathematics/people/dr-y-yuki-murakami
   affiliation:
     - name: TU Delft
-    - city: Delft
-    - country: The Netherlands
+      city: Delft
+      country: The Netherlands
   collaboration: yes
 
 - name: Simone Linz
   link: https://simonelinz.wordpress.com/
   affiliation:
     - name: University of Auckland
-    - city: Auckland
-    - country: New Zealand
+      city: Auckland
+      country: New Zealand
   collaboration: no
 
 - name: Ruben Meuwese
   link: null
   affiliation:
     - name: null
-    - city: null
-    - country: null
+      city: null
+      country: null
   collaboration: no
 
 - name: Nils Morawietz
   link: https://www.fmi.uni-jena.de/en/6028/dr-nils-morawietz
   affiliation:
     - name: Friedrich Schiller Universität
-    - city: Jena
-    - country: Germany
+      city: Jena
+      country: Germany
   collaboration: no
 
 - name: Matthias Bentert
   link: https://fpt.akt.tu-berlin.de/bentert/website.html
   affiliation:
     - name: TU Berlin
-    - city: Berlin
-    - country: Germany
+      city: Berlin
+      country: Germany
   collaboration: yes
 
 - name: Malte Renken
   link: null
   affiliation:
     - name: null
-    - city: null
-    - country: null
+      city: null
+      country: null
   collaboration: no
 
 - name: Ber Lorke
   link: null
   affiliation:
     - name: TU Berlin
-    - city: Berlin
-    - country: Germany
+      city: Berlin
+      country: Germany
   collaboration: no
 
 - name: Kaari Landry
   link: https://kaarilandry.com/
   affiliation:
     - name: Université de Montréal
-    - city: Montreal
-    - country: Canada
+      city: Montreal
+      country: Canada
   collaboration: yes
 
 - name: Nadia Tahiri
   link: https://tahirinadia.github.io/
   affiliation:
     - name: Université de Sherbrooke
-    - city: Sherbrooke
-    - country: Canada
+      city: Sherbrooke
+      country: Canada
   collaboration: yes
 
 - name: Manuel Lafond
   link: https://manuellafond.com/
   affiliation:
     - name: Université de Sherbrooke
-    - city: Sherbrooke
-    - country: Canada
+      city: Sherbrooke
+      country: Canada
   collaboration: yes
 
 - name: Eva Deltl
   link: https://deltl.de/eva/
   affiliation:
     - name: TU Clausthal
-    - city: Clausthal
-    - country: Germany
+      city: Clausthal
+      country: Germany
   collaboration: yes
 
 - name: Robert Bredereck
   link: https://robert.bredereck.online/
   affiliation:
     - name: TU Clausthal
-    - city: Clausthal
-    - country: Germany
+      city: Clausthal
+      country: Germany
   collaboration: yes
 
 - name: Carla Groenland
   link: https://sites.google.com/view/carlagroenland
   affiliation:
     - name: TU Delft
-    - city: Delft
-    - country: The Netherlands
+      city: Delft
+      country: The Netherlands
   collaboration: yes
 

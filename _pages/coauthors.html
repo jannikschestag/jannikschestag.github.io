@@ -73,10 +73,10 @@ classes: wide
         {% assign coauthor = nil %}
         {% for c in site.data.coauthors %}
         <tr>
-          <td>{{ c.collaboration }}</td>
+          <td>{{ c.collaboration }}&#10004;</td>
           <td>{{ c.affiliation }} asdad</td>
           <td>{{ c.affiliation.name }} asdad</td>
-          <td>{{ c.affiliation.city }} asdad</td>
+          <td>{{ c.affiliation[city] }} asdad</td>
           <td>{{ c.affiliation.country }} asdad</td>
         </tr>
           {% if c.name == fullname %}
