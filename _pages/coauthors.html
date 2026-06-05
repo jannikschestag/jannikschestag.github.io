@@ -48,8 +48,9 @@ classes: wide
     {{ name }}
     {{ count }}
     {{ 999-count }}
-    <br>
     {% assign entry = padded_count | append: "||" | append: surname | append: "||" | append: name %}
+    {{ entry }}
+    <br>
     {% assign authors = authors | append: entry | append: ";;" %}
   {% endunless %}
 {% endfor %}
