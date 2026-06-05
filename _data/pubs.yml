@@ -22,6 +22,7 @@
     - FPT
     - Phylogenetic Diversity
     - Phylogenetic Networks
+    - Scanwidth
     - Implementation
   abstract: >
     Identifying a subset of taxa that maximizes Phylogenetic Diversity (PD) is a cornerstone of quantitative conservation planning. Traditionally, PD is defined over a phylogenetic tree in which leaves represent present-day taxa and branch lengths capture the estimated evolutionary distinctiveness. While PD maximization is computationally tractable on trees with unit costs, the problem becomes NP-hard when transitioning to phylogenetic networks or to budgeted versions in which protecting taxa incurs non-homogeneous costs.
@@ -105,7 +106,12 @@
   preprint-identifier: 10.1101/2025.11.14.688467
   preprint-url: https://www.biorxiv.org/content/10.1101/2025.11.14.688467
   software-url: https://github.com/nholtgrefe/panda
-  topics: FPT, Phylogenetic Diversity, Phylogenetic Networks, Implementation
+  topics:
+    - FPT
+    - Phylogenetic Diversity
+    - Phylogenetic Networks
+    - Scanwidth
+    - Implementation
   abstract: >
     Phylogenetic diversity plays an important role in biodiversity, conservation, and evolutionary studies by measuring the diversity of a set of taxa based on their phylogenetic relationships. In phylogenetic trees, a subset of \( k \) taxa with maximum phylogenetic diversity can be found by a simple and efficient greedy algorithm. However, this algorithmic tractability is lost when considering phylogenetic networks, which incorporate reticulate evolutionary events such as hybridization and horizontal gene transfer. To address this challenge, we introduce PaNDA (Phylogenetic Network Diversity Algorithms), the first software package and interactive graphical user-interface for exploring, visualizing and maximizing diversity in phylogenetic networks. PaNDA includes a novel algorithm to find a subset of \( k \) taxa with maximum diversity, running in polynomial time for networks of bounded <i>scanwidth</i>, a measure of tree-likeness of a network that grows slower than the well-known <i>level</i> measure. This algorithm considers the variant of phylogenetic diversity on networks in which the branch lengths of all paths from the root to the selected taxa contribute towards their diversity. We demonstrate the scalability of this algorithm on simulated networks, successfully analyzing level-15 networks with up to 200 taxa in seconds. We also provide a proof-of-concept analysis using a phylogenetic network on Xiphophorus species, illustrating how the tool can support diversity studies based on real genomic data. The software is easily installable and freely available at <a href="https://github.com/nholtgrefe/panda" target="_blank">https://github.com/nholtgrefe/panda</a>. Additionally, we extend the definition of phylogene- tic diversity to semi-directed phylogenetic networks, which are mixed graphs increasingly used in phylogenetic analysis to model uncertainty of the root location. We prove that finding a subset of k taxa with maximum diversity remains NP-hard on semi-directed networks, but do present a polynomial-time algorithm for networks with bounded level.
   bibtex: >
@@ -229,9 +235,10 @@
   preprint-url: https://arxiv.org/abs/2604.27745
   software-url: null
   topics:
-  - FPT
-  - Phylogenetic Diversity
-  - Phylogenetic Networks
+    - FPT
+    - Phylogenetic Diversity
+    - Phylogenetic Networks
+    - Scanwidth
   abstract: >
     We investigate parameterized algorithms for computing the average-tree phylogenetic diversity (APD) in rooted phylogenetic networks, studying the problem under different structural parameters that capture the deviation of a network from a tree. Our primary parameter is the scanwidth, a measure of the tree-likeness of a given directed acyclic graph. We show that a subset of taxa with maximum APD can be found in polynomial time in phylogenetic networks of scanwidth at most 2, but becomes NP-hard in networks of scanwidth 3. Further, we design an algorithm that computes the APD of a given set of taxa in \(\mathcal{O}(2^{\mathsf{sw}} n)\) time, where \(\mathsf{sw}\) denotes the scanwidth and \(n\) the number of taxa in the input network. Finally, we give a linear-time algorithm for computing the APD of a given set of taxa if the network induced by these taxa is reticulation-visible. We generalize this algorithm to still run in polynomial time if each biconnected component of the induced network has only constantly many invisible reticulations.
   bibtex: >
@@ -272,9 +279,9 @@
   preprint-url: https://arxiv.org/abs/2405.01091
   software-url: null
   topics:
-  - FPT
-  - Phylogenetic Diversity
-  - Phylogenetic Networks
+    - FPT
+    - Phylogenetic Diversity
+    - Phylogenetic Networks
   abstract: >
     Network Phylogenetic Diversity (Network-PD) is a measure for the diversity of a set of species based on a rooted phylogenetic network (with branch lengths and inheritance probabilities on the reticulation edges) describing the evolution of those species. We consider the Maximize Network-PD problem: Given such a network, find \(k\) species with maximum Network-PD score. We show that this problem is fixed-parameter tractable (FPT) for binary networks, by describing an optimal algorithm running in \(\mathcal{O}(2^r \log(k)(n+r))\) time, with \(n\) the total number of species in the network and \(r\) its reticulation number. Furthermore, we show that Maximize Network-PD is NP-hard for level-1 networks, proving that, unless P=NP, the FPT approach cannot be extended by using the level as parameter instead of the reticulation number.
   bibtex: >
@@ -309,10 +316,10 @@
   preprint-url: https://arxiv.org/abs/2510.09512
   software-url: null
   topics:
-  - FPT
-  - Phylogenetic Diversity
-  - Phylogenetic Networks
-  - Food Webs
+    - FPT
+    - Phylogenetic Diversity
+    - Phylogenetic Networks
+    - Food Webs
   abstract: >
     For a phylogenetic tree, the phylogenetic diversity of a set \(A\) of taxa is the total weight of edges on paths to \(A\). Finding small sets of maximal diversity is crucial for conservation planning, as it indicates where limited resources can be invested most efficiently. In recent years, efficient algorithms have been developed to find sets of taxa that maximize phylogenetic diversity either in a phylogenetic network or in a phylogenetic tree subject to ecological constraints, such as a food web. However, these aspects have mostly been studied independently. Since both factors are biologically important, it seems natural to consider them together. In this paper, we introduce decision problems where, given a phylogenetic network, a food web, and integers \(k\) and \(D\), the task is to find a set of \(k\) taxa with phylogenetic diversity of at least \(D\) under the maximize-all-paths measure while also satisfying viability conditions within the food web. We investigate the parameterized complexity of these problems and present several fixed-parameter tractable algorithms. Specifically, we provide a complete complexity dichotomy characterizing which combinations of parameters lead to W[1]-hardness and which admit fixed-parameter tractable algorithms. Our primary methodological contribution is a novel algorithmic framework for solving phylogenetic diversity problems in networks where dependencies impose an order, using a color-coding approach.
   bibtex: >
@@ -422,6 +429,7 @@
   - FPT
   - Phylogenetic Diversity
   - Food Webs
+  - Scanwidth
   abstract: >
     Structural parameters of graphs, such as treewidth, play a central role in the study of parameterized complexity. Motivated by the study of parameterized algorithms on phylogenetic networks, scanwidth was introduced recently as a new treewidth-like structural parameter for directed acyclic graphs that respects edge directions. While previous results showed that scanwidth often yields simpler and faster algorithms than treewidth, all previously studied problems were either fixed-parameter tractable with respect to both measures or hard for both. In this paper, we show that scanwidth is not merely a proxy for treewidth. Specifically, we prove that Weighted PDD is fixed-parameter tractable with respect to the scanwidth of the food web but W[\(\ell\)]-hard with respect to its treewidth for every \(\ell \ge 1\). To the best of our knowledge, this is the first natural problem exhibiting such a separation.
   bibtex: >
@@ -513,9 +521,11 @@
   - first: Jannik
     last: Schestag
   - first: Niels
-    last: Gruettemeier
+    last: Grüttemeier
   - first: Christian
     last: Komusiewicz
+  - first: Jannik
+    last: Schestag
   - first: Frank
     last: Sommer
   year: 2024
@@ -573,7 +583,7 @@
   software-url: null
   topics:
     - FPT
-    - Phylogenetics
+    - Parsimony
   abstract: >
     Maximum Parsimony is the problem of computing a most parsimonious phylogenetic tree for a taxa set \(X\) from character data for \(X\). A common strategy to attack this notoriously hard problem is to perform a local search over the phylogenetic tree space. Here, one is given a phylogenetic tree \(T\) and wants to find a more parsimonious tree in the neighborhood of \(T\). We study the complexity of this problem when the neighborhood contains all trees within distance \(k\) for several classic distance functions. For the nearest neighbor interchange (NNI), subtree prune and regraft (SPR), tree bisection and reconnection (TBR), and edge contraction and refinement (ECR) distances, we show that, under the exponential time hypothesis, there are no algorithms with running time \(|I|^{o(k)}\), where \(|I|\) is the total input size. Hence, brute-force algorithms with running time \(|X|^{\mathcal{O}(k)} \cdot |I|\) are essentially optimal. In contrast to the above distances, we observe that for the sECR-distance, where the contracted edges are constrained to form a subtree, a better solution within distance \(k\) can be found in \(k^{\mathcal{O}(k)} \cdot |I|^{\mathcal{O}(1)}\) time.
   bibtex: >
