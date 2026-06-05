@@ -36,21 +36,6 @@ tr:hover {
   {% endfor %}
 {% endfor %}
 
-<!-- Collect and normalize all co-authors from coauthors, skipping yourself -->
-{% for c in site.data.coauthors %}
-  {% assign a = c.name[0] %}
-  {% assign name = a.first %}
-  {% if a.tussenvoegsel %}
-    {% assign name = name | append: " " | append: a.tussenvoegsel %}
-  {% endif %}
-  {% assign name = a.last | append: "||" | append: name | append: " " | append: a.last %}
-  
-  {% unless name == "Schestag||Jannik Schestag" %}
-    {% assign raw = raw | append: name | append: "--" %}
-  {% endunless %}
-  {% endfor %}
-{% endfor %}
-
 <!-- Count occurrences -->
 {% assign names = raw | split: "--" %}
 {% assign counted = "" %}
