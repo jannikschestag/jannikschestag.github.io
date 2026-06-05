@@ -39,9 +39,7 @@ tr:hover {
 <!-- Collect and normalize all co-authors from coauthors, skipping yourself -->
 {% for c in site.data.coauthors %}
   {% assign a = c.name[0] %}
-  {{ a }}
   {% assign name = a.first %}
-  {{ name }}
   {% if a.tussenvoegsel %}
     {% assign name = name | append: " " | append: a.tussenvoegsel %}
   {% endif %}
