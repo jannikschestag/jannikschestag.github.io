@@ -40,7 +40,8 @@
 
 - name:
     - first: Leo
-    - last: van Iersel
+    - tussenvoegsel: van
+    - last: Iersel
   link: https://leovaniersel.wordpress.com/
   affiliation:
     - name: TU Delft

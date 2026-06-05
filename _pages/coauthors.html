@@ -72,7 +72,11 @@ classes: wide
 
         {% assign coauthor = nil %}
         {% for c in site.data.coauthors %}
-        {% assign cname = c.name[0].first | append: " " | append: c.name[0].last %}
+        {% assign cname = c.name[0].first %}
+        {% if a.tussenvoegsel %}
+          {% assign cname = cname | append: " " | append: c.name[0].tussenvoegsel %}
+        {% endif %}
+        {% assign cname = cname | append: " " | append: c.name[0].last %}
         <tr>
           <td>{{ c }}</td>
           <td>{{ c.name[0].first }}</td>
