@@ -1,6 +1,6 @@
 - name:
     - first: Niels
-    - last: Holtgrefe
+      last: Holtgrefe
   link: nielsholtgrefe.nl
   affiliation:
     - name: TU Delft
@@ -10,7 +10,7 @@
 
 - name:
     - first: Mark
-    - last: Jones
+      last: Jones
   link: https://www.mdx.ac.uk/about-us/our-people/staff-directory/dr-mark-jones/
   affiliation:
     - name: Middlesex University
@@ -20,7 +20,7 @@
 
 - name:
     - first: Christian
-    - last: Komusiewicz
+      last: Komusiewicz
   link: https://www.fmi.uni-jena.de/en/6050/prof-dr-christian-komusiewicz
   affiliation:
     - name: Friedrich Schiller Universität
@@ -30,7 +30,7 @@
 
 - name:
     - first: Mathias
-    - last: Weller
+      last: Weller
   link: http://igm.univ-mlv.fr/~mweller/
   affiliation:
     - name: Université Gustave Eiffel
@@ -41,7 +41,7 @@
 - name:
     - first: Leo
     - tussenvoegsel: van
-    - last: Iersel
+      last: Iersel
   link: https://leovaniersel.wordpress.com/
   affiliation:
     - name: TU Delft
@@ -51,7 +51,7 @@
 
 - name:
     - first: Frank
-    - last: Sommer
+      last: Sommer
   link: https://www.ac.tuwien.ac.at/people/fsommer/
   affiliation:
     - name: Friedrich Schiller Universität
@@ -61,7 +61,7 @@
 
 - name:
     - first: Celine
-    - last: Scornavacca
+      last: Scornavacca
   link: https://sites.google.com/view/celinescornavacca
   affiliation:
     - name: Université Montpellier
@@ -71,7 +71,7 @@
 
 - name:
     - first: Norbert
-    - last: Zeh
+      last: Zeh
   link: https://web.cs.dal.ca/~nzeh/
   affiliation:
     - name: Dalhousie University
@@ -81,7 +81,7 @@
 
 - name:
     - first: Niels
-    - last: Grüttemeier
+      last: Grüttemeier
   link: https://www.smart-e-factory.de/?team=dr-niels-gruettemeier
   affiliation:
     - name: Fraunhofer Institut
@@ -91,7 +91,7 @@
 
 - name:
     - first: Jaroslav
-    - last: Garvardt
+      last: Garvardt
   link: https://www.fmi.uni-jena.de/en/6039/jaroslav-garvardt
   affiliation:
     - name: Friedrich Schiller Universität
@@ -101,7 +101,7 @@
 
 - name:
     - first: Yukihiro
-    - last: Murakami
+      last: Murakami
   link: https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/applied-mathematics/people/dr-y-yuki-murakami
   affiliation:
     - name: TU Delft
@@ -111,7 +111,7 @@
 
 - name:
     - first: Simone
-    - last: Linz
+      last: Linz
   link: https://simonelinz.wordpress.com/
   affiliation:
     - name: University of Auckland
@@ -121,7 +121,7 @@
 
 - name:
     - first: Ruben
-    - last: Meuwese
+      last: Meuwese
   link: null
   affiliation:
     - name: null
@@ -131,7 +131,7 @@
 
 - name:
     - first: Nils
-    - last: Morawietz
+      last: Morawietz
   link: https://www.fmi.uni-jena.de/en/6028/dr-nils-morawietz
   affiliation:
     - name: Friedrich Schiller Universität
@@ -141,7 +141,7 @@
 
 - name:
     - first: Matthias
-    - last: Bentert
+      last: Bentert
   link: https://fpt.akt.tu-berlin.de/bentert/website.html
   affiliation:
     - name: TU Berlin
@@ -151,7 +151,7 @@
 
 - name:
     - first: Malte
-    - last: Renken
+      last: Renken
   link: null
   affiliation:
     - name: null
@@ -161,7 +161,7 @@
 
 - name:
     - first: Ber
-    - last: Lorke
+      last: Lorke
   link: null
   affiliation:
     - name: TU Berlin
@@ -171,7 +171,7 @@
 
 - name:
     - first: Kaari
-    - last: Landry
+      last: Landry
   link: https://kaarilandry.com/
   affiliation:
     - name: Université de Montréal
@@ -181,7 +181,7 @@
 
 - name:
     - first: Nadia
-    - last: Tahiri
+      last: Tahiri
   link: https://tahirinadia.github.io/
   affiliation:
     - name: Université de Sherbrooke
@@ -191,7 +191,7 @@
 
 - name:
     - first: Manuel
-    - last: Lafond
+      last: Lafond
   link: https://manuellafond.com/
   affiliation:
     - name: Université de Sherbrooke
@@ -201,7 +201,7 @@
 
 - name:
     - first: Eva
-    - last: Deltl
+      last: Deltl
   link: https://deltl.de/eva/
   affiliation:
     - name: TU Clausthal
@@ -211,7 +211,7 @@
 
 - name:
     - first: Robert
-    - last: Bredereck
+      last: Bredereck
   link: https://robert.bredereck.online/
   affiliation:
     - name: TU Clausthal
@@ -221,7 +221,7 @@
 
 - name:
     - first: Carla
-    - last: Groenland
+      last: Groenland
   link: https://sites.google.com/view/carlagroenland
   affiliation:
     - name: TU Delft
