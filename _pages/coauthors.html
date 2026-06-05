@@ -121,7 +121,9 @@ classes: wide
       {% endfor %}
       
         <tr>
-          <td></td>
+          <td>{{ alreadypublished }}</td>
+          <td>{{ c.collaboration }}</td>
+          <td>{{ c }}</td>
         </tr>
       {% if alreadypublished != true and c.collaboration %}
       
