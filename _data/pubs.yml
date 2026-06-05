@@ -148,7 +148,6 @@
     - FPT
     - Phylogenetic Diversity
     - Phylogenetic Networks
-    - Implementation
   abstract: >
     Phylogenetic Diversity (PD) is a measure of the overall biodiversity of a set of present-day species (taxa) within a phylogenetic tree. We consider an extension of PD to phylogenetic networks. Given a phylogenetic network with weighted edges and a subset \(S\) of leaves, the all-paths phylogenetic diversity of \(S\) is the summed weight of all edges on a path from the root to some leaf in \(S\). The problem of finding a bounded-size set \(S\) that maximizes this measure is polynomial-time solvable on trees, but NP-hard on networks. We study the latter from a parameterized perspective.
     While this problem is W[2]-hard with respect to the size of \(S\) (and W[1]-hard with respect to the size of the complement of \(S\)), we show that it is fixed-parameter tractable with respect to several other parameters, including the phylogenetic diversity of \(S\), the acceptable loss of phylogenetic diversity, the number of reticulations in the network, and the treewidth of the underlying graph.
@@ -320,6 +319,7 @@
     - Phylogenetic Diversity
     - Phylogenetic Networks
     - Food Webs
+    - Scanwidth
   abstract: >
     For a phylogenetic tree, the phylogenetic diversity of a set \(A\) of taxa is the total weight of edges on paths to \(A\). Finding small sets of maximal diversity is crucial for conservation planning, as it indicates where limited resources can be invested most efficiently. In recent years, efficient algorithms have been developed to find sets of taxa that maximize phylogenetic diversity either in a phylogenetic network or in a phylogenetic tree subject to ecological constraints, such as a food web. However, these aspects have mostly been studied independently. Since both factors are biologically important, it seems natural to consider them together. In this paper, we introduce decision problems where, given a phylogenetic network, a food web, and integers \(k\) and \(D\), the task is to find a set of \(k\) taxa with phylogenetic diversity of at least \(D\) under the maximize-all-paths measure while also satisfying viability conditions within the food web. We investigate the parameterized complexity of these problems and present several fixed-parameter tractable algorithms. Specifically, we provide a complete complexity dichotomy characterizing which combinations of parameters lead to W[1]-hardness and which admit fixed-parameter tractable algorithms. Our primary methodological contribution is a novel algorithmic framework for solving phylogenetic diversity problems in networks where dependencies impose an order, using a color-coding approach.
   bibtex: >
