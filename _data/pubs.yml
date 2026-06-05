@@ -729,7 +729,7 @@
   type: journal
   journal: Discrete Mathematics & Theoretical Computer Science
   volume: 23
-  issue: Graph Theory
+  issue: null
   pages: null
   note: null
   doi-identifier: 10.46298/dmtcs.6108
@@ -748,7 +748,6 @@
       author = {Gr{\"u}ttemeier, Niels and Komusiewicz, Christian and Schestag, Jannik and Sommer, Frank},
       journal = {Discrete Mathematics \& Theoretical Computer Science},
       volume = {23},
-      number = {Graph Theory},
       year = {2021},
       publisher = {Episciences.org},
       doi = {10.46298/dmtcs.6108}

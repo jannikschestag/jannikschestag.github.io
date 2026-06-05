@@ -3,7 +3,5 @@ main:
     url: /
   - title: "Publications"
     url: /publications/
-  - title: "Software"
-    url: /software/
-  - title: "Conferences"
-    url: /conferences/
+  - title: "My CV"
+    url: /assets/Schestag_CV.pdf
