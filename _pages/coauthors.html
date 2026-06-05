@@ -72,15 +72,11 @@ classes: wide
 
         {% assign coauthor = nil %}
         {% for c in site.data.coauthors %}
-          {% assign coauthor = c.name %}
-          {% assign coauthorname = coauthor.first | append: " " | coauthor.last %}
-          {% capture cname %}{{ c.name.first }} {{ c.name.last }}{% endcapture %}
         <tr>
-          <td>{{ cname }}</td>
-          <td>{{ coauthorname }}</td>
-          <td>{{ fullname }} new</td>
+          <td>{{ c.name }}</td>
+          <td>{{ fullname }} kjhklfga</td>
         </tr>
-          {% if cname == fullname %}
+          {% if c.name == fullname %}
             {% assign coauthor = c %}
             {% break %}
           {% endif %}
@@ -90,7 +86,7 @@ classes: wide
           <td>{{ count }}x</td>
 
           <td>
-            {% if coauthor and coauthor.link %}
+            {% if c.link %}
               <a href="{{ coauthor.link }}" target="_blank" rel="noopener noreferrer">
                 {{ fullname }}
               </a>
@@ -101,13 +97,13 @@ classes: wide
 
           <td>
             {% if coauthor %}
-              {{ coauthor.collaboration }}
+              {{ c.collaboration }}
             {% endif %}
           </td>
 
           <td>
-            {% if coauthor and coauthor.affiliation.name %}
-              {{ coauthor.affiliation.name }}, {{ coauthor.affiliation.city }}, {{ coauthor.affiliation.country }}
+            {% if c.affiliation.name %}
+              {{ c.affiliation.name }}, {{ c.affiliation.city }}, {{ c.affiliation.country }}
             {% endif %}
           </td>
         </tr>
