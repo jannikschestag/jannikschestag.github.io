@@ -73,6 +73,10 @@ classes: wide
         {% assign coauthor = nil %}
         {% for c in site.data.coauthors %}
           {% assign cname = c.name.first | append: " " | append: c.name.last %}
+        <tr>
+          <td>{{ cname }}</td>
+          <td>{{ fullname }}</td>
+        </tr>
           {% if cname == fullname %}
             {% assign coauthor = c %}
             {% break %}
@@ -99,14 +103,8 @@ classes: wide
           </td>
 
           <td>
-            {% if coauthor and coauthor.affiliation %}
-              {{ coauthor.affiliation.name }}
-              {% if coauthor.affiliation.city %}
-                , {{ coauthor.affiliation.city }}
-              {% endif %}
-              {% if coauthor.affiliation.country %}
-                , {{ coauthor.affiliation.country }}
-              {% endif %}
+            {% if coauthor and coauthor.affiliation.name %}
+              {{ coauthor.affiliation.name }}, {{ coauthor.affiliation.city }}, {{ coauthor.affiliation.country }}
             {% endif %}
           </td>
         </tr>
