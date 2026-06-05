@@ -10,7 +10,7 @@ classes: wide
 
 {% assign raw = "" %}
 
-<!-- Collect and normalize all co-authors, skipping yourself -->
+<!-- Collect and normalize all co-authors from publications, skipping yourself -->
 {% for pub in site.data.pubs %}
   {% for a in pub.authors %}
     {% assign name = a.first %}
@@ -77,6 +77,8 @@ classes: wide
           <td>{{ c.name }}</td>
           <td>{{ c.name[0] }}</td>
           <td>{{ c.name[0].first }}</td>
+          <td>{{ parts }}</td>
+          <td>{{ fullname }}</td>
         </tr>
           {% if c.name[0].first | append: " " | append: c.name[0].last == fullname %}
             {% assign coauthor = c %}
