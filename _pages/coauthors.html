@@ -86,6 +86,7 @@ classes: wide
           <td>{{ count }}x</td>
 
           <td>
+            {{ c.link }}
             {% if c.link == nil %}
               {{ fullname }}
             {% else %}
@@ -96,6 +97,7 @@ classes: wide
           </td>
 
           <td>
+            {{ c.collaboration }}
             {% if c.collaboration %}
               &#10004;
             {% endif %}
@@ -103,6 +105,7 @@ classes: wide
           </td>
 
           <td>
+            {{ c.affiliation[0].name }}
             {% unless c.affiliation[0].name == nil %}
               {{ c.affiliation[0].name }}, {{ c.affiliation[0].city }}, {{ c.affiliation[0].country }}
             {% endunless %}
