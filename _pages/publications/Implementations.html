@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "PD Publications"
-permalink: /publications/PD
+title: "Publications with Implementations"
+permalink: /publications/Implementations
 author_profile: true
 classes: wide
 ---
@@ -19,12 +19,12 @@ classes: wide
 
 
 
-<p>Below you can find my publications and preprints on Phylogenetic Diversity, with links and toggleable abstracts.
+<p>Below you can find my publications and preprints with implemented algorithms, with links and toggleable abstracts.
 <br>To filter by a certain topic, click one of the buttons.</p>
 
 <a href="/publications/FPT" class="topic-button">FPT</a>
 <a href="/publications/FW" class="topic-button">Food Webs</a>
-<a href="/publications/Orienting" class="topic-button">Orienting</a>
+<a href="/publications/Orientations" class="topic-button">Orienting</a>
 <a href="/publications/PD" class="topic-button">Phylogenetic Diversity</a>
 <a href="/publications/PN" class="topic-button">Phylogenetic Networks</a>
 <a href="/publications/SW" class="topic-button">Scanwidth</a>
@@ -36,7 +36,7 @@ classes: wide
 {%- comment -%}
 Filter by topic
 {%- endcomment -%}
-{% assign topic_pubs = all_pubs | where_exp: "p", "p.topics contains 'Phylogenetic Diversity'" %}
+{% assign topic_pubs = all_pubs | where_exp: "p", "p.topics contains 'Implementation'" %}
 
 {%- comment -%}
 Sort by release-date descending
