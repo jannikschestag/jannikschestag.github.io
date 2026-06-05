@@ -46,6 +46,7 @@ classes: wide
     {% endfor %}
     {% assign counted = counted | append: name | append: "||" %}
     {% assign padded_count = 999-count | slice: -3, 3 %}
+    {{ 999-count }}
     {% assign entry = padded_count | append: "||" | append: surname | append: "||" | append: name %}
     {% assign authors = authors | append: entry | append: ";;" %}
   {% endunless %}
