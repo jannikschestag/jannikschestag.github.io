@@ -40,7 +40,7 @@
 
 - name:
     - first: Leo
-    - tussenvoegsel: van
+      tussenvoegsel: van
       last: Iersel
   link: https://leovaniersel.wordpress.com/
   affiliation:

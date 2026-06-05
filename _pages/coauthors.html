@@ -77,13 +77,6 @@ classes: wide
           {% assign cname = cname | append: " " | append: c.name[0].tussenvoegsel %}
         {% endif %}
         {% assign cname = cname | append: " " | append: c.name[0].last %}
-        <tr>
-          <td>{{ c.name[0].first }}</td>
-          <td>{{ c.name[0].last }}</td>
-          <td>{{ c.name[0] }}</td>
-          <td>{{ cname }}</td>
-          <td>{{ fullname }}</td>
-        </tr>
           {% if cname == fullname %}
             {% assign coauthor = c %}
             {% break %}
