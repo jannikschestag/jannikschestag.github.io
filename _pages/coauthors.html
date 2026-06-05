@@ -45,12 +45,7 @@ classes: wide
     {% endfor %}
     {% assign counted = counted | append: name | append: "||" %}
     {% assign padded_count = 999 | minus: count | slice: -3, 3 %}
-    {{ name }}
-    {{ count }}
-    {{ 999 | minus: count }}
-    {{ padded_count }}
-    {% assign entry = padded_count | append: "||" | append: surname | append: "||" | append: name %}
-    {{ entry }}
+    {% assign entry = padded_count | append: "||" | append: name %}
     <br>
     {% assign authors = authors | append: entry | append: ";;" %}
   {% endunless %}
@@ -73,8 +68,8 @@ classes: wide
     {% for entry in sorted %}
       {% unless entry == "" %}
         {% assign parts = entry | split: "||" %}
-        {% assign count = parts[0] | plus: 0 %}
-        {% assign fullname = parts[1] %}
+        {% assign count = 999 | minus: parts[0] | plus: 0 %}
+        {% assign fullname = parts[2] %}
 
         {% assign coauthor = nil %}
         {% for c in site.data.coauthors %}
@@ -85,7 +80,7 @@ classes: wide
         {% endfor %}
 
         <tr>
-          <td>{{ 999-count }}x</td>
+          <td>{{ count }}x</td>
 
           <td>
             {% if coauthor.link == nil %}
