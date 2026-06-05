@@ -47,9 +47,8 @@ Group non-theses by pub.year, assign reverse numbering
     {% assign current_year = pub.year %}
   {% endif %}
 
-  {{ pub }}
-  {{ pub.topic }}
-  {{ pub.topic[0] }}
+  {{ pub.topics }}
+  {{ pub.topics[0] }}
   {% include pub_entry.html pub=pub pubnum=pubnum%}
 {% endfor %}
 
