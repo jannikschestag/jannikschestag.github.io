@@ -23,7 +23,6 @@ classes: wide
       {% assign name = name | append: " " | append: a.tussenvoegsel %}
     {% endif %}
     {% assign name = a.last | append: "||" | append: name | append: " " | append: a.last %}
-    {{ name }}
 
     {% unless name == "Schestag||Jannik Schestag" %}
       {% assign raw = raw | append: name | append: "--" %}
@@ -46,7 +45,10 @@ classes: wide
     {% endfor %}
     {% assign counted = counted | append: name | append: "||" %}
     {% assign padded_count = 999-count | slice: -3, 3 %}
+    {{ name }}
+    {{ count }}
     {{ 999-count }}
+    <br>
     {% assign entry = padded_count | append: "||" | append: surname | append: "||" | append: name %}
     {% assign authors = authors | append: entry | append: ";;" %}
   {% endunless %}
