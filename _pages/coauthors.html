@@ -72,6 +72,12 @@ classes: wide
 
         {% assign coauthor = nil %}
         {% for c in site.data.coauthors %}
+        <tr>
+          <td>{{ c }}</td>
+          <td>{{ c.name }}</td>
+          <td>{{ c.name[0] }}</td>
+          <td>{{ c.name[0].first }}</td>
+        </tr>
           {% if c.name[0].first | append: " " | append: c.name[0].last == fullname %}
             {% assign coauthor = c %}
             {% break %}
@@ -105,49 +111,6 @@ classes: wide
         </tr>
 
       {% endunless %}
-    {% endfor %}
-    
-    
-    {% for c in site.data.coauthors %}
-      {% assign alreadypublished = false %}
-      {% for entry in sorted %}
-        {% assign parts = entry | split: "||" %}
-        {% assign count = parts[0] | plus: 0 %}
-        {% assign fullname = parts[1] %}
-
-        {% if c.name == fullname %}
-          {% assign alreadypublished = true %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-      
-      {% if alreadypublished != true and c.collaboration %}
-      
-        <tr>
-          <td></td>
-
-          <td>
-            {% if c.link == nil %}
-              {{ c.name }}
-            {% else %}
-              <a href="{{ c.link }}" target="_blank" rel="noopener noreferrer">
-                {{ c.name }}
-              </a>
-            {% endif %}
-          </td>
-
-          <td>
-              &#10004;
-          </td>
-
-          <td>
-            {% unless c.affiliation[0].name == nil %}
-              {{ c.affiliation[0].name }}, {{ c.affiliation[0].city }}, {{ c.affiliation[0].country }}
-            {% endunless %}
-          </td>
-        </tr>
-      
-      {% endif %}
     {% endfor %}
   </tbody>
 </table>
