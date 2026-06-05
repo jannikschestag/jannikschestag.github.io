@@ -20,6 +20,7 @@ classes: wide
 
 
 {% assign all_pubs = site.data.pubs %}
+{% assign normal_pubs = all_pubs | where_exp: "p", "p.topics contains 'Orientation'" %}
 
 {%- comment -%}
 Sort by release-date descending
