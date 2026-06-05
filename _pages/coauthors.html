@@ -21,10 +21,9 @@ classes: wide
     {% endif %}
     {% if a.tussenvoegsel %}
       {% assign name = name | append: " " | append: a.tussenvoegsel %}
-      {% assign surname = a.tussenvoegsel %}
     {% endif %}
     {% assign name = name | append: " " | append: a.last %}
-    {% assign surname = surname | append: " " | append: a.last %}
+    {% assign surname = a.last %}
 
     {% unless name == "Jannik Schestag" %}
       {% assign raw = raw | append: name | append: "||" %}
@@ -48,6 +47,7 @@ classes: wide
     {% assign counted = counted | append: name | append: "||" %}
     {% assign padded_count = 999-count | prepend: "000" | slice: -3, 3 %}
     {% assign entry = padded_count | append: "||" | append: surname | append: "||" | append: name %}
+    {{ entry }}
     {% assign authors = authors | append: entry | append: ";;" %}
   {% endunless %}
 {% endfor %}
