@@ -46,7 +46,6 @@ classes: wide
     {% assign counted = counted | append: name | append: "||" %}
     {% assign padded_count = 999 | minus: count | slice: -3, 3 %}
     {% assign entry = padded_count | append: "||" | append: name %}
-    <br>
     {% assign authors = authors | append: entry | append: ";;" %}
   {% endunless %}
 {% endfor %}
@@ -73,7 +72,7 @@ classes: wide
 
         {% assign coauthor = nil %}
         {% for c in site.data.coauthors %}
-          {% if c.name == fullname %}
+          {% if c.name[0].first | append: " " | append: c.name[0].last == fullname %}
             {% assign coauthor = c %}
             {% break %}
           {% endif %}
