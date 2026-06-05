@@ -69,7 +69,7 @@ author:
       icon: "fab fa-fw fa-google-scholar"
       url: "https://scholar.google.com/citations?user=43kAfwsAAAAJ"
     - label: "DBLP"
-      icon: "fab fa-fw fa-database"
+      icon: "fas fa-fw fa-database"
       url: "https://dblp.org/pid/234/7892.html"
     - label: "ORCID"
       icon: "fab fa-fw fa-orcid"
