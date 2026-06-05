@@ -72,7 +72,7 @@ classes: wide
 
         {% assign coauthor = nil %}
         {% for c in site.data.coauthors %}
-          {% assign cname = c.name.first | append: " " | append: c.name.last %}
+          {% capture cname %}{{ c.name.first }} {{ c.name.last }}{% endcapture %}
         <tr>
           <td>{{ cname }}</td>
           <td>{{ fullname }}</td>
