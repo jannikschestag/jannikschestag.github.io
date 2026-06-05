@@ -8,6 +8,52 @@ classes: wide
 
 <p>Collaborators I have co-authored work with, sorted by number of joint publications.</p>
 
+{% assign raw = "" %}
+
+<!-- Collect and normalize all co-authors, skipping yourself -->
+{% for pub in site.data.pubs %}
+  {% for a in pub.authors %}
+    {% assign name = a.first %}
+    {% if a.middle %}
+      {% for m in a.middle %}
+        {% assign name = name | append: " " | append: m | append: "." %}
+      {% endfor %}
+    {% endif %}
+    {% if a.tussenvoegsel %}
+      {% assign name = name | append: " " | append: a.tussenvoegsel %}
+    {% endif %}
+    {% assign name = name | append: " " | append: a.last %}
+
+    {% unless name == "Jannik Schestag" %}
+      {% assign raw = raw | append: name | append: "||" %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+
+<!-- Count occurrences -->
+{% assign names = raw | split: "||" %}
+{% assign counted = "" %}
+{% assign authors = "" %}
+
+{% for name in names %}
+  {% unless name == "" or counted contains name %}
+    {% assign count = 0 %}
+    {% for other in names %}
+      {% if name == other %}
+        {% assign count = count | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    {% assign counted = counted | append: name | append: "||" %}
+    {% assign padded_count = count | prepend: "000" | slice: -3, 3 %}
+    {% assign entry = padded_count | append: "||" | append: name %}
+    {% assign authors = authors | append: entry | append: ";;" %}
+  {% endunless %}
+{% endfor %}
+
+<!-- Sort by count descending, then name ascending -->
+{% assign authors_list = authors | split: ";;" %}
+{% assign sorted = authors_list | sort_natural | reverse %}
+
 <table>
   <thead>
     <tr>
