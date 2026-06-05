@@ -72,15 +72,15 @@ classes: wide
 
         {% assign coauthor = nil %}
         {% for c in site.data.coauthors %}
+        {% assign cname = c.name[0].first | append: " " | append: c.name[0].last %}
         <tr>
           <td>{{ c }}</td>
-          <td>{{ c.name }}</td>
-          <td>{{ c.name[0] }}</td>
           <td>{{ c.name[0].first }}</td>
+          <td>{{ cname }}</td>
           <td>{{ parts }}</td>
           <td>{{ fullname }}</td>
         </tr>
-          {% if c.name[0].first | append: " " | append: c.name[0].last == fullname %}
+          {% if cname == fullname %}
             {% assign coauthor = c %}
             {% break %}
           {% endif %}
