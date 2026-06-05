@@ -26,7 +26,7 @@ classes: wide
 {%- comment -%}
 Sort by release-date descending
 {%- endcomment -%}
-{% assign normal_pubs = normal_pubs | sort: "release-date" | reverse %}
+{% assign normal_pubs = all_pubs | sort: "release-date" | reverse %}
 
 {%- comment -%}
 Group by pub.year, assign reverse numbering
