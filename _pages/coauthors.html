@@ -35,6 +35,8 @@ tr:hover {
   {% endfor %}
 {% endfor %}
 
+{{ raw }}
+
 <!-- Collect and normalize all co-authors from coauthors, skipping yourself -->
 {% for c in site.data.coauthors %}
   {% assign a = c.name[0] %}
@@ -49,6 +51,8 @@ tr:hover {
   {% endunless %}
   {% endfor %}
 {% endfor %}
+
+{{ raw }}
 
 <!-- Count occurrences -->
 {% assign names = raw | split: "--" %}
