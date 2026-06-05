@@ -27,6 +27,7 @@ classes: wide
 Separate non-theses and theses
 {%- endcomment -%}
 {% assign normal_pubs = all_pubs | where_exp: "p", "p.type != 'thesis'" %}
+{% assign normal_pubs = all_pubs | where_exp: "p", "p.topics contains 'Scanwidth'" %}
 
 {%- comment -%}
 Sort non-theses and theses by release-date descending
