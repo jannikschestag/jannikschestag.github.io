@@ -70,7 +70,6 @@ classes: wide
         {% assign count = parts[0] | plus: 0 %}
         {% assign fullname = parts[1] %}
 
-        {% assign coauthor = nil %}
         {% for c in site.data.coauthors %}
         <tr>
           <td>{{ c.collaboration }}&#10004;</td>
@@ -81,7 +80,6 @@ classes: wide
           <td>{{ c }}</td>
         </tr>
           {% if c.name == fullname %}
-            {% assign coauthor = c %}
             {% break %}
           {% endif %}
         {% endfor %}
@@ -90,7 +88,7 @@ classes: wide
           <td>{{ count }}x</td>
 
           <td>
-            {% if c.link %}
+            {% if c.link != nil %}
               <a href="{{ c.link }}" target="_blank" rel="noopener noreferrer">
                 {{ fullname }}
               </a>
@@ -106,8 +104,8 @@ classes: wide
           </td>
 
           <td>
-            {% if c.affiliation.name %}
-              {{ c.affiliation.name }}, {{ c.affiliation.city }}, {{ c.affiliation.country }}
+            {% if c.affiliation[0].name != nil %}
+              {{ c.affiliation[0].name }}, {{ c.affiliation[0].city }}, {{ c.affiliation[0].country }}
             {% endif %}
           </td>
         </tr>
