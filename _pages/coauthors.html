@@ -86,12 +86,12 @@ classes: wide
           <td>{{ count }}x</td>
 
           <td>
-            {% if c.link != nil %}
+            {% if c.link == nil %}
+              {{ fullname }}
+            {% else %}
               <a href="{{ c.link }}" target="_blank" rel="noopener noreferrer">
                 {{ fullname }}
               </a>
-            {% else %}
-              {{ fullname }}
             {% endif %}
           </td>
 
@@ -99,12 +99,13 @@ classes: wide
             {% if c.collaboration %}
               &#10004;
             {% endif %}
+              &#10004;
           </td>
 
           <td>
-            {% if c.affiliation[0].name != nil %}
+            {% unless c.affiliation[0].name == nil %}
               {{ c.affiliation[0].name }}, {{ c.affiliation[0].city }}, {{ c.affiliation[0].country }}
-            {% endif %}
+            {% endunless %}
           </td>
         </tr>
 
