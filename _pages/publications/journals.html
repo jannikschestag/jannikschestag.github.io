@@ -19,15 +19,14 @@ classes: wide
 
 
 
-<p>Below you can find my publications sorted by conferences, with links and toggleable abstracts.
-<br>Also journal publications are listed that beforehand were published at a certain conference.</p>
+<p>Below you can find my publications sorted by journals, with links and toggleable abstracts.</p>
 
 {% assign all_pubs = site.data.pubs %}
 
 {%- comment -%}
 Filter by topic
 {%- endcomment -%}
-{% assign journal_pubs = all_pubs | where_exp: "p", "p.type == journal" %}
+{% assign journal_pubs = all_pubs | where_exp: "p", "p.type == 'journal'" %}
 
 {%- comment -%}
 Sort by journal name
