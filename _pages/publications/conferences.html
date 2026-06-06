@@ -47,8 +47,8 @@ classes: wide
   {% assign normal_pubs = conference_pubs | sort: "conference-year" | reverse %}
 
   {% for pub in normal_pubs %}
-    {% include pub_entry.html pub=pub pubnum=pubnum %}
     {% assign pubnum = pubnum | minus: 1 %}
+    {% include pub_entry.html pub=pub pubnum=pubnum %}
   {% endfor %}
 
 {% endfor %}
