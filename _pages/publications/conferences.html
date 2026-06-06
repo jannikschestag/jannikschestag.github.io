@@ -1,0 +1,54 @@
+---
+layout: single
+title: "Publications"
+permalink: /publications/conferences
+author_profile: true
+classes: wide
+---
+
+
+<link rel="stylesheet" href="{{ '/assets/css/custom-pages.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/topicButtons.css' | relative_url }}">
+<script src="{{ '/assets/js/custom-pages.js' | relative_url }}"></script>
+<script
+  type="text/javascript"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+
+
+<p>Below you can find my publications sorted by conferences, with links and toggleable abstracts.
+<br>Also journal publications are listed that beforehand were published at a certain conference.</p>
+
+{% assign all_pubs = site.data.pubs %}
+
+{%- comment -%}
+Filter by topic
+{%- endcomment -%}
+{% assign conference_pubs = all_pubs | where_exp: "p", "p.conference" %}
+
+{%- comment -%}
+Sort by conference name
+{%- endcomment -%}
+{% assign normal_pubs = conference_pubs | sort: "conference" %}
+
+{%- comment -%}
+Group by pub.conference, assign reverse numbering
+{%- endcomment -%}
+{% assign total = normal_pubs | size %}
+{% assign current_conference = "" %}
+
+{% for pub in normal_pubs %}
+  {% assign pubnum = total | minus: forloop.index0 %}
+
+  {% if pub.conference != current_conference %}
+    <div class="year-label"><span>{{ pub.conference }}</span></div>
+    {% assign current_conference = pub.conference %}
+  {% endif %}
+
+  {% include pub_entry.html pub=pub pubnum=pubnum %}
+  
+{% endfor %}
+
