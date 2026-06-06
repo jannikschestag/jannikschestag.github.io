@@ -1,0 +1,116 @@
+- name: Foundations of Computer Science
+  abbr: FOCS
+  core: A*
+
+- name: ACM Symposium on Theory of Computing
+  abbr: STOC
+  core: A*
+
+- name: ACM-SIAM Symposium on Discrete Algorithms
+  abbr: SODA
+  core: A*
+
+- name: Symposium on Simplicity in Algorithms
+  abbr: SOSA
+  core: B
+
+- name: International Colloquium on Automata, Languages and Programming
+  abbr: ICALP
+  core: A*
+
+- name: Innovations in Theoretical Computer Science
+  abbr: ITCS
+  core: A*
+
+- name: International Conference on Learning Representations
+  abbr: ICLR
+  core: A
+
+- name: Conference on Neural Information Processing Systems
+  abbr: NeurIPS
+  core: A
+
+- name: AAAI Conference on Artificial Intelligence
+  abbr: AAAI
+  core: A
+
+- name: International Joint Conference on Artificial Intelligence
+  abbr: IJCAI
+  core: A
+
+- name: European Symposium on Algorithms
+  abbr: ESA
+  core: A
+
+- name: Symposium on Theoretical Aspects of Computer Science
+  abbr: STACS
+  core: A
+
+- name: International Symposium on Parameterized and Exact Computation
+  abbr: IPEC
+  core: A
+
+- name: International Conference on Research in Computational Molecular Biology
+  abbr: RECOMB
+  core: A
+
+- name: Mathematical Foundations of Computer Science
+  abbr: MFCS
+  core: A
+
+- name: International Symposium on Algorithms and Computation
+  abbr: ISAAC
+  core: A
+
+- name: International Workshop on Algorithms in Bioinformatics
+  abbr: WABI
+  core: A
+
+- name: International Symposium on Fundamentals of Computation Theory
+  abbr: FSTTCS
+  core: A
+
+- name: Scandinavian Symposium and Workshops on Algorithm Theory
+  abbr: SWAT
+  core: A
+
+- name: Workshop on Algorithms and Data Structures
+  abbr: WADS
+  core: A
+
+- name: Latin American Theoretical Informatics Symposium
+  abbr: LATIN
+  core: A
+
+- name: International Workshop on Graph-Theoretic Concepts in Computer Science
+  abbr: WG
+  core: A
+
+- name: International Workshop on Combinatorial Algorithms
+  abbr: IWOCA
+  core: B
+
+- name: International Conference on Current Trends in Theory and Practice of Computer Science
+  abbr: SOFSEM
+  core: B
+
+- name: International Conference on Algorithmic Decision Theory
+  abbr: ADT
+  core: B
+
+- name: RECOMB International Workshop on Comparative Genomics
+  abbr: RECOMB-CG
+  core: B
+
+- name: International Conference and Workshops on Algorithms and Computation
+  abbr: WALCOM
+  core: B
+
+- name: Conference on Computability in Europe
+  abbr: CiE
+  core: B
+
+- name: Combinatorial Testing Workshop
+  abbr: CTW
+  core: B
+
