@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Dr. Jannik Schestag
-#subtitle: nielsholtgrefe.nl
+title: Jannik Schestag
+subtitle: www.JannikSchestag.eu
 email: j.t.schestag@tudelft.nl
 description: >- # this means to ignore newlines until "baseurl:"
   Personal homepage of Jannik Schestag, Postdoctoral Researcher at TU Delft, working on fixed-parameter tractability and phylogenetics
@@ -58,7 +58,7 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Jannik Schestag"
+  name   : "Dr. Jannik Schestag"
   avatar : "/assets/images/bio_pic.jpg"
   bio    : "Postdoctoral Researcher at TU Delft, working on fixed-parameter tractability and phylogenetics."
   links: &social_links
@@ -74,12 +74,9 @@ author:
     - label: "ORCID"
       icon: "fab fa-fw fa-orcid"
       url: "https://orcid.org/0000-0001-7767-2970"
-#    - label: "LinkedIn"
-#      icon: "fab fa-fw fa-linkedin"
-#      url: "https://www.linkedin.com/in/niels-holtgrefe/"
-#    - label: "GitHub"
-#      icon: "fab fa-fw fa-github"
-#      url: "https://github.com/nholtgrefe"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jannik-schestag-762896414/"
     - label: "TU Delft"
       icon: "fas fa-fw fa-university"
       url: "https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/applied-mathematics/people/dr-jt-theo-schestag"
@@ -98,12 +95,9 @@ footer:
     - label: "ORCID"
       icon: "fab fa-fw fa-orcid"
       url: "https://orcid.org/0000-0001-7767-2970"
-#    - label: "LinkedIn"
-#      icon: "fab fa-fw fa-linkedin"
-#      url: "https://www.linkedin.com/in/niels-holtgrefe/"
-#    - label: "GitHub"
-#      icon: "fab fa-fw fa-github"
-#      url: "https://github.com/nholtgrefe"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jannik-schestag-762896414/"
     - label: "TU Delft"
       icon: "fas fa-fw fa-university"
       url: "https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/applied-mathematics/people/dr-jt-theo-schestag"
