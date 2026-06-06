@@ -12,6 +12,8 @@
   issue: null
   pages: null
   note: null
+  conference: null
+  conference-year: null
   doi-identifier: null
   doi-url: null
   preprint-server: arXiv
@@ -55,6 +57,8 @@
   issue: null
   pages: null
   note: null
+  conference: LATIN
+  conference-year: 2026
   doi-identifier: null
   doi-url: null
   preprint-server: arXiv
@@ -100,6 +104,8 @@
   issue: null
   pages: null
   note: null
+  conference: RECOMB
+  conference-year: 2026
   doi-identifier: 10.1101/2025.11.14.688467
   doi-url: https://www.biorxiv.org/content/10.1101/2025.11.14.688467
   preprint-server: bioRxiv
@@ -136,8 +142,10 @@
   journal: Proceedings of the 18th International Symposium on Parameterized and Exact Computation (IPEC 2023)
   volume: null
   issue: null
-  pages: 30:1--30:12
+  pages: 30:1-30:12
   note: null
+  conference: IPEC
+  conference-year: 2023
   doi-identifier: 10.4230/LIPIcs.IPEC.2023.30
   doi-url: https://doi.org/10.4230/LIPIcs.IPEC.2023.30
   preprint-server: null
@@ -183,6 +191,8 @@
   issue: null
   pages: 14:1--14:21
   note: null
+  conference: WABI
+  conference-year: 2025
   doi-identifier: 10.4230/LIPIcs.WABI.2025.15
   doi-url: https://doi.org/10.4230/LIPIcs.WABI.2025.15
   preprint-server: HAL
@@ -227,6 +237,8 @@
   issue: null
   pages: null
   note: null
+  conference: null
+  conference-year: null
   doi-identifier: null
   doi-url: null
   preprint-server: arXiv
@@ -269,8 +281,10 @@
   journal: Proceedings of the 22nd RECOMB International Workshop on Comparative Genomics (RECOMB-CG 2025)
   volume: null
   issue: null
-  pages: 107--130
+  pages: 107-130
   note: null
+  conference: RECOMB-CG
+  conference-year: 2023
   doi-identifier: 10.1007/978-3-031-94928-9_7
   doi-url: https://doi.org/10.1007/978-3-031-94928-9_7
   preprint-server: arXiv
@@ -306,8 +320,10 @@
   journal: Proceedings of the 20th International Symposium on Parameterized and Exact Computation (IPEC 2025)
   volume: null
   issue: null
-  pages: 11:1--11:21
+  pages: 11:1-11:21
   note: null
+  conference: IPEC
+  conference-year: 2025
   doi-identifier: 10.4230/LIPIcs.IPEC.2025.11
   doi-url: https://doi.org/10.4230/LIPIcs.IPEC.2025.11
   preprint-server: arXiv
@@ -345,8 +361,10 @@
   journal: Proceedings of the 44th IARCS Annual Conference on Foundations of Software Technology and Theoretical Computer Science (FSTTCS 2024)
   volume: null
   issue: null
-  pages: 28:1--28:18
+  pages: 28:1-28:18
   note: null
+  conference: FSTTCS
+  conference-year: 2024
   doi-identifier: 10.4230/LIPIcs.FSTTCS.2024.28
   doi-url: https://doi.org/10.4230/LIPIcs.FSTTCS.2024.28
   preprint-server: arXiv
@@ -380,8 +398,10 @@
   journal: Proceedings of the 51st International Conference on Current Trends in Theory and Practice of Computer Science (SOFSEM 2026)
   volume: null
   issue: null
-  pages: 187--202
+  pages: 187-202
   note: null
+  conference: SOFSEM
+  conference-year: 2026
   doi-identifier: 10.1007/978-3-032-17801-5_14
   doi-url: https://doi.org/10.1007/978-3-032-17801-5_14
   preprint-server: arXiv
@@ -419,6 +439,8 @@
   issue: null
   pages: null
   note: null
+  conference: null
+  conference-year: null
   doi-identifier: null
   doi-url: null
   preprint-server: arXiv
@@ -454,8 +476,10 @@
   journal: Discrete Applied Mathematics
   volume: 382
   issue: null
-  pages: 137--154
+  pages: 137-154
   note: null
+  conference: CTW
+  conference-year: 2023
   doi-identifier: 10.1016/j.dam.2025.11.037
   doi-url: https://doi.org/10.1016/j.dam.2025.11.037
   preprint-server: arXiv
@@ -493,6 +517,8 @@
   issue: null
   pages: null
   note: null
+  conference: null
+  conference-year: null
   doi-identifier: null
   doi-url: null
   preprint-server: arXiv
@@ -533,8 +559,10 @@
   journal: Journal of Graph Algorithms and Applications
   volume: 28
   issue: 1
-  pages: 1--26
+  pages: 1-26
   note: null
+  conference: IWOCA
+  conference-year: 2022
   doi-identifier: 10.7155/jgaa.v28i1.2922
   doi-url: https://doi.org/10.7155/jgaa.v28i1.2922
   preprint-server: null
@@ -573,8 +601,10 @@
   journal: Proceedings of the 34th Annual Symposium on Combinatorial Pattern Matching (CPM 2023)
   volume: null
   issue: null
-  pages: 18:1--18:18
+  pages: 18:1-18:18
   note: null
+  conference: CPM
+  conference-year: 2023
   doi-identifier: 10.4230/LIPIcs.CPM.2023.18
   doi-url: https://doi.org/10.4230/LIPIcs.CPM.2023.18
   preprint-server: null
@@ -613,6 +643,8 @@
   issue: null
   pages: 4:1--4:12
   note: null
+  conference: IPEC
+  conference-year: 2023
   doi-identifier: 10.4230/LIPIcs.IPEC.2023.4
   doi-url: https://doi.org/10.4230/LIPIcs.IPEC.2023.4
   preprint-server: arXiv
@@ -652,6 +684,8 @@
   issue: null
   pages: 19:1--19:14
   note: null
+  conference: IPEC
+  conference-year: 2023
   doi-identifier: 10.4230/LIPIcs.IPEC.2023.19
   doi-url: https://doi.org/10.4230/LIPIcs.IPEC.2023.19
   preprint-server: TU Delft
@@ -693,6 +727,8 @@
   issue: null
   pages: 82--97
   note: null
+  conference: ADT
+  conference-year: 2024
   doi-identifier: 10.1007/978-3-031-73903-3_6
   doi-url: https://doi.org/10.1007/978-3-031-73903-3_6
   preprint-server: null
@@ -732,6 +768,8 @@
   issue: null
   pages: null
   note: null
+  conference: CiE
+  conference-year: 2019
   doi-identifier: 10.46298/dmtcs.6108
   doi-url: https://doi.org/10.46298/dmtcs.6108
   preprint-server: arXiv
