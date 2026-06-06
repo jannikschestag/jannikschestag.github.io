@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Co-authors
-permalink: /coauthors/
+permalink: /coauthors/Orientations
 author_profile: true
 classes: wide
 ---
@@ -13,8 +13,8 @@ tr:hover {
 }
 </style>
 
-<p>Collaborators I have co-authored work with, sorted by number of joint publications.
-<br />This list shows all my collaborations. By clicking on a button, you can filter by topics.</p>
+<p>Collaborators I have co-authored work with, sorted by number of joint publications on Orienting into Phylogenetic Networks.
+<br />By clicking on a button, you can filter by topics.</p>
 
 
 <a href="/coauthors/FPT" class="topic-button">FPT</a>
@@ -32,7 +32,9 @@ tr:hover {
 {%- comment -%}
 <!-- Collect and normalize all co-authors from publications, skipping yourself -->
 {%- endcomment -%}
-{% for pub in site.data.pubs %}
+{% assign all_pubs = site.data.pubs %}
+{% assign topic_pubs = all_pubs | where_exp: "p", "p.topics contains 'Orientation'" %}
+{% for pub in topic_pubs %}
   {% for a in pub.authors %}
     {% assign name = a.first %}
     {% if a.middle %}
@@ -49,22 +51,6 @@ tr:hover {
       {% assign raw = raw | append: name | append: "--" %}
     {% endunless %}
   {% endfor %}
-{% endfor %}
-
-{%- comment -%}
-<!-- Collect and normalize all co-authors from coauthors, skipping yourself -->
-{%- endcomment -%}
-{% for c in site.data.coauthors %}
-  {% assign a = c.name[0] %}
-  {% assign name = a.first %}
-  {% if a.tussenvoegsel %}
-    {% assign name = name | append: " " | append: a.tussenvoegsel %}
-  {% endif %}
-  {% assign name = a.last | append: "||" | append: name | append: " " | append: a.last %}
-  
-  {% unless name == "Schestag||Jannik Schestag" %}
-    {% assign raw = raw | append: name | append: "--" %}
-  {% endunless %}
 {% endfor %}
 
 {%- comment -%}
@@ -108,7 +94,7 @@ tr:hover {
     {% for entry in sorted %}
       {% unless entry == "" %}
         {% assign parts = entry | split: "||" %}
-        {% assign count = 998 | minus: parts[0] | plus: 0 %}
+        {% assign count = 999 | minus: parts[0] | plus: 0 %}
         {% assign fullname = parts[2] %}
 
         {% assign coauthor = nil %}
