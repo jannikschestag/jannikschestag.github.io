@@ -27,8 +27,12 @@ classes: wide
 {% assign conferences = conferences | where_exp: "p", "p.conference" %}
 {% assign pubnum = conferences | size %}
 
+{{ pubnum }}
+
 {% assign conferences = site.data.conferences %}
+{{ conferences }}
 {% for conf in conferences %}
+  {{ conf }}
   {% assign all_pubs = site.data.pubs %}
 
   {%- comment -%}
