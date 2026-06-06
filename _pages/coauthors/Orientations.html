@@ -86,7 +86,6 @@ tr:hover {
     <tr>
       <th>Joint papers</th>
       <th>Name</th>
-      <th>Ongoing research</th>
       <th>Affiliation</th>
     </tr>
   </thead>
@@ -125,12 +124,6 @@ tr:hover {
               <a href="{{ coauthor.link }}" target="_blank" rel="noopener noreferrer">
                 {{ fullname }}
               </a>
-            {% endif %}
-          </td>
-
-          <td>
-            {% if coauthor.collaboration %}
-              &#10004;
             {% endif %}
           </td>
 
