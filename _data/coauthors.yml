@@ -239,5 +239,15 @@
       country: Singapore
   collaboration: yes
 
+- name:
+    - first: Bertrand
+      last: Marchand
+  link: https://bmarchand.github.io/
+  affiliation:
+    - name: Université du Québec
+      city: Montreal
+      country: Canada
+  collaboration: yes
+
 
 
