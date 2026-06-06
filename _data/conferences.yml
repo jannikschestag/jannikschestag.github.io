@@ -42,16 +42,16 @@
   abbr: ESA
   core: A
 
+- name: International Conference on Research in Computational Molecular Biology
+  abbr: RECOMB
+  core: A
+
 - name: Symposium on Theoretical Aspects of Computer Science
   abbr: STACS
   core: A
 
 - name: International Symposium on Parameterized and Exact Computation
   abbr: IPEC
-  core: A
-
-- name: International Conference on Research in Computational Molecular Biology
-  abbr: RECOMB
   core: A
 
 - name: Mathematical Foundations of Computer Science
@@ -64,10 +64,6 @@
 
 - name: International Workshop on Algorithms in Bioinformatics
   abbr: WABI
-  core: A
-
-- name: International Symposium on Fundamentals of Computation Theory
-  abbr: FSTTCS
   core: A
 
 - name: Scandinavian Symposium and Workshops on Algorithm Theory
@@ -84,6 +80,10 @@
 
 - name: International Workshop on Graph-Theoretic Concepts in Computer Science
   abbr: WG
+  core: A
+
+- name: International Symposium on Fundamentals of Computation Theory
+  abbr: FSTTCS
   core: A
 
 - name: International Workshop on Combinatorial Algorithms
