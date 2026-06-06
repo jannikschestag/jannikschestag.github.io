@@ -230,6 +230,16 @@
   collaboration: yes
 
 - name:
+    - first: Laurent
+      last: Bulteau
+  link: http://igm.univ-mlv.fr/~bulteau/
+  affiliation:
+    - name: CNRS
+      city: Paris
+      country: France
+  collaboration: yes
+
+- name:
     - first: Louxin
       last: Zhang
   link: https://discovery.nus.edu.sg/822-louxin-zhang
