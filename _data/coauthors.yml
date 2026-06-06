@@ -33,8 +33,8 @@
       last: Weller
   link: http://igm.univ-mlv.fr/~mweller/
   affiliation:
-    - name: Université Gustave Eiffel
-      city: Paris
+    - name: CNRS
+      city: Bordeaux
       country: France
   collaboration: yes
 
@@ -228,4 +228,16 @@
       city: Delft
       country: The Netherlands
   collaboration: yes
+
+- name:
+    - first: Louxin
+      last: Zhang
+  link: https://discovery.nus.edu.sg/822-louxin-zhang
+  affiliation:
+    - name: National University
+      city: Singapore
+      country: Singapore
+  collaboration: yes
+
+
 
