@@ -1,4 +1,4 @@
-- name: Foundations of Computer Science
+- name: IEEE Symposium on Foundations of Computer Science (FOCS)
   abbr: FOCS
   core: A*
 
@@ -10,7 +10,7 @@
   abbr: SODA
   core: A*
 
-- name: Symposium on Simplicity in Algorithms
+- name: SIAM Symposium on Simplicity in Algorithms
   abbr: SOSA
   core: B
 
@@ -82,7 +82,7 @@
   abbr: WG
   core: A
 
-- name: International Symposium on Fundamentals of Computation Theory
+- name: IARCS Annual Conference on Foundations of Software Technology and Theoretical Computer Science
   abbr: FSTTCS
   core: A
 
@@ -114,7 +114,7 @@
   abbr: CiE
   core: B
 
-- name: Combinatorial Testing Workshop
+- name: Cologne Twente Workshop on Graphs and Combinatorial Optimization
   abbr: CTW
   core: B
 
