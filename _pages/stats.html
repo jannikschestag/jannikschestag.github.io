@@ -22,31 +22,30 @@ classes: wide
 <canvas id="pubsPerYear"></canvas>
 Publications per year
 
+{% assign years = "2021,2022,2023,2024,2025,2026" | split: "," %}
+
 <script>
 new Chart(document.getElementById('pubsPerYear'), {
   type: 'bar',
   data: {
-    labels: [2021,2022,2023,2024,2025,2026],
+    labels: [
+      {% for year in years %}
+        "{{ year }}"{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ],
     datasets: [{
       label: 'Publications',
       data: [
-
-{% assign years = "2021,2022,2023,2024,2025,2026" | split: "," %}
-
-{% for year in years %}
-  {% assign yearcount = 0 %}
-  {% for pub in site.data.pubs %}
-    {% assign pubyear = pub.release-date | slice: 0, 4 %}
-    (% if pubyear == year %)
-      {% assign yearcount = yearcount | plus: 1 %}
-    (% endif %)
-  {% endfor %}
-  {{ yearcount }}
-  {% unless forloop.last %}
-    ,
-  {% endunless %}
-{% endfor %}
-
+        {% for year in years %}
+          {% assign yearcount = 0 %}
+          {% for pub in site.data.pubs %}
+            {% assign pubyear = pub.release-date | slice: 0, 4 %}
+            {% if pubyear == year %}
+              {% assign yearcount = yearcount | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          {{ yearcount }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
       ]
     }]
   }
