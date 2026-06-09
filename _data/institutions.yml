@@ -38,7 +38,7 @@
   city: Lemgo
   country: Germany
   point: 52.01729942625376, 8.902021412659472
-  code: Fraunhofer Institutemg
+  code: Fraunhofer InstitutLemgo
 
 - name: University of Auckland
   city: Auckland
@@ -50,7 +50,7 @@
   city: Berlin
   country: Germany
   point: 52.512917573250256, 13.320129483175489
-  code: TU Berin
+  code: TU Berlin
 
 - name: Université de Montréal
   city: Montreal
