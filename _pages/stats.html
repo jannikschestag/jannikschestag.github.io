@@ -17,13 +17,24 @@ classes: wide
 
 
 
+<link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <div id="map" style="height:500px;"></div>
+
+<canvas id="pubsPerYear"></canvas>
 
 <script>
 var map = L.map('map').setView([52.09, 5.12], 4);
 
 L.tileLayer(
-  'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+  'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+  {
+    attribution: '&copy; OpenStreetMap contributors'
+  }
 ).addTo(map);
 
 L.marker([51.9244,4.4777]).addTo(map)
@@ -31,11 +42,7 @@ L.marker([51.9244,4.4777]).addTo(map)
 
 L.marker([50.7374,7.0982]).addTo(map)
  .bindPopup("University of Bonn");
-</script>
 
-<canvas id="pubsPerYear"></canvas>
-
-<script>
 new Chart(document.getElementById('pubsPerYear'), {
   type: 'bar',
   data: {
