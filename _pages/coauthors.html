@@ -11,6 +11,9 @@ classes: wide
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
+
+<div id="map" style="height:500px;"></div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 var map = L.map('map').setView([52.09, 5.12], 4);
@@ -186,5 +189,3 @@ L.marker([{{ inst.point }}]).addTo(map)
     {% endfor %}
   </tbody>
 </table>
-
-<div id="map" style="height:500px;"></div>
