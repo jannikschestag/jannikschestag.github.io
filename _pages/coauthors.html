@@ -149,8 +149,12 @@ tr:hover {
           </td>
 
           <td>
-            {% unless coauthor.affiliation[0].name == nil %}
-              {{ coauthor.affiliation[0].name }}, {{ coauthor.affiliation[0].city }}, {{ coauthor.affiliation[0].country }}
+            {% unless coauthor.affiliation == nil %}
+              {% for inst in site.data.institutions %}
+                {% if coauthor.affiliation == inst.code %}
+                  {{ inst.name }}, {{ inst.city }}, {{ inst.country }}
+                {% endif %}
+              {% endfor %}
             {% endunless %}
           </td>
         </tr>

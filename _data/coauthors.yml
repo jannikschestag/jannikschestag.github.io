@@ -2,41 +2,28 @@
     - first: Niels
       last: Holtgrefe
   link: https://www.nielsholtgrefe.nl/
-  affiliation:
-    - name: TU Delft
-      city: Delft
-      country: The Netherlands
-      point: 51.99804978338791, 4.374143143546663
+  affiliation: TU Delft
   collaboration: yes
 
 - name:
     - first: Mark
       last: Jones
   link: https://www.mdx.ac.uk/about-us/our-people/staff-directory/dr-mark-jones/
-  affiliation:
-    - name: Middlesex University
-      city: London
-      country: United Kingdom
+  affiliation: Middlesex University
   collaboration: no
 
 - name:
     - first: Christian
       last: Komusiewicz
   link: https://www.fmi.uni-jena.de/en/6050/prof-dr-christian-komusiewicz
-  affiliation:
-    - name: Friedrich Schiller Universität
-      city: Jena
-      country: Germany
+  affiliation: Friedrich Schiller Universität
   collaboration: no
 
 - name:
     - first: Mathias
       last: Weller
   link: http://igm.univ-mlv.fr/~mweller/
-  affiliation:
-    - name: CNRS
-      city: Bordeaux
-      country: France
+  affiliation: CNRSBordeaux
   collaboration: yes
 
 - name:
@@ -44,220 +31,154 @@
       tussenvoegsel: van
       last: Iersel
   link: https://leovaniersel.wordpress.com/
-  affiliation:
-    - name: TU Delft
-      city: Delft
-      country: The Netherlands
+  affiliation: TU Delft
   collaboration: yes
 
 - name:
     - first: Frank
       last: Sommer
   link: https://www.ac.tuwien.ac.at/people/fsommer/
-  affiliation:
-    - name: Friedrich Schiller Universität
-      city: Jena
-      country: Germany
+  affiliation: Friedrich Schiller Universität
   collaboration: yes
 
 - name:
     - first: Celine
       last: Scornavacca
   link: https://sites.google.com/view/celinescornavacca
-  affiliation:
-    - name: Université Montpellier
-      city: Montpellier
-      country: France
+  affiliation: Université Montpellier
   collaboration: yes
 
 - name:
     - first: Norbert
       last: Zeh
   link: https://web.cs.dal.ca/~nzeh/
-  affiliation:
-    - name: Dalhousie University
-      city: Halifax
-      country: Canada
+  affiliation: Dalhousie
   collaboration: yes
 
 - name:
     - first: Niels
       last: Grüttemeier
   link: https://www.smart-e-factory.de/?team=dr-niels-gruettemeier
-  affiliation:
-    - name: Fraunhofer Institut
-      city: Lemgo
-      country: Germany
+  affiliation: Fraunhofer InstitutLemgo
   collaboration: no
 
 - name:
     - first: Jaroslav
       last: Garvardt
   link: https://www.fmi.uni-jena.de/en/6039/jaroslav-garvardt
-  affiliation:
-    - name: Friedrich Schiller Universität
-      city: Jena
-      country: Germany
+  affiliation: Friedrich Schiller Universität
   collaboration: yes
 
 - name:
     - first: Yukihiro
       last: Murakami
   link: https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/applied-mathematics/people/dr-y-yuki-murakami
-  affiliation:
-    - name: TU Delft
-      city: Delft
-      country: The Netherlands
+  affiliation: TU Delft
   collaboration: yes
 
 - name:
     - first: Simone
       last: Linz
   link: https://simonelinz.wordpress.com/
-  affiliation:
-    - name: University of Auckland
-      city: Auckland
-      country: New Zealand
+  affiliation: University of Auckland
   collaboration: no
 
 - name:
     - first: Ruben
       last: Meuwese
   link: null
-  affiliation:
-    - name: null
-      city: null
-      country: null
+  affiliation: null
   collaboration: no
 
 - name:
     - first: Nils
       last: Morawietz
   link: https://www.fmi.uni-jena.de/en/6028/dr-nils-morawietz
-  affiliation:
-    - name: Friedrich Schiller Universität
-      city: Jena
-      country: Germany
+  affiliation: Friedrich Schiller Universität
   collaboration: no
 
 - name:
     - first: Matthias
       last: Bentert
   link: https://fpt.akt.tu-berlin.de/bentert/website.html
-  affiliation:
-    - name: TU Berlin
-      city: Berlin
-      country: Germany
+  affiliation: TU Berlin
   collaboration: yes
 
 - name:
     - first: Malte
       last: Renken
   link: null
-  affiliation:
-    - name: null
-      city: null
-      country: null
+  affiliation: null
   collaboration: no
 
 - name:
     - first: Ber
       last: Lorke
   link: null
-  affiliation:
-    - name: TU Berlin
-      city: Berlin
-      country: Germany
+  affiliation: TU Berlin
   collaboration: no
 
 - name:
     - first: Kaari
       last: Landry
   link: https://kaarilandry.com/
-  affiliation:
-    - name: Université de Montréal
-      city: Montreal
-      country: Canada
+  affiliation: Université de Montréal
   collaboration: yes
 
 - name:
     - first: Nadia
       last: Tahiri
   link: https://tahirinadia.github.io/
-  affiliation:
-    - name: Université de Sherbrooke
-      city: Sherbrooke
-      country: Canada
+  affiliation: Université de Sherbrooke
   collaboration: yes
 
 - name:
     - first: Manuel
       last: Lafond
   link: https://manuellafond.com/
-  affiliation:
-    - name: Université de Sherbrooke
-      city: Sherbrooke
-      country: Canada
+  affiliation: Université de Sherbrooke
   collaboration: yes
 
 - name:
     - first: Eva
       last: Deltl
   link: https://deltl.de/eva/
-  affiliation:
-    - name: TU Clausthal
-      city: Clausthal
-      country: Germany
+  affiliation: TU Clausthal
   collaboration: yes
 
 - name:
     - first: Robert
       last: Bredereck
   link: https://robert.bredereck.online/
-  affiliation:
-    - name: TU Clausthal
-      city: Clausthal
-      country: Germany
+  affiliation: TU Clausthal
   collaboration: yes
 
 - name:
     - first: Carla
       last: Groenland
   link: https://sites.google.com/view/carlagroenland
-  affiliation:
-    - name: TU Delft
-      city: Delft
-      country: The Netherlands
+  affiliation: TU Delft
   collaboration: yes
 
 - name:
     - first: Laurent
       last: Bulteau
   link: http://igm.univ-mlv.fr/~bulteau/
-  affiliation:
-    - name: CNRS
-      city: Paris
-      country: France
+  affiliation: CNRSParis
   collaboration: yes
 
 - name:
     - first: Louxin
       last: Zhang
   link: https://discovery.nus.edu.sg/822-louxin-zhang
-  affiliation:
-    - name: National University
-      city: Singapore
-      country: Singapore
+  affiliation: NUS
   collaboration: yes
 
 - name:
     - first: Bertrand
       last: Marchand
   link: https://bmarchand.github.io/
-  affiliation:
-    - name: Université du Québec
-      city: Montreal
-      country: Canada
+  affiliation: UQAM
   collaboration: yes
 
 
