@@ -17,38 +17,37 @@ classes: wide
 
 
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<div id="map" style="height:500px;"></div>
-
 <canvas id="pubsPerYear"></canvas>
+Publications per year
 
 <script>
-var map = L.map('map').setView([52.09, 5.12], 4);
-
-L.tileLayer(
-  'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-  {
-    attribution: '&copy; OpenStreetMap contributors'
-  }
-).addTo(map);
-
-L.marker([51.9244,4.4777]).addTo(map)
- .bindPopup("TU Delft");
-
-L.marker([50.7374,7.0982]).addTo(map)
- .bindPopup("University of Bonn");
-
 new Chart(document.getElementById('pubsPerYear'), {
   type: 'bar',
   data: {
     labels: [2021,2022,2023,2024,2025,2026],
     datasets: [{
       label: 'Publications',
-      data: [1,2,4,5,7,6]
+      data: [
+
+{% assign years = "2021,2022,2023,2024,2025,2026" | split: "," %}
+
+{% for year in years %}
+  {% assign yearcount = 0 %}
+  {% for pub in site.data.pubs %}
+    {% assign pubyear = pub.release-date | slice: 0, 4 %}
+    (% if pubyear == year %)
+      {% assign yearcount = yearcount | plus: 1 %}
+    (% endif %)
+  {% endfor %}
+  {{ yearcount }}
+  {% unless forloop.last %}
+    ,
+  {% endunless %}
+{% endfor %}
+
+      ]
     }]
   }
 });
