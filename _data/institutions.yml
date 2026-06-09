@@ -1,0 +1,92 @@
+- name: TU Delft
+  city: Delft
+  country: The Netherlands
+  point: 51.99804978338791, 4.374143143546663
+  code: TU Delft
+
+- name: Middlesex University
+  city: London
+  country: United Kingdom
+  point: 51.58965781706254, -0.2293058880919917
+  code: Middlesex University
+
+- name: Friedrich Schiller Universität
+  city: Jena
+  country: Germany
+  point: 50.92939496164265, 11.590998240926012
+  code: Friedrich Schiller Universität
+
+- name: CNRS
+  city: Bordeaux
+  country: France
+  point: 44.82586652176699, -0.6057357279445988
+  code: CNRSBordeaux
+
+- name: Université Montpellier
+  city: Montpellier
+  country: France
+  point: 43.61564937699348, 3.872082538146859
+  code: Université Montpellier
+
+- name: Dalhousie University
+  city: Halifax
+  country: Canada
+  point: 44.638902125837255, -63.59080060455585
+  code: Dalhousie
+
+- name: Fraunhofer Institut
+  city: Lemgo
+  country: Germany
+  point: 52.01729942625376, 8.902021412659472
+  code: Fraunhofer Institutemg
+
+- name: University of Auckland
+  city: Auckland
+  country: New Zealand
+  point: -36.85199614082449, 174.76891601556886
+  code: University of Auckland
+
+- name: TU Berlin
+  city: Berlin
+  country: Germany
+  point: 52.512917573250256, 13.320129483175489
+  code: TU Berin
+
+- name: Université de Montréal
+  city: Montreal
+  country: Canada
+  point: 45.50098517510518, -73.61621877205305
+  code: Université de Montréal
+
+- name: Université de Sherbrooke
+  city: Sherbrooke
+  country: Canada
+  point: 45.38001054745566, -71.9267370781434
+  code: Université de Sherbrooke
+
+- name: TU Clausthal
+  city: Clausthal
+  country: Germany
+  point: 51.805856423296326, 10.356139373127457
+  code: TU Clausthal
+
+- name: CNRS
+  city: Paris
+  country: France
+  point: 48.839006266511575, 2.5867768955553174
+  code: CNRSParis
+
+- name: National University
+  city: Singapore
+  country: Singapore
+  point: 1.2975527625195598, 103.7766701420015
+  code: NUS
+
+- name: Université du Québec
+  city: Montreal
+  country: Canada
+  point: 45.51311705168155, -73.56031505987497
+  code: UQAM
+
+
+
