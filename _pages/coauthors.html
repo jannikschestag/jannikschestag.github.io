@@ -9,7 +9,7 @@ classes: wide
 
 
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="{{ '/assets/css/topicButtons.css' | relative_url }}">
 <style>
 tr:hover {
     background-color: #e8e8e8;
@@ -32,6 +32,8 @@ tr:hover {
 
 <div id="map" style="height:500px;"></div>
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 var map = L.map('map').setView([26.767, 33.616], 2);
@@ -43,8 +45,6 @@ L.tileLayer(
   }
 ).addTo(map);
 </script>
-
-<link rel="stylesheet" href="{{ '/assets/css/topicButtons.css' | relative_url }}">
 
 
 {% assign raw = "" %}
