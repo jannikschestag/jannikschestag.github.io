@@ -1,0 +1,49 @@
+---
+layout: single
+title: "Statistics"
+permalink: /stats/
+author_profile: true
+classes: wide
+---
+
+
+<link rel="stylesheet" href="{{ '/assets/css/custom-pages.css' | relative_url }}">
+<script src="{{ '/assets/js/custom-pages.js' | relative_url }}"></script>
+<script
+  type="text/javascript"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+
+<div id="map" style="height:500px;"></div>
+
+<script>
+var map = L.map('map').setView([52.09, 5.12], 4);
+
+L.tileLayer(
+  'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+).addTo(map);
+
+L.marker([51.9244,4.4777]).addTo(map)
+ .bindPopup("TU Delft");
+
+L.marker([50.7374,7.0982]).addTo(map)
+ .bindPopup("University of Bonn");
+</script>
+
+<canvas id="pubsPerYear"></canvas>
+
+<script>
+new Chart(document.getElementById('pubsPerYear'), {
+  type: 'bar',
+  data: {
+    labels: [2021,2022,2023,2024,2025,2026],
+    datasets: [{
+      label: 'Publications',
+      data: [1,2,4,5,7,6]
+    }]
+  }
+});
+</script>
