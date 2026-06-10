@@ -20,7 +20,7 @@ classes: wide
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <canvas id="pubsPerYear"></canvas>
-Publications per year
+Publications per year. Only the year of the most recent publication of a paper is counted.
 
 {% assign years = "2021,2022,2023,2024,2025,2026" | split: "," %}
 
@@ -34,7 +34,7 @@ new Chart(document.getElementById('pubsPerYear'), {
       {% endfor %}
     ],
     datasets: [{
-      label: 'Publications',
+      label: 'Last publications',
       data: [
         {% for year in years %}
           {% assign yearcount = 0 %}
@@ -47,7 +47,10 @@ new Chart(document.getElementById('pubsPerYear'), {
           {{ yearcount }}{% unless forloop.last %},{% endunless %}
         {% endfor %}
       ]
-    }]
+    },{
+      label: 'First publications',
+      data: [1,1,1,1,1,1]
+    },]
   }
 });
 </script>
