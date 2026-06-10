@@ -17,6 +17,11 @@ classes: wide
 
 
 
+
+
+
+<h1>Publiction Statistics</h1>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <canvas id="pubsPerYear"></canvas>
@@ -53,7 +58,7 @@ new Chart(document.getElementById('pubsPerYear'), {
         {% for year in years %}
           {% assign yearcount = 0 %}
           {% for pub in site.data.pubs %}
-            {% if pub.first-publication == year %}
+            {% if pub.first-publication | append: "" == year %}
               {% assign yearcount = yearcount | plus: 1 %}
             {% endif %}
           {% endfor %}
@@ -64,3 +69,168 @@ new Chart(document.getElementById('pubsPerYear'), {
   }
 });
 </script>
+
+<canvas id="pubsPerCountry"></canvas>
+Number of papers with co-authors of a given country.
+
+{% assign countries_raw = "" %}
+
+{% for inst in site.data.institutions %}
+  {% assign countries_raw = countries_raw | append: inst.country | append: "||" %}
+{% endfor %}
+
+{% assign countries = countries_raw | split: "||" | uniq | sort %}
+
+<script>
+new Chart(document.getElementById('pubsPerCountry'), {
+  type: 'bar',
+  data: {
+    labels: [
+      {% for country in countries %}
+        "{{ country }}"{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ],
+    datasets: [{
+      label: 'Papers',
+      data: [
+        {% for country in countries %}
+          {% assign countrycount = 0 %}
+
+          {% for pub in site.data.pubs %}
+            {% for aut in pub.authors %}
+
+              {% assign affiliation = nil %}
+
+              {% for c in site.data.coauthors %}
+                {% assign cname = c.name[0].first | append: " " | append: c.name[0].last %}
+                {% assign aname = aut.first | append: " " | append: aut.last %}
+
+                {% if cname == aname %}
+                  {% assign affiliation = c.affiliation %}
+                {% endif %}
+              {% endfor %}
+
+              {% if affiliation %}
+                {% for inst in site.data.institutions %}
+                  {% if inst.code == affiliation and inst.country == country %}
+                    {% assign countrycount = countrycount | plus: 1 %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+
+            {% endfor %}
+          {% endfor %}
+
+          {{ countrycount }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    },{
+      label: 'Unique Papers',
+      data: [
+        {% for country in countries %}
+          {% assign countrycount = 0 %}
+
+          {% for pub in site.data.pubs %}
+
+            {% assign has_country = false %}
+
+            {% for aut in pub.authors %}
+
+              {% assign affiliation = nil %}
+
+              {% for c in site.data.coauthors %}
+                {% assign cname = c.name[0].first | append: " " | append: c.name[0].last %}
+                {% assign aname = aut.first | append: " " | append: aut.last %}
+
+                {% if cname == aname %}
+                  {% assign affiliation = c.affiliation %}
+                {% endif %}
+              {% endfor %}
+
+              {% if affiliation %}
+                {% for inst in site.data.institutions %}
+                  {% if inst.code == affiliation and inst.country == country %}
+                    {% assign has_country = true %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+
+            {% endfor %}
+
+            {% if has_country %}
+              {% assign countrycount = countrycount | plus: 1 %}
+            {% endif %}
+
+          {% endfor %}
+
+          {{ countrycount }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    },]
+  }
+});
+</script>
+
+
+
+<h1>Collaboration Statistics</ h1>
+
+{% assign names = "" %}
+
+{% for c in site.data.pubs %}
+  {% for a in c.authors %}
+    {% assign names = names | append: a.first | append: " " | append: a.last | append: "||" %}
+  {% endfor %}
+{% endfor %}
+
+Number of unique coauthors: {{ names | split: "||" | uniq | size }}
+
+<br>
+
+Most common team in papers with 2 co-authors: [compute; return all if multiple; return also number of papers]
+
+<br>
+
+Most common team in papers with 3 co-authors: [compute]
+
+<br>
+
+Most common team in papers with 4 co-authors: [compute]
+
+<br>
+
+Most common team in papers with 5 co-authors: [compute]
+
+<br>
+
+<canvas id="pubsPerAuthorsize"></canvas>
+Number of papers with number certain numbers of co-authors.
+[Compute]
+
+
+
+
+
+<h1>Fun statistics</ h1>
+
+Three longest titles by characters: [compute; write titles]
+
+<br>
+
+Three shortest titles by characters: [compute; write titles]
+
+<br>
+
+Average title length by characters: [compute]
+
+<br>
+
+Average abstract length by characters: [compute]
+
+<br>
+
+Five most frequent words in Titles (ignoring common words such as: and, the, ...): [compute; return words with frquency]
+
+<br>
+
+Five most frequent first words in Titles (including common words such as: and, the, ...): [compute; return words with frquency]
