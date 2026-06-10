@@ -25,7 +25,7 @@ classes: wide
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <canvas id="pubsPerYear"></canvas>
-Publications per year. Only the year of the first (red) or most recent (blue) publication of a paper is counted.
+Publications per year. Only the year of the first (blue) or most recent (red) publication of a paper is counted.
 
 {% assign years = "2019,2020,2021,2022,2023,2024,2025,2026" | split: "," %}
 
@@ -39,20 +39,6 @@ new Chart(document.getElementById('pubsPerYear'), {
       {% endfor %}
     ],
     datasets: [{
-      label: 'Last publications',
-      data: [
-        {% for year in years %}
-          {% assign yearcount = 0 %}
-          {% for pub in site.data.pubs %}
-            {% assign pubyear = pub.release-date | slice: 0, 4 %}
-            {% if pubyear == year %}
-              {% assign yearcount = yearcount | plus: 1 %}
-            {% endif %}
-          {% endfor %}
-          {{ yearcount }}{% unless forloop.last %},{% endunless %}
-        {% endfor %}
-      ]
-    },{
       label: 'First publications',
       data: [
         {% for year in years %}
@@ -66,13 +52,27 @@ new Chart(document.getElementById('pubsPerYear'), {
           {{ yearcount }}{% unless forloop.last %},{% endunless %}
         {% endfor %}
       ]
+    },{
+      label: 'Last publications',
+      data: [
+        {% for year in years %}
+          {% assign yearcount = 0 %}
+          {% for pub in site.data.pubs %}
+            {% assign pubyear = pub.release-date | slice: 0, 4 %}
+            {% if pubyear == year %}
+              {% assign yearcount = yearcount | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          {{ yearcount }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
     },]
   }
 });
 </script>
 
 <canvas id="pubsPerCountry"></canvas>
-Number of papers with co-authors affiliated in a given country. In red, only the number of papers is counted. In blue, papers are counted several times if several co-authors are affiliated in that country.
+Number of papers with co-authors affiliated in a given country. In red, only the number of papers is counted. In blue, papers are counted several times if several co-authors are affiliated in that county.
 
 {% assign countries_raw = "" %}
 
@@ -184,7 +184,7 @@ new Chart(document.getElementById('pubsPerCountry'), {
   {% endfor %}
 {% endfor %}
 
-Number of unique coauthors: {{ names | split: "||" | uniq | size }}
+Number of unique coauthors: {{ names | split: "||" | uniq | size | minus: 1 }}
 
 <br>
 
