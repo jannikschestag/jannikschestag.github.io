@@ -45,17 +45,18 @@ Sort by release-date descending
 {% assign topic_pubs = topic_pubs | sort: "release-date" | reverse %}
 
 {%- comment -%}
-Group by pub.year, assign reverse numbering
+Group by pubyear, assign reverse numbering
 {%- endcomment -%}
 {% assign total = topic_pubs | size %}
 {% assign current_year = "" %}
 
-{% for pub in topic_pubs %}
+{% for pub in normal_pubs %}
   {% assign pubnum = total | minus: forloop.index0 %}
 
-  {% if pub.year != current_year %}
-    <div class="year-label"><span>{{ pub.year }}</span></div>
-    {% assign current_year = pub.year %}
+  {% assign pubyear = pub.release-date | slice: 0, 4 %}
+  {% if pubyear != current_year %}
+    <div class="year-label"><span>{{ pubyear }}</span></div>
+    {% assign current_year = pubyear %}
   {% endif %}
 
   {% include pub_entry.html pub=pub pubnum=pubnum %}

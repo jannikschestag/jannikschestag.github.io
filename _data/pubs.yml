@@ -1,11 +1,11 @@
 - title: Tractable Maximization of Budgeted Phylogenetic Diversity on Networks Utilizing Node Scanwidth
   release-date: 2026-05-22
+  first-publication: 2026
   authors:
     - first: Niels
       last: Holtgrefe
     - first: Jannik
       last: Schestag
-  year: 2026
   type: preprint
   journal: null
   volume: null
@@ -28,8 +28,11 @@
     - Implementation
   abstract: >
     Identifying a subset of taxa that maximizes Phylogenetic Diversity (PD) is a cornerstone of quantitative conservation planning. Traditionally, PD is defined over a phylogenetic tree in which leaves represent present-day taxa and branch lengths capture the estimated evolutionary distinctiveness. While PD maximization is computationally tractable on trees with unit costs, the problem becomes NP-hard when transitioning to phylogenetic networks or to budgeted versions in which protecting taxa incurs non-homogeneous costs.
+    <br />
     In this paper, we address these two challenges by providing definitions and a comprehensive analysis of three distinct variants of budgeted PD on networks. We conduct our study through the lens of a small structural parameter, node scanwidth (nsw), which measures the tree-likeness of a phylogenetic network. We show that two of the considered variants can be optimized in \(\mathcal{O}^*(2^{\mathsf{nsw}} \cdot B^2)\) time, where \(B\) is the budget. For the computationally harder, third variant, we provide an algorithm to compute PD scores in \(\mathcal{O}^*(3^{\mathsf{nsw}})\) time.
+    <br />
     We further contribute the first exact algorithms to compute node scanwidth, recognizing that the utility of algorithms based on nsw depends on the ability to compute nsw and its corresponding decomposition. Our approaches integrate data reduction rules, dynamic programming, and an Integer Linear Programming formulation.
+    <br />
     We validate our theoretical results through extensive experiments on highly reticulated, simulated networks containing several hundred taxa, using heterogeneous costs. Our implementation computes PD scores and optimal nsw in fractions of a second, even on the most challenging instances. Furthermore, our budgeted optimization algorithms significantly outperform existing benchmarks for computing PD on networks, which were previously limited to unit-cost scenarios. The software makes analyses even on networks with a thousand taxa tractable in practice.
   bibtex: >
     @article{holtgrefe2026tractable,
@@ -43,6 +46,7 @@
     
 - title: Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies
   release-date: 2026-02-13
+  first-publication: 2026
   authors:
     - first: Niels
       last: Holtgrefe
@@ -50,7 +54,6 @@
       last: Schestag
     - first: Norbert
       last: Zeh
-  year: 2026
   type: conference
   journal: Proceedings of the 17th Latin American Theoretical Informatics Symposium (LATIN 2026)
   volume: null
@@ -69,7 +72,8 @@
     - Phylogenetic Diversity
     - Food Webs
   abstract: >
-    In the <em>Maximize Phylogenetic Diversity</em> problem, we are given a phylogenetic tree that represents the genetic proximity of species, and we are asked to select a subset of species of maximum phylogenetic diversity to be preserved through conservation efforts, subject to budgetary constraints that allow only \( k \) species to be saved. This neglects that it is futile to preserve a predatory species if we do not also preserve at least a subset of the prey it feeds on. Thus, in the <em>Optimizing PD with Dependencies</em> (\( \varepsilon \)-PDD) problem, we are additionally given a food web that represents the predator–prey relationships between species. The goal is to save a set of \( k \) species of maximum phylogenetic diversity such that for every saved species, at least one of its prey is also saved. This problem is NP-hard even when the phylogenetic tree is a star.<br>
+    In the <em>Maximize Phylogenetic Diversity</em> problem, we are given a phylogenetic tree that represents the genetic proximity of species, and we are asked to select a subset of species of maximum phylogenetic diversity to be preserved through conservation efforts, subject to budgetary constraints that allow only \( k \) species to be saved. This neglects that it is futile to preserve a predatory species if we do not also preserve at least a subset of the prey it feeds on. Thus, in the <em>Optimizing PD with Dependencies</em> (\( \varepsilon \)-PDD) problem, we are additionally given a food web that represents the predator–prey relationships between species. The goal is to save a set of \( k \) species of maximum phylogenetic diversity such that for every saved species, at least one of its prey is also saved. This problem is NP-hard even when the phylogenetic tree is a star.
+    <br />
     The \( \alpha \)-PDD problem alters \( \varepsilon \)-PDD by requiring that at least some fraction \( \alpha \) of the prey of every saved species are also saved. In this paper, we study the parameterized complexity of \( \alpha \)-PDD. We prove that the problem is W[1]-hard and in XP when parameterized by the solution size \( k \), the diversity threshold \( D \), or their complements. When parameterized by the vertex cover number of the food web, \( \alpha \)-PDD is fixed-parameter tractable (FPT). A key measure of the computational difficulty of a problem that is FPT is the size of the smallest kernel that can be obtained. We prove that, when parameterized by the distance to clique, 1-PDD admits a linear kernel. Our main contribution is to prove that \( \alpha \)-PDD does not admit a polynomial kernel when parameterized by the vertex cover number plus the diversity threshold \( D \), even if the phylogenetic tree is a star. This implies the non-existence of a polynomial kernel for \( \alpha \)-PDD also when parameterized by a range of structural parameters of the food web, such as its distance to cluster, treewidth, pathwidth, feedback vertex set, and others.
   bibtex: >
     @inproceedings{holtgrefe2026limits,
@@ -82,6 +86,7 @@
     
 - title: "PaNDA: Efficient Optimization of Phylogenetic Diversity in Networks"
   release-date: 2025-11-17
+  first-publication: 2025
   authors:
     - first: Niels
       middle: null
@@ -95,7 +100,6 @@
       last: Murakami
     - first: Jannik
       last: Schestag
-  year: 2025
   type: preprint
   journal: null
   volume: null
@@ -130,12 +134,12 @@
     
 - title: How can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks
   release-date: 2023-09-01
+  first-publication: 2023
   authors:
     - first: Mark
       last: Jones
     - first: Jannik
       last: Schestag
-  year: 2023
   type: conference
   journal: Proceedings of the 18th International Symposium on Parameterized and Exact Computation (IPEC 2023)
   volume: null
@@ -156,6 +160,7 @@
     - Phylogenetic Networks
   abstract: >
     Phylogenetic Diversity (PD) is a measure of the overall biodiversity of a set of present-day species (taxa) within a phylogenetic tree. We consider an extension of PD to phylogenetic networks. Given a phylogenetic network with weighted edges and a subset \(S\) of leaves, the all-paths phylogenetic diversity of \(S\) is the summed weight of all edges on a path from the root to some leaf in \(S\). The problem of finding a bounded-size set \(S\) that maximizes this measure is polynomial-time solvable on trees, but NP-hard on networks. We study the latter from a parameterized perspective.
+    <br />
     While this problem is W[2]-hard with respect to the size of \(S\) (and W[1]-hard with respect to the size of the complement of \(S\)), we show that it is fixed-parameter tractable with respect to several other parameters, including the phylogenetic diversity of \(S\), the acceptable loss of phylogenetic diversity, the number of reticulations in the network, and the treewidth of the underlying graph.
   bibtex: >
     @inproceedings{jones2023maximize,
@@ -170,6 +175,7 @@
 
 - title: Average-Tree Phylogenetic Diversity of Networks
   release-date: 2025-08-01
+  first-publication: 2025
   authors:
   - first: Leo
     tussenvoegsel: van
@@ -182,7 +188,6 @@
     last: Scornavacca
   - first: Mathias
     last: Weller
-  year: 2025
   type: conference
   journal: Proceedings of the 25th International Workshop on Algorithms in Bioinformatics (WABI 2025)
   volume: null
@@ -216,6 +221,7 @@
 
 - title: Average-Tree Phylogenetic Diversity Parameterized by Scanwidth and Invisibility
   release-date: 2026-01-01
+  first-publication: 2026
   authors:
   - first: Leo
     tussenvoegsel: van
@@ -228,7 +234,6 @@
     last: Scornavacca
   - first: Mathias
     last: Weller
-  year: 2026
   type: preprint
   journal: null
   volume: null
@@ -262,6 +267,7 @@
 
 - title: Phylogenetic Network Diversity Parameterized by Reticulation Number and Beyond
   release-date: 2025-04-01
+  first-publication: 2025
   authors:
   - first: Leo
     tussenvoegsel: van
@@ -274,7 +280,6 @@
     last: Scornavacca
   - first: Mathias
     last: Weller
-  year: 2025
   type: conference
   journal: Proceedings of the 22nd RECOMB International Workshop on Comparative Genomics (RECOMB-CG 2025)
   volume: null
@@ -308,12 +313,12 @@
 
 - title: Parameterized Algorithms for Diversity of Networks with Ecological Dependencies
   release-date: 2025-09-01
+  first-publication: 2025
   authors:
   - first: Mark
     last: Jones
   - first: Jannik
     last: Schestag
-  year: 2025
   type: conference
   journal: Proceedings of the 20th International Symposium on Parameterized and Exact Computation (IPEC 2025)
   volume: null
@@ -349,12 +354,12 @@
 
 - title: "Maximizing Phylogenetic Diversity under Ecological Constraints: A Parameterized Complexity Study"
   release-date: 2024-12-01
+  first-publication: 2024
   authors:
   - first: Christian
     last: Komusiewicz
   - first: Jannik
     last: Schestag
-  year: 2024
   type: conference
   journal: Proceedings of the 44th IARCS Annual Conference on Foundations of Software Technology and Theoretical Computer Science (FSTTCS 2024)
   volume: null
@@ -388,10 +393,10 @@
 
 - title: Weighted Food Webs Make Computing Phylogenetic Diversity So Much Harder
   release-date: 2026-02-02
+  first-publication: 2025
   authors:
   - first: Jannik
     last: Schestag
-  year: 2026
   type: conference
   journal: Proceedings of the 51st International Conference on Current Trends in Theory and Practice of Computer Science (SOFSEM 2026)
   volume: null
@@ -425,12 +430,12 @@
 
 - title: The First Known Problem That Is FPT with Respect to Node Scanwidth but Not Treewidth
   release-date: 2026-02-01
+  first-publication: 2026
   authors:
   - first: Jannik
     last: Schestag
   - first: Norbert
     last: Zeh
-  year: 2026
   type: preprint
   journal: null
   volume: null
@@ -464,12 +469,12 @@
 
 - title: A Multivariate Complexity Analysis of the Generalized Noah's Ark Problem
   release-date: 2025-11-01
+  first-publication: 2023
   authors:
   - first: Christian
     last: Komusiewicz
   - first: Jannik
     last: Schestag
-  year: 2025
   type: journal
   journal: Discrete Applied Mathematics
   volume: 382
@@ -503,12 +508,12 @@
 
 - title: "Maximizing Phylogenetic Diversity under Time Pressure: Planning with Extinctions Ahead"
   release-date: 2024-03-01
+  first-publication: 2024
   authors:
   - first: Mark
     last: Jones
   - first: Jannik
     last: Schestag
-  year: 2024
   type: preprint
   journal: null
   volume: null
@@ -541,6 +546,7 @@
 
 - title: On Critical Node Problems with Vulnerable Vertices
   release-date: 2024-01-01
+  first-publication: 2022
   authors:
   - first: Jannik
     last: Schestag
@@ -552,7 +558,6 @@
     last: Schestag
   - first: Frank
     last: Sommer
-  year: 2024
   type: journal
   journal: Journal of Graph Algorithms and Applications
   volume: 28
@@ -585,6 +590,7 @@
 
 - title: On the Complexity of Parameterized Local Search for the Maximum Parsimony Problem
   release-date: 2023-06-01
+  first-publication: 2023
   authors:
     - first: Christian
       last: Komusiewicz
@@ -594,7 +600,6 @@
       last: Morawietz
     - first: Jannik
       last: Schestag
-  year: 2023
   type: conference
   journal: Proceedings of the 34th Annual Symposium on Combinatorial Pattern Matching (CPM 2023)
   volume: null
@@ -627,6 +632,7 @@
 
 - title: On the Complexity of Finding a Sparse Connected Spanning Subgraph in a Non-Uniform Failure Model
   release-date: 2023-09-01
+  first-publication: 2023
   authors:
     - first: Matthias
       last: Bentert
@@ -634,7 +640,6 @@
       last: Schestag
     - first: Frank
       last: Sommer
-  year: 2023
   type: conference
   journal: Proceedings of the 18th International Symposium on Parameterized and Exact Computation (IPEC 2023)
   volume: null
@@ -666,6 +671,7 @@
 
 - title: Finding Degree-Constrained Acyclic Orientations
   release-date: 2023-09-01
+  first-publication: 2023
   authors:
     - first: Jaroslav
       last: Garvardt
@@ -675,7 +681,6 @@
       last: Schestag
     - first: Mathias
       last: Weller
-  year: 2023
   type: conference
   journal: Proceedings of the 18th International Symposium on Parameterized and Exact Computation (IPEC 2023)
   volume: null
@@ -709,6 +714,7 @@
 
 - title: "Protective and Nonprotective Subset Sum Games: A Parameterized Complexity Analysis"
   release-date: 2024-10-01
+  first-publication: 2024
   authors:
     - first: Jaroslav
       last: Garvardt
@@ -718,7 +724,6 @@
       last: Lorke
     - first: Jannik
       last: Schestag
-  year: 2024
   type: conference
   journal: Proceedings of the 8th International Conference on Algorithmic Decision Theory (ADT 2024)
   volume: null
@@ -750,6 +755,7 @@
 
 - title: Destroying Bicolored \(P_3\)s by Deleting Few Edges
   release-date: 2021-10-01
+  first-publication: 2019
   authors:
     - first: Niels
       last: Grüttemeier
@@ -759,7 +765,6 @@
       last: Schestag
     - first: Frank
       last: Sommer
-  year: 2021
   type: journal
   journal: Discrete Mathematics & Theoretical Computer Science
   volume: 23
