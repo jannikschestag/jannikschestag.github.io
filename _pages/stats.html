@@ -70,6 +70,18 @@ new Chart(document.getElementById('pubsPerYear'), {
 });
 </script>
 
+
+        {% for year in years %}
+          {% assign yearcount = 0 %}
+          {% for pub in site.data.pubs %}
+            {{ pub.first-publication }} / {{ year }}
+            {% if pub.first-publication | append: "" == year %}
+              {% assign yearcount = yearcount | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          {{ yearcount }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+
 <canvas id="pubsPerCountry"></canvas>
 Number of papers with co-authors of a given country.
 
@@ -173,7 +185,7 @@ new Chart(document.getElementById('pubsPerCountry'), {
 
 
 
-<h1>Collaboration Statistics</ h1>
+<h1>Collaboration Statistics</h1>
 
 {% assign names = "" %}
 
@@ -211,7 +223,7 @@ Number of papers with number certain numbers of co-authors.
 
 
 
-<h1>Fun statistics</ h1>
+<h1>Fun statistics</h1>
 
 Three longest titles by characters: [compute; write titles]
 
