@@ -58,7 +58,8 @@ new Chart(document.getElementById('pubsPerYear'), {
         {% for year in years %}
           {% assign yearcount = 0 %}
           {% for pub in site.data.pubs %}
-            {% if pub.first-publication | append: "" == year %}
+            {% assign pubyear = pub.first-publication | append: "" %}
+            {% if pubyear == year %}
               {% assign yearcount = yearcount | plus: 1 %}
             {% endif %}
           {% endfor %}
@@ -74,8 +75,9 @@ new Chart(document.getElementById('pubsPerYear'), {
         {% for year in years %}
           {% assign yearcount = 0 %}
           {% for pub in site.data.pubs %}
-            <br>{{ pub.first-publication }} / {{ year }}
-            {% if pub.first-publication | append: "" == year %}
+            {% assign pubyear = pub.first-publication | append: "" %}
+            <br>{{ pubyear }} / {{ year }}
+            {% if pubyear | append: "" == year %}
               yes
               {% assign yearcount = yearcount | plus: 1 %}
             {% endif %}
