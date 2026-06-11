@@ -290,7 +290,7 @@ Three longest titles:<br>
 <br>
 
 Three shortest titles:<br>
-{% for e in sorted2 limit:3 %}
+{% for e in sorted limit:3 %}
   {% assign pub = e | split: "||" %}
   {{ pub[1] }} ({{ pub[0] | plus: 0 }} characters) <br />
 {% endfor %}
