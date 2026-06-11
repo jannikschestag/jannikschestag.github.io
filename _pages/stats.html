@@ -266,18 +266,20 @@ new Chart(document.getElementById('numAuthors'), {
 {% endfor %}
 
 {% assign sorted = titles | split: ";;" | sort %}
+{% assign sorted2 = sorted %}
+
 Three longest titles by characters:
 
 {% for e in sorted reversed limit:3 %}
-  {{ e }}
+  {{ e }} <br />
 {% endfor %}
 
 <br>
 
 Three shortest titles by characters:
 
-{% for e in sorted limit:3 %}
-  {{ e }}
+{% for e in sorted2 limit:3 %}
+  {{ e }} <br />
 {% endfor %}
 
 <br>
@@ -285,6 +287,7 @@ Three shortest titles by characters:
 {% assign total = 0 %}
 
 {% for pub in site.data.pubs %}
+  {{ pub.title | size }} <br />
   {% assign total = total | plus: (pub.title | size) %}
 {% endfor %}
 
