@@ -268,19 +268,18 @@ new Chart(document.getElementById('numAuthors'), {
 {% assign sorted = titles | split: ";;" | sort %}
 {% assign sorted2 = sorted | reversed %}
 
-Three longest titles by characters:
-
-{% for e in sorted reversed limit:3 %}
+Three longest titles by characters:<br>
+{% for e in sorted limit:3 %}
   {% assign pub = e | split: "||" %}
-  {{ pub[1] }} ({{ pub[0] }}x) <br />
+  {{ pub[1] }} ({{ pub[0] | plus: 0 }}x) <br />
 {% endfor %}
 
 <br>
 
-Three shortest titles by characters:
-
+Three shortest titles by characters:<br>
 {% for e in sorted2 limit:3 %}
-  {{ e }} <br />
+  {% assign pub = e | split: "||" %}
+  {{ pub[1] }} ({{ pub[0] | plus: 0 }}x) <br />
 {% endfor %}
 
 <br>
