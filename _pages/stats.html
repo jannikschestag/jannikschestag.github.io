@@ -204,9 +204,47 @@ Most common team in papers with 5 co-authors: [compute]
 
 <br>
 
-<canvas id="pubsPerAuthorsize"></canvas>
+<canvas id="numAuthors"></canvas>
 Number of papers with number certain numbers of co-authors.
-[Compute]
+
+{% assign numAuthors = "1,2,3,4,5" | split: "," %}
+
+<script>
+new Chart(document.getElementById('numAuthors'), {
+  type: 'bar',
+  data: {
+    labels: [
+      {% for num in numAuthors %}
+        {{ num }},
+      {% endfor %}
+      &GreaterEqual;6
+    ],
+    datasets: [{
+      label: 'Publications',
+      data: [
+        {% for num in numAuthors %}
+          {% assign numcount = 0 %}
+          {% for pub in site.data.pubs %}
+            {% assign pubsize = pub.authors | size %}
+            {% if pubsize == num %}
+              {% assign numcount = numcount | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+          {{ numcount }},
+        {% endfor %}
+        {% assign numcount = 0 %}
+        {% for pub in site.data.pubs %}
+          {% assign pubsize = pub.authors | size %}
+          {% if pubsize >= 6 %}
+            {% assign numcount = numcount | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+        {{ numcount }}
+      ]
+    }]
+  }
+});
+</script>
 
 
 
