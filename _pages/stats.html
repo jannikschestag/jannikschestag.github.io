@@ -217,7 +217,7 @@ new Chart(document.getElementById('numAuthors'), {
       {% for num in numAuthors %}
         {{ num }},
       {% endfor %}
-      "&GreaterEqual;6"
+      ">= 6"
     ],
     datasets: [{
       label: 'Publications',
@@ -225,7 +225,7 @@ new Chart(document.getElementById('numAuthors'), {
         {% for num in numAuthors %}
           {% assign numcount = 0 %}
           {% for pub in site.data.pubs %}
-            {% assign pubsize = pub.authors | size %}
+            {% assign pubsize = pub.authors | size | append: "" %}
             {% if pubsize == num %}
               {% assign numcount = numcount | plus: 1 %}
             {% endif %}
@@ -234,7 +234,7 @@ new Chart(document.getElementById('numAuthors'), {
         {% endfor %}
         {% assign numcount = 0 %}
         {% for pub in site.data.pubs %}
-          {% assign pubsize = pub.authors | size %}
+          {% assign pubsize = pub.authors | size | append: "" %}
           {% if pubsize >= 6 %}
             {% assign numcount = numcount | plus: 1 %}
           {% endif %}
