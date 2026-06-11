@@ -252,19 +252,53 @@ new Chart(document.getElementById('numAuthors'), {
 
 <h2>Fun statistics</h2>
 
-Three longest titles by characters: [compute; write titles]
+{% assign titles = "" %}
+
+{% for pub in site.data.pubs %}
+  {% assign len = pub.title | size %}
+  {% assign padded = len | prepend: "000" | slice: -4, 4 %}
+
+  {% assign titles = titles
+     | append: padded
+     | append: "||"
+     | append: pub.title
+     | append: ";;" %}
+{% endfor %}
+
+{% assign sorted = titles | split: ";;" | sort %}
+Three longest titles by characters:
+
+{% for e in sorted reversed limit:3 %}
+  {{ e }}
+{% endfor %}
 
 <br>
 
-Three shortest titles by characters: [compute; write titles]
+Three shortest titles by characters:
+
+{% for e in sorted limit:3 %}
+  {{ e }}
+{% endfor %}
 
 <br>
 
-Average title length by characters: [compute]
+{% assign total = 0 %}
+
+{% for pub in site.data.pubs %}
+  {% assign total = total | plus: (pub.title | size) %}
+{% endfor %}
+
+Average title length by characters: {{ total | divided_by: site.data.pubs.size }}
 
 <br>
 
-Average abstract length by characters: [compute]
+{% assign total = 0 %}
+
+{% for pub in site.data.pubs %}
+  {% assign total = total | plus: (pub.abstract | size) %}
+{% endfor %}
+
+Average abstract length by characters: {{ total | divided_by: site.data.pubs.size }}
 
 <br>
 
