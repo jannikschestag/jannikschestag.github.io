@@ -300,7 +300,20 @@ Three shortest titles:<br>
 {% assign total = 0 %}
 
 {% for pub in site.data.pubs %}
-  {% assign titlesize = pub.title | size %}
+  {% assign cleaned = pub.title
+    | replace: "<br>", ""
+    | replace: "<br />", ""
+    | replace: "\(", ""
+    | replace: "\)", ""
+    | replace: "_", ""
+    | replace: "^", ""
+    | replace: "{", ""
+    | replace: "}", ""
+    | replace: "\mathcal", ""
+    | replace: "\mathsf", ""
+    | replace: "    ", ""
+  %}
+  {% assign titlesize = cleaned | size %}
   {% assign total = total | plus: titlesize %}
 {% endfor %}
 
@@ -311,7 +324,20 @@ Average title length: {{ total | divided_by: site.data.pubs.size }} characters
 {% assign total = 0 %}
 
 {% for pub in site.data.pubs %}
-  {% assign abstractsize = pub.abstract | size %}
+  {% assign cleaned = pub.abstract
+    | replace: "<br>", ""
+    | replace: "<br />", ""
+    | replace: "\(", ""
+    | replace: "\)", ""
+    | replace: "_", ""
+    | replace: "^", ""
+    | replace: "{", ""
+    | replace: "}", ""
+    | replace: "\mathcal", ""
+    | replace: "\mathsf", ""
+    | replace: "    ", ""
+  %}
+  {% assign abstractsize = cleaned | size %}
   {% assign total = total | plus: abstractsize %}
 {% endfor %}
 
@@ -319,12 +345,10 @@ Average abstract length by characters: {{ total | divided_by: site.data.pubs.siz
 
 <br>
 
-Five most frequent words in Titles (ignoring common words such as: and, the, ...):
 <div id="topWords"></div>
 
 <br>
 
-Five most frequent first words in Titles (including common words such as: and, the, ...): [compute; return words with frquency]
 <div id="topFirstWords"></div>
 
 
@@ -381,14 +405,14 @@ for (const title of titles) {
 
 const topFirstWords = Object.entries(firstWordCount)
   .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-  .slice(0,5);
+  .slice(0,3);
 
 // ---------- Output ----------
 document.getElementById("topWords").innerHTML =
-  "<b>Five most frequent words in titles:</b> " +
+  "Five most frequent words in titles  (excluding common words such as: and, the, ...):<br />" +
   topWords.map(([w,c]) => `${w} (${c})`).join(", ");
 
 document.getElementById("topFirstWords").innerHTML =
-  "<b>Five most frequent first words in titles:</b> " +
+  "Three most frequent first words in titles  (including common words such as: and, the, ...):<br />" +
   topFirstWords.map(([w,c]) => `${w} (${c})`).join(", ");
 </script>
