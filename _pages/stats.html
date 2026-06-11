@@ -268,18 +268,21 @@ new Chart(document.getElementById('numAuthors'), {
 {% assign sorted = titles | split: ";;" | sort %}
 {% assign sorted2 = sorted | reversed %}
 
-Three longest titles by characters:<br>
+{{ sorted }}
+{{ sorted2 }}
+
+Three longest titles:<br>
 {% for e in sorted limit:3 %}
   {% assign pub = e | split: "||" %}
-  {{ pub[1] }} ({{ pub[0] | plus: 0 }}x) <br />
+  {{ pub[1] }} ({{ pub[0] | plus: 0 }} characters) <br />
 {% endfor %}
 
 <br>
 
-Three shortest titles by characters:<br>
+Three shortest titles:<br>
 {% for e in sorted2 limit:3 %}
   {% assign pub = e | split: "||" %}
-  {{ pub[1] }} ({{ pub[0] | plus: 0 }}x) <br />
+  {{ pub[1] }} ({{ pub[0] | plus: 0 }} characters) <br />
 {% endfor %}
 
 <br>
@@ -291,7 +294,7 @@ Three shortest titles by characters:<br>
   {% assign total = total | plus: titlesize %}
 {% endfor %}
 
-Average title length by characters: {{ total | divided_by: site.data.pubs.size }}
+Average title length: {{ total | divided_by: site.data.pubs.size }} characters
 
 <br>
 
