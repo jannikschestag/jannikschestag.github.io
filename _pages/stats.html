@@ -234,7 +234,7 @@ new Chart(document.getElementById('numAuthors'), {
         {% endfor %}
         {% assign numcount = 0 %}
         {% for pub in site.data.pubs %}
-          {% assign pubsize = pub.authors | size | append: "" %}
+          {% assign pubsize = pub.authors | size %}
           {% if pubsize >= 6 %}
             {% assign numcount = numcount | plus: 1 %}
           {% endif %}
