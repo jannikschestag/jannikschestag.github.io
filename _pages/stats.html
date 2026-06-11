@@ -319,8 +319,76 @@ Average abstract length by characters: {{ total | divided_by: site.data.pubs.siz
 
 <br>
 
-Five most frequent words in Titles (ignoring common words such as: and, the, ...): [compute; return words with frquency]
+Five most frequent words in Titles (ignoring common words such as: and, the, ...):
+<div id="topWords"></div>
 
 <br>
 
 Five most frequent first words in Titles (including common words such as: and, the, ...): [compute; return words with frquency]
+<div id="topFirstWords"></div>
+
+
+
+<script>
+const titles = [
+{% for pub in site.data.pubs %}
+  {{ pub.title | jsonify }},
+{% endfor %}
+];
+
+const stopwords = new Set([
+  "a","an","and","are","as","at","be","but","by",
+  "for","from","in","into","is","it","of","on","or",
+  "that","the","to","with","without","under","over"
+]);
+
+// ---------- Most frequent words ----------
+const wordCount = {};
+
+for (const title of titles) {
+  const words = title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, " ")
+    .split(/\s+/)
+    .filter(w => w.length > 0);
+
+  for (const word of words) {
+    if (!stopwords.has(word)) {
+      wordCount[word] = (wordCount[word] || 0) + 1;
+    }
+  }
+}
+
+const topWords = Object.entries(wordCount)
+  .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .slice(0,5);
+
+// ---------- Most frequent first words ----------
+const firstWordCount = {};
+
+for (const title of titles) {
+  const words = title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, " ")
+    .split(/\s+/)
+    .filter(w => w.length > 0);
+
+  if (words.length > 0) {
+    const first = words[0];
+    firstWordCount[first] = (firstWordCount[first] || 0) + 1;
+  }
+}
+
+const topFirstWords = Object.entries(firstWordCount)
+  .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .slice(0,5);
+
+// ---------- Output ----------
+document.getElementById("topWords").innerHTML =
+  "<b>Five most frequent words in titles:</b> " +
+  topWords.map(([w,c]) => `${w} (${c})`).join(", ");
+
+document.getElementById("topFirstWords").innerHTML =
+  "<b>Five most frequent first words in titles:</b> " +
+  topFirstWords.map(([w,c]) => `${w} (${c})`).join(", ");
+</script>
