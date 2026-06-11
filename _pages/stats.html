@@ -255,7 +255,20 @@ new Chart(document.getElementById('numAuthors'), {
 {% assign titles = "" %}
 
 {% for pub in site.data.pubs %}
-  {% assign len = pub.title | size %}
+  {% assign cleaned = pub.title
+    | replace: "<br>", ""
+    | replace: "<br />", ""
+    | replace: "\(", ""
+    | replace: "\)", ""
+    | replace: "_", ""
+    | replace: "^", ""
+    | replace: "{", ""
+    | replace: "}", ""
+    | replace: "\mathcal", ""
+    | replace: "\mathsf", ""
+    | replace: "    ", ""
+  %}
+  {% assign len = cleaned | size %}
   {% assign padded = len | prepend: "000" | slice: -4, 4 %}
 
   {% assign titles = titles
