@@ -191,23 +191,18 @@ Number of unique coauthors: {{ names | split: "||" | uniq | size | minus: 1 }}
 
 <br>
 
-Most common team in papers with 2 co-authors: [compute; return all if multiple; return also number of papers]
-
-<br>
-
-Most common team in papers with 3 co-authors: [compute]
-
-<br>
-
-Most common team in papers with 4 co-authors: [compute]
-
-<br>
-
-Most common team in papers with 5 co-authors: [compute]
-
 <div id="team2"></div>
+
+<br>
+
 <div id="team3"></div>
+
+<br>
+
 <div id="team4"></div>
+
+<br>
+
 <div id="team5"></div>
 
 <script>
@@ -216,7 +211,8 @@ const publications = [
 {
   authors: [
     {% for a in pub.authors %}
-      "{{ a.first }} {{ a.last }}"{% unless forloop.last %},{% endunless %}
+      {{ a.last }}{% unless forloop.last %},{% endunless %}
+//      "{{ a.first }} {{ a.last }}"{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ]
 },
@@ -234,7 +230,7 @@ for (const pub of publications) {
   if (size < 2 || size > 5)
     continue;
 
-  const team = authors.join(" | ");
+  const team = authors.join(", ");
 
   if (!teamCounts[size])
     teamCounts[size] = {};
@@ -265,8 +261,8 @@ function writeMostCommonTeam(size, elementId) {
   }
 
   document.getElementById(elementId).innerHTML =
-    `<b>Most common team in papers with ${size} authors:</b> `
-    + bestTeams.join("; ")
+    `Most common team in papers with ${size} authors: `
+    + bestTeams.join(" | ")
     + ` (${maxFreq} paper${maxFreq > 1 ? "s" : ""})`;
 }
 
