@@ -5,5 +5,7 @@ main:
     url: /publications/
   - title: "Co-Authors"
     url: /coauthors/
+  - title: "Statistics"
+    url: /stats/
   - title: "My CV"
     url: /assets/Schestag_CV.pdf

@@ -205,11 +205,7 @@ const publications = [
 {
   authors: [
     {% for a in pub.authors %}
-      {% if a.last == "Schestag" %}
-        "S."{% unless forloop.last %},{% endunless %}
-      {% else %}
-        "{% if a.tussenvoegsel %}{{ a.tussenvoegsel }} {% endif %}{{ a.last }}"{% unless forloop.last %},{% endunless %}
-      {% endif %}
+      "{% if a.tussenvoegsel %}{{ a.tussenvoegsel }} {% endif %}{{ a.last }}"{% unless forloop.last %},{% endunless %}
 //      "{{ a.first }} {% if a.tussenvoegsel %}{{ a.tussenvoegsel }} {% endif %}{{ a.last }}"{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ]
@@ -228,7 +224,9 @@ for (const pub of publications) {
   if (size < 2 || size > 5)
     continue;
 
-  const team = authors.join(" & ");
+  const team = authors.join(" & ")
+    .replace("Schestag", "S.")
+    .replace("Iersel", "van Iersel");
 
   if (!teamCounts[size])
     teamCounts[size] = {};
@@ -247,7 +245,7 @@ function writeMostCommonTeam(size, elementId) {
 
   if (maxFreq === 0) {
     document.getElementById(elementId).innerHTML =
-      `Most common team in papers with ${size} authors: none`;
+      `Most common team in papers with ${size} authors:<br />none`;
     return;
   }
 
@@ -259,7 +257,7 @@ function writeMostCommonTeam(size, elementId) {
   }
 
   document.getElementById(elementId).innerHTML =
-    `Most common team in papers with ${size} authors: `
+    `Most common team in papers with ${size} authors:<br />`
     + bestTeams.join(" | ")
     + ` (${maxFreq} paper${maxFreq > 1 ? "s" : ""})`;
 }
