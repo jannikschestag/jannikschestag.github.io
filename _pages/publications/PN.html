@@ -50,7 +50,7 @@ Group by pubyear, assign reverse numbering
 {% assign total = topic_pubs | size %}
 {% assign current_year = "" %}
 
-{% for pub in normal_pubs %}
+{% for pub in topic_pubs %}
   {% assign pubnum = total | minus: forloop.index0 %}
 
   {% assign pubyear = pub.release-date | slice: 0, 4 %}
