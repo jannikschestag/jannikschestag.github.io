@@ -205,7 +205,11 @@ const publications = [
 {
   authors: [
     {% for a in pub.authors %}
-      "{% if a.tussenvoegsel %}{{ a.tussenvoegsel }} {% endif %}{{ a.last }}"{% unless forloop.last %},{% endunless %}
+      {% if a.last == "Schestag" %}
+        S.{% unless forloop.last %},{% endunless %}
+      {% else %}
+        "{% if a.tussenvoegsel %}{{ a.tussenvoegsel }} {% endif %}{{ a.last }}"{% unless forloop.last %},{% endunless %}
+      {% endif %}
 //      "{{ a.first }} {% if a.tussenvoegsel %}{{ a.tussenvoegsel }} {% endif %}{{ a.last }}"{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ]
