@@ -344,6 +344,7 @@ Average title length: {{ total | divided_by: site.data.pubs.size }} characters
 Average abstract length by characters: {{ total | divided_by: site.data.pubs.size }}
 
 <br>
+<br>
 
 <div id="topWords"></div>
 
@@ -351,12 +352,23 @@ Average abstract length by characters: {{ total | divided_by: site.data.pubs.siz
 
 <div id="topFirstWords"></div>
 
+<br>
+
+<div id="topWordsAbstract"></div>
+
+<br>
+
 
 
 <script>
 const titles = [
 {% for pub in site.data.pubs %}
   {{ pub.title | jsonify }},
+{% endfor %}
+];
+const abstracts = [
+{% for pub in site.data.pubs %}
+  {{ pub.abstract | jsonify }},
 {% endfor %}
 ];
 
@@ -368,6 +380,7 @@ const stopwords = new Set([
 
 // ---------- Most frequent words ----------
 const wordCount = {};
+const wordCountA = {};
 
 for (const title of titles) {
   const words = title
@@ -383,7 +396,24 @@ for (const title of titles) {
   }
 }
 
+for (const abstract of abstracts) {
+  const words = abstract
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, " ")
+    .split(/\s+/)
+    .filter(w => w.length > 0);
+
+  for (const word of words) {
+    if (!stopwords.has(word)) {
+      wordCountA[word] = (wordCountA[word] || 0) + 1;
+    }
+  }
+}
+
 const topWords = Object.entries(wordCount)
+  .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .slice(0,5);
+const topWordsA = Object.entries(wordCountA)
   .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]))
   .slice(0,5);
 
@@ -415,4 +445,9 @@ document.getElementById("topWords").innerHTML =
 document.getElementById("topFirstWords").innerHTML =
   "Three most frequent first words in titles  (including common words such as: and, the, ...):<br />" +
   topFirstWords.map(([w,c]) => `${w} (${c})`).join(", ");
+
+document.getElementById("topWordsAbstract").innerHTML =
+  "Five most frequent words in abstracts  (excluding common words such as: and, the, ...):<br />" +
+  topWordsA.map(([w,c]) => `${w} (${c})`).join(", ");
+
 </script>
