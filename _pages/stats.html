@@ -320,100 +320,6 @@ new Chart(document.getElementById('numAuthors'), {
 
 <h2>Fun statistics</h2>
 
-{% assign titles = "" %}
-
-{% for pub in site.data.pubs %}
-  {% assign cleaned = pub.title
-    | replace: "<br>", ""
-    | replace: "<br />", ""
-    | replace: "\(", ""
-    | replace: "\)", ""
-    | replace: "_", ""
-    | replace: "^", ""
-    | replace: "{", ""
-    | replace: "}", ""
-    | replace: "\mathcal", ""
-    | replace: "\mathsf", ""
-    | replace: "    ", ""
-  %}
-  {% assign len = cleaned | size %}
-  {% assign padded = len | prepend: "000" | slice: -4, 4 %}
-
-  {% assign titles = titles
-     | append: padded
-     | append: "||"
-     | append: pub.title
-     | append: ";;" %}
-{% endfor %}
-
-{% assign sorted = titles | split: ";;" | sort %}
-{% assign sorted2 = sorted | reverse %}
-
-Three longest titles:<br>
-{% for e in sorted2 limit:3 %}
-  {% assign pub = e | split: "||" %}
-  {{ pub[1] }} ({{ pub[0] | plus: 0 }} characters) <br />
-{% endfor %}
-
-<br>
-
-Three shortest titles:<br>
-{% for e in sorted limit:3 %}
-  {% assign pub = e | split: "||" %}
-  {{ pub[1] }} ({{ pub[0] | plus: 0 }} characters) <br />
-{% endfor %}
-
-<br>
-
-{% assign total = 0 %}
-
-{% for pub in site.data.pubs %}
-  {% assign cleaned = pub.title
-    | replace: "<br>", ""
-    | replace: "<br />", ""
-    | replace: "\(", ""
-    | replace: "\)", ""
-    | replace: "_", ""
-    | replace: "^", ""
-    | replace: "{", ""
-    | replace: "}", ""
-    | replace: "\mathcal", ""
-    | replace: "\mathsf", ""
-    | replace: "    ", ""
-  %}
-  {% assign titlesize = cleaned | size %}
-  {% assign total = total | plus: titlesize %}
-{% endfor %}
-
-Average title length: {{ total | divided_by: site.data.pubs.size }} characters
-
-<br>
-
-{% assign total = 0 %}
-
-{% for pub in site.data.pubs %}
-  {% assign cleaned = pub.abstract
-    | replace: "<br>", ""
-    | replace: "<br />", ""
-    | replace: "\(", ""
-    | replace: "\)", ""
-    | replace: "_", ""
-    | replace: "^", ""
-    | replace: "{", ""
-    | replace: "}", ""
-    | replace: "\mathcal", ""
-    | replace: "\mathsf", ""
-    | replace: "    ", ""
-  %}
-  {% assign abstractsize = cleaned | size %}
-  {% assign total = total | plus: abstractsize %}
-{% endfor %}
-
-Average abstract length by characters: {{ total | divided_by: site.data.pubs.size }}
-
-<br>
-<br>
-
 <div id="topWords"></div>
 
 <br>
@@ -425,8 +331,6 @@ Average abstract length by characters: {{ total | divided_by: site.data.pubs.siz
 <div id="topWordsAbstract"></div>
 
 <br>
-
-
 
 <script>
 const titles = [
@@ -519,3 +423,95 @@ document.getElementById("topWordsAbstract").innerHTML =
   topWordsA.map(([w,c]) => `${w} (${c})`).join(", ");
 
 </script>
+
+{% assign titles = "" %}
+
+{% for pub in site.data.pubs %}
+  {% assign cleaned = pub.title
+    | replace: "<br>", ""
+    | replace: "<br />", ""
+    | replace: "\(", ""
+    | replace: "\)", ""
+    | replace: "_", ""
+    | replace: "^", ""
+    | replace: "{", ""
+    | replace: "}", ""
+    | replace: "\mathcal", ""
+    | replace: "\mathsf", ""
+    | replace: "    ", ""
+  %}
+  {% assign len = cleaned | size %}
+  {% assign padded = len | prepend: "000" | slice: -4, 4 %}
+
+  {% assign titles = titles
+     | append: padded
+     | append: "||"
+     | append: pub.title
+     | append: ";;" %}
+{% endfor %}
+
+{% assign sorted = titles | split: ";;" | sort %}
+{% assign sorted2 = sorted | reverse %}
+
+Three shortest titles:<br>
+{% for e in sorted limit:3 %}
+  {% assign pub = e | split: "||" %}
+  {{ pub[1] }} ({{ pub[0] | plus: 0 }} characters) <br />
+{% endfor %}
+
+<br>
+
+Three longest titles:<br>
+{% for e in sorted2 limit:3 %}
+  {% assign pub = e | split: "||" %}
+  {{ pub[1] }} ({{ pub[0] | plus: 0 }} characters) <br />
+{% endfor %}
+
+<br>
+
+{% assign total = 0 %}
+
+{% for pub in site.data.pubs %}
+  {% assign cleaned = pub.title
+    | replace: "<br>", ""
+    | replace: "<br />", ""
+    | replace: "\(", ""
+    | replace: "\)", ""
+    | replace: "_", ""
+    | replace: "^", ""
+    | replace: "{", ""
+    | replace: "}", ""
+    | replace: "\mathcal", ""
+    | replace: "\mathsf", ""
+    | replace: "    ", ""
+  %}
+  {% assign titlesize = cleaned | size %}
+  {% assign total = total | plus: titlesize %}
+{% endfor %}
+
+Average title length: {{ total | divided_by: site.data.pubs.size }} characters
+
+<br>
+
+{% assign total = 0 %}
+
+{% for pub in site.data.pubs %}
+  {% assign cleaned = pub.abstract
+    | replace: "<br>", ""
+    | replace: "<br />", ""
+    | replace: "\(", ""
+    | replace: "\)", ""
+    | replace: "_", ""
+    | replace: "^", ""
+    | replace: "{", ""
+    | replace: "}", ""
+    | replace: "\mathcal", ""
+    | replace: "\mathsf", ""
+    | replace: "    ", ""
+  %}
+  {% assign abstractsize = cleaned | size %}
+  {% assign total = total | plus: abstractsize %}
+{% endfor %}
+
+Average abstract length: {{ total | divided_by: site.data.pubs.size }} characters
+
