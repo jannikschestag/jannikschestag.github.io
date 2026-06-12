@@ -205,8 +205,8 @@ const publications = [
 {
   authors: [
     {% for a in pub.authors %}
-      "{% if a.tussenvoegsel %}{{ a.tussenvoegsel }} {{ endif }}{{ a.last }}"{% unless forloop.last %},{% endunless %}
-//      "{{ a.first }} {% if a.tussenvoegsel %}{{ a.tussenvoegsel }} {{ endif }}{{ a.last }}"{% unless forloop.last %},{% endunless %}
+      "{% if a.tussenvoegsel %}{{ a.tussenvoegsel }} {% endif %}{{ a.last }}"{% unless forloop.last %},{% endunless %}
+//      "{{ a.first }} {% if a.tussenvoegsel %}{{ a.tussenvoegsel }} {% endif %}{{ a.last }}"{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ]
 },
