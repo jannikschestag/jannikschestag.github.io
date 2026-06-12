@@ -374,7 +374,7 @@ const abstracts = [
 
 const stopwords = new Set([
   "a","an","and","are","as","at","be","but","by",
-  "for","from","in","into","is","it","of","on","or",
+  "for","from","in","into","is","it","k","of","on","or",
   "that","the","to","we","with","without","under","over"
 ]);
 
@@ -415,7 +415,7 @@ const topWords = Object.entries(wordCount)
   .slice(0,5);
 const topWordsA = Object.entries(wordCountA)
   .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-  .slice(0,5);
+  .slice(0,10);
 
 // ---------- Most frequent first words ----------
 const firstWordCount = {};
