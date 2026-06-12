@@ -96,6 +96,9 @@ new Chart(document.getElementById('pubsPerCountry'), {
       data: [
         {% for country in countries %}
           {% assign countrycount = 0 %}
+          {% if country == "Germany" or country == "The Netherlands" %}
+            {% assign countrycount = 1 %}
+          {% endif %}
 
           {% for pub in site.data.pubs %}
             {% for aut in pub.authors %}
@@ -201,6 +204,77 @@ Most common team in papers with 4 co-authors: [compute]
 <br>
 
 Most common team in papers with 5 co-authors: [compute]
+
+<div id="team2"></div>
+<div id="team3"></div>
+<div id="team4"></div>
+<div id="team5"></div>
+
+<script>
+const publications = [
+{% for pub in site.data.pubs %}
+{
+  authors: [
+    {% for a in pub.authors %}
+      "{{ a.first }} {{ a.last }}"{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+},
+{% endfor %}
+];
+
+// teamCounts[size][team] = frequency
+const teamCounts = {};
+
+for (const pub of publications) {
+  const authors = [...pub.authors].sort();
+
+  const size = authors.length;
+
+  if (size < 2 || size > 5)
+    continue;
+
+  const team = authors.join(" | ");
+
+  if (!teamCounts[size])
+    teamCounts[size] = {};
+
+  teamCounts[size][team] =
+    (teamCounts[size][team] || 0) + 1;
+}
+
+function writeMostCommonTeam(size, elementId) {
+  const counts = teamCounts[size] || {};
+
+  let maxFreq = 0;
+
+  for (const freq of Object.values(counts))
+    maxFreq = Math.max(maxFreq, freq);
+
+  if (maxFreq === 0) {
+    document.getElementById(elementId).innerHTML =
+      `Most common team in papers with ${size} authors: none`;
+    return;
+  }
+
+  const bestTeams = [];
+
+  for (const [team, freq] of Object.entries(counts)) {
+    if (freq === maxFreq)
+      bestTeams.push(team);
+  }
+
+  document.getElementById(elementId).innerHTML =
+    `<b>Most common team in papers with ${size} authors:</b> `
+    + bestTeams.join("; ")
+    + ` (${maxFreq} paper${maxFreq > 1 ? "s" : ""})`;
+}
+
+writeMostCommonTeam(2, "team2");
+writeMostCommonTeam(3, "team3");
+writeMostCommonTeam(4, "team4");
+writeMostCommonTeam(5, "team5");
+</script>
 
 <br>
 
