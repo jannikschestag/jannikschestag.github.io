@@ -206,7 +206,7 @@ const publications = [
   authors: [
     {% for a in pub.authors %}
       {% if a.last == "Schestag" %}
-        S.{% unless forloop.last %},{% endunless %}
+        "S."{% unless forloop.last %},{% endunless %}
       {% else %}
         "{% if a.tussenvoegsel %}{{ a.tussenvoegsel }} {% endif %}{{ a.last }}"{% unless forloop.last %},{% endunless %}
       {% endif %}
@@ -228,7 +228,7 @@ for (const pub of publications) {
   if (size < 2 || size > 5)
     continue;
 
-  const team = authors.join(", ");
+  const team = authors.join(" & ");
 
   if (!teamCounts[size])
     teamCounts[size] = {};
