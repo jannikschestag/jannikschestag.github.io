@@ -193,15 +193,9 @@ Number of unique coauthors: {{ names | split: "||" | uniq | size | minus: 1 }}
 
 <div id="team2"></div>
 
-<br>
-
 <div id="team3"></div>
 
-<br>
-
 <div id="team4"></div>
-
-<br>
 
 <div id="team5"></div>
 
@@ -211,8 +205,8 @@ const publications = [
 {
   authors: [
     {% for a in pub.authors %}
-      "{{ a.last }}"{% unless forloop.last %},{% endunless %}
-//      "{{ a.first }} {{ a.last }}"{% unless forloop.last %},{% endunless %}
+      "{% if a.tussenvoegsel %}{{ a.tussenvoegsel }} {{ endif }}{{ a.last }}"{% unless forloop.last %},{% endunless %}
+//      "{{ a.first }} {% if a.tussenvoegsel %}{{ a.tussenvoegsel }} {{ endif }}{{ a.last }}"{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ]
 },
