@@ -211,7 +211,7 @@ const publications = [
 {
   authors: [
     {% for a in pub.authors %}
-      {{ a.last }}{% unless forloop.last %},{% endunless %}
+      "{{ a.last }}"{% unless forloop.last %},{% endunless %}
 //      "{{ a.first }} {{ a.last }}"{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ]
