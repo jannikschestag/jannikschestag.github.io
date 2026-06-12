@@ -375,7 +375,7 @@ const abstracts = [
 const stopwords = new Set([
   "a","an","and","are","as","at","be","but","by",
   "for","from","in","into","is","it","k","of","on","or",
-  "that","the","to","we","with","without","under","over"
+  "that","the","this","to","we","with","without","under","over"
 ]);
 
 // ---------- Most frequent words ----------
@@ -415,7 +415,7 @@ const topWords = Object.entries(wordCount)
   .slice(0,5);
 const topWordsA = Object.entries(wordCountA)
   .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-  .slice(0,10);
+  .slice(0,15);
 
 // ---------- Most frequent first words ----------
 const firstWordCount = {};
@@ -447,7 +447,7 @@ document.getElementById("topFirstWords").innerHTML =
   topFirstWords.map(([w,c]) => `${w} (${c})`).join(", ");
 
 document.getElementById("topWordsAbstract").innerHTML =
-  "Five most frequent words in abstracts  (excluding common words such as: and, we, the, ...):<br />" +
+  "Ten most frequent words in abstracts  (excluding common words such as: and, we, the, ...):<br />" +
   topWordsA.map(([w,c]) => `${w} (${c})`).join(", ");
 
 </script>
