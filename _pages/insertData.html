@@ -10,7 +10,7 @@ classes: wide
 <h1>BibTeX → YAML Converter</h1>
 
 <h2>BibTeX</h2>
-<textarea id="bibtex" rows="15" style="width:100%;"></textarea>
+<textarea id="bibtex" rows="10" style="width:100%;"></textarea>
 
 <h2>Abstract</h2>
 <textarea id="abstract" rows="15" style="width:100%;"></textarea>
@@ -157,8 +157,16 @@ function convertBib() {
 
         if (line.trim() === "")
             yaml += "    <br />\n";
-        else
+        else {
+        
+            line = line
+                .replaceAll("~", " ")
+                .replaceAll("\\Oh", "\\mathcal{O}")
+                .replace(/\$\$(.*?)\$\$/g, "\\[$1\\]")
+                .replace(/\$(.*?)\$/g, "\\($1\\)");
+
             yaml += "    " + line + "\n";
+        }
     });
 
     yaml += "  bibtex: >\n";
