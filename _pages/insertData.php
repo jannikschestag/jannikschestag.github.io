@@ -1,0 +1,221 @@
+---
+layout: single
+title: "Insert Data"
+permalink: /insertData/
+author_profile: true
+classes: wide
+---
+
+
+<?php
+function bibtexField($bib, $field) {
+    if (preg_match('/' . preg_quote($field, '/') . '\s*=\s*\{(.*?)\}/si', $bib, $m)) {
+        return trim($m[1]);
+    }
+    if (preg_match('/' . preg_quote($field, '/') . '\s*=\s*"(.*?)"/si', $bib, $m)) {
+        return trim($m[1]);
+    }
+    return null;
+}
+
+function yamlEscape($s) {
+    return str_replace(":", "\\:", trim($s));
+}
+
+function parseAuthors($authorField) {
+    $result = [];
+
+    if (!$authorField) {
+        return $result;
+    }
+
+    $authors = preg_split('/\s+and\s+/i', $authorField);
+
+    foreach ($authors as $author) {
+        $author = trim($author);
+
+        if (strpos($author, ',') !== false) {
+            [$last, $first] = array_map('trim', explode(',', $author, 2));
+        } else {
+            $parts = preg_split('/\s+/', $author);
+
+            $last = array_pop($parts);
+            $first = implode(' ', $parts);
+        }
+
+        $result[] = [
+            'first' => $first,
+            'last'  => $last
+        ];
+    }
+
+    return $result;
+}
+
+$output = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $bib = trim($_POST['bibtex'] ?? '');
+    $abstract = trim($_POST['abstract'] ?? '');
+
+    $title = bibtexField($bib, 'title');
+    $authorField = bibtexField($bib, 'author');
+    $year = bibtexField($bib, 'year');
+    $journal = bibtexField($bib, 'journal');
+    $booktitle = bibtexField($bib, 'booktitle');
+    $doi = bibtexField($bib, 'doi');
+    $eprint = bibtexField($bib, 'eprint');
+    $archivePrefix = bibtexField($bib, 'archivePrefix');
+
+    $authors = parseAuthors($authorField);
+
+    $type = "preprint";
+
+    if ($journal) {
+        if (stripos($journal, 'arxiv') === false) {
+            $type = "journal";
+        }
+    }
+
+    if ($booktitle) {
+        $type = "conference";
+    }
+
+    $output .= "- title: " . yamlEscape($title) . "\n";
+    $output .= "  release-date: {$year}-01-01\n";
+    $output .= "  first-publication: {$year}\n";
+
+    $output .= "  authors:\n";
+
+    foreach ($authors as $a) {
+        $output .= "    - first: {$a['first']}\n";
+        $output .= "      last: {$a['last']}\n";
+    }
+
+    $output .= "  type: {$type}\n";
+
+    $output .= "  journal: " .
+        ($journal && stripos($journal, 'arxiv') === false
+            ? yamlEscape($journal)
+            : "null") . "\n";
+
+    $output .= "  volume: null\n";
+    $output .= "  issue: null\n";
+    $output .= "  pages: null\n";
+    $output .= "  note: null\n";
+
+    if ($booktitle) {
+        $output .= "  conference: " . yamlEscape($booktitle) . "\n";
+        $output .= "  conference-year: {$year}\n";
+    } else {
+        $output .= "  conference: null\n";
+        $output .= "  conference-year: null\n";
+    }
+
+    if ($doi) {
+        $output .= "  doi-identifier: {$doi}\n";
+        $output .= "  doi-url: https://doi.org/{$doi}\n";
+    } else {
+        $output .= "  doi-identifier: null\n";
+        $output .= "  doi-url: null\n";
+    }
+
+    if ($eprint) {
+        $output .= "  preprint-server: " . ($archivePrefix ?: "arXiv") . "\n";
+        $output .= "  preprint-identifier: {$eprint}\n";
+        $output .= "  preprint-url: https://arxiv.org/abs/{$eprint}\n";
+    } else {
+        $output .= "  preprint-server: null\n";
+        $output .= "  preprint-identifier: null\n";
+        $output .= "  preprint-url: null\n";
+    }
+
+    $output .= "  software-url: null\n";
+
+    $output .= "  topics:\n";
+    $output .= "    - TODO\n";
+
+    $output .= "  abstract: >\n";
+
+    $lines = preg_split('/\R/', $abstract);
+
+    foreach ($lines as $line) {
+        $line = trim($line);
+
+        if ($line === '') {
+            $output .= "    <br />\n";
+        } else {
+            $output .= "    {$line}\n";
+        }
+    }
+
+    $output .= "  bibtex: >\n";
+
+    foreach (explode("\n", $bib) as $line) {
+        $output .= "    " . rtrim($line) . "\n";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BibTeX → YAML Converter</title>
+
+<style>
+body {
+    font-family: sans-serif;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+textarea {
+    width: 100%;
+    height: 300px;
+    font-family: monospace;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.output {
+    white-space: pre-wrap;
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 20px;
+    font-family: monospace;
+}
+</style>
+</head>
+
+<body>
+
+<h1>BibTeX → YAML Converter</h1>
+
+<form method="post">
+
+<h2>BibTeX</h2>
+<textarea name="bibtex"><?= htmlspecialchars($_POST['bibtex'] ?? '') ?></textarea>
+
+<h2>Abstract (LaTeX)</h2>
+<textarea name="abstract"><?= htmlspecialchars($_POST['abstract'] ?? '') ?></textarea>
+
+<br><br>
+
+<button type="submit">Convert</button>
+
+</form>
+
+<?php if ($output): ?>
+<h2>YAML Output</h2>
+<div class="output"><?= htmlspecialchars($output) ?></div>
+<?php endif; ?>
+
+</body>
+</html>
