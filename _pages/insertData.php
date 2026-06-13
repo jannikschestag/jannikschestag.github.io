@@ -158,11 +158,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>BibTeX → YAML Converter</title>
 
 <style>
 body {
@@ -192,9 +187,6 @@ button {
     font-family: monospace;
 }
 </style>
-</head>
-
-<body>
 
 <h1>BibTeX → YAML Converter</h1>
 
@@ -218,4 +210,3 @@ button {
 <?php endif; ?>
 
 </body>
-</html>
