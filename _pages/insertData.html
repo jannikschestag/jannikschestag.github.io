@@ -1,0 +1,173 @@
+---
+layout: single
+title: "Insert Data"
+permalink: /insertdata/
+author_profile: true
+classes: wide
+---
+
+
+<h1>BibTeX → YAML Converter</h1>
+
+<h2>BibTeX</h2>
+<textarea id="bibtex" rows="15" style="width:100%;"></textarea>
+
+<h2>Abstract</h2>
+<textarea id="abstract" rows="15" style="width:100%;"></textarea>
+
+<br><br>
+
+<button onclick="convertBib()">Convert</button>
+
+<h2>YAML Output</h2>
+<textarea id="output" rows="30" style="width:100%;"></textarea>
+
+<script>
+
+function getField(bib, field) {
+
+    let regex = new RegExp(
+        field + "\\s*=\\s*[{\"]([\\s\\S]*?)[}\"]\\s*(,|$)",
+        "i"
+    );
+
+    let match = bib.match(regex);
+
+    return match ? match[1].trim() : null;
+}
+
+function parseAuthors(authorField) {
+
+    if (!authorField)
+        return [];
+
+    return authorField.split(/\s+and\s+/i).map(author => {
+
+        author = author.trim();
+
+        if (author.includes(",")) {
+
+            let parts = author.split(",");
+
+            return {
+                first: parts[1].trim(),
+                last: parts[0].trim()
+            };
+        }
+
+        let words = author.split(/\s+/);
+
+        return {
+            first: words.slice(0,-1).join(" "),
+            last: words[words.length-1]
+        };
+    });
+}
+
+function convertBib() {
+
+    let bib = document.getElementById("bibtex").value;
+    let abstract = document.getElementById("abstract").value;
+
+    let title = getField(bib, "title");
+    let authors = parseAuthors(getField(bib, "author"));
+    let year = getField(bib, "year");
+    let journal = getField(bib, "journal");
+    let booktitle = getField(bib, "booktitle");
+    let doi = getField(bib, "doi");
+    let eprint = getField(bib, "eprint");
+    let archivePrefix = getField(bib, "archivePrefix");
+
+    let type = "preprint";
+
+    if (booktitle)
+        type = "conference";
+    else if (journal &&
+             !journal.toLowerCase().includes("arxiv"))
+        type = "journal";
+
+    let yaml = "";
+
+    yaml += "- title: " + (title || "null") + "\n";
+    yaml += "  release-date: " + year + "-01-01\n";
+    yaml += "  first-publication: " + year + "\n";
+
+    yaml += "  authors:\n";
+
+    authors.forEach(a => {
+        yaml += "    - first: " + a.first + "\n";
+        yaml += "      last: " + a.last + "\n";
+    });
+
+    yaml += "  type: " + type + "\n";
+
+    yaml += "  journal: "
+          + ((journal && type==="journal")
+                ? journal
+                : "null")
+          + "\n";
+
+    yaml += "  volume: null\n";
+    yaml += "  issue: null\n";
+    yaml += "  pages: null\n";
+    yaml += "  note: null\n";
+
+    yaml += "  conference: "
+          + (booktitle || "null")
+          + "\n";
+
+    yaml += "  conference-year: "
+          + (booktitle ? year : "null")
+          + "\n";
+
+    yaml += "  doi-identifier: "
+          + (doi || "null")
+          + "\n";
+
+    yaml += "  doi-url: "
+          + (doi
+                ? "https://doi.org/" + doi
+                : "null")
+          + "\n";
+
+    yaml += "  preprint-server: "
+          + (eprint
+                ? (archivePrefix || "arXiv")
+                : "null")
+          + "\n";
+
+    yaml += "  preprint-identifier: "
+          + (eprint || "null")
+          + "\n";
+
+    yaml += "  preprint-url: "
+          + (eprint
+                ? "https://arxiv.org/abs/" + eprint
+                : "null")
+          + "\n";
+
+    yaml += "  software-url: null\n";
+
+    yaml += "  topics:\n";
+    yaml += "    - TODO\n";
+
+    yaml += "  abstract: >\n";
+
+    abstract.split("\n").forEach(line => {
+
+        if (line.trim() === "")
+            yaml += "    <br />\n";
+        else
+            yaml += "    " + line + "\n";
+    });
+
+    yaml += "  bibtex: >\n";
+
+    bib.split("\n").forEach(line => {
+        yaml += "    " + line + "\n";
+    });
+
+    document.getElementById("output").value = yaml;
+}
+
+</script>
