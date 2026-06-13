@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Insert Data"
-permalink: /insertData/
+permalink: /insertdata/
 author_profile: true
 classes: wide
 ---
