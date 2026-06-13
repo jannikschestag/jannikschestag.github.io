@@ -112,7 +112,7 @@ new Chart(document.getElementById('pubsPerYear'), {
 const pubs = [
 {% for pub in site.data.pubs %}
 {
-  year: {{ pub.release-date | slice: 0,4 }},
+  year: {{ pub.first-publication }},
   topics: [
     {% for topic in pub.topics %}
       {{ topic | jsonify }}{% unless forloop.last %},{% endunless %}
@@ -288,7 +288,7 @@ new Chart(document.getElementById('numAuthors'), {
       {% for num in numAuthors %}
         {{ num }},
       {% endfor %}
-      ">= 6"
+      "≥ 6"
     ],
     datasets: [{
       label: 'Publications',
