@@ -71,109 +71,114 @@ new Chart(document.getElementById('pubsPerYear'), {
 });
 </script>
 
-<canvas id="pubsPerCountry"></canvas>
-Number of papers with co-authors affiliated in a given country. In red, only the number of papers is counted. In blue, papers are counted several times if several co-authors are affiliated in that county.
 
-{% assign countries_raw = "" %}
+<style>
+.topic-timeline {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1em;
+}
 
-{% for inst in site.data.institutions %}
-  {% assign countries_raw = countries_raw | append: inst.country | append: "||" %}
-{% endfor %}
+.topic-timeline th,
+.topic-timeline td {
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+}
 
-{% assign countries = countries_raw | split: "||" | uniq | sort %}
+.topic-timeline th {
+  background: #f5f5f5;
+}
+
+.topic-timeline td.topic {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.topic-timeline td.bar {
+  text-align: center;
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+.topic-timeline tr:hover {
+  background: #fafafa;
+}
+</style>
+
+<div id="topicTimeline"></div>
 
 <script>
-new Chart(document.getElementById('pubsPerCountry'), {
-  type: 'bar',
-  data: {
-    labels: [
-      {% for country in countries %}
-        "{{ country }}"{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-    ],
-    datasets: [{
-      label: 'People in all papers',
-      data: [
-        {% for country in countries %}
-          {% assign countrycount = 0 %}
-          {% if country == "Germany" or country == "The Netherlands" %}
-            {% assign countrycount = 1 %}
-          {% endif %}
+// ----- Publications -----
+const pubs = [
+{% for pub in site.data.pubs %}
+{
+  year: {{ pub.release-date | slice: 0,4 }},
+  topics: [
+    {% for topic in pub.topics %}
+      {{ topic | jsonify }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+},
+{% endfor %}
+];
 
-          {% for pub in site.data.pubs %}
-            {% for aut in pub.authors %}
+// ----- Determine years -----
+const years = [...new Set(pubs.map(p => p.year))]
+  .sort();
 
-              {% assign affiliation = nil %}
+// ----- Count papers per topic and year -----
+const counts = {};
 
-              {% for c in site.data.coauthors %}
-                {% assign cname = c.name[0].first | append: " " | append: c.name[0].last %}
-                {% assign aname = aut.first | append: " " | append: aut.last %}
+for (const pub of pubs) {
+  for (const topic of pub.topics) {
 
-                {% if cname == aname %}
-                  {% assign affiliation = c.affiliation %}
-                {% endif %}
-              {% endfor %}
+    if (!counts[topic])
+      counts[topic] = {};
 
-              {% if affiliation %}
-                {% for inst in site.data.institutions %}
-                  {% if inst.code == affiliation and inst.country == country %}
-                    {% assign countrycount = countrycount | plus: 1 %}
-                  {% endif %}
-                {% endfor %}
-              {% endif %}
+    if (!counts[topic][pub.year])
+      counts[topic][pub.year] = 0;
 
-            {% endfor %}
-          {% endfor %}
-
-          {{ countrycount }}{% unless forloop.last %},{% endunless %}
-        {% endfor %}
-      ]
-    },{
-      label: 'Unique Papers',
-      data: [
-        {% for country in countries %}
-          {% assign countrycount = 0 %}
-
-          {% for pub in site.data.pubs %}
-
-            {% assign has_country = false %}
-
-            {% for aut in pub.authors %}
-
-              {% assign affiliation = nil %}
-
-              {% for c in site.data.coauthors %}
-                {% assign cname = c.name[0].first | append: " " | append: c.name[0].last %}
-                {% assign aname = aut.first | append: " " | append: aut.last %}
-
-                {% if cname == aname %}
-                  {% assign affiliation = c.affiliation %}
-                {% endif %}
-              {% endfor %}
-
-              {% if affiliation %}
-                {% for inst in site.data.institutions %}
-                  {% if inst.code == affiliation and inst.country == country %}
-                    {% assign has_country = true %}
-                  {% endif %}
-                {% endfor %}
-              {% endif %}
-
-            {% endfor %}
-
-            {% if has_country %}
-              {% assign countrycount = countrycount | plus: 1 %}
-            {% endif %}
-
-          {% endfor %}
-
-          {{ countrycount }}{% unless forloop.last %},{% endunless %}
-        {% endfor %}
-      ]
-    }]
+    counts[topic][pub.year]++;
   }
-});
+}
+
+// ----- Sort topics by total number of papers -----
+const topics = Object.keys(counts)
+  .sort((a,b) => {
+    const sa = Object.values(counts[a]).reduce((x,y)=>x+y,0);
+    const sb = Object.values(counts[b]).reduce((x,y)=>x+y,0);
+    return sb-sa;
+  });
+
+// ----- Build table -----
+let html = '<table class="topic-timeline">';
+
+html += '<tr><th>Topic</th>';
+
+for (const year of years)
+  html += `<th>${year}</th>`;
+
+html += '</tr>';
+
+for (const topic of topics) {
+
+  html += `<tr><td class="topic">${topic}</td>`;
+
+  for (const year of years) {
+
+    const c = counts[topic][year] || 0;
+
+    html += `<td class="bar">${'█'.repeat(Math.min(c,7))}</td>`;
+  }
+
+  html += '</tr>';
+}
+
+html += '</table>';
+
+document.getElementById("topicTimeline").innerHTML = html;
 </script>
+
 
 
 
@@ -313,6 +318,110 @@ new Chart(document.getElementById('numAuthors'), {
 </script>
 
 
+
+<canvas id="pubsPerCountry"></canvas>
+Number of papers with co-authors affiliated in a given country. In red, only the number of papers is counted. In blue, papers are counted several times if several co-authors are affiliated in that county.
+
+{% assign countries_raw = "" %}
+
+{% for inst in site.data.institutions %}
+  {% assign countries_raw = countries_raw | append: inst.country | append: "||" %}
+{% endfor %}
+
+{% assign countries = countries_raw | split: "||" | uniq | sort %}
+
+<script>
+new Chart(document.getElementById('pubsPerCountry'), {
+  type: 'bar',
+  data: {
+    labels: [
+      {% for country in countries %}
+        "{{ country }}"{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ],
+    datasets: [{
+      label: 'People in all papers',
+      data: [
+        {% for country in countries %}
+          {% assign countrycount = 0 %}
+          {% if country == "Germany" or country == "The Netherlands" %}
+            {% assign countrycount = 1 %}
+          {% endif %}
+
+          {% for pub in site.data.pubs %}
+            {% for aut in pub.authors %}
+
+              {% assign affiliation = nil %}
+
+              {% for c in site.data.coauthors %}
+                {% assign cname = c.name[0].first | append: " " | append: c.name[0].last %}
+                {% assign aname = aut.first | append: " " | append: aut.last %}
+
+                {% if cname == aname %}
+                  {% assign affiliation = c.affiliation %}
+                {% endif %}
+              {% endfor %}
+
+              {% if affiliation %}
+                {% for inst in site.data.institutions %}
+                  {% if inst.code == affiliation and inst.country == country %}
+                    {% assign countrycount = countrycount | plus: 1 %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+
+            {% endfor %}
+          {% endfor %}
+
+          {{ countrycount }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    },{
+      label: 'Unique Papers',
+      data: [
+        {% for country in countries %}
+          {% assign countrycount = 0 %}
+
+          {% for pub in site.data.pubs %}
+
+            {% assign has_country = false %}
+
+            {% for aut in pub.authors %}
+
+              {% assign affiliation = nil %}
+
+              {% for c in site.data.coauthors %}
+                {% assign cname = c.name[0].first | append: " " | append: c.name[0].last %}
+                {% assign aname = aut.first | append: " " | append: aut.last %}
+
+                {% if cname == aname %}
+                  {% assign affiliation = c.affiliation %}
+                {% endif %}
+              {% endfor %}
+
+              {% if affiliation %}
+                {% for inst in site.data.institutions %}
+                  {% if inst.code == affiliation and inst.country == country %}
+                    {% assign has_country = true %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+
+            {% endfor %}
+
+            {% if has_country %}
+              {% assign countrycount = countrycount | plus: 1 %}
+            {% endif %}
+
+          {% endfor %}
+
+          {{ countrycount }}{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }]
+  }
+});
+</script>
 
 
 
