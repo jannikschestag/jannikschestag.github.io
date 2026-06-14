@@ -618,6 +618,7 @@ Average title length: {{ total | divided_by: site.data.pubs.size }} characters
     | replace: "{", ""
     | replace: "}", ""
     | replace: "\mathcal", ""
+    | replace: "\mathrm", ""
     | replace: "\mathsf", ""
     | replace: "    ", ""
   %}
