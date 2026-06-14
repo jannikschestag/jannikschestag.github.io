@@ -26,13 +26,15 @@ tr:hover {
 <a href="/coauthors/SW" class="topic-button">Scanwidth</a>
 <a href="/coauthors/Implementations" class="topic-button">Implemented Algorithms</a>
 
-
-<div id="map" style="height:500px;"></div>
+<br />
+<button class="topic-button" onclick="showMap()">Show / Hide map of co-authors' institutions</button>
+<div id="map" style="aspect-ratio: 2/1;"></div>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+
 var map = L.map('map').setView([21.422503386479725, 39.826188442942936], 2);
 
 L.tileLayer(
@@ -41,6 +43,16 @@ L.tileLayer(
     attribution: '&copy; OpenStreetMap contributors'
   }
 ).addTo(map);
+
+function showMap() {
+    const div = document.getElementById("map");
+
+    if (div.style.display === "none") {
+        div.style.display = "block";
+    } else {
+        div.style.display = "none";
+    }
+}
 </script>
 
 <link rel="stylesheet" href="{{ '/assets/css/topicButtons.css' | relative_url }}">
