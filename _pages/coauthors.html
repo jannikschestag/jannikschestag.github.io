@@ -29,8 +29,8 @@ tr:hover {
 <a href="/coauthors/Implementations" class="topic-button">Implemented Algorithms</a>
 
 
-<button onclick="toggleDiv()">Show / Hide</button>
-<div id="map" style="aspect-ratio: 2/1;"></div>
+<button id="mapbutton" onclick="showMap()">Show / Hide map of co-authors' institutions</button>
+<div id="map" style="aspect-ratio: 2/1; display: none;"></div>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
@@ -46,7 +46,7 @@ L.tileLayer(
   }
 ).addTo(map);
 
-function toggleDiv() {
+function showMap() {
     const div = document.getElementById("map");
 
     if (div.style.display === "none") {
