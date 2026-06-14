@@ -153,10 +153,16 @@ function convertBib() {
 
     yaml += "  abstract: >\n";
 
+    prevline = "a";
     abstract.split("\n").forEach(line => {
 
+        if (prevline.trim() === "" || line.trim() === "")
+            yaml += "\n";
+        else
+            yaml += " ";
+        
         if (line.trim() === "")
-            yaml += "    <br />\n";
+            yaml += "    <br />";
         else {
         
             line = line
@@ -165,8 +171,10 @@ function convertBib() {
                 .replace(/\$\$(.*?)\$\$/g, "\\[$1\\]")
                 .replace(/\$(.*?)\$/g, "\\($1\\)");
 
-            yaml += "    " + line + "\n";
+            yaml += "    " + line;
         }
+        
+        prevline = line;
     });
 
     yaml += "  bibtex: >\n";
