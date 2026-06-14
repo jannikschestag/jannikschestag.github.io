@@ -29,13 +29,14 @@ tr:hover {
 <a href="/coauthors/Implementations" class="topic-button">Implemented Algorithms</a>
 
 
-
-<div id="map" style="height:500px;"></div>
+<button onclick="toggleDiv()">Show / Hide</button>
+<div id="map" style="aspect-ratio: 2/1;"></div>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
+
 var map = L.map('map').setView([21.422503386479725, 39.826188442942936], 2);
 
 L.tileLayer(
@@ -44,6 +45,16 @@ L.tileLayer(
     attribution: '&copy; OpenStreetMap contributors'
   }
 ).addTo(map);
+
+function toggleDiv() {
+    const div = document.getElementById("map");
+
+    if (div.style.display === "none") {
+        div.style.display = "block";
+    } else {
+        div.style.display = "none";
+    }
+}
 </script>
 
 
