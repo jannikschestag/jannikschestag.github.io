@@ -1,3 +1,41 @@
+- title: "Orienting Unrooted Binary Networks Faster: Focus on the Generator"
+  release-date: 2026-06-30
+  first-publication: 2026
+  authors:
+    - first: Jannik
+      last: Schestag
+    - first: Norbert
+      last: Zeh
+  type: preprint
+  journal: null
+  volume: null
+  issue: null
+  pages: null
+  note: null
+  conference: null
+  conference-year: null
+  doi-identifier: null
+  doi-url: null
+  preprint-server: arXiv
+  preprint-identifier: 2606.00000
+  preprint-url: https://arxiv.org/abs/2606.00000
+  software-url: null
+  topics:
+    - FPT
+    - Orientation
+    - Phylogenetic Networks
+  abstract: >
+    The problem of orienting an unrooted network to obtain a specific class of rooted phylogenetic networks is known to be NP-hard in many cases. In this paper, we introduce two algorithmic frameworks that yield significantly improved fixed-parameter tractable (FPT) algorithms parameterized by the network level \(\ell\). Our first main contribution shows that for several prominent network classes, the core algorithmic difficulty lies in finding a directed spanning tree on the network's undirected generator. By enumerating these spanning trees in \(\mathcal{O}(5.3334^\ell + \ell)\) time and orienting all remaining edges in polynomial time, we solve the orientation problem in \(\mathcal{O}(5.3334^\ell \cdot n)\) time for tree-based networks and in \(\mathcal{O}(5.3334^\ell \cdot n^2)\) time for orchards, where \(n\) is the number of vertices of the graph. Extending this approach with further branching yields \(\mathcal{O}(10.6667^\ell \cdot n^2)\)-time algorithms for tree-child and normal networks. Our second technique bypasses spanning trees by directly guessing the placement of reticulations on the generator. This framework provides \(\mathcal{O}(12.2071^\ell \cdot n^2)\)-time algorithms for temporal, reticulation-visible, and tree-sibling networks. Finally, we demonstrate the versatility of the reticulation-guessing framework by showing that even computing an orientation with minimum scanwidth is single-exponential FPT with respect to the level. Together, these results significantly improve the best-known running times for phylogenetic network orientation.
+  bibtex: >
+    @article{Schestag2026Orienting,
+    	title = {{Orienting Unrooted Binary Networks Faster: Focus on the Generator}},
+    	author = {Schestag, Jannik and Zeh, Norbert},
+    	journal = {arXiv preprint},
+    	year = {2026},
+    	archivePrefix = {arXiv},
+    	eprint = {2606.00000}
+    }
+
 - title: Tractable Maximization of Budgeted Phylogenetic Diversity on Networks Utilizing Node Scanwidth
   release-date: 2026-05-22
   first-publication: 2026
@@ -480,7 +518,7 @@
       eprint = {2602.06903}
     }
 
-- title: A Multivariate Complexity Analysis of the Generalized Noah's Ark Problem
+- title: A multivariate complexity analysis of the Generalized Noah's Ark Problem
   release-date: 2025-11-01
   first-publication: 2023
   authors:

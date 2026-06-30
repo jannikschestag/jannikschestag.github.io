@@ -58,10 +58,6 @@
   abbr: MFCS
   core: A
 
-- name: International Symposium on Algorithms and Computation
-  abbr: ISAAC
-  core: A
-
 - name: International Workshop on Algorithms in Bioinformatics
   abbr: WABI
   core: A
@@ -72,6 +68,10 @@
 
 - name: Workshop on Algorithms and Data Structures
   abbr: WADS
+  core: A
+
+- name: International Symposium on Algorithms and Computation
+  abbr: ISAAC
   core: A
 
 - name: Latin American Theoretical Informatics Symposium
