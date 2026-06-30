@@ -181,5 +181,11 @@
   affiliation: UQAM
   collaboration: yes
 
+- name:
+    - first: Guillaume
+      last: Scholz
+  link: null
+  affiliation: Universität Greifswald
+  collaboration: yes
 
 

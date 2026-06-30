@@ -10,7 +10,7 @@
   point: 51.589683637768076, -0.22934804331008563
   code: Middlesex University
 
-- name: Friedrich Schiller Universität
+- name: Friedrich-Schiller-Universität
   city: Jena
   country: Germany
   point: 50.92939496164265, 11.590998240926012
@@ -88,5 +88,8 @@
   point: 45.51311705168155, -73.56031505987497
   code: UQAM
 
-
-
+- name: Universität Greifswald
+  city: Greifswald
+  country: Germany
+  point: 54.09049516370367, 13.40324774929707
+  code: Universität Greifswald
