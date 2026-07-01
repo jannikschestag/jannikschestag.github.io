@@ -17,8 +17,8 @@
   doi-identifier: null
   doi-url: null
   preprint-server: arXiv
-  preprint-identifier: 2606.00000
-  preprint-url: https://arxiv.org/abs/2606.00000
+  preprint-identifier: 2606.31597
+  preprint-url: https://arxiv.org/abs/2606.31597
   software-url: null
   topics:
     - FPT
@@ -33,7 +33,7 @@
     	journal = {arXiv preprint},
     	year = {2026},
     	archivePrefix = {arXiv},
-    	eprint = {2606.00000}
+    	eprint = {2606.31597}
     }
 
 - title: Tractable Maximization of Budgeted Phylogenetic Diversity on Networks Utilizing Node Scanwidth
