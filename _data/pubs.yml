@@ -1,4 +1,39 @@
+- title: The Computational Limits of Cost-Constrained EF1 Allocations
+  published: false
+  release-date: 2026-12-31
+  first-publication: 2026
+  authors:
+    - first: Matthias
+      last: Bentert
+    - first: Eva
+      last: Deltl
+    - first: Jannik
+      last: Schestag
+    - first: Frank
+      last: Sommer
+  type: null
+  journal: null
+  volume: null
+  issue: null
+  pages: null
+  note: null
+  conference: null
+  conference-year: null
+  doi-identifier: null
+  doi-url: null
+  preprint-server: null
+  preprint-identifier: null
+  preprint-url: null
+  software-url: null
+  topics:
+    - FPT
+    - Social Choice
+  abstract: >
+    Cost-efficient resource allocation and fair resource allocation are often studied separately, yet practical allocation systems typically require both. We initiate the study of their combination through the problem of finding minimum-cost allocations that are envy-free up to one item. Although EF1 is always attainable and efficiently computable in the classical cost-free setting, we show that the additional cost requirement makes the problem computationally intractable. We then analyze the problem's parameterized complexity and study combinations of natural parameters like the number of agents, the number of items, the budget, the number of different item types, and the maximum evaluation of any item by any agent. Our main results are a polynomial kernel for the number of items and W[1]-hardness for the number of different item types. The combination of all our results gives an almost complete characterization of which parameters admit polynomial kernels, fixed-parameter tractability, and containment in XP. For non-existent tractability results, we present matching lower bounds like W[1]-hardness and para-NP-completeness.
+  bibtex: null
+
 - title: "Orienting Unrooted Binary Networks Faster: Focus on the Generator"
+  published: true
   release-date: 2026-06-30
   first-publication: 2026
   authors:
@@ -28,15 +63,16 @@
     The problem of orienting an unrooted network to obtain a specific class of rooted phylogenetic networks is known to be NP-hard in many cases. In this paper, we introduce two algorithmic frameworks that yield significantly improved fixed-parameter tractable (FPT) algorithms parameterized by the network level \(\ell\). Our first main contribution shows that for several prominent network classes, the core algorithmic difficulty lies in finding a directed spanning tree on the network's undirected generator. By enumerating these spanning trees in \(\mathcal{O}(5.3334^\ell + \ell)\) time and orienting all remaining edges in polynomial time, we solve the orientation problem in \(\mathcal{O}(5.3334^\ell \cdot n)\) time for tree-based networks and in \(\mathcal{O}(5.3334^\ell \cdot n^2)\) time for orchards, where \(n\) is the number of vertices of the graph. Extending this approach with further branching yields \(\mathcal{O}(10.6667^\ell \cdot n^2)\)-time algorithms for tree-child and normal networks. Our second technique bypasses spanning trees by directly guessing the placement of reticulations on the generator. This framework provides \(\mathcal{O}(12.2071^\ell \cdot n^2)\)-time algorithms for temporal, reticulation-visible, and tree-sibling networks. Finally, we demonstrate the versatility of the reticulation-guessing framework by showing that even computing an orientation with minimum scanwidth is single-exponential FPT with respect to the level. Together, these results significantly improve the best-known running times for phylogenetic network orientation.
   bibtex: >
     @article{Schestag2026Orienting,
-    	title = {{Orienting Unrooted Binary Networks Faster: Focus on the Generator}},
-    	author = {Schestag, Jannik and Zeh, Norbert},
-    	journal = {arXiv preprint},
-    	year = {2026},
-    	archivePrefix = {arXiv},
-    	eprint = {2606.31597}
+      title = {{Orienting Unrooted Binary Networks Faster: Focus on the Generator}},
+      author = {Schestag, Jannik and Zeh, Norbert},
+      journal = {arXiv preprint},
+      year = {2026},
+      archivePrefix = {arXiv},
+      eprint = {2606.31597}
     }
 
 - title: Tractable Maximization of Budgeted Phylogenetic Diversity on Networks Utilizing Node Scanwidth
+  published: true
   release-date: 2026-05-22
   first-publication: 2026
   authors:
@@ -83,6 +119,7 @@
     }
     
 - title: Limits of Kernelization and Parametrization for Phylogenetic Diversity with Dependencies
+  published: true
   release-date: 2026-02-13
   first-publication: 2026
   authors:
@@ -123,6 +160,7 @@
     }
     
 - title: "PaNDA: Efficient Optimization of Phylogenetic Diversity in Networks"
+  published: true
   release-date: 2025-11-17
   first-publication: 2025
   authors:
@@ -171,6 +209,7 @@
     }
     
 - title: How can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks
+  published: true
   release-date: 2023-09-01
   first-publication: 2023
   authors:
@@ -212,6 +251,7 @@
     }
 
 - title: Average-Tree Phylogenetic Diversity of Networks
+  published: true
   release-date: 2025-08-01
   first-publication: 2025
   authors:
@@ -259,6 +299,7 @@
     }
 
 - title: Average-Tree Phylogenetic Diversity Parameterized by Scanwidth and Invisibility
+  published: true
   release-date: 2026-01-01
   first-publication: 2026
   authors:
@@ -305,6 +346,7 @@
     }
 
 - title: Phylogenetic Network Diversity Parameterized by Reticulation Number and Beyond
+  published: true
   release-date: 2025-04-01
   first-publication: 2025
   authors:
@@ -351,6 +393,7 @@
     }
 
 - title: Parameterized Algorithms for Diversity of Networks with Ecological Dependencies
+  published: true
   release-date: 2025-09-01
   first-publication: 2025
   authors:
@@ -398,6 +441,7 @@
     }
 
 - title: "Maximizing Phylogenetic Diversity under Ecological Constraints: A Parameterized Complexity Study"
+  published: true
   release-date: 2024-12-01
   first-publication: 2024
   authors:
@@ -439,6 +483,7 @@
     }
 
 - title: Weighted Food Webs Make Computing Phylogenetic Diversity So Much Harder
+  published: true
   release-date: 2026-02-02
   first-publication: 2025
   authors:
@@ -480,6 +525,7 @@
     }
 
 - title: The First Known Problem That Is FPT with Respect to Node Scanwidth but Not Treewidth
+  published: true
   release-date: 2026-02-01
   first-publication: 2026
   authors:
@@ -519,6 +565,7 @@
     }
 
 - title: A multivariate complexity analysis of the Generalized Noah's Ark Problem
+  published: true
   release-date: 2025-11-01
   first-publication: 2023
   authors:
@@ -558,6 +605,7 @@
     }
 
 - title: "Maximizing Phylogenetic Diversity under Time Pressure: Planning with Extinctions Ahead"
+  published: true
   release-date: 2024-03-01
   first-publication: 2024
   authors:
@@ -596,6 +644,7 @@
     }
 
 - title: On Critical Node Problems with Vulnerable Vertices
+  published: true
   release-date: 2024-01-01
   first-publication: 2022
   authors:
@@ -640,6 +689,7 @@
     }
 
 - title: On the Complexity of Parameterized Local Search for the Maximum Parsimony Problem
+  published: true
   release-date: 2023-06-01
   first-publication: 2023
   authors:
@@ -684,6 +734,7 @@
     }
 
 - title: On the Complexity of Finding a Sparse Connected Spanning Subgraph in a Non-Uniform Failure Model
+  published: true
   release-date: 2023-09-01
   first-publication: 2023
   authors:
@@ -723,6 +774,7 @@
     }
 
 - title: Finding Degree-Constrained Acyclic Orientations
+  published: true
   release-date: 2023-09-01
   first-publication: 2023
   authors:
@@ -768,6 +820,7 @@
     }
 
 - title: "Protective and Nonprotective Subset Sum Games: A Parameterized Complexity Analysis"
+  published: true
   release-date: 2024-10-01
   first-publication: 2024
   authors:
@@ -811,6 +864,7 @@
     }
 
 - title: Destroying Bicolored \(P_3\)s by Deleting Few Edges
+  published: true
   release-date: 2021-10-01
   first-publication: 2019
   authors:

@@ -39,6 +39,11 @@ classes: wide
 {% assign all_pubs = site.data.pubs %}
 
 {%- comment -%}
+Filter non-published
+{%- endcomment -%}
+{% assign topic_pubs = all_pubs | where_exp: "p", "p.published" %}
+
+{%- comment -%}
 Sort by release-date descending
 {%- endcomment -%}
 {% assign normal_pubs = all_pubs | sort: "release-date" | reverse %}
