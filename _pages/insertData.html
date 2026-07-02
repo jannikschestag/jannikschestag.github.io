@@ -89,6 +89,7 @@ function convertBib() {
     let yaml = "";
 
     yaml += "- title: " + (title || "null") + "\n";
+    yaml += "  published: true\n";
     yaml += "  release-date: " + year + "-01-01\n";
     yaml += "  first-publication: " + year + "\n";
 
