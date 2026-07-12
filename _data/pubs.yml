@@ -26,7 +26,8 @@
   preprint-url: null
   software-url: null
   topics:
-    - TODO
+    - Orientation
+    - Phylogenetic Networks
   abstract: >
     Many methods for reconstructing phylogenetic networks first infer an undirected network skeleton, which subsequently requires orienting its edges to obtain a meaningful evolutionary history. Motivated by this setting, the problem of orienting an undirected graph into a class of phylogenetic networks has recently received considerable attention, with hardness results known for many of the most important network classes. We introduce the Reorientation problem: Given a directed arc-weighted graph and a budget \(B\), determine whether arc reversals of total cost at most \(B\) suffice to transform the graph into a phylogenetic network belonging to a specified class. This models situations in which an inferred network is already directed but may contain a limited number of incorrect arc orientations. We study the computational complexity of this generalization of the Orientation problem. For binary galled networks of level \(\ell\), we show that a reorientation of cost at most \(B\) can be found in \(\mathcal{O}(|V|^2 \log(\ell))\) time. In contrast, we prove that extending this result to more general network classes is unlikely and thereby resolve an open question in the literature: The Orientation problem is NP-hard already for binary reticulation-visible networks and for galled networks of maximum degree 5. Finally, we develop fixed-parameter tractable algorithms for Reorientation parameterized by the treewidth of the underlying graph. Together, these results establish a sharper complexity landscape for the Orientation and Reorientation problem in phylogenetic networks.
   bibtex: null
