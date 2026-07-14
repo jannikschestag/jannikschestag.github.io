@@ -242,7 +242,7 @@
       doi = {10.1101/2025.11.14.688467}
     }
     
-- title: How can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks
+- title: "Maximizing All-Paths Phylogenetic Diversity: Parameterized Approaches for Networks"
   published: true
   release-date: 2023-09-01
   first-publication: 2023
@@ -270,9 +270,7 @@
     - Phylogenetic Diversity
     - Phylogenetic Networks
   abstract: >
-    Phylogenetic Diversity (PD) is a measure of the overall biodiversity of a set of present-day species (taxa) within a phylogenetic tree. We consider an extension of PD to phylogenetic networks. Given a phylogenetic network with weighted edges and a subset \(S\) of leaves, the all-paths phylogenetic diversity of \(S\) is the summed weight of all edges on a path from the root to some leaf in \(S\). The problem of finding a bounded-size set \(S\) that maximizes this measure is polynomial-time solvable on trees, but NP-hard on networks. We study the latter from a parameterized perspective.
-    <br />
-    While this problem is W[2]-hard with respect to the size of \(S\) (and W[1]-hard with respect to the size of the complement of \(S\)), we show that it is fixed-parameter tractable with respect to several other parameters, including the phylogenetic diversity of \(S\), the acceptable loss of phylogenetic diversity, the number of reticulations in the network, and the treewidth of the underlying graph.
+    Phylogenetic Diversity (PD) is a fundamental measure of biodiversity, originally defined on phylogenetic trees and widely used in conservation biology. Phylogenetic trees are often generalised to directed acyclic graphs, called phylogenetic networks. As such, a corresponding generalization of PD is needed. A natural generalization to edge-weighted phylogenetic networks is the all-paths measure, where the diversity of a set \(S\) of species (taxa) is defined as the total weight of all edges that lie on a path from the root to at least one species in \(S\). While maximizing PD on trees can be solved in polynomial time, the corresponding problem on networks is NP-hard and difficult to approximate. We undertake a systematic parameterized complexity study of the Max-All-Paths-PD (MapPD) problem. We establish W[2]-hardness when parameterized by the number of species that are included in a solution, and W[1]-hardness for the number of species that are excluded. On the positive side, we show that the problem is fixed-parameter tractable with respect to the threshold of diversity and the acceptable loss of diversity. We further analyze how the network's proximity to a tree influences algorithmic behavior and present single-exponential fixed-parameter algorithms when parameterized by the number of reticulations and by the treewidth of the underlying graph. Finally, we present a polynomial kernelization for MapPD with respect to the number of reticulation edges.
   bibtex: >
     @inproceedings{jones2023maximize,
       title = {{How Can We Maximize Phylogenetic Diversity? Parameterized Approaches for Networks}},
