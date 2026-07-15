@@ -261,9 +261,9 @@
   conference-year: 2023
   doi-identifier: 10.4230/LIPIcs.IPEC.2023.30
   doi-url: https://doi.org/10.4230/LIPIcs.IPEC.2023.30
-  preprint-server: null
-  preprint-identifier: null
-  preprint-url: null
+  preprint-server: arXiv
+  preprint-identifier: 2607.12670
+  preprint-url: https://arxiv.org/abs/2607.12670
   software-url: null
   topics:
     - FPT
