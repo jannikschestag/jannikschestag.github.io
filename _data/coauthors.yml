@@ -10,14 +10,14 @@
       last: Jones
   link: https://www.mdx.ac.uk/about-us/our-people/staff-directory/dr-mark-jones/
   affiliation: Middlesex University
-  collaboration: no
+  collaboration: yes
 
 - name:
     - first: Christian
       last: Komusiewicz
   link: https://www.fmi.uni-jena.de/en/6050/prof-dr-christian-komusiewicz
   affiliation: Friedrich Schiller Universität
-  collaboration: no
+  collaboration: yes
 
 - name:
     - first: Mathias
@@ -110,6 +110,34 @@
   link: null
   affiliation: null
   collaboration: no
+
+- name:
+    - first: Anton
+      last: Hermann
+  link: https://www.tu.berlin/akt/ueber-uns/team/anton-herrmann
+  affiliation: TU Berlin
+  collaboration: yes
+
+- name:
+    - first: André
+      last: Nichterlein
+  link: https://www.tu.berlin/akt/ueber-uns/team/andre-nichterlein
+  affiliation: TU Berlin
+  collaboration: yes
+
+- name:
+    - first: Tom
+      last: Breitkopf
+  link: https://www.tu.berlin/akt/ueber-uns/team/tom-breitkopf
+  affiliation: TU Berlin
+  collaboration: yes
+
+- name:
+    - first: Amelie
+      last: Heindl
+  link: https://www.tu.berlin/las/team/wissenschaftler/amelie-heindl
+  affiliation: TU Berlin
+  collaboration: yes
 
 - name:
     - first: Ber
