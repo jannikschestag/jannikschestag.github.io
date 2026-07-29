@@ -80,6 +80,12 @@ author:
     - label: "TU Delft"
       icon: "fas fa-fw fa-university"
       url: "https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/applied-mathematics/people/dr-jt-theo-schestag"
+    - label: "Mekelweg 4, 2628 CD, Delft"
+      icon: "fas fa-fw fa-building"
+      url: null
+    - label: "Room 36.HB 04.230"
+      icon: "fas fa-fw fa-location-dot"
+      url: null
 
 footer:
   links:
