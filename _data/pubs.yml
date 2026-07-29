@@ -1,3 +1,34 @@
+- title: On the Parameterized Complexity of Overlapping Edge-Colored Hypergraph Clustering
+  published: true
+  release-date: 2026-12-31
+  first-publication: 2026
+  authors:
+    - first: Robert
+      last: Bredereck
+    - first: Jannik
+      last: Schestag
+    - first: Frank
+      last: Sommer
+  type: preprint
+  journal: null
+  volume: null
+  issue: null
+  pages: null
+  note: null
+  conference: null
+  conference-year: null
+  doi-identifier: null
+  doi-url: null
+  preprint-server: null
+  preprint-identifier: null
+  preprint-url: null
+  software-url: null
+  topics:
+    - FPT
+  abstract: >
+    In the classical Edge-Colored Hypergraph Clustering (CHC) problem, the input is an edge-colored hypergraph whose colors represent different interaction types. Given an assignment of one color to each vertex, a hyperedge \(e\) is satisfied if every vertex of \(e\) receives the color of \(e\). The objective is to find an assignment that maximizes the number of satisfied hyperedges. However, restricting every vertex to a single color rules out overlapping clusters, which arise naturally in applications. To capture such overlaps, Crane et al. [WSDM '24] recently introduced three extensions of CHC where a vertex may receive several colors. In Local CHC, every vertex may receive up to \(b\) colors; in Global CHC, every vertex receives at least one color and a global budget of \(b\) additional colors may be assigned; and in Robust CHC, at most \(b\) joker vertices receive all colors, while every other vertex receives exactly one color. Each variant contains CHC as a special case and is therefore NP-hard. Crane et al. also initiated the study of the parameterized complexity of these problems, which we significantly extend. Our key parameterizations include the target number \(z\) of satisfied hyperedges, its dual-the number \(t\) of erroneous hyperedges-and parameters capturing the distribution of colors among the hyperedges. On the algorithmic side, we obtain several fixed-parameter tractability results and polynomial kernels. In particular, we show that Robust CHC is fixed-parameter tractable when parameterized by \(t+r\), where \(r\) is the maximum hyperedge size. We complement these algorithms with W[1]-hardness and NP-hardness results that delineate the limits of tractability. In particular, Global CHC and Robust CHC remain NP-hard on graphs (\(r=2\)) with only two colors.
+  bibtex: null
+    
 - title: Orienting and Reorienting Into Galled and Reticulation-Visible Networks
   published: false
   release-date: 2026-12-31
