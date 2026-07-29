@@ -60,8 +60,14 @@ function showMap() {
         div.style.display = "none";
     }
 }
+const places = new Array();
 </script>
 
+{% for inst in site.data.institutions %}
+<script>
+places["{{ inst.name }}"] = "<b>{{ inst.name }}, {{ inst.city }}</b>";
+</script>
+{% endfor %}
 
 {% assign raw = "" %}
 
@@ -190,10 +196,7 @@ function showMap() {
                 {% if coauthor.affiliation == inst.code %}
                   {{ inst.name }}, {{ inst.city }}, {{ inst.country }}
 <script>
-
-L.marker([{{ inst.point }}]).addTo(map)
- .bindPopup("{{ inst.name }}, {{ inst.city }}");
-
+places["{{ inst.name }}"] += "\n new <br> new {{ fullname }}";
 </script>
                 {% endif %}
               {% endfor %}
@@ -205,3 +208,11 @@ L.marker([{{ inst.point }}]).addTo(map)
     {% endfor %}
   </tbody>
 </table>
+
+
+{% for inst in site.data.institutions %}
+<script>
+L.marker([{{ inst.point }}]).addTo(map)
+ .bindPopup(places["{{ inst.name }}"]);
+</script>
+{% endfor %}
