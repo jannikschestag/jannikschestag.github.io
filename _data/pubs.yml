@@ -1,5 +1,5 @@
 - title: On the Parameterized Complexity of Overlapping Edge-Colored Hypergraph Clustering
-  published: true
+  published: false
   release-date: 2026-12-31
   first-publication: 2026
   authors:
@@ -9,7 +9,7 @@
       last: Schestag
     - first: Frank
       last: Sommer
-  type: preprint
+  type: null
   journal: null
   volume: null
   issue: null
