@@ -14,6 +14,9 @@ classes: wide
 tr:hover {
     background-color: #e8e8e8;
 }
+div.leaflet-popup-content {
+  text-align: center;
+}
 </style>
 
 <p>Collaborators I have co-authored work with, sorted by number of joint publications.
@@ -65,7 +68,7 @@ const places = new Array();
 
 {% for inst in site.data.institutions %}
 <script>
-places["{{ inst.name }}"] = "<b>{{ inst.name }}, {{ inst.city }}</b>";
+places["{{ inst.code }}"] = "<b>{{ inst.name }}, {{ inst.city }}</b>";
 </script>
 {% endfor %}
 
@@ -196,7 +199,7 @@ places["{{ inst.name }}"] = "<b>{{ inst.name }}, {{ inst.city }}</b>";
                 {% if coauthor.affiliation == inst.code %}
                   {{ inst.name }}, {{ inst.city }}, {{ inst.country }}
 <script>
-places["{{ inst.name }}"] += "\n new <br> new {{ fullname }}";
+places["{{ inst.code }}"] += "<br>{{ fullname }}";
 </script>
                 {% endif %}
               {% endfor %}
@@ -213,6 +216,6 @@ places["{{ inst.name }}"] += "\n new <br> new {{ fullname }}";
 {% for inst in site.data.institutions %}
 <script>
 L.marker([{{ inst.point }}]).addTo(map)
- .bindPopup(places["{{ inst.name }}"]);
+ .bindPopup(places["{{ inst.code }}"]);
 </script>
 {% endfor %}
