@@ -362,7 +362,7 @@
 
 - title: Average-Tree Phylogenetic Diversity Parameterized by Scanwidth and Invisibility
   published: true
-  release-date: 2026-01-01
+  release-date: 2026-09-01
   first-publication: 2026
   authors:
   - first: Leo
@@ -376,14 +376,14 @@
     last: Scornavacca
   - first: Mathias
     last: Weller
-  type: preprint
-  journal: null
+  type: conference
+  journal: Proceedings of the 21th International Symposium on Parameterized and Exact Computation (IPEC 2026)
   volume: null
   issue: null
   pages: null
   note: null
-  conference: null
-  conference-year: null
+  conference: IPEC
+  conference-year: 2023
   doi-identifier: null
   doi-url: null
   preprint-server: arXiv
@@ -398,13 +398,12 @@
   abstract: >
     We investigate parameterized algorithms for computing the average-tree phylogenetic diversity (APD) in rooted phylogenetic networks, studying the problem under different structural parameters that capture the deviation of a network from a tree. Our primary parameter is the scanwidth, a measure of the tree-likeness of a given directed acyclic graph. We show that a subset of taxa with maximum APD can be found in polynomial time in phylogenetic networks of scanwidth at most 2, but becomes NP-hard in networks of scanwidth 3. Further, we design an algorithm that computes the APD of a given set of taxa in \(\mathcal{O}(2^{\mathrm{sw}} n)\) time, where \(\mathrm{sw}\) denotes the scanwidth and \(n\) the number of taxa in the input network. Finally, we give a linear-time algorithm for computing the APD of a given set of taxa if the network induced by these taxa is reticulation-visible. We generalize this algorithm to still run in polynomial time if each biconnected component of the induced network has only constantly many invisible reticulations.
   bibtex: >
-    @article{vanIersel2026averagetree,
+    @inproceedings{vanIersel2026averagetree,
       title = {{Average-Tree Phylogenetic Diversity Parameterized by Scanwidth and Invisibility}},
       author = {van Iersel, Leo and Jones, Mark and Schestag, Jannik and Scornavacca, Celine and Weller, Mathias},
+      booktitle = {Proceedings of the 21th International Symposium on Parameterized and Exact Computation (IPEC 2026)},
       year = {2026},
-      archivePrefix = {arXiv},
-      journal = {arXiv preprint},
-      eprint = {2604.27745}
+      organization = {Schloss-Dagstuhl-Leibniz Zentrum f{\"u}r Informatik},
     }
 
 - title: Phylogenetic Network Diversity Parameterized by Reticulation Number and Beyond
