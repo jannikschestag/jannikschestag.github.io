@@ -36,10 +36,11 @@ classes: wide
   {% assign all_pubs = site.data.pubs %}
 
   {%- comment -%}
-  Filter by topic
+  Filter by topic and order by year
   {%- endcomment -%}
   {% assign conference_pubs = all_pubs | where_exp: "p", "p.conference == conf.abbr" %}
-  {% assign conference_pubs = conference_pubs | sort: "release-date" | reverse %}
+  {% assign conference_pubs = conference_pubs | sort: "conference-year" | reverse %}
+  
   {% assign conference_length = conference_pubs | size %}
 
   {% if conference_length != 0 %}
