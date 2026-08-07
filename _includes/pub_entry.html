@@ -28,7 +28,7 @@ any) appears inside the summary/abstract box when it is opened, not in the card.
       {%- case pub.type -%}
         {%- when "journal" -%}{%- assign type_label = "Journal article" -%}
         {%- when "preprint" -%}{%- assign type_label = "Preprint" -%}
-        {%- when "conference" -%}{%- assign type_label = "Conference proceedings" -%}
+        {%- when "conference" -%}{%- assign type_label = "Conference proceeding" -%}
       {%- endcase -%}
 
       <div class="pub-title">{{ pub.title }}{% if pub.status_note %} {% endif %}</div>
