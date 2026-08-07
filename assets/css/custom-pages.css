@@ -598,6 +598,14 @@ html[data-theme="dark"] .pub-type-conference {
   background: var(--nh-surface);
 }
 
+.pub-toolbar a.filter-pill {
+  text-decoration: none;
+}
+
+.pub-toolbar a.filter-pill:hover {
+  text-decoration: none;
+}
+
 .pub-toolbar-group {
   display: flex;
   flex-wrap: wrap;
