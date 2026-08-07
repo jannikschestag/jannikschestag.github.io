@@ -33,7 +33,7 @@ any) appears inside the summary/abstract box when it is opened, not in the card.
 
       <div class="pub-title">{{ pub.title }}{% if pub.status_note %} {% endif %}</div>
 
-    <span class="authors">
+    <span class="pub-authors">
       {% assign numAuthors = pub.authors | size %}
       {% assign currentAuthorPos = 1 %}
       {% for author in pub.authors %}
@@ -48,7 +48,7 @@ any) appears inside the summary/abstract box when it is opened, not in the card.
           {%- assign name = name | append: " " | append: author.tussenvoegsel -%}
         {%- endif %}
         {%- assign name = name | append: " " | append: author.last -%}
-        <span style="white-space: nowrap;">{{ name }}</span>{% if currentAuthorPos < numAuthors %}, {% elsif currentAuthorPos == numAuthors and numAuthors > 2 %}, and {% elsif currentAuthorPos == numAuthors and numAuthors == 2 %} and {% endif %}
+        <span class="pub-author">{{ name }}</span>{% if currentAuthorPos < numAuthors %}<span class="pub-author-sep">, </span>{% elsif currentAuthorPos == numAuthors and numAuthors > 2 %}<span class="pub-author-sep">, and </span>{% elsif currentAuthorPos == numAuthors and numAuthors == 2 %}<span class="pub-author-sep"> and </span>{% endif %}
       {% endfor %}
     </span><br>
     
