@@ -33,21 +33,25 @@ any) appears inside the summary/abstract box when it is opened, not in the card.
 
       <div class="pub-title">{{ pub.title }}{% if pub.status_note %} {% endif %}</div>
 
-      <div class="pub-authors">
-        {% for author in pub.authors %}
-          {%- assign name = author.first -%}
-          {%- if author.middle %}
-            {%- for m in author.middle %}
-              {%- assign name = name | append: " " | append: m | append: "." -%}
-            {%- endfor %}
-          {%- endif %}
-          {%- if author.tussenvoegsel %}
-            {%- assign name = name | append: " " | append: author.tussenvoegsel -%}
-          {%- endif %}
-          {%- assign name = name | append: " " | append: author.last -%}
-          <span class="pub-author{% if author.first == 'Jannik' and author.last == 'Schestag' %} is-me{% endif %}">{{ name }}</span>{%- unless forloop.last %}<span class="pub-author-sep">, </span>{% endunless %}
-        {% endfor %}
-      </div>
+    <span class="authors">
+      {% assign numAuthors = pub.authors | size %}
+      {% assign currentAuthorPos = 1 %}
+      {% for author in pub.authors %}
+        {% assign currentAuthorPos = currentAuthorPos | plus: 1 %}
+        {%- assign name = author.first -%}
+        {%- if author.middle %}
+          {%- for m in author.middle %}
+            {%- assign name = name | append: " " | append: m | append: "." -%}
+          {%- endfor %}
+        {%- endif %}
+        {%- if author.tussenvoegsel %}
+          {%- assign name = name | append: " " | append: author.tussenvoegsel -%}
+        {%- endif %}
+        {%- assign name = name | append: " " | append: author.last -%}
+        <span style="white-space: nowrap;">{{ name }}</span>{% if currentAuthorPos < numAuthors %}, {% elsif currentAuthorPos == numAuthors and numAuthors > 2 %}, and {% elsif currentAuthorPos == numAuthors and numAuthors == 2 %} and {% endif %}
+      {% endfor %}
+    </span><br>
+    
       <div class="pub-venue">
         {%- if venue_url and venue_url != "" -%}<a class="pub-venue-link" href="{{ venue_url }}" target="_blank">{%- endif -%}
         {%- if pub.type == "journal" -%}
