@@ -1,5 +1,27 @@
-<link rel="stylesheet" href="{{ '/assets/css/overrides.css' | relative_url }}">
+<script>
+  /* Set the colour theme before first paint to avoid a flash. */
+  (function () {
+    try {
+      var stored = localStorage.getItem('nh-theme');
+      var theme = stored || (window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/overrides.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<script defer src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+<script defer src="{{ '/assets/js/network-bg.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/js-icon.svg' | relative_url }}">
 <link rel="apple-touch-icon" href="{{ '/assets/images/js-icon.svg' | relative_url }}">
-<meta property="og:image" content="{{ '/assets/images/js-icon.svg' | absolute_url }}">
-<meta name="twitter:image" content="{{ '/assets/images/js-icon.svg' | absolute_url }}">
+{%- comment -%}
+og:title / og:description / og:image are emitted per page by jekyll-seo-tag:
+the title comes from each page's `title`, the description from its `description`
+front matter (falling back to site.description), and the image from site.og_image.
+Re-declaring them here only produced duplicate tags, so they are not repeated.
+{%- endcomment -%}
