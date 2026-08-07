@@ -79,7 +79,7 @@ any) appears inside the summary/abstract box when it is opened, not in the card.
           {% if pub.preprint-url %}<a class="pub-icon-btn" href="{{ pub.preprint-url }}" target="_blank" rel="noopener" title="Preprint on {{ pub.preprint-server }}" aria-label="Preprint on {{ pub.preprint-server }}">{{ ic_preprint }}</a>{% endif %}
           {% if pub.software-url %}<a class="pub-icon-btn" href="{{ pub.software-url }}" target="_blank" rel="noopener" title="Source code" aria-label="Source code">{{ ic_code }}</a>{% endif %}
         {% elsif pub.type == "conference" %}
-          {% if pub.doi-url %}<a class="pub-icon-btn" href="{{ pub.doi-url }}" target="_blank" rel="noopener" title="Journal article (DOI)" aria-label="Journal article (DOI)">{{ ic_journal }}</a>{% endif %}
+          {% if pub.doi-url %}<a class="pub-icon-btn" href="{{ pub.doi-url }}" target="_blank" rel="noopener" title="Conference proceedings (DOI)" aria-label="Conference proceedings (DOI)">{{ ic_journal }}</a>{% endif %}
           {% if pub.preprint-url %}<a class="pub-icon-btn" href="{{ pub.preprint-url }}" target="_blank" rel="noopener" title="Preprint on {{ pub.preprint-server }}" aria-label="Preprint on {{ pub.preprint-server }}">{{ ic_preprint }}</a>{% endif %}
           {% if pub.software-url %}<a class="pub-icon-btn" href="{{ pub.software-url }}" target="_blank" rel="noopener" title="Source code" aria-label="Source code">{{ ic_code }}</a>{% endif %}
         {% elsif pub.type == "preprint" %}
