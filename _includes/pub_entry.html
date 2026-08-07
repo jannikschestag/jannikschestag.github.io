@@ -44,7 +44,7 @@ any) appears inside the summary/abstract box when it is opened, not in the card.
         {%- if venue_url and venue_url != "" -%}</a>{%- endif -%}
       </div>
 
-      <div class="pub-title">{{ pub.title }}{% if pub.status_note %} <span class="pub-info" tabindex="0" role="note" aria-label="{{ pub.status_note | escape }}" data-tip="{{ pub.status_note | escape }}"><svg class="pub-info-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="8" cy="4.6" r="1" fill="currentColor"/><rect x="7.05" y="6.9" width="1.9" height="5" rx="0.95" fill="currentColor"/></svg></span>{% endif %}</div>
+      <div class="pub-title">{{ pub.title }}{% if pub.status_note %} {% endif %}</div>
 
       <div class="pub-authors">
         {% for author in pub.authors %}
