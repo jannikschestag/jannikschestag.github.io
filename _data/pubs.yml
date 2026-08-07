@@ -25,6 +25,8 @@
   software-url: null
   topics:
     - FPT
+  summary_lay: >-
+    Still to come
   abstract: >
     In the classical Edge-Colored Hypergraph Clustering (CHC) problem, the input is an edge-colored hypergraph whose colors represent different interaction types. Given an assignment of one color to each vertex, a hyperedge \(e\) is satisfied if every vertex of \(e\) receives the color of \(e\). The objective is to find an assignment that maximizes the number of satisfied hyperedges. However, restricting every vertex to a single color rules out overlapping clusters, which arise naturally in applications. To capture such overlaps, Crane et al. [WSDM '24] recently introduced three extensions of CHC where a vertex may receive several colors. In Local CHC, every vertex may receive up to \(b\) colors; in Global CHC, every vertex receives at least one color and a global budget of \(b\) additional colors may be assigned; and in Robust CHC, at most \(b\) joker vertices receive all colors, while every other vertex receives exactly one color. Each variant contains CHC as a special case and is therefore NP-hard. Crane et al. also initiated the study of the parameterized complexity of these problems, which we significantly extend. Our key parameterizations include the target number \(z\) of satisfied hyperedges, its dual-the number \(t\) of erroneous hyperedges-and parameters capturing the distribution of colors among the hyperedges. On the algorithmic side, we obtain several fixed-parameter tractability results and polynomial kernels. In particular, we show that Robust CHC is fixed-parameter tractable when parameterized by \(t+r\), where \(r\) is the maximum hyperedge size. We complement these algorithms with W[1]-hardness and NP-hardness results that delineate the limits of tractability. In particular, Global CHC and Robust CHC remain NP-hard on graphs (\(r=2\)) with only two colors.
   bibtex: null
@@ -59,6 +61,8 @@
   topics:
     - Orientation
     - Phylogenetic Networks
+  summary_lay: >-
+    Still to come
   abstract: >
     Many methods for reconstructing phylogenetic networks first infer an undirected network skeleton, which subsequently requires orienting its edges to obtain a meaningful evolutionary history. Motivated by this setting, the problem of orienting an undirected graph into a class of phylogenetic networks has recently received considerable attention, with hardness results known for many of the most important network classes. We introduce the Reorientation problem: Given a directed arc-weighted graph and a budget \(B\), determine whether arc reversals of total cost at most \(B\) suffice to transform the graph into a phylogenetic network belonging to a specified class. This models situations in which an inferred network is already directed but may contain a limited number of incorrect arc orientations. We study the computational complexity of this generalization of the Orientation problem. For binary galled networks of level \(\ell\), we show that a reorientation of cost at most \(B\) can be found in \(\mathcal{O}(|V|^2 \log(\ell))\) time. In contrast, we prove that extending this result to more general network classes is unlikely and thereby resolve an open question in the literature: The Orientation problem is NP-hard already for binary reticulation-visible networks and for galled networks of maximum degree 5. Finally, we develop fixed-parameter tractable algorithms for Reorientation parameterized by the treewidth of the underlying graph. Together, these results establish a sharper complexity landscape for the Orientation and Reorientation problem in phylogenetic networks.
   bibtex: null
@@ -93,6 +97,8 @@
   topics:
     - FPT
     - Social Choice
+  summary_lay: >-
+    Still to come
   abstract: >
     Cost-efficient resource allocation and fair resource allocation are often studied separately, yet practical allocation systems typically require both. We initiate the study of their combination through the problem of finding minimum-cost allocations that are envy-free up to one item. Although EF1 is always attainable and efficiently computable in the classical cost-free setting, we show that the additional cost requirement makes the problem computationally intractable. We then analyze the problem's parameterized complexity and study combinations of natural parameters like the number of agents, the number of items, the budget, the number of different item types, and the maximum evaluation of any item by any agent. Our main results are a polynomial kernel for the number of items and W[1]-hardness for the number of different item types. The combination of all our results gives an almost complete characterization of which parameters admit polynomial kernels, fixed-parameter tractability, and containment in XP. For non-existent tractability results, we present matching lower bounds like W[1]-hardness and para-NP-completeness.
   bibtex: null
@@ -124,6 +130,8 @@
     - FPT
     - Orientation
     - Phylogenetic Networks
+  summary_lay: >-
+    Still to come
   abstract: >
     The problem of orienting an unrooted network to obtain a specific class of rooted phylogenetic networks is known to be NP-hard in many cases. In this paper, we introduce two algorithmic frameworks that yield significantly improved fixed-parameter tractable (FPT) algorithms parameterized by the network level \(\ell\). Our first main contribution shows that for several prominent network classes, the core algorithmic difficulty lies in finding a directed spanning tree on the network's undirected generator. By enumerating these spanning trees in \(\mathcal{O}(5.3334^\ell + \ell)\) time and orienting all remaining edges in polynomial time, we solve the orientation problem in \(\mathcal{O}(5.3334^\ell \cdot n)\) time for tree-based networks and in \(\mathcal{O}(5.3334^\ell \cdot n^2)\) time for orchards, where \(n\) is the number of vertices of the graph. Extending this approach with further branching yields \(\mathcal{O}(10.6667^\ell \cdot n^2)\)-time algorithms for tree-child and normal networks. Our second technique bypasses spanning trees by directly guessing the placement of reticulations on the generator. This framework provides \(\mathcal{O}(12.2071^\ell \cdot n^2)\)-time algorithms for temporal, reticulation-visible, and tree-sibling networks. Finally, we demonstrate the versatility of the reticulation-guessing framework by showing that even computing an orientation with minimum scanwidth is single-exponential FPT with respect to the level. Together, these results significantly improve the best-known running times for phylogenetic network orientation.
   bibtex: >
@@ -165,6 +173,8 @@
     - Phylogenetic Networks
     - Scanwidth
     - Implementation
+  summary_lay: >-
+    Still to come
   abstract: >
     Identifying a subset of taxa that maximizes Phylogenetic Diversity (PD) is a cornerstone of quantitative conservation planning. Traditionally, PD is defined over a phylogenetic tree in which leaves represent present-day taxa and branch lengths capture the estimated evolutionary distinctiveness. While PD maximization is computationally tractable on trees with unit costs, the problem becomes NP-hard when transitioning to phylogenetic networks or to budgeted versions in which protecting taxa incurs non-homogeneous costs.
     <br />
@@ -211,6 +221,8 @@
     - FPT
     - Phylogenetic Diversity
     - Food Webs
+  summary_lay: >-
+    Still to come
   abstract: >
     In the Maximize Phylogenetic Diversity problem, we are given a phylogenetic tree that represents the genetic proximity of species, and we are asked to select a subset of species of maximum phylogenetic diversity to be preserved through conservation efforts, subject to budgetary constraints that allow only \(k\) species to be saved. This neglects that it is futile to preserve a predatory species if we do not also preserve at least a subset of the prey it feeds on. Thus, in the Optimizing PD with Dependencies (\(\varepsilon\)-PDD) problem, we are additionally given a food web that represents the predator–prey relationships between species. The goal is to save a set of \(k\) species of maximum phylogenetic diversity such that for every saved species, at least one of its prey is also saved. This problem is NP-hard even when the phylogenetic tree is a star.
     <br />
@@ -260,6 +272,8 @@
     - Phylogenetic Networks
     - Scanwidth
     - Implementation
+  summary_lay: >-
+    Still to come
   abstract: >
     Phylogenetic diversity plays an important role in biodiversity, conservation, and evolutionary studies by measuring the diversity of a set of taxa based on their phylogenetic relationships. In phylogenetic trees, a subset of \(k\) taxa with maximum phylogenetic diversity can be found by a simple and efficient greedy algorithm. However, this algorithmic tractability is lost when considering phylogenetic networks, which incorporate reticulate evolutionary events such as hybridization and horizontal gene transfer. To address this challenge, we introduce PaNDA (Phylogenetic Network Diversity Algorithms), the first software package and interactive graphical user-interface for exploring, visualizing and maximizing diversity in phylogenetic networks. PaNDA includes a novel algorithm to find a subset of \(k\) taxa with maximum diversity, running in polynomial time for networks of bounded canwidth, a measure of tree-likeness of a network that grows slower than the well-known level measure. This algorithm considers the variant of phylogenetic diversity on networks in which the branch lengths of all paths from the root to the selected taxa contribute towards their diversity. We demonstrate the scalability of this algorithm on simulated networks, successfully analyzing level-15 networks with up to 200 taxa in seconds. We also provide a proof-of-concept analysis using a phylogenetic network on Xiphophorus species, illustrating how the tool can support diversity studies based on real genomic data. The software is easily installable and freely available at <a href="https://github.com/nholtgrefe/panda" target="_blank">https://github.com/nholtgrefe/panda</a>. Additionally, we extend the definition of phylogene- tic diversity to semi-directed phylogenetic networks, which are mixed graphs increasingly used in phylogenetic analysis to model uncertainty of the root location. We prove that finding a subset of \(k\) taxa with maximum diversity remains NP-hard on semi-directed networks, but do present a polynomial-time algorithm for networks with bounded level.
   bibtex: >
@@ -299,6 +313,8 @@
     - FPT
     - Phylogenetic Diversity
     - Phylogenetic Networks
+  summary_lay: >-
+    Still to come
   abstract: >
     Phylogenetic Diversity (PD) is a fundamental measure of biodiversity, originally defined on phylogenetic trees and widely used in conservation biology. Phylogenetic trees are often generalised to directed acyclic graphs, called phylogenetic networks. As such, a corresponding generalization of PD is needed. A natural generalization to edge-weighted phylogenetic networks is the all-paths measure, where the diversity of a set \(S\) of species (taxa) is defined as the total weight of all edges that lie on a path from the root to at least one species in \(S\). While maximizing PD on trees can be solved in polynomial time, the corresponding problem on networks is NP-hard and difficult to approximate. We undertake a systematic parameterized complexity study of the Max-All-Paths-PD (MapPD) problem. We establish W[2]-hardness when parameterized by the number of species that are included in a solution, and W[1]-hardness for the number of species that are excluded. On the positive side, we show that the problem is fixed-parameter tractable with respect to the threshold of diversity and the acceptable loss of diversity. We further analyze how the network's proximity to a tree influences algorithmic behavior and present single-exponential fixed-parameter algorithms when parameterized by the number of reticulations and by the treewidth of the underlying graph. Finally, we present a polynomial kernelization for MapPD with respect to the number of reticulation edges.
   bibtex: >
@@ -347,6 +363,8 @@
   - Phylogenetic Diversity
   - Phylogenetic Networks
   - Implementation
+  summary_lay: >-
+    Still to come
   abstract: >
     Phylogenetic diversity is a measure used to quantify the biodiversity of a set of species. Here, we introduce the average-tree phylogenetic diversity score in rooted binary phylogenetic networks and consider algorithms for computing and maximizing the score on a given network. Basically, the score is the weighted average of the phylogenetic diversity scores in all trees displayed by the network, with the weights determined by the inheritance probabilities on the reticulation edges used in the embeddings. We show that computing the score of a given set of taxa in a given network is #P-hard, directly implying #P-hardness of finding a subset of \(k\) taxa achieving maximum diversity score and thereby ruling out polynomial-time algorithms for these problems unless the polynomial hierarchy collapses. However, we show that both problems can be solved efficiently if the input network is close to being a tree in the sense that its reticulation number is small. More precisely, we prove that we can solve the optimization problem in networks with \(n\) leaves and \(r\) reticulations in \(2^{\mathcal{O}(r)} \cdot n \cdot k\) time. Using experiments on data produced by simulating a reticulate-evolution process, we show that our algorithm runs efficiently on networks with hundreds of taxa and tens of reticulations.
   bibtex: >
@@ -395,6 +413,8 @@
     - Phylogenetic Diversity
     - Phylogenetic Networks
     - Scanwidth
+  summary_lay: >-
+    Still to come
   abstract: >
     We investigate parameterized algorithms for computing the average-tree phylogenetic diversity (APD) in rooted phylogenetic networks, studying the problem under different structural parameters that capture the deviation of a network from a tree. Our primary parameter is the scanwidth, a measure of the tree-likeness of a given directed acyclic graph. We show that a subset of taxa with maximum APD can be found in polynomial time in phylogenetic networks of scanwidth at most 2, but becomes NP-hard in networks of scanwidth 3. Further, we design an algorithm that computes the APD of a given set of taxa in \(\mathcal{O}(2^{\mathrm{sw}} n)\) time, where \(\mathrm{sw}\) denotes the scanwidth and \(n\) the number of taxa in the input network. Finally, we give a linear-time algorithm for computing the APD of a given set of taxa if the network induced by these taxa is reticulation-visible. We generalize this algorithm to still run in polynomial time if each biconnected component of the induced network has only constantly many invisible reticulations.
   bibtex: >
@@ -440,6 +460,8 @@
     - FPT
     - Phylogenetic Diversity
     - Phylogenetic Networks
+  summary_lay: >-
+    Still to come
   abstract: >
     Network Phylogenetic Diversity (Network-PD) is a measure for the diversity of a set of species based on a rooted phylogenetic network (with branch lengths and inheritance probabilities on the reticulation edges) describing the evolution of those species. We consider the Maximize Network-PD problem: Given such a network, find \(k\) species with maximum Network-PD score. We show that this problem is fixed-parameter tractable (FPT) for binary networks, by describing an optimal algorithm running in \(\mathcal{O}(2^r \log(k)(n+r))\) time, with \(n\) the total number of species in the network and \(r\) its reticulation number. Furthermore, we show that Maximize Network-PD is NP-hard for level-1 networks, proving that, unless P=NP, the FPT approach cannot be extended by using the level as parameter instead of the reticulation number.
   bibtex: >
@@ -482,6 +504,8 @@
     - Phylogenetic Networks
     - Food Webs
     - Scanwidth
+  summary_lay: >-
+    Still to come
   abstract: >
     For a phylogenetic tree, the phylogenetic diversity of a set \(A\) of taxa is the total weight of edges on paths to \(A\). Finding small sets of maximal diversity is crucial for conservation planning, as it indicates where limited resources can be invested most efficiently. In recent years, efficient algorithms have been developed to find sets of taxa that maximize phylogenetic diversity either in a phylogenetic network or in a phylogenetic tree subject to ecological constraints, such as a food web. However, these aspects have mostly been studied independently. Since both factors are biologically important, it seems natural to consider them together.
     <br />
@@ -528,6 +552,8 @@
   - FPT
   - Phylogenetic Diversity
   - Food Webs
+  summary_lay: >-
+    Still to come
   abstract: >
     In the NP-hard Optimizing Phylogenetic Diversity with Dependencies (PDD) problem, the input consists of a phylogenetic tree \(\mathcal{T}\) over a set of taxa \(X\), a food-web that describes the prey-predator relationships in \(X\), and integers \(k\) and \(D\). The task is to find a set \(S\) of \(k\) species that is viable in the food-web such that the subtree of \(\mathcal{T}\) obtained by retaining only the vertices of \(S\) has total edge weight at least \(D\). Herein, viable means that for every predator taxon of \(S\), the set \(S\) contains at least one prey taxon.
     <br />
@@ -568,6 +594,8 @@
   - FPT
   - Phylogenetic Diversity
   - Food Webs
+  summary_lay: >-
+    Still to come
   abstract: >
     In a phylogenetic tree, Phylogenetic trees represent certain species and their likely ancestors. In such a tree, present-day species are leaves and an edge from \(u\) to \(v\) indicates that \(u\) is an ancestor of \(v\). Weights on these edges indicate the phylogenetic distance. The phylogenetic diversity (PD) of a set of species \(A\) is the total weight of edges that are on any path between the root of the phylogenetic tree and a species in \(A\).
     <br />
@@ -613,6 +641,8 @@
   - Phylogenetic Diversity
   - Food Webs
   - Scanwidth
+  summary_lay: >-
+    Still to come
   abstract: >
     Structural parameters of graphs, such as treewidth, play a central role in the study of the parameterized complexity of graph problems. Motivated by the study of parametrized algorithms on phylogenetic networks, scanwidth was introduced recently as a new treewidth-like structural parameter for acyclic directed graphs (DAGs) that respects the edge directions in the DAG. The utility of this width measure has been demonstrated by results that show that a number of problems that are fixed-parameter-tractable (FPT) with respect to both treewidth and scanwidth allow algorithms with a better dependence on scanwidth than on treewidth. More importantly, these scanwidth-based algorithms are often much simpler than their treewidth-based counterparts: the name ``scanwidth'' reflects that traversing a tree extension (the scanwidth-equivalent of a tree decomposition) of a DAG amounts to ``scanning'' the DAG according to a well-chosen topological ordering. While these results show that scanwidth is useful especially for solving problems on phylogenetic networks, all problems studied through the lens of scanwidth so far are either FPT with respect to both scanwidth and treewidth, or W[\(\ell\)]-hard, for some \(\ell \ge 1\), with respect to both. In this paper, we show that scanwidth is not just a proxy for treewidth and provides information about the structure of the input graph not provided by treewidth, by proving a fairly stark complexity-theoretic separation between these two width measures. Specifically, we prove that Weighted-PDD is FPT with respect to the scanwidth of the food web but W[\(\ell\)]-hard with respect to its treewidth, for all \(\ell \ge 1\). To the best of our knowledge, no such separation between these two width measures has been shown for any natural problem before.
   bibtex: >
@@ -651,6 +681,8 @@
   topics:
   - FPT
   - Phylogenetic Diversity
+  summary_lay: >-
+    Still to come
   abstract: >
     In the Generalized Noah's Ark Problem, one is given a phylogenetic tree on a set of species \(X\) and a set of conservation projects for each species. Each project comes with a cost and raises the survival probability of the corresponding species. The aim is to select a conservation project for each species such that the total cost of the selected projects does not exceed some given threshold and the expected phylogenetic diversity is as large as possible. We study the complexity of Generalized Noah's Ark Problem and some of its special cases with respect to several parameters related to the input structure, such as the number of different costs, the number of different survival probabilities, or the number of species, \(|X|\).
   bibtex: >
@@ -692,6 +724,8 @@
   - FPT
   - Phylogenetic Diversity
   - Scheduling
+  summary_lay: >-
+    Still to come
   abstract: >
     Phylogenetic Diversity (PD) is a measure of the overall biodiversity of a set of present-day species (taxa) within a phylogenetic tree. In Maximize Phylogenetic Diversity (MPD) one is asked to find a set of taxa (of bounded size/cost) for which this measure is maximized. MPD is a relevant problem in conservation planning, where there are not enough resources to preserve all taxa and minimizing the overall loss of biodiversity is critical. We consider an extension of this problem, motivated by real-world concerns, in which each taxon not only requires a certain amount of time to save, but also has an extinction time after which it can no longer be saved. In addition there may be multiple teams available to work on preservation efforts in parallel; we consider two variants of the problem based on whether teams are allowed to collaborate on the same taxa. These problems have much in common with machine scheduling problems, (with taxa corresponding to tasks and teams corresponding to machines), but with the objective function (the phylogenetic diversity) inspired by biological considerations. Our extensions are, in contrast to the original MPD, NP-hard, even in very restricted cases. We provide several algorithms and hardness-results and thereby show that the problems are fixed-parameter tractable (FPT) when parameterized the target phylogenetic diversity, and that the problem where teams are allowed to collaborate is FPT when parameterized the acceptable loss of diversity.
   bibtex: >
@@ -733,6 +767,8 @@
   software-url: null
   topics:
   - FPT
+  summary_lay: >-
+    Still to come
   abstract: >
     A vertex pair in an undirected graph is called connected if the two vertices are connected by a path. In the NP-hard Critical Node Problem (CNP), the input is an undirected graph \(G\) with integers \(k\) and \(x\), and the question is whether one can transform \(G\) by deleting at most \(k\) vertices into a graph whose total number of connected vertex pairs is at most \(x\). In this work, we introduce and study two NP- hard variants of CNP where a subset of the vertices is marked as vulnerable, and we aim to obtain a graph with at most \(x\) connected vertex pairs containing at least one vulnerable vertex. In the first variant, which generalizes CNP, we may delete vulnerable and non-vulnerable vertices. In the second variant, we may only delete non-vulnerable vertices.
     <br />
@@ -779,6 +815,8 @@
   topics:
     - FPT
     - Parsimony
+  summary_lay: >-
+    Still to come
   abstract: >
     Maximum Parsimony is the problem of computing a most parsimonious phylogenetic tree for a taxa set \(X\) from character data for \(X\). A common strategy to attack this notoriously hard problem is to perform a local search over the phylogenetic tree space. Here, one is given a phylogenetic tree \(T\) and wants to find a more parsimonious tree in the neighborhood of \(T\). We study the complexity of this problem when the neighborhood contains all trees within distance \(k\) for several classic distance functions. For the nearest neighbor interchange (NNI), subtree prune and regraft (SPR), tree bisection and reconnection (TBR), and edge contraction and refinement (ECR) distances, we show that, under the exponential time hypothesis, there are no algorithms with running time \(|I|^{o(k)}\) where \(|I|\) is the total input size. Hence, brute-force algorithms with running time \(|X|^{\mathcal{O}(k)} \cdot |I|\) are essentially optimal.
     <br />
@@ -821,6 +859,8 @@
   software-url: null
   topics:
     - FPT
+  summary_lay: >-
+    Still to come
   abstract: >
     We study a generalization of the classic Spanning Tree problem that allows for a non-uniform failure model. More precisely, edges are either safe or unsafe and we assume that failures only affect unsafe edges. In Unweighted Flexible Graph Connectivity we are given an undirected graph \(G = (V,E)\) in which the edge set \(E\) is partitioned into a set \(S\) of safe edges and a set \(U\) of unsafe edges and the task is to find a set \(T\) of at most \(k\) edges such that \(T - u\) is connected and spans \(V\) for any unsafe edge \(u \in T\). Unweighted Flexible Graph Connectivity generalizes both Spanning Tree and Hamiltonian Cycle. We study Unweighted Flexible Graph Connectivity in terms of fixed-parameter tractability (FPT). We show an almost complete dichotomy on which parameters lead to fixed-parameter tractability and which lead to hardness. To this end, we obtain FPT-time algorithms with respect to the vertex deletion distance to cluster graphs and with respect to the treewidth. By exploiting the close relationship to Hamiltonian Cycle, we show that FPT-time algorithms for many smaller parameters are unlikely under standard parameterized complexity assumptions. Regarding problem-specific parameters, we observe that Unweighted Flexible Graph Connectivity admits an FPT-time algorithm when parameterized by the number of unsafe edges. Furthermore, we investigate a below-upper-bound parameter for the number of edges of a solution. We show that this parameter also leads to an FPT-time algorithm.
   bibtex: >
@@ -865,6 +905,8 @@
     - FPT
     - Orientation
     - Phylogenetic Networks
+  summary_lay: >-
+    Still to come
   abstract: >
     We consider the problem of orienting a given, undirected graph into a (directed) acyclic graph such that the in-degree of each vertex \(v\) is in a prescribed list \(\lambda(v)\). Variants of this problem have been studied for a long time and with various applications, but mostly without the requirement for acyclicity. Without this requirement, the problem is closely related to the classical General Factor problem, which is known to be NP-hard in general, but polynomial-time solvable if no list \(\lambda(v)\) contains large “gaps” [Cornuéjols, J. Comb. Theory B, 1988]. In contrast, we show that deciding if an acyclic orientation exists is NP-hard even in the absence of such “gaps”.
     <br />
@@ -909,6 +951,8 @@
   software-url: null
   topics:
     - FPT
+  summary_lay: >-
+    Still to come
   abstract: >
     In Subset Sum Game as studied by Pieterse and Woeginger [Theory of Computing Systems, 2021], two players alternatingly fill a common knapsack each with items from a private collection. The goal of Player A is to reach a value of at least \(T_A\), whereas Player B may follow different strategies. Subset Sum Game is NP-complete and solvable in pseudopolynomial time if Player B greedily selects the biggest available item in each turn; the game is PSPACE-complete, however, if Player B plays a hostile strategy where the only aim is to avoid that Player A wins. We continue the study of the game with these two strategies for Player B.
     <br />
@@ -953,6 +997,8 @@
   software-url: null
   topics:
     - FPT
+  summary_lay: >-
+    Still to come
   abstract: >
     We introduce and study the Bicolored \(P_3\) Deletion problem defined as follows. The input is a graph \(G = (V, E)\) where the edge set \(E\) is partitioned into a set \(E_r\) of red edges and a set \(E_b\) of blue edges. The question is whether we can delete at most \(k\) edges such that \(G\) does not contain a bicolored \(P_3\) as an induced subgraph. Here, a bicolored \(P_3\) is a path on three vertices with one blue and one red edge. We show that Bicolored \(P_3\) Deletion is NP-hard and cannot be solved in \(2^{o(|V|+|E|)}\) time on bounded-degree graphs if the ETH is true. Then, we show that Bicolored \(P_3\) Deletion is polynomial-time solvable when \(G\) does not contain a bicolored \(K_3\), that is, a triangle with edges of both colors. We also provide a polynomial-time algorithm for the case that \(G\) contains no blue \(P_3\), red \(P_3\), blue \(K_3\), and red \(K_3\). Finally, we show that Bicolored \(P_3\) Deletion can be solved in \(\mathcal{O}(1.84^k \cdot |V | \cdot |E|)\) time and that it admits a kernel with \(\mathcal{O}(k \Delta min(k, \Delta))\) vertices, where \(\Delta\) is the maximum degree of \(G\).
   bibtex: >
