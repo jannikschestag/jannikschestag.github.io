@@ -14,12 +14,12 @@
   abbr: SOSA
   core: B
 
-- name: International Colloquium on Automata, Languages and Programming
-  abbr: ICALP
-  core: A*
-
 - name: Innovations in Theoretical Computer Science
   abbr: ITCS
+  core: A*
+
+- name: International Colloquium on Automata, Languages and Programming
+  abbr: ICALP
   core: A*
 
 - name: International Conference on Learning Representations
@@ -38,12 +38,12 @@
   abbr: IJCAI
   core: A
 
-- name: European Symposium on Algorithms
-  abbr: ESA
-  core: A
-
 - name: International Conference on Research in Computational Molecular Biology
   abbr: RECOMB
+  core: A
+
+- name: European Symposium on Algorithms
+  abbr: ESA
   core: A
 
 - name: Symposium on Theoretical Aspects of Computer Science
@@ -58,10 +58,6 @@
   abbr: MFCS
   core: A
 
-- name: International Workshop on Algorithms in Bioinformatics
-  abbr: WABI
-  core: A
-
 - name: Scandinavian Symposium and Workshops on Algorithm Theory
   abbr: SWAT
   core: A
@@ -70,8 +66,8 @@
   abbr: WADS
   core: A
 
-- name: International Symposium on Algorithms and Computation
-  abbr: ISAAC
+- name: International Workshop on Algorithms in Bioinformatics
+  abbr: WABI
   core: A
 
 - name: Latin American Theoretical Informatics Symposium
@@ -86,32 +82,36 @@
   abbr: FSTTCS
   core: A
 
+- name: International Symposium on Algorithms and Computation
+  abbr: ISAAC
+  core: A
+
 - name: International Workshop on Combinatorial Algorithms
   abbr: IWOCA
-  core: B
-
-- name: Annual Symposium on Combinatorial Pattern Matching
-  abbr: CPM
-  core: B
-
-- name: International Conference on Current Trends in Theory and Practice of Computer Science
-  abbr: SOFSEM
-  core: B
-
-- name: International Conference on Algorithmic Decision Theory
-  abbr: ADT
   core: B
 
 - name: RECOMB International Workshop on Comparative Genomics
   abbr: RECOMB-CG
   core: B
 
-- name: International Conference and Workshops on Algorithms and Computation
-  abbr: WALCOM
+- name: International Conference on Current Trends in Theory and Practice of Computer Science
+  abbr: SOFSEM
+  core: B
+
+- name: Annual Symposium on Combinatorial Pattern Matching
+  abbr: CPM
+  core: B
+
+- name: International Conference on Algorithmic Decision Theory
+  abbr: ADT
   core: B
 
 - name: Computability in Europe
   abbr: CiE
+  core: B
+
+- name: International Conference and Workshops on Algorithms and Computation
+  abbr: WALCOM
   core: B
 
 - name: Cologne Twente Workshop on Graphs and Combinatorial Optimization
