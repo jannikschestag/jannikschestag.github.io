@@ -22,8 +22,17 @@ classes: wide
 <p>Below you can find my publications sorted by journals, with links and toggleable abstracts.
 <br />This list is sorted by journals. For sorting by conferences or date click here.</p>
 
-<a href="/publications/conferences" class="topic-button">Sort by conference</a>
-<a href="/publications" class="topic-button">Sort by date</a>
+<div class="pub-toolbar">
+  <div class="pub-toolbar-group" role="group" aria-label="Publication topics">
+
+    <span class="pub-toolbar-label">Sort</span>
+
+    <a href="/publications/" class="filter-pill">Date</a>
+    <a href="/publications/conferences" class="filter-pill">Conference</a>
+    <a href="/publications/journals" class="filter-pill is-active">Journal</a>
+
+  </div>
+</div>
 
 {% assign all_pubs = site.data.pubs %}
 

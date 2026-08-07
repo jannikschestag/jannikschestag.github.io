@@ -23,8 +23,17 @@ classes: wide
 <br />Also journal publications are listed that beforehand were published at a certain conference.
 <br />This list is sorted by conferences. For sorting by journal or date click here.</p>
 
-<a href="/publications/journals" class="topic-button">Sort by journal</a>
-<a href="/publications" class="topic-button">Sort by date</a>
+<div class="pub-toolbar">
+  <div class="pub-toolbar-group" role="group" aria-label="Publication topics">
+
+    <span class="pub-toolbar-label">Sort</span>
+
+    <a href="/publications/" class="filter-pill">Date</a>
+    <a href="/publications/conferences" class="filter-pill is-active">Conference</a>
+    <a href="/publications/journals" class="filter-pill">Journal</a>
+
+  </div>
+</div>
 
 
 {% assign conferences = site.data.pubs %}
