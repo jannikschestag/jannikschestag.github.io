@@ -122,7 +122,7 @@ any) appears inside the summary/abstract box when it is opened, not in the card.
       </div>
     {% endif %}
     <div id="bib_{{ slug }}" class="bibtex noshow">
-      <pre>{%- include pub_bibtex.html pub=pub -%}</pre>
+        {{ pub.bibtex }}
     </div>
   </div>
 </div>
