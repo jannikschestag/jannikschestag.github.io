@@ -110,8 +110,10 @@ any) appears inside the summary/abstract box when it is opened, not in the card.
     {% if pub.summary_lay and pub.summary_lay != "" %}
       <div id="sum_{{ slug }}" class="summary-box noshow">
         {% if pub.image %}<img class="box-figure" src="{{ pub.image | relative_url }}" alt="" loading="lazy">{% endif %}
-        <span class="box-label">In plain language</span>
+        <span class="box-label">In terms of laymen</span>
         {{ pub.summary_lay }}
+        <span class="box-label">In Laiensprache (German translation)</span>
+        {{ pub.summary_lay_german }}
       </div>
     {% endif %}
     {% if pub.abstract %}

@@ -10,10 +10,6 @@
   abbr: SODA
   core: A*
 
-- name: SIAM Symposium on Simplicity in Algorithms
-  abbr: SOSA
-  core: B
-
 - name: Innovations in Theoretical Computer Science
   abbr: ITCS
   core: A*
@@ -30,6 +26,14 @@
   abbr: NeurIPS
   core: A
 
+- name: International Conference on Machine Learning
+  abbr: ICML
+  core: A
+
+- name: International Conference on Learning Representations
+  abbr: ICLR
+  core: A
+
 - name: AAAI Conference on Artificial Intelligence
   abbr: AAAI
   core: A
@@ -38,16 +42,8 @@
   abbr: IJCAI
   core: A
 
-- name: International Conference on Machine Learning
-  abbr: ICML
-  core: A
-
 - name: International Conference on Autonomous Agents and Multiagent Systems
   abbr: AAMAS
-  core: A
-
-- name: International Conference on Learning Representations
-  abbr: ICLR
   core: A
 
 - name: International Conference on Research in Computational Molecular Biology
@@ -66,6 +62,10 @@
   abbr: MFCS
   core: A
 
+- name: IARCS Annual Conference on Foundations of Software Technology and Theoretical Computer Science
+  abbr: FSTTCS
+  core: A
+
 - name: Scandinavian Symposium and Workshops on Algorithm Theory
   abbr: SWAT
   core: A
@@ -78,16 +78,16 @@
   abbr: WABI
   core: A
 
-- name: Latin American Theoretical Informatics Symposium
-  abbr: LATIN
+- name: SIAM Symposium on Simplicity in Algorithms
+  abbr: SOSA
   core: A
 
 - name: International Workshop on Graph-Theoretic Concepts in Computer Science
   abbr: WG
   core: A
 
-- name: IARCS Annual Conference on Foundations of Software Technology and Theoretical Computer Science
-  abbr: FSTTCS
+- name: Latin American Theoretical Informatics Symposium
+  abbr: LATIN
   core: A
 
 - name: International Symposium on Algorithms and Computation

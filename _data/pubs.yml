@@ -131,7 +131,9 @@
     - Orientation
     - Phylogenetic Networks
   summary_lay: >-
-    Still to come
+    Evolutionary networks are sometimes reconstructed without directions on their connections, even though interpreting them as an evolutionary history requires deciding which way those connections point. This paper shows how to find suitable directions much faster when the complicated core of the network is small, covering several important types of evolutionary networks.
+  summary_lay_german: >-
+    Auf Deutsch würde das dann in etwa so aussehen.
   abstract: >
     The problem of orienting an unrooted network to obtain a specific class of rooted phylogenetic networks is known to be NP-hard in many cases. In this paper, we introduce two algorithmic frameworks that yield significantly improved fixed-parameter tractable (FPT) algorithms parameterized by the network level \(\ell\). Our first main contribution shows that for several prominent network classes, the core algorithmic difficulty lies in finding a directed spanning tree on the network's undirected generator. By enumerating these spanning trees in \(\mathcal{O}(5.3334^\ell + \ell)\) time and orienting all remaining edges in polynomial time, we solve the orientation problem in \(\mathcal{O}(5.3334^\ell \cdot n)\) time for tree-based networks and in \(\mathcal{O}(5.3334^\ell \cdot n^2)\) time for orchards, where \(n\) is the number of vertices of the graph. Extending this approach with further branching yields \(\mathcal{O}(10.6667^\ell \cdot n^2)\)-time algorithms for tree-child and normal networks. Our second technique bypasses spanning trees by directly guessing the placement of reticulations on the generator. This framework provides \(\mathcal{O}(12.2071^\ell \cdot n^2)\)-time algorithms for temporal, reticulation-visible, and tree-sibling networks. Finally, we demonstrate the versatility of the reticulation-guessing framework by showing that even computing an orientation with minimum scanwidth is single-exponential FPT with respect to the level. Together, these results significantly improve the best-known running times for phylogenetic network orientation.
   bibtex: >
@@ -174,7 +176,7 @@
     - Scanwidth
     - Implementation
   summary_lay: >-
-    Still to come
+    When conservation funds are limited and different species cost different amounts to protect, we would like to preserve as much evolutionary history as possible with the available budget. This paper develops efficient methods for doing this on sufficiently tree-like evolutionary networks and shows experimentally that the resulting algorithms can handle large networks quickly.
   abstract: >
     Identifying a subset of taxa that maximizes Phylogenetic Diversity (PD) is a cornerstone of quantitative conservation planning. Traditionally, PD is defined over a phylogenetic tree in which leaves represent present-day taxa and branch lengths capture the estimated evolutionary distinctiveness. While PD maximization is computationally tractable on trees with unit costs, the problem becomes NP-hard when transitioning to phylogenetic networks or to budgeted versions in which protecting taxa incurs non-homogeneous costs.
     <br />
@@ -222,7 +224,7 @@
     - Phylogenetic Diversity
     - Food Webs
   summary_lay: >-
-    Still to come
+    A conservation plan should not protect a predator while allowing too much of the prey it depends on to disappear. This paper studies how difficult it is to select an evolutionarily diverse set of species while respecting such food-web dependencies, identifying both situations where efficient solutions are possible and situations that remain fundamentally difficult.
   abstract: >
     In the Maximize Phylogenetic Diversity problem, we are given a phylogenetic tree that represents the genetic proximity of species, and we are asked to select a subset of species of maximum phylogenetic diversity to be preserved through conservation efforts, subject to budgetary constraints that allow only \(k\) species to be saved. This neglects that it is futile to preserve a predatory species if we do not also preserve at least a subset of the prey it feeds on. Thus, in the Optimizing PD with Dependencies (\(\varepsilon\)-PDD) problem, we are additionally given a food web that represents the predator–prey relationships between species. The goal is to save a set of \(k\) species of maximum phylogenetic diversity such that for every saved species, at least one of its prey is also saved. This problem is NP-hard even when the phylogenetic tree is a star.
     <br />
