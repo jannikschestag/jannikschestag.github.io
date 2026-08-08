@@ -27,6 +27,8 @@
     - FPT
   summary_lay: >-
     Still to come
+  summary_lay_german: >-
+    Still to come
   abstract: >
     In the classical Edge-Colored Hypergraph Clustering (CHC) problem, the input is an edge-colored hypergraph whose colors represent different interaction types. Given an assignment of one color to each vertex, a hyperedge \(e\) is satisfied if every vertex of \(e\) receives the color of \(e\). The objective is to find an assignment that maximizes the number of satisfied hyperedges. However, restricting every vertex to a single color rules out overlapping clusters, which arise naturally in applications. To capture such overlaps, Crane et al. [WSDM '24] recently introduced three extensions of CHC where a vertex may receive several colors. In Local CHC, every vertex may receive up to \(b\) colors; in Global CHC, every vertex receives at least one color and a global budget of \(b\) additional colors may be assigned; and in Robust CHC, at most \(b\) joker vertices receive all colors, while every other vertex receives exactly one color. Each variant contains CHC as a special case and is therefore NP-hard. Crane et al. also initiated the study of the parameterized complexity of these problems, which we significantly extend. Our key parameterizations include the target number \(z\) of satisfied hyperedges, its dual-the number \(t\) of erroneous hyperedges-and parameters capturing the distribution of colors among the hyperedges. On the algorithmic side, we obtain several fixed-parameter tractability results and polynomial kernels. In particular, we show that Robust CHC is fixed-parameter tractable when parameterized by \(t+r\), where \(r\) is the maximum hyperedge size. We complement these algorithms with W[1]-hardness and NP-hardness results that delineate the limits of tractability. In particular, Global CHC and Robust CHC remain NP-hard on graphs (\(r=2\)) with only two colors.
   bibtex: null
@@ -62,6 +64,8 @@
     - Orientation
     - Phylogenetic Networks
   summary_lay: >-
+    Still to come
+  summary_lay_german: >-
     Still to come
   abstract: >
     Many methods for reconstructing phylogenetic networks first infer an undirected network skeleton, which subsequently requires orienting its edges to obtain a meaningful evolutionary history. Motivated by this setting, the problem of orienting an undirected graph into a class of phylogenetic networks has recently received considerable attention, with hardness results known for many of the most important network classes. We introduce the Reorientation problem: Given a directed arc-weighted graph and a budget \(B\), determine whether arc reversals of total cost at most \(B\) suffice to transform the graph into a phylogenetic network belonging to a specified class. This models situations in which an inferred network is already directed but may contain a limited number of incorrect arc orientations. We study the computational complexity of this generalization of the Orientation problem. For binary galled networks of level \(\ell\), we show that a reorientation of cost at most \(B\) can be found in \(\mathcal{O}(|V|^2 \log(\ell))\) time. In contrast, we prove that extending this result to more general network classes is unlikely and thereby resolve an open question in the literature: The Orientation problem is NP-hard already for binary reticulation-visible networks and for galled networks of maximum degree 5. Finally, we develop fixed-parameter tractable algorithms for Reorientation parameterized by the treewidth of the underlying graph. Together, these results establish a sharper complexity landscape for the Orientation and Reorientation problem in phylogenetic networks.
@@ -99,6 +103,8 @@
     - Social Choice
   summary_lay: >-
     Still to come
+  summary_lay_german: >-
+    Still to come
   abstract: >
     Cost-efficient resource allocation and fair resource allocation are often studied separately, yet practical allocation systems typically require both. We initiate the study of their combination through the problem of finding minimum-cost allocations that are envy-free up to one item. Although EF1 is always attainable and efficiently computable in the classical cost-free setting, we show that the additional cost requirement makes the problem computationally intractable. We then analyze the problem's parameterized complexity and study combinations of natural parameters like the number of agents, the number of items, the budget, the number of different item types, and the maximum evaluation of any item by any agent. Our main results are a polynomial kernel for the number of items and W[1]-hardness for the number of different item types. The combination of all our results gives an almost complete characterization of which parameters admit polynomial kernels, fixed-parameter tractability, and containment in XP. For non-existent tractability results, we present matching lower bounds like W[1]-hardness and para-NP-completeness.
   bibtex: null
@@ -131,9 +137,9 @@
     - Orientation
     - Phylogenetic Networks
   summary_lay: >-
-    Evolutionary networks are sometimes reconstructed without directions on their connections, even though interpreting them as an evolutionary history requires deciding which way those connections point. This paper shows how to find suitable directions much faster when the complicated core of the network is small, covering several important types of evolutionary networks.
+    Evolutionary networks are sometimes reconstructed without directions on their connections, even though interpreting them as an evolutionary history requires deciding which way those connections point. This paper shows how to find suitable directions much faster when the complicated core of the network is small, covering the most relevant classes of evolutionary networks.
   summary_lay_german: >-
-    Auf Deutsch würde das dann in etwa so aussehen.
+    Evolutionäre Netzwerke werden manchmal rekonstruiert, ohne dass die Verbindungen eine Richtung haben. Um ein solches Netzwerk als Evolutionsgeschichte interpretieren zu können, muss jedoch festgelegt werden, in welche Richtung die einzelnen Verbindungen verlaufen. Diese Arbeit zeigt, wie sich geeignete Richtungen deutlich schneller bestimmen lassen, wenn der komplizierte Kern des Netzwerks klein ist, und behandelt dabei die wichtigsten Klassen evolutionärer Netzwerke.
   abstract: >
     The problem of orienting an unrooted network to obtain a specific class of rooted phylogenetic networks is known to be NP-hard in many cases. In this paper, we introduce two algorithmic frameworks that yield significantly improved fixed-parameter tractable (FPT) algorithms parameterized by the network level \(\ell\). Our first main contribution shows that for several prominent network classes, the core algorithmic difficulty lies in finding a directed spanning tree on the network's undirected generator. By enumerating these spanning trees in \(\mathcal{O}(5.3334^\ell + \ell)\) time and orienting all remaining edges in polynomial time, we solve the orientation problem in \(\mathcal{O}(5.3334^\ell \cdot n)\) time for tree-based networks and in \(\mathcal{O}(5.3334^\ell \cdot n^2)\) time for orchards, where \(n\) is the number of vertices of the graph. Extending this approach with further branching yields \(\mathcal{O}(10.6667^\ell \cdot n^2)\)-time algorithms for tree-child and normal networks. Our second technique bypasses spanning trees by directly guessing the placement of reticulations on the generator. This framework provides \(\mathcal{O}(12.2071^\ell \cdot n^2)\)-time algorithms for temporal, reticulation-visible, and tree-sibling networks. Finally, we demonstrate the versatility of the reticulation-guessing framework by showing that even computing an orientation with minimum scanwidth is single-exponential FPT with respect to the level. Together, these results significantly improve the best-known running times for phylogenetic network orientation.
   bibtex: >
@@ -177,6 +183,8 @@
     - Implementation
   summary_lay: >-
     When conservation funds are limited and different species cost different amounts to protect, we would like to preserve as much evolutionary history as possible with the available budget. This paper develops efficient methods for doing this on sufficiently tree-like evolutionary networks and shows experimentally that the resulting algorithms can handle large networks quickly.
+  summary_lay_german: >-
+    Wenn die Mittel für den Artenschutz begrenzt sind und der Schutz verschiedener Arten unterschiedlich viel kostet, möchte man mit dem verfügbaren Budget möglichst viel Evolutionsgeschichte bewahren. Diese Arbeit entwickelt effiziente Methoden dafür auf evolutionären Netzwerken, die eine hinreichend baumähnliche Struktur besitzen, und zeigt experimentell, dass die Algorithmen auch große Netzwerke schnell bearbeiten können.
   abstract: >
     Identifying a subset of taxa that maximizes Phylogenetic Diversity (PD) is a cornerstone of quantitative conservation planning. Traditionally, PD is defined over a phylogenetic tree in which leaves represent present-day taxa and branch lengths capture the estimated evolutionary distinctiveness. While PD maximization is computationally tractable on trees with unit costs, the problem becomes NP-hard when transitioning to phylogenetic networks or to budgeted versions in which protecting taxa incurs non-homogeneous costs.
     <br />
@@ -225,6 +233,8 @@
     - Food Webs
   summary_lay: >-
     A conservation plan should not protect a predator while allowing too much of the prey it depends on to disappear. This paper studies how difficult it is to select an evolutionarily diverse set of species while respecting such food-web dependencies, identifying both situations where efficient solutions are possible and situations that remain fundamentally difficult.
+  summary_lay_german: >-
+    Ein Artenschutzplan sollte nicht ein Raubtier schützen, während gleichzeitig zu viele der Beutetiere verschwinden, von denen es abhängig ist. Diese Arbeit untersucht, wie schwierig es ist, eine evolutionär vielfältige Gruppe von Arten auszuwählen und dabei solche Abhängigkeiten im Nahrungsnetz zu berücksichtigen. Sie zeigt sowohl Situationen auf, in denen effiziente Lösungen möglich sind, als auch solche, die grundsätzlich schwierig bleiben.
   abstract: >
     In the Maximize Phylogenetic Diversity problem, we are given a phylogenetic tree that represents the genetic proximity of species, and we are asked to select a subset of species of maximum phylogenetic diversity to be preserved through conservation efforts, subject to budgetary constraints that allow only \(k\) species to be saved. This neglects that it is futile to preserve a predatory species if we do not also preserve at least a subset of the prey it feeds on. Thus, in the Optimizing PD with Dependencies (\(\varepsilon\)-PDD) problem, we are additionally given a food web that represents the predator–prey relationships between species. The goal is to save a set of \(k\) species of maximum phylogenetic diversity such that for every saved species, at least one of its prey is also saved. This problem is NP-hard even when the phylogenetic tree is a star.
     <br />
@@ -275,7 +285,9 @@
     - Scanwidth
     - Implementation
   summary_lay: >-
-    Still to come
+    When only some species can be protected, conservationists would like to choose those that preserve as much evolutionary history as possible. PaNDA provides algorithms and an interactive software tool for solving and visualizing this problem on complex evolutionary networks, with experiments showing that realistically large networks can be handled efficiently.
+  summary_lay_german: >-
+    Wenn nur ein Teil der Arten geschützt werden kann, möchte man diejenigen auswählen, durch deren Schutz möglichst viel Evolutionsgeschichte erhalten bleibt. PaNDA stellt Algorithmen und ein interaktives Softwarewerkzeug bereit, mit denen dieses Problem auf komplexen evolutionären Netzwerken gelöst und visualisiert werden kann. Experimente zeigen, dass sich damit auch realistisch große Netzwerke effizient bearbeiten lassen.
   abstract: >
     Phylogenetic diversity plays an important role in biodiversity, conservation, and evolutionary studies by measuring the diversity of a set of taxa based on their phylogenetic relationships. In phylogenetic trees, a subset of \(k\) taxa with maximum phylogenetic diversity can be found by a simple and efficient greedy algorithm. However, this algorithmic tractability is lost when considering phylogenetic networks, which incorporate reticulate evolutionary events such as hybridization and horizontal gene transfer. To address this challenge, we introduce PaNDA (Phylogenetic Network Diversity Algorithms), the first software package and interactive graphical user-interface for exploring, visualizing and maximizing diversity in phylogenetic networks. PaNDA includes a novel algorithm to find a subset of \(k\) taxa with maximum diversity, running in polynomial time for networks of bounded canwidth, a measure of tree-likeness of a network that grows slower than the well-known level measure. This algorithm considers the variant of phylogenetic diversity on networks in which the branch lengths of all paths from the root to the selected taxa contribute towards their diversity. We demonstrate the scalability of this algorithm on simulated networks, successfully analyzing level-15 networks with up to 200 taxa in seconds. We also provide a proof-of-concept analysis using a phylogenetic network on Xiphophorus species, illustrating how the tool can support diversity studies based on real genomic data. The software is easily installable and freely available at <a href="https://github.com/nholtgrefe/panda" target="_blank">https://github.com/nholtgrefe/panda</a>. Additionally, we extend the definition of phylogene- tic diversity to semi-directed phylogenetic networks, which are mixed graphs increasingly used in phylogenetic analysis to model uncertainty of the root location. We prove that finding a subset of \(k\) taxa with maximum diversity remains NP-hard on semi-directed networks, but do present a polynomial-time algorithm for networks with bounded level.
   bibtex: >
@@ -316,7 +328,9 @@
     - Phylogenetic Diversity
     - Phylogenetic Networks
   summary_lay: >-
-    Still to come
+    Evolution is not always well represented by a tree because events such as hybridization can create several ancestral routes to the same species. This paper studies how to select a small group of species that preserves as much of such an evolutionary network as possible. The problem is computationally difficult in general but becomes efficiently solvable when certain reasons of network complexity are limited.
+  summary_lay_german: >-
+    Evolution lässt sich nicht immer angemessen durch einen Baum darstellen, da Ereignisse wie Hybridisierungen dazu führen können, dass eine Art über mehrere Abstammungswege erreicht wird. Diese Arbeit untersucht, wie man eine kleine Gruppe von Arten auswählen kann, die möglichst viel eines solchen evolutionären Netzwerks bewahrt. Das Problem ist im Allgemeinen schwierig zu berechnen, kann aber effizient gelöst werden, wenn bestimmte Ursachen der Netzwerkkomplexität begrenzt sind.
   abstract: >
     Phylogenetic Diversity (PD) is a fundamental measure of biodiversity, originally defined on phylogenetic trees and widely used in conservation biology. Phylogenetic trees are often generalised to directed acyclic graphs, called phylogenetic networks. As such, a corresponding generalization of PD is needed. A natural generalization to edge-weighted phylogenetic networks is the all-paths measure, where the diversity of a set \(S\) of species (taxa) is defined as the total weight of all edges that lie on a path from the root to at least one species in \(S\). While maximizing PD on trees can be solved in polynomial time, the corresponding problem on networks is NP-hard and difficult to approximate. We undertake a systematic parameterized complexity study of the Max-All-Paths-PD (MapPD) problem. We establish W[2]-hardness when parameterized by the number of species that are included in a solution, and W[1]-hardness for the number of species that are excluded. On the positive side, we show that the problem is fixed-parameter tractable with respect to the threshold of diversity and the acceptable loss of diversity. We further analyze how the network's proximity to a tree influences algorithmic behavior and present single-exponential fixed-parameter algorithms when parameterized by the number of reticulations and by the treewidth of the underlying graph. Finally, we present a polynomial kernelization for MapPD with respect to the number of reticulation edges.
   bibtex: >
@@ -366,7 +380,9 @@
   - Phylogenetic Networks
   - Implementation
   summary_lay: >-
-    Still to come
+    A phylogenetic network can represent many different possible evolutionary trees, with some histories being more likely than others. This paper measures the diversity of a set of species by averaging over these possible histories and shows that, although optimization is difficult in general, it can be practical when the network contains relatively few points where evolutionary histories merge.
+  summary_lay_german: >-
+    Ein phylogenetisches Netzwerk kann viele verschiedene mögliche Evolutionsbäume darstellen, wobei manche Evolutionsgeschichten wahrscheinlicher sind als andere. Diese Arbeit misst die Vielfalt einer Gruppe von Arten, indem über diese möglichen Geschichten gemittelt wird. Obwohl die Optimierung im Allgemeinen schwierig ist, kann sie effizient durchgeführt werden, wenn das Netzwerk nur relativ wenige Stellen besitzt, an denen unterschiedliche Evolutionswege zusammenlaufen.
   abstract: >
     Phylogenetic diversity is a measure used to quantify the biodiversity of a set of species. Here, we introduce the average-tree phylogenetic diversity score in rooted binary phylogenetic networks and consider algorithms for computing and maximizing the score on a given network. Basically, the score is the weighted average of the phylogenetic diversity scores in all trees displayed by the network, with the weights determined by the inheritance probabilities on the reticulation edges used in the embeddings. We show that computing the score of a given set of taxa in a given network is #P-hard, directly implying #P-hardness of finding a subset of \(k\) taxa achieving maximum diversity score and thereby ruling out polynomial-time algorithms for these problems unless the polynomial hierarchy collapses. However, we show that both problems can be solved efficiently if the input network is close to being a tree in the sense that its reticulation number is small. More precisely, we prove that we can solve the optimization problem in networks with \(n\) leaves and \(r\) reticulations in \(2^{\mathcal{O}(r)} \cdot n \cdot k\) time. Using experiments on data produced by simulating a reticulate-evolution process, we show that our algorithm runs efficiently on networks with hundreds of taxa and tens of reticulations.
   bibtex: >
@@ -416,7 +432,9 @@
     - Phylogenetic Networks
     - Scanwidth
   summary_lay: >-
-    Still to come
+    This paper investigates when the average amount of evolutionary history represented by selected species can be computed efficiently on complex evolutionary networks. It shows that subtle differences in how tree-like the network is can make the difference between an easy and a difficult problem, and gives fast algorithms for several important network structures.
+  summary_lay_german: >-
+    Diese Arbeit untersucht, unter welchen Bedingungen sich die durchschnittliche Menge an Evolutionsgeschichte, die durch ausgewählte Arten repräsentiert wird, auf komplexen evolutionären Netzwerken effizient berechnen lässt. Sie zeigt, dass bereits feine Unterschiede darin, wie baumähnlich ein Netzwerk ist, darüber entscheiden können, ob ein Problem leicht oder schwierig zu lösen ist, und entwickelt schnelle Algorithmen für mehrere wichtige Netzwerkstrukturen.
   abstract: >
     We investigate parameterized algorithms for computing the average-tree phylogenetic diversity (APD) in rooted phylogenetic networks, studying the problem under different structural parameters that capture the deviation of a network from a tree. Our primary parameter is the scanwidth, a measure of the tree-likeness of a given directed acyclic graph. We show that a subset of taxa with maximum APD can be found in polynomial time in phylogenetic networks of scanwidth at most 2, but becomes NP-hard in networks of scanwidth 3. Further, we design an algorithm that computes the APD of a given set of taxa in \(\mathcal{O}(2^{\mathrm{sw}} n)\) time, where \(\mathrm{sw}\) denotes the scanwidth and \(n\) the number of taxa in the input network. Finally, we give a linear-time algorithm for computing the APD of a given set of taxa if the network induced by these taxa is reticulation-visible. We generalize this algorithm to still run in polynomial time if each biconnected component of the induced network has only constantly many invisible reticulations.
   bibtex: >
@@ -463,7 +481,9 @@
     - Phylogenetic Diversity
     - Phylogenetic Networks
   summary_lay: >-
-    Still to come
+    Evolutionary networks allow several possible histories for a species, for example because of hybridization, and these histories may have different probabilities. This paper shows that selecting a maximally diverse group of species can be done efficiently when the number of such evolutionary merging events is small. Another, related, seemingly natural measure of network simplicity does not suffice.
+  summary_lay_german: >-
+    Evolutionäre Netzwerke erlauben mehrere mögliche Abstammungsgeschichten für eine Art, beispielsweise aufgrund von Hybridisierungen, und diese Geschichten können unterschiedliche Wahrscheinlichkeiten haben. Diese Arbeit zeigt, dass sich eine möglichst vielfältige Gruppe von Arten effizient auswählen lässt, wenn die Anzahl solcher evolutionären Verschmelzungsereignisse klein ist. Ein anderes, verwandtes, zunächst naheliegend erscheinendes Maß für die Einfachheit eines Netzwerks reicht dafür dagegen nicht aus.
   abstract: >
     Network Phylogenetic Diversity (Network-PD) is a measure for the diversity of a set of species based on a rooted phylogenetic network (with branch lengths and inheritance probabilities on the reticulation edges) describing the evolution of those species. We consider the Maximize Network-PD problem: Given such a network, find \(k\) species with maximum Network-PD score. We show that this problem is fixed-parameter tractable (FPT) for binary networks, by describing an optimal algorithm running in \(\mathcal{O}(2^r \log(k)(n+r))\) time, with \(n\) the total number of species in the network and \(r\) its reticulation number. Furthermore, we show that Maximize Network-PD is NP-hard for level-1 networks, proving that, unless P=NP, the FPT approach cannot be extended by using the level as parameter instead of the reticulation number.
   bibtex: >
@@ -507,7 +527,9 @@
     - Food Webs
     - Scanwidth
   summary_lay: >-
-    Still to come
+    Conservation decisions should take into account both how much evolutionary history species represent and whether the selected species can survive together in an ecosystem. This paper combines these two requirements by incorporating food-web dependencies into conservation planning on evolutionary networks and identifies several structural conditions under which the resulting problem can be solved efficiently.
+  summary_lay_german: >-
+    Entscheidungen im Artenschutz sollten sowohl berücksichtigen, wie viel Evolutionsgeschichte die ausgewählten Arten repräsentieren, als auch, ob diese Arten gemeinsam in einem Ökosystem überleben können. Diese Arbeit verbindet beide Anforderungen, indem sie Abhängigkeiten aus Nahrungsnetzen in die Schutzplanung auf evolutionären Netzwerken einbezieht. Sie identifiziert mehrere strukturelle Bedingungen, unter denen das entstehende Problem effizient gelöst werden kann.
   abstract: >
     For a phylogenetic tree, the phylogenetic diversity of a set \(A\) of taxa is the total weight of edges on paths to \(A\). Finding small sets of maximal diversity is crucial for conservation planning, as it indicates where limited resources can be invested most efficiently. In recent years, efficient algorithms have been developed to find sets of taxa that maximize phylogenetic diversity either in a phylogenetic network or in a phylogenetic tree subject to ecological constraints, such as a food web. However, these aspects have mostly been studied independently. Since both factors are biologically important, it seems natural to consider them together.
     <br />
@@ -555,7 +577,9 @@
   - Phylogenetic Diversity
   - Food Webs
   summary_lay: >-
-    Still to come
+    Saving an evolutionarily diverse group of species is of little use if some of those species cannot survive because the prey they need has disappeared. This paper studies conservation choices that simultaneously preserve evolutionary diversity and respect such ecological dependencies, and identifies several kinds of ecosystem structure that make the problem efficiently solvable.
+  summary_lay_german: >-
+    Eine evolutionär vielfältige Gruppe von Arten zu schützen, hilft wenig, wenn einige dieser Arten nicht überleben können, weil die von ihnen benötigten Beutetiere verschwunden sind. Diese Arbeit untersucht Schutzentscheidungen, die gleichzeitig evolutionäre Vielfalt bewahren und solche ökologischen Abhängigkeiten berücksichtigen. Sie zeigt mehrere Arten von Ökosystemstrukturen auf, unter denen sich das Problem effizient lösen lässt.
   abstract: >
     In the NP-hard Optimizing Phylogenetic Diversity with Dependencies (PDD) problem, the input consists of a phylogenetic tree \(\mathcal{T}\) over a set of taxa \(X\), a food-web that describes the prey-predator relationships in \(X\), and integers \(k\) and \(D\). The task is to find a set \(S\) of \(k\) species that is viable in the food-web such that the subtree of \(\mathcal{T}\) obtained by retaining only the vertices of \(S\) has total edge weight at least \(D\). Herein, viable means that for every predator taxon of \(S\), the set \(S\) contains at least one prey taxon.
     <br />
@@ -597,7 +621,9 @@
   - Phylogenetic Diversity
   - Food Webs
   summary_lay: >-
-    Still to come
+    Not every prey species is equally important to a predator, so a more realistic food web can assign different strengths to different feeding relationships. This paper shows that introducing these weights can make selecting an evolutionarily diverse and ecologically viable set of species dramatically harder, even when both the evolutionary tree and the food web are otherwise extremely simple.
+  summary_lay_german: >-
+    Nicht jede Beuteart ist für ein Raubtier gleich wichtig, weshalb ein realistischeres Nahrungsnetz verschiedenen Räuber-Beute-Beziehungen unterschiedliche Bedeutungen zuweisen kann. Diese Arbeit zeigt, dass solche Gewichtungen die Auswahl einer evolutionär vielfältigen und zugleich ökologisch überlebensfähigen Gruppe von Arten erheblich schwieriger machen können – selbst dann, wenn sowohl der Evolutionsbaum als auch das Nahrungsnetz ansonsten äußerst einfach aufgebaut sind.
   abstract: >
     In a phylogenetic tree, Phylogenetic trees represent certain species and their likely ancestors. In such a tree, present-day species are leaves and an edge from \(u\) to \(v\) indicates that \(u\) is an ancestor of \(v\). Weights on these edges indicate the phylogenetic distance. The phylogenetic diversity (PD) of a set of species \(A\) is the total weight of edges that are on any path between the root of the phylogenetic tree and a species in \(A\).
     <br />
@@ -644,7 +670,9 @@
   - Food Webs
   - Scanwidth
   summary_lay: >-
-    Still to come
+    Computer scientists often measure how “tree-like” a network is because many difficult problems become easier on networks that resemble trees. This paper gives the first known problem for which a measure that takes the directions of connections into account makes efficient computation possible, while the classical undirected measure does not, showing that those directions can contain crucial algorithmic information.
+  summary_lay_german: >-
+    In der Informatik wird häufig gemessen, wie „baumähnlich“ ein Netzwerk ist, da sich viele schwierige Probleme auf besonders baumähnlichen Netzwerken leichter lösen lassen. Diese Arbeit beschreibt das erste bekannte Problem, bei dem ein Maß, das auch die Richtungen der Verbindungen berücksichtigt, eine effiziente Berechnung ermöglicht, während das klassische ungerichtete Maß dafür nicht ausreicht. Damit zeigt sie, dass die Richtungen der Verbindungen entscheidende algorithmische Informationen enthalten können.
   abstract: >
     Structural parameters of graphs, such as treewidth, play a central role in the study of the parameterized complexity of graph problems. Motivated by the study of parametrized algorithms on phylogenetic networks, scanwidth was introduced recently as a new treewidth-like structural parameter for acyclic directed graphs (DAGs) that respects the edge directions in the DAG. The utility of this width measure has been demonstrated by results that show that a number of problems that are fixed-parameter-tractable (FPT) with respect to both treewidth and scanwidth allow algorithms with a better dependence on scanwidth than on treewidth. More importantly, these scanwidth-based algorithms are often much simpler than their treewidth-based counterparts: the name ``scanwidth'' reflects that traversing a tree extension (the scanwidth-equivalent of a tree decomposition) of a DAG amounts to ``scanning'' the DAG according to a well-chosen topological ordering. While these results show that scanwidth is useful especially for solving problems on phylogenetic networks, all problems studied through the lens of scanwidth so far are either FPT with respect to both scanwidth and treewidth, or W[\(\ell\)]-hard, for some \(\ell \ge 1\), with respect to both. In this paper, we show that scanwidth is not just a proxy for treewidth and provides information about the structure of the input graph not provided by treewidth, by proving a fairly stark complexity-theoretic separation between these two width measures. Specifically, we prove that Weighted-PDD is FPT with respect to the scanwidth of the food web but W[\(\ell\)]-hard with respect to its treewidth, for all \(\ell \ge 1\). To the best of our knowledge, no such separation between these two width measures has been shown for any natural problem before.
   bibtex: >
@@ -684,7 +712,9 @@
   - FPT
   - Phylogenetic Diversity
   summary_lay: >-
-    Still to come
+    Suppose each endangered species can receive different conservation measures, each with its own cost and effect on the species' chance of survival. This paper studies how to choose among those measures under a limited budget so that as much evolutionary history as possible is expected to survive, and determines which aspects of the problem make this choice easier or harder to compute.
+  summary_lay_german: >-
+    Angenommen, für jede bedrohte Art stehen verschiedene Schutzmaßnahmen zur Verfügung, die jeweils unterschiedliche Kosten verursachen und ihre Überlebenswahrscheinlichkeit unterschiedlich stark erhöhen. Diese Arbeit untersucht, wie solche Maßnahmen bei begrenztem Budget ausgewählt werden sollten, damit voraussichtlich möglichst viel Evolutionsgeschichte erhalten bleibt. Außerdem wird bestimmt, welche Eigenschaften des Problems diese Entscheidung rechnerisch leichter oder schwieriger machen.
   abstract: >
     In the Generalized Noah's Ark Problem, one is given a phylogenetic tree on a set of species \(X\) and a set of conservation projects for each species. Each project comes with a cost and raises the survival probability of the corresponding species. The aim is to select a conservation project for each species such that the total cost of the selected projects does not exceed some given threshold and the expected phylogenetic diversity is as large as possible. We study the complexity of Generalized Noah's Ark Problem and some of its special cases with respect to several parameters related to the input structure, such as the number of different costs, the number of different survival probabilities, or the number of species, \(|X|\).
   bibtex: >
@@ -727,7 +757,9 @@
   - Phylogenetic Diversity
   - Scheduling
   summary_lay: >-
-    Still to come
+    Conservation takes time: Protecting a species may require a lengthy project, while the species itself may become extinct if help arrives too late. This paper treats conservation as a scheduling problem for one or more teams and investigates when good plans can be found efficiently despite these deadlines.
+  summary_lay_german: >-
+    Artenschutz benötigt Zeit: Der Schutz einer Art kann ein länger dauerndes Projekt erfordern, während die Art selbst aussterben könnte, wenn die Hilfe zu spät kommt. Diese Arbeit betrachtet Artenschutz deshalb als Planungsproblem für ein oder mehrere Teams und untersucht, unter welchen Bedingungen sich trotz solcher Fristen effiziente Schutzpläne finden lassen.
   abstract: >
     Phylogenetic Diversity (PD) is a measure of the overall biodiversity of a set of present-day species (taxa) within a phylogenetic tree. In Maximize Phylogenetic Diversity (MPD) one is asked to find a set of taxa (of bounded size/cost) for which this measure is maximized. MPD is a relevant problem in conservation planning, where there are not enough resources to preserve all taxa and minimizing the overall loss of biodiversity is critical. We consider an extension of this problem, motivated by real-world concerns, in which each taxon not only requires a certain amount of time to save, but also has an extinction time after which it can no longer be saved. In addition there may be multiple teams available to work on preservation efforts in parallel; we consider two variants of the problem based on whether teams are allowed to collaborate on the same taxa. These problems have much in common with machine scheduling problems, (with taxa corresponding to tasks and teams corresponding to machines), but with the objective function (the phylogenetic diversity) inspired by biological considerations. Our extensions are, in contrast to the original MPD, NP-hard, even in very restricted cases. We provide several algorithms and hardness-results and thereby show that the problems are fixed-parameter tractable (FPT) when parameterized the target phylogenetic diversity, and that the problem where teams are allowed to collaborate is FPT when parameterized the acceptable loss of diversity.
   bibtex: >
@@ -770,7 +802,9 @@
   topics:
   - FPT
   summary_lay: >-
-    Still to come
+    In some networks, particular vertices are especially important or vulnerable, and one may want to isolate them from as much of the remaining network as possible by removing only a few vertices. This paper studies two versions of that problem and determines a range of conditions under which it can be solved efficiently, as well as cases that remain computationally difficult.
+  summary_lay_german: >-
+    In manchen Netzwerken sind bestimmte Knoten besonders wichtig oder gefährdet. Dann kann das Ziel darin bestehen, diese durch das Entfernen möglichst weniger anderer Knoten von einem möglichst großen Teil des restlichen Netzwerks abzutrennen. Diese Arbeit untersucht zwei Varianten dieses Problems und bestimmt sowohl Bedingungen, unter denen es effizient gelöst werden kann, als auch Fälle, die rechnerisch schwierig bleiben.
   abstract: >
     A vertex pair in an undirected graph is called connected if the two vertices are connected by a path. In the NP-hard Critical Node Problem (CNP), the input is an undirected graph \(G\) with integers \(k\) and \(x\), and the question is whether one can transform \(G\) by deleting at most \(k\) vertices into a graph whose total number of connected vertex pairs is at most \(x\). In this work, we introduce and study two NP- hard variants of CNP where a subset of the vertices is marked as vulnerable, and we aim to obtain a graph with at most \(x\) connected vertex pairs containing at least one vulnerable vertex. In the first variant, which generalizes CNP, we may delete vulnerable and non-vulnerable vertices. In the second variant, we may only delete non-vulnerable vertices.
     <br />
@@ -818,7 +852,9 @@
     - FPT
     - Parsimony
   summary_lay: >-
-    Still to come
+    A common method for reconstructing an evolutionary tree is to start with a candidate tree and repeatedly make small changes that improve how well it explains the observed biological data. This paper shows that for several standard kinds of tree modification, checking all nearby alternatives is essentially unavoidable in the worst case, while a more restricted form of modification permits a substantially faster search.
+  summary_lay_german: >-
+    Eine verbreitete Methode zur Rekonstruktion eines Evolutionsbaums besteht darin, mit einem möglichen Baum zu beginnen und ihn schrittweise so zu verändern, dass er die beobachteten biologischen Daten besser erklärt. Diese Arbeit zeigt, dass bei mehreren üblichen Arten solcher Veränderungen im schlimmsten Fall im Wesentlichen alle naheliegenden Alternativen geprüft werden müssen. Für eine stärker eingeschränkte Form der Veränderung ist dagegen eine wesentlich schnellere Suche möglich.
   abstract: >
     Maximum Parsimony is the problem of computing a most parsimonious phylogenetic tree for a taxa set \(X\) from character data for \(X\). A common strategy to attack this notoriously hard problem is to perform a local search over the phylogenetic tree space. Here, one is given a phylogenetic tree \(T\) and wants to find a more parsimonious tree in the neighborhood of \(T\). We study the complexity of this problem when the neighborhood contains all trees within distance \(k\) for several classic distance functions. For the nearest neighbor interchange (NNI), subtree prune and regraft (SPR), tree bisection and reconnection (TBR), and edge contraction and refinement (ECR) distances, we show that, under the exponential time hypothesis, there are no algorithms with running time \(|I|^{o(k)}\) where \(|I|\) is the total input size. Hence, brute-force algorithms with running time \(|X|^{\mathcal{O}(k)} \cdot |I|\) are essentially optimal.
     <br />
@@ -862,7 +898,9 @@
   topics:
     - FPT
   summary_lay: >-
-    Still to come
+    Imagine designing a sparse network in which some connections are reliable and others may fail, while requiring that the whole network remains connected if any one unreliable connection breaks. This paper investigates when such a robust network can be found efficiently and gives a broad classification of which structural properties make the task manageable.
+  summary_lay_german: >-
+    Man stelle sich vor, ein möglichst sparsames Netzwerk zu entwerfen, in dem einige Verbindungen zuverlässig sind und andere ausfallen können. Gleichzeitig soll das gesamte Netzwerk auch dann verbunden bleiben, wenn eine einzelne unzuverlässige Verbindung ausfällt. Diese Arbeit untersucht, wann sich ein solches robustes Netzwerk effizient finden lässt, und klassifiziert umfassend, welche strukturellen Eigenschaften die Aufgabe beherrschbar machen.
   abstract: >
     We study a generalization of the classic Spanning Tree problem that allows for a non-uniform failure model. More precisely, edges are either safe or unsafe and we assume that failures only affect unsafe edges. In Unweighted Flexible Graph Connectivity we are given an undirected graph \(G = (V,E)\) in which the edge set \(E\) is partitioned into a set \(S\) of safe edges and a set \(U\) of unsafe edges and the task is to find a set \(T\) of at most \(k\) edges such that \(T - u\) is connected and spans \(V\) for any unsafe edge \(u \in T\). Unweighted Flexible Graph Connectivity generalizes both Spanning Tree and Hamiltonian Cycle. We study Unweighted Flexible Graph Connectivity in terms of fixed-parameter tractability (FPT). We show an almost complete dichotomy on which parameters lead to fixed-parameter tractability and which lead to hardness. To this end, we obtain FPT-time algorithms with respect to the vertex deletion distance to cluster graphs and with respect to the treewidth. By exploiting the close relationship to Hamiltonian Cycle, we show that FPT-time algorithms for many smaller parameters are unlikely under standard parameterized complexity assumptions. Regarding problem-specific parameters, we observe that Unweighted Flexible Graph Connectivity admits an FPT-time algorithm when parameterized by the number of unsafe edges. Furthermore, we investigate a below-upper-bound parameter for the number of edges of a solution. We show that this parameter also leads to an FPT-time algorithm.
   bibtex: >
@@ -908,7 +946,9 @@
     - Orientation
     - Phylogenetic Networks
   summary_lay: >-
-    Still to come
+    Sometimes the connections of an undirected network need to be assigned directions while obeying local restrictions on how many connections may point into each vertex, and without creating any directed cycles. This paper shows that this task is difficult in general but can be solved efficiently in important cases arising from evolutionary networks when the underlying structure or the number of ambiguous choices is sufficiently simple.
+  summary_lay_german: >-
+    Manchmal müssen den Verbindungen eines ungerichteten Netzwerks Richtungen zugewiesen werden, wobei für jeden Knoten Einschränkungen gelten, wie viele Verbindungen auf ihn zeigen dürfen, und gleichzeitig keine gerichteten Kreise entstehen sollen. Diese Arbeit zeigt, dass diese Aufgabe im Allgemeinen schwierig ist, sich aber in wichtigen Fällen aus dem Bereich evolutionärer Netzwerke effizient lösen lässt, wenn die zugrundeliegende Struktur oder die Anzahl mehrdeutiger Entscheidungen hinreichend einfach ist.
   abstract: >
     We consider the problem of orienting a given, undirected graph into a (directed) acyclic graph such that the in-degree of each vertex \(v\) is in a prescribed list \(\lambda(v)\). Variants of this problem have been studied for a long time and with various applications, but mostly without the requirement for acyclicity. Without this requirement, the problem is closely related to the classical General Factor problem, which is known to be NP-hard in general, but polynomial-time solvable if no list \(\lambda(v)\) contains large “gaps” [Cornuéjols, J. Comb. Theory B, 1988]. In contrast, we show that deciding if an acyclic orientation exists is NP-hard even in the absence of such “gaps”.
     <br />
@@ -954,7 +994,9 @@
   topics:
     - FPT
   summary_lay: >-
-    Still to come
+    Two players take turns putting their own weighted items into a shared knapsack, with one player trying to reach a target while the other may either behave greedily or actively try to prevent this. This paper investigates how difficult it is to find a winning strategy under different rules and also considers a semi-cooperative “protective” version in which the first player wants the second player to reach a target as well.
+  summary_lay_german: >-
+    Zwei Spieler legen abwechselnd ihre jeweils unterschiedlich gewichteten Gegenstände in einen gemeinsamen Rucksack. Dabei versucht ein Spieler, einen bestimmten Zielwert zu erreichen, während der andere entweder eigennützig handelt oder dies aktiv verhindern möchte. Diese Arbeit untersucht, wie schwierig es unter verschiedenen Regeln ist, eine Gewinnstrategie zu finden, und betrachtet außerdem eine halbkooperative Variante, bei der der erste Spieler auch dem zweiten helfen möchte, dessen Ziel zu erreichen.
   abstract: >
     In Subset Sum Game as studied by Pieterse and Woeginger [Theory of Computing Systems, 2021], two players alternatingly fill a common knapsack each with items from a private collection. The goal of Player A is to reach a value of at least \(T_A\), whereas Player B may follow different strategies. Subset Sum Game is NP-complete and solvable in pseudopolynomial time if Player B greedily selects the biggest available item in each turn; the game is PSPACE-complete, however, if Player B plays a hostile strategy where the only aim is to avoid that Player A wins. We continue the study of the game with these two strategies for Player B.
     <br />
@@ -1000,7 +1042,9 @@
   topics:
     - FPT
   summary_lay: >-
-    Still to come
+    Consider a network whose connections are colored red or blue, and suppose we want to remove only a few connections so that no path through three vertices uses both colors. This paper shows that finding such a small set of deletions is difficult in general, but gives faster algorithms, useful preprocessing techniques, and special graph classes on which the problem can be solved efficiently.
+  summary_lay_german: >-
+    Betrachten wir ein Netzwerk, dessen Verbindungen rot oder blau gefärbt sind. Gesucht sind möglichst wenige Verbindungen, die entfernt werden müssen, sodass kein Pfad über drei Knoten mehr beide Farben verwendet. Diese Arbeit zeigt, dass das Finden einer solchen kleinen Menge im Allgemeinen schwierig ist, entwickelt aber schnellere Algorithmen und nützliche Vorverarbeitungstechniken und identifiziert spezielle Netzwerkklassen, für die sich das Problem effizient lösen lässt.
   abstract: >
     We introduce and study the Bicolored \(P_3\) Deletion problem defined as follows. The input is a graph \(G = (V, E)\) where the edge set \(E\) is partitioned into a set \(E_r\) of red edges and a set \(E_b\) of blue edges. The question is whether we can delete at most \(k\) edges such that \(G\) does not contain a bicolored \(P_3\) as an induced subgraph. Here, a bicolored \(P_3\) is a path on three vertices with one blue and one red edge. We show that Bicolored \(P_3\) Deletion is NP-hard and cannot be solved in \(2^{o(|V|+|E|)}\) time on bounded-degree graphs if the ETH is true. Then, we show that Bicolored \(P_3\) Deletion is polynomial-time solvable when \(G\) does not contain a bicolored \(K_3\), that is, a triangle with edges of both colors. We also provide a polynomial-time algorithm for the case that \(G\) contains no blue \(P_3\), red \(P_3\), blue \(K_3\), and red \(K_3\). Finally, we show that Bicolored \(P_3\) Deletion can be solved in \(\mathcal{O}(1.84^k \cdot |V | \cdot |E|)\) time and that it admits a kernel with \(\mathcal{O}(k \Delta \min(k, \Delta))\) vertices, where \(\Delta\) is the maximum degree of \(G\).
   bibtex: >
