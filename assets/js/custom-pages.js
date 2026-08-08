@@ -10,7 +10,7 @@ function toggleDetail(id) {
 }
 
 function toggleBox(id) {
-  document.querySelectorAll(".abstract-box, .bibtex").forEach((box) => {
+  document.querySelectorAll(".abstract-box, .summary-box, .bibtex").forEach((box) => {
     if (box.id !== id) {
       box.classList.add("noshow");
     }
