@@ -22,8 +22,8 @@
   abbr: ICALP
   core: A*
 
-- name: International Conference on Learning Representations
-  abbr: ICLR
+- name: European Symposium on Algorithms
+  abbr: ESA
   core: A
 
 - name: Conference on Neural Information Processing Systems
@@ -38,12 +38,20 @@
   abbr: IJCAI
   core: A
 
-- name: International Conference on Research in Computational Molecular Biology
-  abbr: RECOMB
+- name: International Conference on Machine Learning
+  abbr: ICML
   core: A
 
-- name: European Symposium on Algorithms
-  abbr: ESA
+- name: International Conference on Autonomous Agents and Multiagent Systems
+  abbr: AAMAS
+  core: A
+
+- name: International Conference on Learning Representations
+  abbr: ICLR
+  core: A
+
+- name: International Conference on Research in Computational Molecular Biology
+  abbr: RECOMB
   core: A
 
 - name: Symposium on Theoretical Aspects of Computer Science
@@ -108,13 +116,12 @@
 
 - name: Computability in Europe
   abbr: CiE
-  core: B
+  core: C
 
 - name: International Conference and Workshops on Algorithms and Computation
   abbr: WALCOM
-  core: B
+  core: C
 
 - name: Cologne Twente Workshop on Graphs and Combinatorial Optimization
   abbr: CTW
-  core: B
-
+  core: C
