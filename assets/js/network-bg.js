@@ -21,7 +21,8 @@
   document.body.classList.add("net-live");   // hides the static ::before mask
 
   // ---- tunables ----
-  var CELL = 84, JIT = 24, CONNECT = 118;
+  var CELL = 92, JIT = 28, CONNECT = 130;
+  var MAX_DEG = 3;
   var REPEL = 105, REPEL_R2 = REPEL * REPEL, PUSH = 1.6, MIND = 18;
   var SPRING = 0.03, DAMP = 0.78, STROKE = 1.1, NODE_R = 1.8;
 
@@ -32,41 +33,134 @@
 
   function rnd(a) { return (Math.random() - 0.5) * 2 * a; }
 
-  function build() {
-    vw = window.innerWidth;
-    vh = window.innerHeight;
-    var docH = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, vh);
-    canvas.width = Math.round(vw * dpr);
-    canvas.height = Math.round(vh * dpr);
-    canvas.style.width = vw + "px";
-    canvas.style.height = vh + "px";
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    function build() {
+        vw = window.innerWidth;
+        vh = window.innerHeight;
 
-    var cols = Math.ceil(vw / CELL) + 2, rows = Math.ceil(docH / CELL) + 2;
-    var grid = [];
-    nodes = [];
-    for (var j = 0; j < rows; j++) {
-      grid[j] = [];
-      for (var i = 0; i < cols; i++) {
-        var bx = i * CELL + rnd(JIT), by = j * CELL + rnd(JIT);
-        var n = { bx: bx, by: by, x: bx, y: by, vx: 0, vy: 0 };
-        grid[j][i] = n; nodes.push(n);
-      }
+        var docH = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight,
+            vh
+        );
+
+        canvas.width = Math.round(vw * dpr);
+        canvas.height = Math.round(vh * dpr);
+        canvas.style.width = vw + "px";
+        canvas.style.height = vh + "px";
+
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        // Slightly compressed vertically.
+        // Together with alternating horizontal offsets, this produces
+        // a loose hexagonal rather than square arrangement.
+        var YSTEP = CELL * 0.82;
+
+        var cols = Math.ceil(vw / CELL) + 3;
+        var rows = Math.ceil(docH / YSTEP) + 2;
+
+        var grid = [];
+        nodes = [];
+
+        // ---- Create vertices ----
+        for (var j = 0; j < rows; j++) {
+            grid[j] = [];
+
+            for (var i = 0; i < cols; i++) {
+
+                // Shift every second row.
+                var shift = (j % 2) * CELL * 0.45;
+
+                var bx = i * CELL + shift + rnd(JIT);
+                var by = j * YSTEP + rnd(JIT);
+
+                var n = {
+                    bx: bx,
+                    by: by,
+                    x: bx,
+                    y: by,
+                    vx: 0,
+                    vy: 0,
+                    degree: 0
+                };
+
+                grid[j][i] = n;
+                nodes.push(n);
+            }
+        }
+
+        edges = [];
+
+        var c2 = CONNECT * CONNECT;
+
+        function link(a, b, probability) {
+
+            if (!a || !b)
+                return false;
+
+            if (a.degree >= MAX_DEG || b.degree >= MAX_DEG)
+                return false;
+
+            if (Math.random() > probability)
+                return false;
+
+            var dx = a.bx - b.bx;
+            var dy = a.by - b.by;
+
+            if (dx * dx + dy * dy >= c2)
+                return false;
+
+            edges.push([a, b]);
+
+            a.degree++;
+            b.degree++;
+
+            return true;
+        }
+
+        // ---- Create edges ----
+        for (var jj = 0; jj < rows; jj++) {
+            for (var ii = 0; ii < cols; ii++) {
+
+                var a = grid[jj][ii];
+
+                if (!grid[jj + 1])
+                    continue;
+
+                var below = grid[jj + 1];
+
+                /*
+                 * Because alternating rows are shifted, each vertex has
+                 * two natural candidates in the next row.
+                 */
+                var diagonalIndex =
+                    (jj % 2 === 0)
+                        ? ii - 1
+                        : ii + 1;
+
+                var down1 = below[ii];
+                var down2 = below[diagonalIndex];
+
+                /*
+                 * Randomly select which downward connection is the
+                 * "main" one. This breaks the repetitive pattern.
+                 */
+                if (Math.random() < 0.5) {
+                    var tmp = down1;
+                    down1 = down2;
+                    down2 = tmp;
+                }
+
+                // Usually continue downward.
+                link(a, down1, 0.90);
+
+                // Horizontal edges provide occasional cycles.
+                link(a, grid[jj][ii + 1], 0.55);
+
+                // Occasionally branch toward the other downward neighbour.
+                link(a, down2, 0.18);
+            }
+        }
     }
-    edges = [];
-    var c2 = CONNECT * CONNECT;
-    function link(a, b) {
-      if (!a || !b) return;
-      var dx = a.bx - b.bx, dy = a.by - b.by;
-      if (dx * dx + dy * dy < c2) edges.push([a, b]);
-    }
-    for (var jj = 0; jj < rows; jj++)
-      for (var ii = 0; ii < cols; ii++) {
-        var a = grid[jj][ii];
-        link(a, grid[jj][ii + 1]);
-        if (grid[jj + 1]) { link(a, grid[jj + 1][ii]); link(a, grid[jj + 1][ii + 1]); link(a, grid[jj + 1][ii - 1]); }
-      }
-  }
 
   function step() {
     var active = false, has = mouse.on, mx = mouse.x, my = mouse.y;
