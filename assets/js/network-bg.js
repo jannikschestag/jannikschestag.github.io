@@ -4,10 +4,10 @@
    nodes near the cursor (a soft "force field").
 
    Graph structure:
-   - visible vertices have degree 3 or 4;
+   - visible vertices have degree 3 to 5;
    - a degree-3 backbone is created first;
    - some additional edges randomly turn pairs of degree-3 vertices into
-     degree-4 vertices;
+     degree-4 or 5 vertices;
    - the graph is generated beyond the visible area so that low-degree
      boundary vertices remain invisible.
 
@@ -58,8 +58,8 @@
   var PAD = 4;
 
   // Probability that an optional fourth edge is added.
-  // Larger values produce more degree-4 vertices.
-  var EXTRA_EDGE_PROBABILITY = 0.28;
+  // Larger values produce more degree-5 vertices.
+  var EXTRA_EDGE_PROBABILITY = 0.30;
 
   // Mouse interaction.
   var REPEL = 105;
@@ -242,9 +242,9 @@
         return false;
 
       /*
-       * This guarantees maximum degree 4.
+       * This guarantees maximum degree 5.
        */
-      if (a.degree >= 4 || b.degree >= 4)
+      if (a.degree >= 5 || b.degree >= 5)
         return false;
 
       if (edgeExists(a, b))
@@ -324,7 +324,7 @@
      * Candidate edges connect nearby vertices in adjacent rows.
      *
      * They are deliberately different from the vertical backbone
-     * edges. Adding one changes both endpoints from degree 3 to 4.
+     * edges. Adding one changes both endpoints from degree 3 to 5.
      */
 
     var candidates = [];
@@ -400,13 +400,13 @@
        *
        * Therefore this operation always changes
        *
-       *     degree 3 -> degree 4
+       *     degree 3 -> degree 4 -> degree 5
        *
        * at both endpoints.
        */
       if (
-        u.degree !== 3 ||
-        w.degree !== 3
+        u.degree > 4 ||
+        w.degree > 4
       ) {
         continue;
       }
