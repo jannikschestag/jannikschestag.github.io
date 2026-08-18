@@ -15,9 +15,9 @@
 # in the templates via {{ site.myvariable }}.
 title: Jannik Schestag
 subtitle: www.JannikSchestag.eu
-email: j.t.schestag@tudelft.nl
+email: jasch1376@uib.no
 description: >- # this means to ignore newlines until "baseurl:"
-  Personal homepage of Jannik Schestag, Postdoctoral Researcher at TU Delft, working on fixed-parameter tractability and phylogenetics
+  Personal homepage of Jannik Schestag, Researcher at University of Bergen, working on fixed-parameter tractability and phylogenetics
   
 #twitter_username: username
 #github_username: username
@@ -77,13 +77,13 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/jannik-schestag-762896414/"
-    - label: "TU Delft"
+    - label: "University of Bergen"
       icon: "fas fa-fw fa-university"
-      url: "https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/applied-mathematics/people/dr-jt-theo-schestag"
-    - label: "Mekelweg 4, 2628 CD, Delft"
+      url: "https://www4.uib.no/en/find-employees/jannik.schestag"
+    - label: "MHIB - Thormøhlens gate 55, 5006 Bergen "
       icon: "fas fa-fw fa-building"
       url: ""
-    - label: "Room 36.HB 04.230"
+    - label: "Room 305P2"
       icon: "fas fa-fw fa-location-dot"
       url: ""
 
@@ -104,9 +104,9 @@ footer:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/jannik-schestag-762896414/"
-    - label: "TU Delft"
+    - label: "University of Bergen"
       icon: "fas fa-fw fa-university"
-      url: "https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/applied-mathematics/people/dr-jt-theo-schestag"
+      url: "https://www4.uib.no/en/find-employees/jannik.schestag"
 
 defaults:
   - scope:
