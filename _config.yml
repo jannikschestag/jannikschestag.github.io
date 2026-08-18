@@ -60,7 +60,7 @@ plugins:
 author:
   name   : "Dr. Jannik Schestag"
   avatar : "/assets/images/bio_pic.jpg"
-  bio    : "Postdoctoral Researcher at TU Delft, working on fixed-parameter tractability and phylogenetics."
+  bio    : "Postdoctoral Researcher at University of Bergen, working on fixed-parameter tractability and phylogenetics."
   links: &social_links
     - label: "j.t.schestag@tudelft.nl"
       icon: "fas fa-fw fa-envelope"
