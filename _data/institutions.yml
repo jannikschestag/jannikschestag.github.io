@@ -1,3 +1,9 @@
+- name: Universitetet i Bergen
+  city: Bergen
+  country: Norway
+  point: 60.3813724643422, 5.331346338573534
+  code: UiB
+
 - name: TU Delft
   city: Delft
   country: The Netherlands

@@ -1,4 +1,18 @@
 - name:
+    - first: Fedor
+      last: Fomin
+  link: https://www4.uib.no/en/find-employees/fedor.fomin
+  affiliation: UiB
+  collaboration: yes
+
+- name:
+    - first: Petr
+      last: Golovach
+  link: https://www4.uib.no/en/find-employees/petr.golovach
+  affiliation: UiB
+  collaboration: yes
+
+- name:
     - first: Niels
       last: Holtgrefe
   link: https://www.nielsholtgrefe.nl/
