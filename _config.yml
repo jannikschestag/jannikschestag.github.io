@@ -62,9 +62,9 @@ author:
   avatar : "/assets/images/bio_pic.jpg"
   bio    : "Postdoctoral Researcher at University of Bergen, working on fixed-parameter tractability and phylogenetics."
   links: &social_links
-    - label: "j.t.schestag@tudelft.nl"
+    - label: "j.schestag@uib.no"
       icon: "fas fa-fw fa-envelope"
-      url: "mailto:j.t.schestag@tudelft.nl"
+      url: "mailto:j.schestag@uib.no"
     - label: "Google Scholar"
       icon: "fab fa-fw fa-google-scholar"
       url: "https://scholar.google.com/citations?user=43kAfwsAAAAJ"
@@ -89,9 +89,9 @@ author:
 
 footer:
   links:
-    - label: "j.t.schestag@tudelft.nl"
+    - label: "j.schestag@uib.no"
       icon: "fas fa-fw fa-envelope"
-      url: "mailto:j.t.schestag@tudelft.nl"
+      url: "mailto:j.schestag@uib.no"
     - label: "Google Scholar"
       icon: "fab fa-fw fa-google-scholar"
       url: "https://scholar.google.com/citations?user=43kAfwsAAAAJ"
