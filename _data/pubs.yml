@@ -295,7 +295,7 @@
       title = {{PaNDA: Efficient Optimization of Phylogenetic Diversity in Networks}},
       author = {Holtgrefe, Niels and van Iersel, Leo and Meuwese, Ruben and Murakami, Yukihiro and Schestag, Jannik},
       year = {2026},
-      journal = {Journal of Mathematical Biology},
+      journal = {Journal of Computational Biology},
       publisher={Springer},
       doi = {10.1101/2025.11.14.688467}
     }
@@ -364,7 +364,7 @@
   journal: Proceedings of the 25th International Workshop on Algorithms in Bioinformatics (WABI 2025)
   volume: null
   issue: null
-  pages: 14:1--14:21
+  pages: 15:1--15:20
   note: null
   conference: WABI
   conference-year: 2025
@@ -389,8 +389,8 @@
     @inproceedings{vanIersel2025averagetree,
       title = {{Average-Tree Phylogenetic Diversity of Networks}},
       author = {van Iersel, Leo and Jones, Mark and Schestag, Jannik and Scornavacca, Celine and Weller, Mathias},
-      booktitle = {Proceedings of the 25th International Workshop on Algorithms in Bioinformatics (WABI 2025)},
-      pages = {15:1--15:21},
+      booktitle = {Proceedings of the 25th International Conference on Algorithms in Bioinformatics (WABI 2025)},
+      pages = {15:1--15:20},
       year = {2025},
       organization = {Schloss Dagstuhl--Leibniz-Zentrum f{\"u}r Informatik},
       doi = {10.4230/LIPIcs.WABI.2025.15}
@@ -413,7 +413,7 @@
   - first: Mathias
     last: Weller
   type: conference
-  journal: Proceedings of the 21th International Symposium on Parameterized and Exact Computation (IPEC 2026)
+  journal: Proceedings of the 21st International Symposium on Parameterized and Exact Computation (IPEC 2026)
   volume: null
   issue: null
   pages: null
@@ -469,7 +469,7 @@
   pages: 107-130
   note: null
   conference: RECOMB-CG
-  conference-year: 2023
+  conference-year: 2025
   doi-identifier: 10.1007/978-3-031-94928-9_7
   doi-url: https://doi.org/10.1007/978-3-031-94928-9_7
   preprint-server: arXiv
@@ -687,7 +687,7 @@
 
 - title: A multivariate complexity analysis of the Generalized Noah's Ark Problem
   published: true
-  release-date: 2025-11-01
+  release-date: 2026-03-31
   first-publication: 2023
   authors:
   - first: Christian
@@ -718,13 +718,13 @@
   abstract: >
     In the Generalized Noah's Ark Problem, one is given a phylogenetic tree on a set of species \(X\) and a set of conservation projects for each species. Each project comes with a cost and raises the survival probability of the corresponding species. The aim is to select a conservation project for each species such that the total cost of the selected projects does not exceed some given threshold and the expected phylogenetic diversity is as large as possible. We study the complexity of Generalized Noah's Ark Problem and some of its special cases with respect to several parameters related to the input structure, such as the number of different costs, the number of different survival probabilities, or the number of species, \(|X|\).
   bibtex: >
-    @article{komusiewicz2025multivariate,
+    @article{komusiewicz2026multivariate,
       title = {{A multivariate complexity analysis of the Generalized Noah's Ark Problem}},
       author = {Komusiewicz, Christian and Schestag, Jannik},
       journal = {Discrete Applied Mathematics},
       volume = {382},
       pages = {137--154},
-      year = {2025},
+      year = {2026},
       publisher = {Elsevier},
       doi = {10.1016/j.dam.2025.11.037}
     }
@@ -1028,7 +1028,7 @@
   type: journal
   journal: Discrete Mathematics & Theoretical Computer Science
   volume: 23
-  issue: null
+  issue: 1
   pages: null
   note: null
   conference: CiE
@@ -1053,6 +1053,7 @@
       author = {Gr{\"u}ttemeier, Niels and Komusiewicz, Christian and Schestag, Jannik and Sommer, Frank},
       journal = {Discrete Mathematics \& Theoretical Computer Science},
       volume = {23},
+      number = {1},
       year = {2021},
       publisher = {Episciences.org},
       doi = {10.46298/dmtcs.6108}
