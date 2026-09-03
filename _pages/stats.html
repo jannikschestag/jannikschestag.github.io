@@ -21,9 +21,9 @@ classes: wide
 {%- comment -%}
 Filter non-published
 {%- endcomment -%}
-{% assign unpublisherd_pubs = all_pubs | where: "published", false %}
+{% assign unpublished_pubs = all_pubs | where_exp: "p", "p.published != true" %}
 
-{% assign unpubs = unpublisherd_pubs | size %}
+{% assign unpubs = unpublished_pubs | size %}
 
 
 <h2>Publiction Statistics</h2>

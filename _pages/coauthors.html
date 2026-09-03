@@ -25,9 +25,9 @@ div.leaflet-popup-content {
 {%- comment -%}
 Filter non-published
 {%- endcomment -%}
-{% assign unpublisherd_pubs = all_pubs | where_exp: "p", "!p.published" %}
+{% assign unpublished_pubs = all_pubs | where_exp: "p", "p.published != true" %}
 
-{% assign unpubs = unpublisherd_pubs | size %}
+{% assign unpubs = unpublished_pubs | size %}
 
 <p>Collaborators I have co-authored work with, sorted by number of joint publications.
 <br />This list shows all my collaborations. By clicking on a button, you can filter by topics.
