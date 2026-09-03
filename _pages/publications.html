@@ -59,7 +59,7 @@ classes: wide
 {%- comment -%}
 Filter non-published
 {%- endcomment -%}
-{% assign all_pubs = all_pubs | where_exp: "p", "p.published" %}
+{% assign unpublisherd_pubs = all_pubs | where: "published", false %}
 
 {%- comment -%}
 Sort by release-date descending
