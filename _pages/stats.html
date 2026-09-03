@@ -16,11 +16,19 @@ classes: wide
 </script>
 
 
+{% assign all_pubs = site.data.pubs %}
 
+{%- comment -%}
+Filter non-published
+{%- endcomment -%}
+{% assign unpublisherd_pubs = all_pubs | where_exp: "p", "!p.published" %}
 
+{% assign unpubs = unpublisherd_pubs | size %}
 
 
 <h2>Publiction Statistics</h2>
+
+<p>*Also {{ unpubs }} submitted but not published papers are considered.</p>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

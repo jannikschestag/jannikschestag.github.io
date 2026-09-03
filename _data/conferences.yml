@@ -94,6 +94,10 @@
   abbr: ISAAC
   core: A
 
+- name: SIAM Conference on Applied and Computational Discrete Algorithms
+  abbr: ACDA
+  core: B
+
 - name: International Workshop on Combinatorial Algorithms
   abbr: IWOCA
   core: B
@@ -120,6 +124,10 @@
 
 - name: International Conference and Workshops on Algorithms and Computation
   abbr: WALCOM
+  core: C
+
+- name: International Conference on Algorithms and Discrete Applied Mathematics
+  abbr: CALDAM
   core: C
 
 - name: Cologne Twente Workshop on Graphs and Combinatorial Optimization
