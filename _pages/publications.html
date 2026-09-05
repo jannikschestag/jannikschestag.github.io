@@ -59,12 +59,12 @@ classes: wide
 {%- comment -%}
 Filter non-published
 {%- endcomment -%}
-{% assign unpublisherd_pubs = all_pubs | where_exp: "p", "p.published != false" %}
+{% assign publisherd_pubs = all_pubs | where_exp: "p", "p.published != false" %}
 
 {%- comment -%}
 Sort by release-date descending
 {%- endcomment -%}
-{% assign normal_pubs = all_pubs | sort: "release-date" | reverse %}
+{% assign normal_pubs = publisherd_pubs | sort: "release-date" | reverse %}
 
 {%- comment -%}
 Group by pubyear, assign reverse numbering
