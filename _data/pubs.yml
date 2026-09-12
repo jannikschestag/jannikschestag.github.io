@@ -1,3 +1,38 @@
+- title: Budgeted Phylogenetic Network Diversity Revisited
+  published: false
+  release-date: 2026-09-12
+  first-publication: 2026
+  authors:
+    - first: Jannik
+      last: Schestag
+  type: preprint
+  journal: null
+  volume: null
+  issue: null
+  pages: null
+  note: null
+  conference: null
+  conference-year: null
+  doi-identifier: null
+  doi-url: null
+  preprint-server: null
+  preprint-identifier: null
+  preprint-url: null
+  software-url: null
+  topics:
+    - FPT
+    - Phylogenetic Diversity
+    - Phylogenetic Networks
+  summary_lay: >-
+    Still to come
+  summary_lay_german: >-
+    Still to come
+  abstract: >
+    Phylogenetic diversity (PD) is a prominent measure for quantifying the biodiversity of a set of taxa (species). Although, among same-sized sets of taxa, phylogenetic diversity can be optimized in polynomial time on trees, optimizing PD in phylogenetic networks becomes NP-hard under most definitions. We provide a systematic parameterized complexity analysis of evaluating and optimizing five such measures in the light of the budget and the solution size parameter: all-paths PD, network PD, average-tree PD, minimum-tree PD, and maximum-tree PD.
+    <br />
+    For evaluation, we show that minimum-tree phylogenetic diversity is fixed-parameter tractable in the size of the evaluated taxon set, whereas average-tree phylogenetic diversity is \(\#\)W[1]-hard but belongs to XP for this parameter. For optimization, we show that maximum-tree phylogenetic diversity is fixed-parameter tractable in the budget \(B\), with sub-exponential running time \(\mathcal{O}^*(2^{\mathcal{O}(\sqrt{B})})\); This affirmatively answers a question of Holtgrefe and Schestag [ArXiv:2605.23319]. For each of the other four measures, optimization with respect to \(B\) is W[1]-hard, but belongs to XP. We further investigate the classical complexity of the optimization problems and show that minimum- and average-tree phylogenetic diversity are \(\Sigma_2^p\)-hard and thus not in NP, unless the polynomial hierarchy collapses. Together, our results settle the classical and fixed-parameter tractability frontier for these measures with respect to the budget, the solution size and the size of the evaluated set.
+  bibtex: null
+
 - title: On the Parameterized Complexity of Overlapping Edge-Colored Hypergraph Clustering
   published: false
   release-date: 2026-12-31
