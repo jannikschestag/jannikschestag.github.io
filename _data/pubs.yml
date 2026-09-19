@@ -1,3 +1,37 @@
+- title: Ultrametric Network Phylogenetic Diversity and the Greedy Algorithm
+  published: false
+  release-date: 2026-12-31
+  first-publication: null
+  authors:
+    - first: Jannik
+      last: Schestag
+    - first: Mathias
+      last: Weller
+  type: preprint
+  journal: null
+  volume: null
+  issue: null
+  pages: null
+  note: null
+  conference: null
+  conference-year: null
+  doi-identifier: null
+  doi-url: null
+  preprint-server: null
+  preprint-identifier: null
+  preprint-url: null
+  software-url: null
+  topics:
+    - Phylogenetic Diversity
+    - Phylogenetic Networks
+  summary_lay: >-
+    Still to come
+  summary_lay_german: >-
+    Still to come
+  abstract: >
+    Phylogenetic diversity (PD) measures the amount of evolutionary history represented by a set of species. On phylogenetic trees, a set of \(k\) species maximizing PD can be found greedily. Although networks allow modeling reticulate events, this greedy property gets lost, once we generalize PD from trees to networks. We show that it is recovered on ultrametric level-\(1\) networks. Ultrametric networks are a common under the molecular-clock hypothesis, while level-\(1\) networks form a fundamental class of networks with low complexity of local structures. We further show, that our greedy algorithm can probably not be extended to ultrametric tree-child networks, by proving strong \NP-hardness for this case.
+  bibtex: null
+
 - title: Budgeted Phylogenetic Network Diversity Revisited
   published: false
   release-date: 2026-09-12
