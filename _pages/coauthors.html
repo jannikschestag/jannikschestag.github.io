@@ -79,6 +79,7 @@ const places = new Array();
 {% for inst in site.data.institutions %}
 <script>
 places["{{ inst.code }}"] = "<b>{{ inst.name }}, {{ inst.city }}</b>";
+places2["{{ inst.code }}"] = false;
 </script>
 {% endfor %}
 
@@ -179,12 +180,11 @@ places["{{ inst.code }}"] = "<b>{{ inst.name }}, {{ inst.city }}</b>";
             {% break %}
           {% endif %}
         {% endfor %}
+        {% if count != 0 %}
 
         <tr>
           <td>
-            {% if count != 0 %}
               {{ count }}x
-            {% endif %}
           </td>
 
           <td>
@@ -210,12 +210,14 @@ places["{{ inst.code }}"] = "<b>{{ inst.name }}, {{ inst.city }}</b>";
                   {{ inst.name }}, {{ inst.city }}, {{ inst.country }}
 <script>
 places["{{ inst.code }}"] += "<br>{{ fullname }}";
+places2["{{ inst.code }}"] = true;
 </script>
                 {% endif %}
               {% endfor %}
             {% endunless %}
           </td>
         </tr>
+        {% endif %}
 
       {% endunless %}
     {% endfor %}
@@ -224,8 +226,10 @@ places["{{ inst.code }}"] += "<br>{{ fullname }}";
 
 
 {% for inst in site.data.institutions %}
+    {% if places2["{{ inst.code }}"] %}
 <script>
 L.marker([{{ inst.point }}]).addTo(map)
  .bindPopup(places["{{ inst.code }}"]);
 </script>
+    {% endif %}
 {% endfor %}
