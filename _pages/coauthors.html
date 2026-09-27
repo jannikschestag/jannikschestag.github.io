@@ -226,7 +226,8 @@ places2["{{ inst.code }}"] = true;
 
 
 {% for inst in site.data.institutions %}
-{{ places2["{{ inst.code }}"] }}
+x = places2["{{ inst.code }}"]
+{{ x }}
     {% if places2["{{ inst.code }}"] == true %}
 <script>
 L.marker([{{ inst.point }}]).addTo(map)
