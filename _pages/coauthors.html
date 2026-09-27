@@ -226,12 +226,10 @@ places2["{{ inst.code }}"] = true;
 
 
 {% for inst in site.data.institutions %}
-{% assign x = places2["{{ inst.code }}"] %}
-{{ x }}
-    {% if places2["{{ inst.code }}"] == true %}
 <script>
-L.marker([{{ inst.point }}]).addTo(map)
- .bindPopup(places["{{ inst.code }}"]);
+if (places2["{{ inst.code }}"]) {
+  L.marker([{{ inst.point }}]).addTo(map)
+   .bindPopup(places["{{ inst.code }}"]);
+}
 </script>
-    {% endif %}
 {% endfor %}
