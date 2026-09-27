@@ -226,7 +226,7 @@ places2["{{ inst.code }}"] = true;
 
 
 {% for inst in site.data.institutions %}
-x = places2["{{ inst.code }}"]
+{% assign x = places2["{{ inst.code }}"] %}
 {{ x }}
     {% if places2["{{ inst.code }}"] == true %}
 <script>
