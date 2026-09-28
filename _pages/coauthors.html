@@ -227,6 +227,8 @@ places2["{{ inst.code }}"] = true;
 
 {% for inst in site.data.institutions %}
 <script>
+console.log("{{ inst.code }}");
+console.log(places2["{{ inst.code }}"]);
 if (places2["{{ inst.code }}"]) {
   L.marker([{{ inst.point }}]).addTo(map)
    .bindPopup(places["{{ inst.code }}"]);
