@@ -31,7 +31,7 @@
       last: Komusiewicz
   link: https://www.fmi.uni-jena.de/en/6050/prof-dr-christian-komusiewicz
   affiliation: Friedrich Schiller Universität
-  collaboration: yes
+  collaboration: no
 
 - name:
     - first: Mathias
@@ -51,9 +51,9 @@
 - name:
     - first: Frank
       last: Sommer
-  link: https://www.ac.tuwien.ac.at/people/fsommer/
+  link: https://www.fmi.uni-jena.de/en/6006/dr-frank-sommer
   affiliation: Friedrich Schiller Universität
-  collaboration: yes
+  collaboration: no
 
 - name:
     - first: Celine
@@ -81,7 +81,7 @@
       last: Garvardt
   link: https://www.fmi.uni-jena.de/en/6039/jaroslav-garvardt
   affiliation: Friedrich Schiller Universität
-  collaboration: yes
+  collaboration: no
 
 - name:
     - first: Yukihiro
@@ -114,9 +114,9 @@
 - name:
     - first: Matthias
       last: Bentert
-  link: https://fpt.akt.tu-berlin.de/bentert/website.html
+  link: https://www.user.tu-berlin.de/matthias.bentert/
   affiliation: TU Berlin
-  collaboration: yes
+  collaboration: no
 
 - name:
     - first: Malte
