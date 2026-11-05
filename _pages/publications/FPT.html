@@ -28,7 +28,7 @@ classes: wide
     <span class="pub-toolbar-label">Filter by topic</span>
 
     <a href="/publications/" class="filter-pill">All</a>
-    <a href="/publications/FPT" class="filter-pill is-active">FPT</a>
+    <a href="/publications/FPT" class="filter-pill is-active">Parameterized Complexity</a>
     <a href="/publications/FW" class="filter-pill">Food Webs</a>
     <a href="/publications/Orientations" class="filter-pill">Orienting</a>
     <a href="/publications/PD" class="filter-pill">Phylogenetic Diversity</a>
@@ -50,7 +50,7 @@ Filter non-published
 {%- comment -%}
 Filter by topic
 {%- endcomment -%}
-{% assign topic_pubs = all_pubs | where_exp: "p", "p.topics contains 'FPT'" %}
+{% assign topic_pubs = all_pubs | where_exp: "p", "p.topics contains 'Parameterized Complexity'" %}
 
 {%- comment -%}
 Sort by release-date descending

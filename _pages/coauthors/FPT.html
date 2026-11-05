@@ -18,7 +18,7 @@ tr:hover {
 
 
 <a href="/coauthors/" class="topic-button">All</a>
-<a href="/coauthors/FPT" class="topic-button">FPT</a>
+<a href="/coauthors/FPT" class="topic-button">Parameterized Complexity</a>
 <a href="/coauthors/FW" class="topic-button">Food Webs</a>
 <a href="/coauthors/Orientations" class="topic-button">Orienting</a>
 <a href="/coauthors/PD" class="topic-button">Phylogenetic Diversity</a>
@@ -65,7 +65,7 @@ function showMap() {
 <!-- Collect and normalize all co-authors from publications, skipping yourself -->
 {%- endcomment -%}
 {% assign all_pubs = site.data.pubs %}
-{% assign topic_pubs = all_pubs | where_exp: "p", "p.topics contains 'FPT'" %}
+{% assign topic_pubs = all_pubs | where_exp: "p", "p.topics contains 'Parameterized Complexity'" %}
 {% for pub in topic_pubs %}
   {% for a in pub.authors %}
     {% assign name = a.first %}
