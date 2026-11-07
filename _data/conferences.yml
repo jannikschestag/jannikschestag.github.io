@@ -38,14 +38,6 @@
   abbr: AAAI
   core: A
 
-- name: International Joint Conference on Artificial Intelligence
-  abbr: IJCAI
-  core: A
-
-- name: International Conference on Autonomous Agents and Multiagent Systems
-  abbr: AAMAS
-  core: A
-
 - name: International Conference on Research in Computational Molecular Biology
   abbr: RECOMB
   core: A
@@ -54,12 +46,20 @@
   abbr: STACS
   core: A
 
-- name: International Symposium on Parameterized and Exact Computation
-  abbr: IPEC
+- name: International Joint Conference on Artificial Intelligence
+  abbr: IJCAI
+  core: A
+
+- name: International Conference on Autonomous Agents and Multiagent Systems
+  abbr: AAMAS
   core: A
 
 - name: Mathematical Foundations of Computer Science
   abbr: MFCS
+  core: A
+
+- name: International Symposium on Parameterized and Exact Computation
+  abbr: IPEC
   core: A
 
 - name: IARCS Annual Conference on Foundations of Software Technology and Theoretical Computer Science
@@ -102,16 +102,16 @@
   abbr: IWOCA
   core: B
 
-- name: RECOMB International Workshop on Comparative Genomics
-  abbr: RECOMB-CG
-  core: B
-
 - name: International Conference on Current Trends in Theory and Practice of Computer Science
   abbr: SOFSEM
   core: B
 
 - name: Annual Symposium on Combinatorial Pattern Matching
   abbr: CPM
+  core: B
+
+- name: RECOMB International Workshop on Comparative Genomics
+  abbr: RECOMB-CG
   core: B
 
 - name: International Conference on Algorithmic Decision Theory
