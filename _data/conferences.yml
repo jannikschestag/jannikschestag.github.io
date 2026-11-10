@@ -98,12 +98,12 @@
   abbr: ACDA
   core: B
 
-- name: International Workshop on Combinatorial Algorithms
-  abbr: IWOCA
-  core: B
-
 - name: International Conference on Current Trends in Theory and Practice of Computer Science
   abbr: SOFSEM
+  core: B
+
+- name: International Workshop on Combinatorial Algorithms
+  abbr: IWOCA
   core: B
 
 - name: Annual Symposium on Combinatorial Pattern Matching

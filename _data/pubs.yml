@@ -74,21 +74,21 @@
   bibtex: null
 
 - title: Ultrametric Network Phylogenetic Diversity and the Greedy Algorithm
-  published: false
-  release-date: 2026-12-31
+  published: true
+  release-date: 2027-02-05
   first-publication: 2026
   authors:
     - first: Jannik
       last: Schestag
     - first: Mathias
       last: Weller
-  type: preprint
-  journal: null
+  type: conference
+  journal: Proceedings of the 52nd International Conference on Current Trends in Theory and Practice of Computer Science (SOFSEM 2027)
   volume: null
   issue: null
   pages: null
   note: null
-  conference: null
+  conference: SOFSEM
   conference-year: null
   doi-identifier: null
   doi-url: null
@@ -105,7 +105,14 @@
     Auf Evolutionsbäumen ist die Auswahl von Arten, die möglichst viel Evolutionsgeschichte bewahren, überraschend einfach: Wenn man wiederholt die Art auswählt, die am meisten zusätzliche Vielfalt beiträgt, erhält man eine optimale Lösung. Diese Arbeit zeigt, dass diese einfache Strategie auch auf bestimmten evolutionären Netzwerken funktioniert, die eine biologische Annahme über den zeitlichen Verlauf der Evolution erfüllen, während bereits etwas komplexere Netzwerke das Problem wieder rechnerisch schwierig machen.
   abstract: >
     Phylogenetic diversity (PD) measures the amount of evolutionary history represented by a set of species. On phylogenetic trees, a set of \(k\) species maximizing PD can be found greedily. Although networks allow modeling reticulate events, this greedy property gets lost, once we generalize PD from trees to networks. We show that it is recovered on ultrametric level-\(1\) networks. Ultrametric networks are a common under the molecular-clock hypothesis, while level-\(1\) networks form a fundamental class of networks with low complexity of local structures. We further show, that our greedy algorithm can probably not be extended to ultrametric tree-child networks, by proving strong \NP-hardness for this case.
-  bibtex: null
+  bibtex: >
+    @inproceedings{schestag2027ultrametric,
+      title = {{Ultrametric Network Phylogenetic Diversity and the Greedy Algorithm}},
+      author = {Schestag, Jannik and Weller, Mathias},
+      booktitle = {Proceedings of the 52nd International Conference on Current Trends in Theory and Practice of Computer Science (SOFSEM 2027)},
+      year = {2027},
+      organization = {Springer}
+    }
 
 - title: Budgeted Phylogenetic Network Diversity Revisited
   published: true
@@ -262,20 +269,20 @@
 
 - title: "Orienting Unrooted Binary Networks Faster: Focus on the Generator"
   published: true
-  release-date: 2026-06-30
+  release-date: 2027-02-05
   first-publication: 2026
   authors:
     - first: Jannik
       last: Schestag
     - first: Norbert
       last: Zeh
-  type: preprint
-  journal: null
+  type: conference
+  journal: Proceedings of the 52nd International Conference on Current Trends in Theory and Practice of Computer Science (SOFSEM 2027)
   volume: null
   issue: null
   pages: null
   note: null
-  conference: null
+  conference: SOFSEM
   conference-year: null
   doi-identifier: null
   doi-url: null
@@ -294,11 +301,13 @@
   abstract: >
     The problem of orienting an unrooted network to obtain a specific class of rooted phylogenetic networks is known to be NP-hard in many cases. In this paper, we introduce two algorithmic frameworks that yield significantly improved fixed-parameter tractable (FPT) algorithms parameterized by the network level \(\ell\). Our first main contribution shows that for several prominent network classes, the core algorithmic difficulty lies in finding a directed spanning tree on the network's undirected generator. By enumerating these spanning trees in \(\mathcal{O}(5.3334^\ell + \ell)\) time and orienting all remaining edges in polynomial time, we solve the orientation problem in \(\mathcal{O}(5.3334^\ell \cdot n)\) time for tree-based networks and in \(\mathcal{O}(5.3334^\ell \cdot n^2)\) time for orchards, where \(n\) is the number of vertices of the graph. Extending this approach with further branching yields \(\mathcal{O}(10.6667^\ell \cdot n^2)\)-time algorithms for tree-child and normal networks. Our second technique bypasses spanning trees by directly guessing the placement of reticulations on the generator. This framework provides \(\mathcal{O}(12.2071^\ell \cdot n^2)\)-time algorithms for temporal, reticulation-visible, and tree-sibling networks. Finally, we demonstrate the versatility of the reticulation-guessing framework by showing that even computing an orientation with minimum scanwidth is single-exponential FPT with respect to the level. Together, these results significantly improve the best-known running times for phylogenetic network orientation.
   bibtex: >
-    @article{Schestag2026Orienting,
+    @inproceedings{Schestag2026Orienting,
       title = {{Orienting Unrooted Binary Networks Faster: Focus on the Generator}},
       author = {Schestag, Jannik and Zeh, Norbert},
+      booktitle = {Proceedings of the 52nd International Conference on Current Trends in Theory and Practice of Computer Science (SOFSEM 2027)},
+      year = {2027},
+      organization = {Springer},
       journal = {arXiv preprint},
-      year = {2026},
       archivePrefix = {arXiv},
       eprint = {2606.31597}
     }
