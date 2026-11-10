@@ -122,7 +122,7 @@
     - first: Jannik
       last: Schestag
   type: conference
-  journal: Proceedings of the 4th SIAM Conference on Applied and Computational Discrete Algorithms (ACDA27)
+  journal: Proceedings of the 4th SIAM Conference on Applied and Computational Discrete Algorithms (ACDA 2027)
   volume: null
   issue: null
   pages: null
@@ -151,7 +151,7 @@
     @inproceedings{schestag2027budgeted,
       title = {{Budgeted Phylogenetic Network Diversity Revisited}},
       author = {Jannik Schestag},
-      booktitle = {Proceedings of the 4th SIAM Conference on Applied and Computational Discrete Algorithms (ACDA27)},
+      booktitle = {Proceedings of the 4th SIAM Conference on Applied and Computational Discrete Algorithms (ACDA 2027)},
       organization = {SIAM},
       year = {2027}
     }
