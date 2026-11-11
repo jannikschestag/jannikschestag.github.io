@@ -9,7 +9,7 @@
       last: Schestag
     - first: Norbert
       last: Zeh
-  type: preprint
+  type: null
   journal: null
   volume: null
   issue: null
@@ -48,7 +48,7 @@
       last: Schestag
     - first: Frank
       last: Sommer
-  type: preprint
+  type: null
   journal: null
   volume: null
   issue: null
@@ -89,7 +89,7 @@
   pages: null
   note: null
   conference: SOFSEM
-  conference-year: null
+  conference-year: 2027
   doi-identifier: null
   doi-url: null
   preprint-server: null
@@ -283,7 +283,7 @@
   pages: null
   note: null
   conference: SOFSEM
-  conference-year: null
+  conference-year: 2027
   doi-identifier: null
   doi-url: null
   preprint-server: arXiv
