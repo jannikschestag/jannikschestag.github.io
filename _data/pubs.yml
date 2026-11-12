@@ -1,3 +1,44 @@
+- title: From Undirected Phylogenetic Networks to Parsimonious Evolutionary Histories
+  published: false
+  release-date: 2026-12-31
+  first-publication: 2026
+  authors:
+    - first: Manuel
+      last: Lafond
+    - first: Kaari
+      last: Landry
+    - first: Jannik
+      last: Schestag
+    - first: Nadia
+      last: Tahiri
+  type: null
+  journal: null
+  volume: null
+  issue: null
+  pages: null
+  note: null
+  conference: null
+  conference-year: null
+  doi-identifier: null
+  doi-url: null
+  preprint-server: null
+  preprint-identifier: null
+  preprint-url: null
+  software-url: null
+  topics:
+    - FPT
+    - Orientation
+    - Phylogenetic Networks
+  summary_lay: >-
+    Still to come
+  summary_lay_german: >-
+    Still to come
+  abstract: >
+    Phylogenetic networks represent complex evolutionary histories involving events such as hybridization and horizontal gene transfer. Such networks are, in principle, directed acyclic graphs, but several reconstruction methods leave some or all of their edges unoriented. We study parsimony as a criterion for choosing an orientation of an undirected phylogenetic network whose leaves carry a binary character. Motivated by Dollo parsimony, we seek an acyclic orientation and an extension of the leaf states that explain the character, using exactly one gain and at most \(\ell\) losses. We distinguish hardwired and softwired interpretations of gains and losses, allowing these to be combined independently.
+    <br />
+    We establish a complexity dichotomy between all such combinations of costs. For every combination involving softwired gains or softwired losses, the problem is NP-hard even when no losses are allowed and exactly one leaf has state 0. In particular, these variants are para-NP-hard when parameterizing by \(\ell\). When gains and losses are hardwired, the problem remains NP-hard when \(\ell\) is part of the input, but it is fixed-parameter tractable in \(\ell\). Specifically, we give an algorithm that constructs a solution in \(\mathcal{O}(4^\ell \ell n)\) time, where \(n\) is the number of vertices. Finally, for all four variants, we give a fixed-parameter algorithm parameterized by the network level \(k\), running in \(\mathcal{O}(64^k\cdot n^4)\) time. Altogether, our results establish a clear boundary of tractability for the orientability of networks based on parsimony.
+  bibtex: null
+
 - title: "ForestPD: Maximizing Phylogenetic Diversity Under Phylogenetic and Extinction Uncertainty"
   published: false
   release-date: 2026-12-31
