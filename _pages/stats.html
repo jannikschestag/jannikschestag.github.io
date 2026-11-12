@@ -585,15 +585,15 @@ function formatWord([word, data]) {
 
 // ---------- Output ----------
 document.getElementById("topWords").innerHTML =
-  "Five most frequent words in titles (excluding common words such as: and, we, the, ...):<br />" +
+  "Five most frequent words in titles (singular and plural forms are added, excluding common words such as: and, we, the, ...):<br />" +
   topWords.map(formatWord).join(", ");
 
 document.getElementById("topFirstWords").innerHTML =
-  "Five most frequent first words in titles (including common words such as: and, we, the, ...):<br />" +
+  "Five most frequent first words in titles (including common words):<br />" +
   topFirstWords.map(([w, c]) => `${displayWord(w)} (${c})`).join(", ");
 
 document.getElementById("topWordsAbstract").innerHTML =
-  "Twenty most frequent words in abstracts (excluding common words such as: and, we, the, ...):<br />" +
+  "Twenty most frequent words in abstracts (singular and plural forms are added, excluding common words):<br />" +
   topWordsA.map(formatWord).join(", ");
 
 </script>
