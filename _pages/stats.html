@@ -460,6 +460,7 @@ const titles = [
   {{ pub.title | jsonify }},
 {% endfor %}
 ];
+
 const abstracts = [
 {% for pub in site.data.pubs %}
   {{ pub.abstract | jsonify }},
@@ -472,80 +473,126 @@ const stopwords = new Set([
   "this","to","under","we","with","without","when","where","which"
 ]);
 
+// ---------- Tokenization ----------
+function tokenize(text) {
+  return String(text || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, " ")
+    .split(/\s+/)
+    .filter(w => w.length > 0);
+}
+
+// Collect all words to recognize singular/plural pairs.
+// A word ending in "s" is treated as plural only if the corresponding
+// singular form also occurs somewhere in the titles or abstracts.
+const allWords = new Set(
+  [...titles, ...abstracts].flatMap(tokenize)
+);
+
+// ---------- Normalize singular/plural ----------
+function normalizeWord(word) {
+  if (word.endsWith("s") && word.length > 3) {
+    const singular = word.slice(0, -1);
+
+    if (allWords.has(singular)) {
+      return singular;
+    }
+  }
+
+  return word;
+}
+
+// ---------- Count words ----------
+function countWords(texts) {
+  const counts = {};
+
+  for (const text of texts) {
+    for (const rawWord of tokenize(text)) {
+      const word = normalizeWord(rawWord);
+
+      if (stopwords.has(word) || stopwords.has(rawWord)) {
+        continue;
+      }
+
+      if (!counts[word]) {
+        counts[word] = {
+          total: 0,
+          forms: {}
+        };
+      }
+
+      counts[word].total++;
+
+      counts[word].forms[rawWord] =
+        (counts[word].forms[rawWord] || 0) + 1;
+    }
+  }
+
+  return counts;
+}
+
+const wordCount = countWords(titles);
+const wordCountA = countWords(abstracts);
+
 // ---------- Most frequent words ----------
-const wordCount = {};
-const wordCountA = {};
-
-for (const title of titles) {
-  const words = title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, " ")
-    .split(/\s+/)
-    .filter(w => w.length > 0);
-
-  for (const word of words) {
-    if (!stopwords.has(word)) {
-      wordCount[word] = (wordCount[word] || 0) + 1;
-    }
-  }
+function topWordsFrom(counts, limit) {
+  return Object.entries(counts)
+    .sort((a, b) =>
+      b[1].total - a[1].total ||
+      a[0].localeCompare(b[0])
+    )
+    .slice(0, limit);
 }
 
-for (const abstract of abstracts) {
-  const words = abstract
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, " ")
-    .split(/\s+/)
-    .filter(w => w.length > 0);
-
-  for (word of words) {
-    if (word == "pd") {
-      word = "PD";
-    }
-    if (!stopwords.has(word)) {
-      wordCountA[word] = (wordCountA[word] || 0) + 1;
-    }
-  }
-}
-
-const topWords = Object.entries(wordCount)
-  .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-  .slice(0,5);
-const topWordsA = Object.entries(wordCountA)
-  .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-  .slice(0,20);
+const topWords = topWordsFrom(wordCount, 5);
+const topWordsA = topWordsFrom(wordCountA, 20);
 
 // ---------- Most frequent first words ----------
 const firstWordCount = {};
 
 for (const title of titles) {
-  const words = title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, " ")
-    .split(/\s+/)
-    .filter(w => w.length > 0);
+  const words = tokenize(title);
 
   if (words.length > 0) {
     const first = words[0];
-    firstWordCount[first] = (firstWordCount[first] || 0) + 1;
+
+    firstWordCount[first] =
+      (firstWordCount[first] || 0) + 1;
   }
 }
 
 const topFirstWords = Object.entries(firstWordCount)
-  .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-  .slice(0,5);
+  .sort((a, b) =>
+    b[1] - a[1] ||
+    a[0].localeCompare(b[0])
+  )
+  .slice(0, 5);
+
+// ---------- Formatting ----------
+function displayWord(word) {
+  return word === "pd" ? "PD" : word;
+}
+
+function formatWord([word, data]) {
+  const breakdown = Object.entries(data.forms)
+    .map(([form, count]) => `${displayWord(form)}: ${count}`)
+    .join(", ");
+
+  return `<span title="${breakdown}">${displayWord(word)} (${data.total})</span>`;
+}
 
 // ---------- Output ----------
 document.getElementById("topWords").innerHTML =
-  "Five most frequent words in titles  (excluding common words such as: and, we, the, ...):<br />" +
-  topWords.map(([w,c]) => `${w} (${c})`).join(", ");
+  "Five most frequent words in titles (excluding common words such as: and, we, the, ...):<br />" +
+  topWords.map(formatWord).join(", ");
 
 document.getElementById("topFirstWords").innerHTML =
-  "Five most frequent first words in titles  (including common words such as: and, we, the, ...):<br />" +
-  topFirstWords.map(([w,c]) => `${w} (${c})`).join(", ");
+  "Five most frequent first words in titles (including common words such as: and, we, the, ...):<br />" +
+  topFirstWords.map(([w, c]) => `${displayWord(w)} (${c})`).join(", ");
 
 document.getElementById("topWordsAbstract").innerHTML =
-  "Twenty most frequent words in abstracts  (excluding common words such as: and, we, the, ...):<br />" +
-  topWordsA.map(([w,c]) => `${w} (${c})`).join(", ");
+  "Twenty most frequent words in abstracts (excluding common words such as: and, we, the, ...):<br />" +
+  topWordsA.map(formatWord).join(", ");
 
 </script>
 
