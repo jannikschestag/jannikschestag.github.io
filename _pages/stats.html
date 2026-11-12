@@ -467,7 +467,7 @@ const abstracts = [
 ];
 
 const stopwords = new Set([
-  "a","an","and","are","as","at","be","br","but","by","for","from",
+  "a","an","and","are","as","at","be","b","br","but","by","can","for","from",
   "in","into","is","it","k","of","on","or","over","s","such","that","the",
   "this","to","under","we","with","without","when","where","which"
 ]);
@@ -529,7 +529,7 @@ for (const title of titles) {
 
 const topFirstWords = Object.entries(firstWordCount)
   .sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-  .slice(0,3);
+  .slice(0,5);
 
 // ---------- Output ----------
 document.getElementById("topWords").innerHTML =
