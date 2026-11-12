@@ -469,7 +469,7 @@ const abstracts = [
 
 const stopwords = new Set([
   "a","an","and","are","as","at","be","b","br","but","by","can","for","from",
-  "in","into","is","it","k","of","on","or","over","s","such","that","the",
+  "in","into","is","it","k","mathcal","of","on","or","over","s","such","that","the",
   "this","to","under","we","with","without","when","where","which"
 ]);
 
@@ -498,7 +498,9 @@ function normalizeWord(word) {
       return singular;
     }
   }
-
+  if (word == "taxa") {
+    return "taxon";
+  }
   return word;
 }
 
