@@ -498,6 +498,9 @@ for (const abstract of abstracts) {
     .filter(w => w.length > 0);
 
   for (const word of words) {
+    if (word == "pd") {
+      word = "PD";
+    }
     if (!stopwords.has(word)) {
       wordCountA[word] = (wordCountA[word] || 0) + 1;
     }
@@ -537,7 +540,7 @@ document.getElementById("topWords").innerHTML =
   topWords.map(([w,c]) => `${w} (${c})`).join(", ");
 
 document.getElementById("topFirstWords").innerHTML =
-  "Three most frequent first words in titles  (including common words such as: and, we, the, ...):<br />" +
+  "Five most frequent first words in titles  (including common words such as: and, we, the, ...):<br />" +
   topFirstWords.map(([w,c]) => `${w} (${c})`).join(", ");
 
 document.getElementById("topWordsAbstract").innerHTML =
